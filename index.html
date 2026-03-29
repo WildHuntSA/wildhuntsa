@@ -475,11 +475,11 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 .map-hover-card{display:none}
 /* ── SVG PROVINCE MAP ── */
-.svgp{fill:rgba(60,32,4,0.8);stroke:rgba(220,140,20,0.85);stroke-width:1.8;cursor:pointer;transition:all 0.3s}
-.svgp:hover,.svgp.active{fill:rgba(160,90,8,0.55);stroke:rgba(255,190,40,1);stroke-width:3;filter:drop-shadow(0 0 8px rgba(220,140,20,0.7))}
-.svgl{fill:rgba(255,195,80,0.85);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-anchor:middle}
-.svgdot{fill:rgba(255,185,40,0.95);cursor:pointer;filter:drop-shadow(0 0 6px rgba(255,180,30,0.8))}
-.svgdot:hover{fill:white;filter:drop-shadow(0 0 10px white)}
+.svgp{fill:url(#pf);stroke:rgba(235,155,25,0.95);stroke-width:2.2;cursor:pointer;transition:fill 0.3s,stroke 0.3s,filter 0.3s;filter:url(#neon-glow)}
+.svgp:hover,.svgp.active{fill:url(#pf-h);stroke:rgba(255,200,50,1);stroke-width:3;filter:url(#hover-glow)}
+.svgl{fill:rgba(255,210,120,0.92);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-anchor:middle;text-shadow:0 0 8px rgba(255,160,30,0.8)}
+.svgdot{fill:rgba(255,185,40,0.95);cursor:pointer;filter:drop-shadow(0 0 6px rgba(255,180,30,0.9)) drop-shadow(0 0 12px rgba(255,140,0,0.5))}
+.svgdot:hover{fill:white;filter:drop-shadow(0 0 12px white)}
 /* ── PROVINCE HOTSPOTS ── */
 .prov-hotspot{position:absolute;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
 .prov-hotspot:hover{background:transparent}
@@ -699,111 +699,106 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <div style="display:grid;grid-template-columns:1fr 260px;gap:0;background:rgba(10,7,3,0.9);border:1px solid rgba(201,125,26,0.15);border-radius:8px;overflow:hidden">
 
       <!-- MAP IMAGE WITH HOTSPOTS -->
-      <div style="position:relative;background:#1a0e05;display:flex;align-items:center;justify-content:center;padding:0;min-height:520px" id="map-container">
+      <div style="position:relative;background:radial-gradient(ellipse at 40% 40%,#1e0e04 0%,#0a0502 100%);display:flex;align-items:center;justify-content:center;padding:0;min-height:520px" id="map-container">
 
         <!-- SVG Province Map -->
         <div style="position:relative;width:100%">
-          <svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:520px;display:block">
-            <defs>
-              <filter id="glow1">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-              <filter id="glow2">
-                <feGaussianBlur stdDeviation="6" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-              <radialGradient id="mapbg" cx="50%" cy="50%" r="70%">
-                <stop offset="0%" stop-color="#3a1e08"/>
-                <stop offset="100%" stop-color="#0e0700"/>
-              </radialGradient>
-            </defs>
+          <svg viewBox="0 0 1000 740" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:520px;display:block">
+  <defs>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feGaussianBlur stdDeviation="8" result="b2"/>
+      <feColorMatrix in="b2" type="matrix" values="1 0.6 0 0 0  0.6 0.3 0 0 0  0 0 0 0 0  0 0 0 1 0" result="orange2"/>
+      <feColorMatrix in="b1" type="matrix" values="1 0.8 0 0 0  0.8 0.5 0 0 0  0 0 0 0 0  0 0 0 1.5 0" result="orange1"/>
+      <feMerge><feMergeNode in="orange2"/><feMergeNode in="orange1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hover-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" result="b2"/>
+      <feColorMatrix in="b2" type="matrix" values="1 0.7 0 0 0.1  0.7 0.4 0 0 0  0 0 0 0 0  0 0 0 1.2 0" result="o2"/>
+      <feColorMatrix in="b1" type="matrix" values="1 0.9 0 0 0.1  0.9 0.6 0 0 0  0 0 0 0 0  0 0 0 2 0" result="o1"/>
+      <feMerge><feMergeNode in="o2"/><feMergeNode in="o1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1e0e04"/>
+      <stop offset="70%" stop-color="#0f0602"/>
+      <stop offset="100%" stop-color="#060300"/>
+    </radialGradient>
+    <radialGradient id="pf" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="rgba(100,58,12,0.65)"/>
+      <stop offset="100%" stop-color="rgba(28,14,4,0.85)"/>
+    </radialGradient>
+    <radialGradient id="pf-h" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="rgba(200,120,20,0.55)"/>
+      <stop offset="100%" stop-color="rgba(120,65,10,0.7)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="740" fill="url(#bg)"/>
 
-            <!-- Background -->
-            <rect width="800" height="620" fill="url(#mapbg)"/>
+  <!-- === LIMPOPO - top, stretches east === -->
+  <path class="svgp" id="sp-limpopo" data-name="Limpopo" data-count="128" data-species="Kudu, Impala, Bushbuck"
+    d="M370,38 L415,26 L475,20 L550,22 L620,30 L672,48 L702,72 L712,102 L706,134 L686,156 L656,170 L618,178 L575,182 L530,178 L488,172 L448,166 L410,162 L378,164 L354,158 L332,142 L314,120 L310,94 L318,66 Z"
+    onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"/>
+  <text x="510" y="106" class="svgl" pointer-events="none">LIMPOPO</text>
+  <circle class="svgdot" cx="510" cy="122" r="6" onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"><animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/></circle>
 
-            <!-- LIMPOPO -->
-            <path class="svgp" data-name="Limpopo" data-count="128" data-species="Kudu, Impala, Bushbuck"
-              d="M340,40 L375,30 L425,26 L485,28 L545,36 L592,50 L620,72 L632,100 L628,130 L612,150 L588,162 L558,170 L520,172 L488,166 L455,160 L420,156 L390,154 L362,158 L342,164 L322,158 L305,145 L290,125 L286,100 L290,76 L310,55 Z"
-              onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"/>
-            <text x="458" y="105" class="svgl" pointer-events="none">LIMPOPO</text>
-            <circle class="svgdot" cx="458" cy="118" r="7" onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')">
-              <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === NORTH WEST === -->
+  <path class="svgp" id="sp-nw" data-name="North West" data-count="74" data-species="Kudu, Blesbok, Wildebeest"
+    d="M314,172 L354,164 L378,170 L398,184 L402,212 L396,242 L376,268 L348,284 L318,290 L288,282 L264,262 L256,236 L260,208 L274,184 Z"
+    onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"/>
+  <text x="330" y="230" class="svgl" font-size="11" pointer-events="none">NORTH WEST</text>
+  <circle class="svgdot" cx="330" cy="248" r="5" onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"><animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/></circle>
 
-            <!-- NORTH WEST -->
-            <path class="svgp" data-name="North West" data-count="74" data-species="Kudu, Blesbok, Wildebeest"
-              d="M286,168 L322,158 L342,164 L362,158 L376,175 L380,202 L375,230 L358,254 L334,268 L306,274 L278,268 L256,250 L248,226 L252,200 L262,178 Z"
-              onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"/>
-            <text x="314" y="215" class="svgl" font-size="11" pointer-events="none">NORTH WEST</text>
-            <circle class="svgdot" cx="314" cy="230" r="6" onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')">
-              <animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === GAUTENG - small central === -->
+  <path class="svgp" id="sp-gp" data-name="Gauteng" data-count="12" data-species="Impala, Blesbok, Steenbok"
+    d="M410,162 L448,166 L466,178 L468,202 L456,224 L430,230 L406,224 L394,210 L396,186 Z"
+    onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"/>
+  <text x="432" y="197" class="svgl" font-size="8.5" pointer-events="none">GAUTENG</text>
+  <circle class="svgdot" cx="432" cy="212" r="4" onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/></circle>
 
-            <!-- GAUTENG -->
-            <path class="svgp" data-name="Gauteng" data-count="12" data-species="Impala, Blesbok, Steenbok"
-              d="M390,154 L420,156 L438,168 L440,192 L430,212 L408,218 L388,214 L376,202 L376,175 Z"
-              onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"/>
-            <text x="410" y="187" class="svgl" font-size="9" pointer-events="none">GAUTENG</text>
-            <circle class="svgdot" cx="410" cy="200" r="5" onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')">
-              <animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === MPUMALANGA === -->
+  <path class="svgp" id="sp-mp" data-name="Mpumalanga" data-count="41" data-species="Impala, Kudu, Nyala"
+    d="M466,178 L530,178 L575,182 L618,178 L656,170 L678,190 L688,220 L680,252 L660,276 L630,292 L598,298 L566,296 L540,284 L518,264 L506,240 L482,224 L456,220 L456,200 Z"
+    onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"/>
+  <text x="582" y="234" class="svgl" font-size="10" pointer-events="none">MPUMALANGA</text>
+  <circle class="svgdot" cx="582" cy="250" r="5" onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"><animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/></circle>
 
-            <!-- MPUMALANGA -->
-            <path class="svgp" data-name="Mpumalanga" data-count="41" data-species="Impala, Kudu, Nyala"
-              d="M438,168 L488,166 L520,172 L558,170 L588,162 L612,178 L622,205 L615,232 L600,255 L575,272 L548,278 L520,276 L498,264 L480,245 L470,222 L450,208 L440,192 Z"
-              onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"/>
-            <text x="545" y="218" class="svgl" font-size="10" pointer-events="none">MPUMALANGA</text>
-            <circle class="svgdot" cx="545" cy="232" r="6" onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')">
-              <animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === NORTHERN CAPE - massive left province === -->
+  <path class="svgp" id="sp-nc" data-name="Northern Cape" data-count="58" data-species="Gemsbok, Springbok, Eland"
+    d="M78,182 L132,168 L188,162 L238,160 L264,162 L274,184 L260,208 L256,236 L248,274 L238,314 L224,354 L208,390 L186,422 L160,448 L130,464 L100,470 L72,458 L50,434 L32,404 L20,366 L14,326 L16,286 L24,248 L38,212 L56,192 Z"
+    onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"/>
+  <text x="158" y="308" class="svgl" font-size="12" pointer-events="none">NORTHERN</text>
+  <text x="158" y="326" class="svgl" font-size="12" pointer-events="none">CAPE</text>
+  <circle class="svgdot" cx="158" cy="346" r="6" onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"><animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"/></circle>
 
-            <!-- NORTHERN CAPE -->
-            <path class="svgp" data-name="Northern Cape" data-count="58" data-species="Gemsbok, Springbok, Eland"
-              d="M75,168 L125,155 L178,150 L225,148 L258,148 L286,158 L286,168 L262,178 L252,200 L248,226 L240,262 L232,298 L220,335 L205,368 L186,400 L165,425 L140,442 L114,448 L88,440 L65,420 L48,395 L36,362 L30,328 L32,292 L38,258 L48,225 L60,198 Z"
-              onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"/>
-            <text x="152" y="300" class="svgl" font-size="11" pointer-events="none">NORTHERN</text>
-            <text x="152" y="318" class="svgl" font-size="11" pointer-events="none">CAPE</text>
-            <circle class="svgdot" cx="152" cy="335" r="6" onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')">
-              <animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === FREE STATE - central === -->
+  <path class="svgp" id="sp-fs" data-name="Free State" data-count="22" data-species="Blesbok, Springbok, Wildebeest"
+    d="M318,296 L348,290 L376,274 L396,248 L406,228 L430,236 L456,228 L480,232 L506,248 L518,272 L526,304 L518,338 L500,362 L478,378 L450,386 L420,388 L390,382 L362,368 L340,350 L326,328 L316,310 Z"
+    onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"/>
+  <text x="420" y="322" class="svgl" font-size="11" pointer-events="none">FREE STATE</text>
+  <circle class="svgdot" cx="420" cy="338" r="5" onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"><animate attributeName="r" values="4;7;4" dur="2.6s" repeatCount="indefinite"/></circle>
 
-            <!-- FREE STATE -->
-            <path class="svgp" data-name="Free State" data-count="22" data-species="Blesbok, Springbok, Wildebeest"
-              d="M306,274 L334,268 L358,254 L375,230 L388,214 L408,218 L430,212 L450,208 L470,222 L480,245 L488,272 L482,305 L468,330 L450,348 L425,358 L398,360 L370,355 L345,344 L325,328 L312,308 L306,290 Z"
-              onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"/>
-            <text x="395" y="295" class="svgl" font-size="11" pointer-events="none">FREE STATE</text>
-            <circle class="svgdot" cx="395" cy="310" r="6" onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')">
-              <animate attributeName="r" values="4;7;4" dur="2.6s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === KWAZULU-NATAL - east coast === -->
+  <path class="svgp" id="sp-kzn" data-name="KwaZulu-Natal" data-count="19" data-species="Nyala, Bushbuck, Impala"
+    d="M540,290 L566,302 L598,304 L630,298 L660,282 L682,300 L696,330 L692,364 L672,394 L646,416 L614,432 L582,438 L552,430 L526,412 L510,388 L506,362 L510,338 L518,314 L526,304 Z"
+    onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"/>
+  <text x="602" y="366" class="svgl" font-size="10" pointer-events="none">KWAZULU-NATAL</text>
+  <circle class="svgdot" cx="602" cy="382" r="5" onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"><animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/></circle>
 
-            <!-- KWAZULU-NATAL -->
-            <path class="svgp" data-name="KwaZulu-Natal" data-count="19" data-species="Nyala, Bushbuck, Impala"
-              d="M498,264 L520,276 L548,278 L575,272 L600,282 L618,305 L628,335 L622,362 L605,388 L580,408 L552,420 L525,422 L500,412 L480,392 L470,368 L468,345 L468,330 L482,305 L488,272 Z"
-              onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"/>
-            <text x="552" y="348" class="svgl" font-size="10" pointer-events="none">KWAZULU-NATAL</text>
-            <circle class="svgdot" cx="552" cy="362" r="6" onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')">
-              <animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/>
-            </circle>
+  <!-- === EASTERN CAPE === -->
+  <path class="svgp" id="sp-ec" data-name="Eastern Cape" data-count="17" data-species="Buffalo, Kudu, Sable"
+    d="M210,428 L242,414 L276,400 L314,386 L340,356 L362,372 L390,386 L420,394 L450,392 L478,382 L506,366 L510,392 L504,420 L484,448 L458,468 L426,482 L390,490 L354,490 L318,482 L284,466 L254,448 L228,428 Z"
+    onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"/>
+  <text x="380" y="440" class="svgl" font-size="11" pointer-events="none">EASTERN CAPE</text>
+  <circle class="svgdot" cx="380" cy="456" r="5" onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"><animate attributeName="r" values="3;6;3" dur="2.1s" repeatCount="indefinite"/></circle>
 
-            <!-- EASTERN CAPE -->
-            <path class="svgp" data-name="Eastern Cape" data-count="17" data-species="Buffalo, Kudu, Sable"
-              d="M205,405 L232,392 L262,380 L295,368 L325,355 L345,344 L368,355 L398,360 L425,358 L450,368 L468,392 L462,420 L445,442 L420,458 L390,468 L355,472 L320,468 L288,455 L260,440 L235,422 Z"
-              onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"/>
-            <text x="365" y="420" class="svgl" font-size="11" pointer-events="none">EASTERN CAPE</text>
-            <circle class="svgdot" cx="365" cy="435" r="5" onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')">
-              <animate attributeName="r" values="3;6;3" dur="2.1s" repeatCount="indefinite"/>
-            </circle>
-
-            <!-- WESTERN CAPE -->
-            <path class="svgp" data-name="Western Cape" data-count="8" data-species="Springbok, Gemsbok, Eland"
-              d="M88,440 L114,448 L140,455 L165,465 L188,478 L205,492 L200,518 L182,538 L158,550 L130,555 L105,548 L82,530 L62,508 L50,482 L48,458 L58,442 Z"
-              onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"/>
-            <text x="128" y="498" class="svgl" font-size="10" pointer-events="none">WESTERN CAPE</text>
-            <circle class="svgdot" cx="128" cy="512" r="5" onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')">
-              <animate attributeName="r" values="3;5;3" dur="3.2s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
+  <!-- === WESTERN CAPE === -->
+  <path class="svgp" id="sp-wc" data-name="Western Cape" data-count="8" data-species="Springbok, Gemsbok, Eland"
+    d="M86,462 L114,470 L140,478 L164,490 L186,504 L202,520 L196,548 L176,570 L148,584 L118,588 L90,578 L64,558 L44,532 L34,504 L38,478 L56,466 Z"
+    onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"/>
+  <text x="116" y="524" class="svgl" font-size="9.5" pointer-events="none">WESTERN CAPE</text>
+  <circle class="svgdot" cx="116" cy="542" r="5" onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"><animate attributeName="r" values="3;5;3" dur="3.2s" repeatCount="indefinite"/></circle>
+</svg>
         <!-- HOVER POPUP -->
         <div id="prov-popup" style="display:none;position:absolute;background:rgba(10,7,3,0.96);border:1px solid rgba(201,125,26,0.5);border-radius:6px;padding:18px 22px;min-width:200px;pointer-events:none;z-index:50;box-shadow:0 8px 40px rgba(0,0,0,0.7)">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="color:var(--amber)">📍</span><div id="pp-name" style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold)"></div></div>
@@ -841,15 +836,105 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <h1 class="sec-title">Hunting Marketplace</h1>
     <p class="sec-sub" style="margin-bottom:24px">Verified hunters selling quality gear, optics, clothing and equipment across South Africa.</p>
 
-    <!-- CATEGORY TABS -->
-    <div class="ftabs" style="margin-bottom:24px;flex-wrap:wrap;gap:6px">
+    <!-- CATEGORY TABS WITH DROPDOWNS -->
+    <div class="ftabs" style="margin-bottom:24px;flex-wrap:wrap;gap:6px;align-items:center">
       <button class="ftab on" onclick="mktCat(this,'all')">All Items</button>
-      <button class="ftab" onclick="mktCat(this,'optics')">🔭 Optics</button>
-      <button class="ftab" onclick="mktCat(this,'clothing')">👕 Clothing</button>
-      <button class="ftab" onclick="mktCat(this,'gear')">🎒 Gear & Cases</button>
-      <button class="ftab" onclick="mktCat(this,'knives')">🔪 Knives</button>
-      <button class="ftab" onclick="mktCat(this,'bows')">🏹 Bows</button>
-      <button class="ftab" onclick="mktCat(this,'accessories')">🔧 Accessories</button>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('guns')">🔫 Guns ▾</button>
+        <div class="cat-dd" id="dd-guns">
+          <button onclick="mktCatSub('guns','','All Guns');closeDDs()">All Guns</button>
+          <button onclick="mktCatSub('guns','rifles','Rifles');closeDDs()">🎯 Rifles</button>
+          <button onclick="mktCatSub('guns','shotguns','Shotguns');closeDDs()">🔫 Shotguns</button>
+          <button onclick="mktCatSub('guns','handguns','Handguns');closeDDs()">🔫 Handguns</button>
+          <button onclick="mktCatSub('guns','ammo','Ammunition');closeDDs()">📦 Ammunition</button>
+          <button onclick="mktCatSub('guns','parts','Parts & Accessories');closeDDs()">🔧 Parts & Accessories</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('optics')">🔭 Optics ▾</button>
+        <div class="cat-dd" id="dd-optics">
+          <button onclick="mktCatSub('optics','','All Optics');closeDDs()">All Optics</button>
+          <button onclick="mktCatSub('optics','rifle-scopes','Rifle Scopes');closeDDs()">🎯 Rifle Scopes</button>
+          <button onclick="mktCatSub('optics','binoculars','Binoculars');closeDDs()">👁️ Binoculars</button>
+          <button onclick="mktCatSub('optics','rangefinders','Rangefinders');closeDDs()">📏 Rangefinders</button>
+          <button onclick="mktCatSub('optics','thermal','Thermal & Night Vision');closeDDs()">🌡️ Thermal & Night Vision</button>
+          <button onclick="mktCatSub('optics','red-dot','Red Dot Sights');closeDDs()">🔴 Red Dot Sights</button>
+          <button onclick="mktCatSub('optics','optics-acc','Accessories');closeDDs()">🔧 Accessories</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('clothing')">👕 Clothing ▾</button>
+        <div class="cat-dd" id="dd-clothing">
+          <button onclick="mktCatSub('clothing','','All Clothing');closeDDs()">All Clothing</button>
+          <button onclick="mktCatSub('clothing','jackets','Jackets');closeDDs()">🧥 Jackets</button>
+          <button onclick="mktCatSub('clothing','shirts','Shirts');closeDDs()">👕 Shirts</button>
+          <button onclick="mktCatSub('clothing','pants','Pants');closeDDs()">👖 Pants</button>
+          <button onclick="mktCatSub('clothing','boots','Boots');closeDDs()">🥾 Boots</button>
+          <button onclick="mktCatSub('clothing','headwear','Headwear');closeDDs()">🧢 Headwear</button>
+          <button onclick="mktCatSub('clothing','gloves','Gloves');closeDDs()">🧤 Gloves</button>
+          <button onclick="mktCatSub('clothing','rainwear','Rainwear');closeDDs()">🌧️ Rainwear</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('gear')">🎒 Gear & Cases ▾</button>
+        <div class="cat-dd" id="dd-gear">
+          <button onclick="mktCatSub('gear','','All Gear');closeDDs()">All Gear & Cases</button>
+          <button onclick="mktCatSub('gear','backpacks','Backpacks');closeDDs()">🎒 Backpacks</button>
+          <button onclick="mktCatSub('gear','rifle-cases','Rifle Cases');closeDDs()">🔫 Rifle Cases</button>
+          <button onclick="mktCatSub('gear','hard-cases','Hard Cases');closeDDs()">🧳 Hard Cases</button>
+          <button onclick="mktCatSub('gear','ammo-storage','Ammo Storage');closeDDs()">📦 Ammo Storage</button>
+          <button onclick="mktCatSub('gear','shooting-gear','Shooting Gear');closeDDs()">🎯 Shooting Gear</button>
+          <button onclick="mktCatSub('gear','slings','Slings & Holsters');closeDDs()">🔗 Slings & Holsters</button>
+          <button onclick="mktCatSub('gear','gps','GPS & Comms');closeDDs()">📡 GPS & Comms</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('knives')">🔪 Knives ▾</button>
+        <div class="cat-dd" id="dd-knives">
+          <button onclick="mktCatSub('knives','','All Knives');closeDDs()">All Knives</button>
+          <button onclick="mktCatSub('knives','hunting-knives','Hunting Knives');closeDDs()">🔪 Hunting Knives</button>
+          <button onclick="mktCatSub('knives','skinning-knives','Skinning Knives');closeDDs()">🔪 Skinning Knives</button>
+          <button onclick="mktCatSub('knives','folding-knives','Folding Knives');closeDDs()">🔪 Folding Knives</button>
+          <button onclick="mktCatSub('knives','fixed-blade','Fixed Blade');closeDDs()">🗡️ Fixed Blade</button>
+          <button onclick="mktCatSub('knives','multi-tools','Multi-Tools');closeDDs()">🔧 Multi-Tools</button>
+          <button onclick="mktCatSub('knives','sharpeners','Sharpeners');closeDDs()">⚙️ Sharpeners</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('bows')">🏹 Bows ▾</button>
+        <div class="cat-dd" id="dd-bows">
+          <button onclick="mktCatSub('bows','','All Bows');closeDDs()">All Bows</button>
+          <button onclick="mktCatSub('bows','compound','Compound Bows');closeDDs()">🏹 Compound Bows</button>
+          <button onclick="mktCatSub('bows','recurve','Recurve Bows');closeDDs()">🏹 Recurve Bows</button>
+          <button onclick="mktCatSub('bows','crossbow','Crossbows');closeDDs()">⚔️ Crossbows</button>
+          <button onclick="mktCatSub('bows','youth','Youth Bows');closeDDs()">🏹 Youth Bows</button>
+          <button onclick="mktCatSub('bows','bow-acc','Accessories');closeDDs()">🔧 Accessories</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('guns')">🔫 Guns ▾</button>
+        <div class="cat-dd" id="dd-guns">
+          <button onclick="mktCatSub('guns','','All Guns');closeDDs()">All Guns</button>
+          <button onclick="mktCatSub('guns','rifles','Rifles');closeDDs()">🔫 Rifles</button>
+          <button onclick="mktCatSub('guns','shotguns','Shotguns');closeDDs()">🔫 Shotguns</button>
+          <button onclick="mktCatSub('guns','handguns','Handguns');closeDDs()">🔫 Handguns</button>
+          <button onclick="mktCatSub('guns','ammo','Ammunition');closeDDs()">📦 Ammunition</button>
+          <button onclick="mktCatSub('guns','cleaning','Cleaning & Maintenance');closeDDs()">🔧 Cleaning & Maintenance</button>
+          <button onclick="mktCatSub('guns','parts','Parts & Upgrades');closeDDs()">⚙️ Parts & Upgrades</button>
+        </div>
+      </div>
+
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('accessories')">🔧 Accessories ▾</button>
+        <div class="cat-dd" id="dd-accessories">
+          <button onclick="mktCatSub('accessories','','All Accessories');closeDDs()">All Accessories</button>
+          <button onclick="mktCatSub('accessories','shooting-acc','Shooting Accessories');closeDDs()">🎯 Shooting Accessories</button>
+          <button onclick="mktCatSub('accessories','cleaning','Cleaning Kits');closeDDs()">🧹 Cleaning Kits</button>
+          <button onclick="mktCatSub('accessories','lights','Lights & Torches');closeDDs()">🔦 Lights & Torches</button>
+          <button onclick="mktCatSub('accessories','calls','Calls & Scents');closeDDs()">📯 Calls & Scents</button>
+          <button onclick="mktCatSub('accessories','safety','Safety Gear');closeDDs()">🦺 Safety Gear</button>
+          <button onclick="mktCatSub('accessories','maintenance','Maintenance Tools');closeDDs()">🔧 Maintenance Tools</button>
+        </div>
+      </div>
     </div>
 
     <!-- SEARCH -->
@@ -871,16 +956,16 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <p class="sec-sub" style="margin-bottom:28px">Tips, sightings, trophy photos and reviews — from hunters, for hunters.</p>
 
     <div class="ftabs" style="margin-bottom:28px">
-      <button class="ftab on" onclick="ftab(this)">All Posts</button>
-      <button class="ftab" onclick="ftab(this)">💡 Tips</button>
-      <button class="ftab" onclick="ftab(this)">👁️ Sightings</button>
-      <button class="ftab" onclick="ftab(this)">⭐ Reviews</button>
-      <button class="ftab" onclick="ftab(this)">🏆 Trophies</button>
+      <button class="ftab on" onclick="commFilter(this,'all')">All Posts</button>
+      <button class="ftab" onclick="commFilter(this,'tip')">💡 Tips</button>
+      <button class="ftab" onclick="commFilter(this,'sight')">👁️ Sightings</button>
+      <button class="ftab" onclick="commFilter(this,'review')">⭐ Reviews</button>
+      <button class="ftab" onclick="commFilter(this,'trophy')">🏆 Trophies</button>
     </div>
 
     <div class="posts-grid">
 
-      <div class="post-card">
+      <div class="post-card" data-cat="sight">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a1a08,#3d2810);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           🦌<div class="post-cat pc-sight">👁️ Sighting</div>
         </div>
@@ -891,7 +976,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="post-card">
+      <div class="post-card" data-cat="tip">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a2a08,#2a3d10);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           🔭<div class="post-cat pc-tip">💡 Tips</div>
         </div>
@@ -902,7 +987,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="post-card">
+      <div class="post-card" data-cat="review">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a2008,#3d3010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           ⭐<div class="post-cat pc-review">⭐ Review</div>
         </div>
@@ -913,7 +998,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="post-card">
+      <div class="post-card" data-cat="tip">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#082a1a,#103d28);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           📋<div class="post-cat pc-tip">💡 Tips</div>
         </div>
@@ -924,7 +1009,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="post-card">
+      <div class="post-card" data-cat="trophy">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a0808,#3d1010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           🏆<div class="post-cat pc-trophy">🏆 Trophy</div>
         </div>
@@ -935,7 +1020,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="post-card">
+      <div class="post-card" data-cat="sight">
         <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a1a2a,#282840);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
           🐗<div class="post-cat pc-sight">👁️ Sighting</div>
         </div>
@@ -1006,27 +1091,62 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══════════ AUTH MODAL ══════════ -->
 <div class="overlay" id="authModal">
-  <div class="modal-box auth" style="max-width:440px">
-    <div class="bk-header">
-      <div><div class="bk-title" id="auth-title">Sign In</div><div class="bk-sub">Welcome back to WildHuntsa</div></div>
-      <button class="modal-close-btn" onclick="closeOverlay('authModal')">✕</button>
+  <div class="modal-box auth" style="max-width:460px">
+    <div style="display:flex;border-bottom:1px solid rgba(176,152,112,0.12)">
+      <button id="tab-signin" onclick="authTab('signin')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Sign In</button>
+      <button id="tab-register" onclick="authTab('register')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid transparent;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Register Free</button>
+      <button class="modal-close-btn" onclick="closeOverlay('authModal')" style="padding:18px 20px">✕</button>
     </div>
-    <div class="bk-body">
+
+    <!-- SIGN IN PANEL -->
+    <div id="panel-signin" class="bk-body">
+      <div style="margin-bottom:20px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--ivory)">Welcome back 🦌</h2>
+        <p style="font-size:13px;color:var(--khaki);margin-top:4px">Sign in to your WildHuntsa account</p>
+      </div>
       <div class="fg">
-        <div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" placeholder="hunter@email.com"></div>
-        <div class="fi full" id="auth-name-field" style="display:none"><label class="fl">Full Name</label><input type="text" class="finput" placeholder="Your name"></div>
-        <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" placeholder="••••••••"></div>
-        <div class="fi full" id="auth-type-field" style="display:none">
-          <label class="fl">I am a...</label>
-          <select class="fselect">
-            <option>Hunter</option><option>Farm Owner / PH</option><option>Marketplace Vendor</option>
-          </select>
+        <div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" id="si-email" placeholder="hunter@email.com"></div>
+        <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" id="si-pass" placeholder="••••••••"></div>
+        <div class="fi full" style="display:flex;justify-content:flex-end;margin-top:-4px">
+          <button style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:12px;cursor:pointer;letter-spacing:0.5px" onclick="showToast('Password reset email sent! 📧','ok')">Forgot password?</button>
         </div>
       </div>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+        <button class="btn-hero-main" style="width:100%;padding:14px;font-size:14px" onclick="doSignIn()">Sign In →</button>
+        <div style="text-align:center;font-size:13px;color:var(--khaki)">Don't have an account? <button onclick="authTab('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Register free →</button></div>
+      </div>
     </div>
-    <div class="bk-footer" style="flex-direction:column;gap:10px">
-      <button class="btn-sm btn-amber-sm" style="width:100%;padding:14px" onclick="showToast('Welcome back! 🦌','ok');closeOverlay('authModal')">Sign In</button>
-      <button onclick="toggleAuth()" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;cursor:pointer" id="auth-toggle-btn">Don't have an account? Register free →</button>
+
+    <!-- REGISTER PANEL -->
+    <div id="panel-register" class="bk-body" style="display:none">
+      <div style="margin-bottom:20px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--ivory)">Join WildHuntsa 🇿🇦</h2>
+        <p style="font-size:13px;color:var(--khaki);margin-top:4px">Create your free hunter profile</p>
+      </div>
+      <div class="fg">
+        <div class="fi"><label class="fl">First Name</label><input type="text" class="finput" id="reg-fname" placeholder="e.g. Pieter"></div>
+        <div class="fi"><label class="fl">Last Name</label><input type="text" class="finput" id="reg-lname" placeholder="e.g. van der Berg"></div>
+        <div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" id="reg-email" placeholder="hunter@email.com"></div>
+        <div class="fi full"><label class="fl">WhatsApp Number</label><input type="tel" class="finput" id="reg-phone" placeholder="+27 71 123 4567"></div>
+        <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" id="reg-pass" placeholder="Min 8 characters"></div>
+        <div class="fi full"><label class="fl">I am a...</label>
+          <select class="fselect" id="reg-type">
+            <option value="hunter">🦌 Hunter</option>
+            <option value="owner">🌿 Farm Owner / Professional Hunter</option>
+            <option value="vendor">🛒 Marketplace Vendor</option>
+          </select>
+        </div>
+        <div class="fi full">
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;color:var(--sand)">
+            <input type="checkbox" id="reg-terms" style="width:16px;height:16px;accent-color:var(--amber)">
+            I agree to the <span style="color:var(--amber)">Terms of Service</span> and <span style="color:var(--amber)">Privacy Policy</span>
+          </label>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+        <button class="btn-hero-main" style="width:100%;padding:14px;font-size:14px" onclick="doRegister()">Create My Account →</button>
+        <div style="text-align:center;font-size:13px;color:var(--khaki)">Already have an account? <button onclick="authTab('signin')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Sign in →</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -1105,28 +1225,29 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
-<!-- ══════════ CTA ══════════ -->
-<div class="sec-sm">
-  <div class="cta-box" style="position:relative;z-index:1">
-    <div>
-      <h2 class="cta-title">Own a farm or <em>game reserve?</em></h2>
-      <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — no upfront costs, no monthly fees.</p>
-    </div>
-    <div class="cta-btns" style="position:relative;z-index:2">
-      <button class="btn-hero-main" onclick="openOnboard()" style="position:relative;z-index:2">List Your Farm Free</button>
-      <button class="btn-hero-sec" onclick="showToast('Opening WhatsApp... 📱')">Talk to Us on WhatsApp</button>
-    </div>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col"><h4>WildHuntsa</h4><p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.4);line-height:1.6;margin-top:8px">South Africa's online hunting marketplace. Connecting hunters with verified farms across all 9 provinces.</p></div>
-      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="gp('provinces')">Browse Farms</a></li><li><a onclick="gp('provinces')">Province Map</a></li><li><a onclick="gp('marketplace')">Marketplace</a></li><li><a onclick="gp('community')">Community</a></li></ul></div>
-      <div class="footer-col"><h4>Farm Owners</h4><ul><li><a onclick="openOnboard()">List Your Farm</a></li><li><a>Pricing & Fees</a></li><li><a>Owner Dashboard</a></li><li><a>Featured Listings</a></li></ul></div>
-      <div class="footer-col"><h4>Support</h4><ul><li><a>Help Centre</a></li><li><a>Contact Us</a></li><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a onclick="gp('provinces')" style="cursor:pointer">Browse Farms</a></li>
+        <li><a onclick="gp('provinces')" style="cursor:pointer">Province Map</a></li>
+        <li><a onclick="gp('marketplace')" style="cursor:pointer">Marketplace</a></li>
+        <li><a onclick="gp('community')" style="cursor:pointer">Community</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Farm Owners</h4><ul>
+        <li><a onclick="openOnboard()" style="cursor:pointer">List Your Farm</a></li>
+        <li><a onclick="showToast('Pricing info coming soon! 📋')" style="cursor:pointer">Pricing & Fees</a></li>
+        <li><a onclick="openAuth('login')" style="cursor:pointer">Owner Dashboard</a></li>
+        <li><a onclick="gp('provinces')" style="cursor:pointer">Featured Listings</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Support</h4><ul>
+        <li><a onclick="showToast('Help Centre coming soon! 🛠️')" style="cursor:pointer">Help Centre</a></li>
+        <li><a onclick="showToast('Email us: info@wildhuntsa.com 📧')" style="cursor:pointer">Contact Us</a></li>
+        <li><a onclick="showToast('Privacy Policy coming soon! 📄')" style="cursor:pointer">Privacy Policy</a></li>
+        <li><a onclick="showToast('Terms of Service coming soon! 📄')" style="cursor:pointer">Terms of Service</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 WildHuntsa. All rights reserved.</span><span>🇿🇦 Proudly South African</span></div>
   </div>
@@ -1186,15 +1307,52 @@ function closeOverlay(id) { document.getElementById(id).classList.remove('open')
 document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if(e.target===o) closeOverlay(o.id); }));
 
 // ════ AUTH ════
-let authMode = 'login';
-function openAuth(mode) { authMode=mode; updateAuthModal(); openOverlay('authModal'); }
-function toggleAuth() { authMode = authMode==='login'?'register':'login'; updateAuthModal(); }
-function updateAuthModal() {
-  const isReg = authMode==='register';
-  document.getElementById('auth-title').textContent = isReg ? 'Create Account' : 'Sign In';
-  document.getElementById('auth-name-field').style.display = isReg ? 'block' : 'none';
-  document.getElementById('auth-type-field').style.display = isReg ? 'block' : 'none';
-  document.getElementById('auth-toggle-btn').textContent = isReg ? 'Already have an account? Sign in →' : 'Don\'t have an account? Register free →';
+function openAuth(mode) {
+  switchAuthTab(mode === 'register' ? 'register' : 'signin');
+  openOverlay('authModal');
+}
+function switchAuthTab(tab) {
+  document.getElementById('panel-signin').style.display = tab === 'signin' ? 'block' : 'none';
+  document.getElementById('panel-register').style.display = tab === 'register' ? 'block' : 'none';
+  document.getElementById('tab-signin').style.cssText = tab === 'signin'
+    ? 'flex:1;padding:12px;background:rgba(201,125,26,0.15);border:none;border-bottom:2px solid var(--amber);color:var(--gold);font-family:\'Barlow Condensed\',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer'
+    : 'flex:1;padding:12px;background:none;border:none;border-bottom:2px solid rgba(176,152,112,0.15);color:var(--khaki);font-family:\'Barlow Condensed\',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer';
+  document.getElementById('tab-register').style.cssText = tab === 'register'
+    ? 'flex:1;padding:12px;background:rgba(201,125,26,0.15);border:none;border-bottom:2px solid var(--amber);color:var(--gold);font-family:\'Barlow Condensed\',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer'
+    : 'flex:1;padding:12px;background:none;border:none;border-bottom:2px solid rgba(176,152,112,0.15);color:var(--khaki);font-family:\'Barlow Condensed\',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer';
+}
+function doSignIn() {
+  const email = document.getElementById('si-email').value;
+  const pass = document.getElementById('si-pass').value;
+  if(!email || !pass) { showToast('Please fill in all fields ⚠️','err'); return; }
+  showToast('Welcome back, Hunter! 🦌','ok');
+  closeOverlay('authModal');
+}
+function doRegister() {
+  const first = document.getElementById('reg-first').value;
+  const email = document.getElementById('reg-email').value;
+  const pass = document.getElementById('reg-pass').value;
+  const terms = document.getElementById('reg-terms').checked;
+  if(!first || !email || !pass) { showToast('Please fill in all fields ⚠️','err'); return; }
+  if(pass.length < 8) { showToast('Password must be at least 8 characters ⚠️','err'); return; }
+  if(!terms) { showToast('Please accept the terms to continue ⚠️','err'); return; }
+  showToast('Account created! Welcome to WildHuntsa 🦌','ok');
+  closeOverlay('authModal');
+}
+function toggleAuth() {}
+function updateAuthModal() {}
+
+// ════ COMMUNITY FILTER ════
+function filterPosts(btn, cat) {
+  btn.closest('.ftabs').querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.post-card').forEach(card => {
+    if(cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
 }
 
 // ════ FARMS DATA ════
@@ -1285,11 +1443,30 @@ const products = [
 ];
 
 let mktFilter = 'all';
+let mktSub = '';
+
+function toggleCatDD(cat) {
+  const dd = document.getElementById('dd-'+cat);
+  if(!dd) return;
+  const wasOpen = dd.classList.contains('open');
+  closeDDs();
+  if(!wasOpen) dd.classList.add('open');
+}
+function closeDDs() { document.querySelectorAll('.cat-dd').forEach(d=>d.classList.remove('open')); }
+document.addEventListener('click', function(e){ if(!e.target.closest('.cat-dd-wrap')) closeDDs(); });
 
 function mktCat(btn, cat) {
-  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));
   btn.classList.add('on');
   mktFilter = cat;
+  mktSub = '';
+  mktSearch();
+  closeDDs();
+}
+
+function mktCatSub(cat, sub, label) {
+  mktFilter = cat;
+  mktSub = sub;
   mktSearch();
 }
 
@@ -1297,8 +1474,9 @@ function mktSearch() {
   const q = (document.getElementById('mkt-search')?.value || '').toLowerCase();
   const items = products.filter(p => {
     const catOk = mktFilter === 'all' || p.cat === mktFilter;
+    const subOk = !mktSub || p.subcat === mktSub;
     const searchOk = !q || p.title.toLowerCase().includes(q) || (p.desc||'').toLowerCase().includes(q);
-    return catOk && searchOk;
+    return catOk && subOk && searchOk;
   });
   mktRender(items);
 }
@@ -1347,6 +1525,16 @@ function showProvPopup(e,name,count,species){const popup=document.getElementById
 function selectProvince(name,count,species){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===name);});const provFarms=farms.filter(f=>f.province===name);const resultsDiv=document.getElementById('prov-results');document.getElementById('prov-result-label').textContent=count+' Farms in '+name;document.getElementById('prov-result-title').textContent='Hunting in '+name;renderFarms(provFarms.length>0?provFarms:farms.slice(0,2),'prov-farms-grid');resultsDiv.style.display='block';showToast('Showing '+count+' farms in '+name+' 📍');resultsDiv.scrollIntoView({behavior:'smooth',block:'start'});}
 function provFilter(btn,filter){document.querySelectorAll('.prov-pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');}
 function hoverProv(){}function unhoverProv(){}function showTT(){}function hideTT(){}
+
+// ════ COMMUNITY FILTER ════
+function commFilter(btn, cat) {
+  document.querySelectorAll('#page-community .ftab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.post-card').forEach(card => {
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = show ? 'block' : 'none';
+  });
+}
 
 // ════ SLIDESHOW ════
 const fsSlides=document.querySelectorAll('.fs-slide');
