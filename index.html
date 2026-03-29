@@ -54,7 +54,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:140px;display:flex;al
 .btn-amber-sm:hover{background:var(--gold)}
 
 /* ── PAGES ── */
-.page{display:none;min-height:100vh;padding-top:140px}
+.page{display:none;min-height:100vh;padding-top:80px}
 .page.active{display:block}
 
 /* ── HERO ── */
@@ -96,7 +96,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:140px;display:flex;al
 .search-go:hover{background:var(--gold)}
 
 /* ── SECTIONS ── */
-.sec{padding:88px 80px}
+.sec{padding:52px 80px}
 .sec-sm{padding:60px 80px}
 .sec-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
 .sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--ivory);line-height:1.1;margin-bottom:14px}
@@ -660,17 +660,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div><div class="footer-brand-logo"><img src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/wildhunt_logo_hd.png.png" alt="WildHuntsa" style="height:60px;width:auto;filter:drop-shadow(0 2px 8px rgba(201,125,26,0.3))"></div><p class="footer-desc">South Africa's leading hunting marketplace. Connecting hunters with premium game farms and reserves across all 9 provinces.</p><div class="footer-socials"><div class="fsoc">📘</div><div class="fsoc">📸</div><div class="fsoc">🐦</div><div class="fsoc">📺</div></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="gp('provinces')">Browse Farms</a></li><li><a onclick="gp('provinces')">Province Map</a></li><li><a>Species Guide</a></li><li><a onclick="gp('marketplace')">Marketplace</a></li><li><a onclick="gp('community')">Community</a></li></ul></div>
-    <div class="footer-col"><h4>Farm Owners</h4><ul><li><a onclick="openOnboard()">List Your Farm</a></li><li><a>Pricing & Fees</a></li><li><a>Owner Dashboard</a></li><li><a>Featured Listings</a></li><li><a>WhatsApp Onboarding</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a>About WildHuntsa</a></li><li><a>Hunting Regulations</a></li><li><a>Legal & Licensing</a></li><li><a>Privacy Policy</a></li><li><a>Contact Us</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><span>© 2025 WildHuntsa (Pty) Ltd · Registered in South Africa</span><span>🇿🇦 Hunt Legal · Hunt Ethical · Hunt WildHuntsa</span></div>
-</footer>
-</div>
+</div><!-- end page-home -->
 
 <!-- ══════════ PAGE: FARMS / LISTINGS ══════════ -->
 <div class="page" id="page-listings">
@@ -848,98 +838,28 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="sec">
     <div class="sec-label">Buy & Sell</div>
     <h1 class="sec-title">Hunting Marketplace</h1>
-    <p class="sec-sub" style="margin-bottom:28px">Verified hunters selling quality gear, optics, clothing and equipment across South Africa.</p>
-    <div class="ftabs" style="margin-bottom:0;flex-wrap:wrap;gap:4px;align-items:center">
-      <button class="ftab on" onclick="setMainCat(this,'all')">All Items</button>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('optics')">🔭 Optics ▾</button>
-        <div class="cat-dd" id="dd-optics">
-          <button onclick="setCatSub('optics','','All Optics');closeDDs()">All Optics</button>
-          <button onclick="setCatSub('optics','rifle-scopes','Rifle Scopes');closeDDs()">🎯 Rifle Scopes</button>
-          <button onclick="setCatSub('optics','binoculars','Binoculars');closeDDs()">👁️ Binoculars</button>
-          <button onclick="setCatSub('optics','rangefinders','Rangefinders');closeDDs()">📏 Rangefinders</button>
-          <button onclick="setCatSub('optics','thermal','Thermal & Night Vision');closeDDs()">🌡️ Thermal & Night Vision</button>
-          <button onclick="setCatSub('optics','red-dot','Red Dot Sights');closeDDs()">🔴 Red Dot Sights</button>
-          <button onclick="setCatSub('optics','optics-acc','Optics Accessories');closeDDs()">🔧 Accessories</button>
-        </div>
-      </div>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('clothing')">👕 Clothing ▾</button>
-        <div class="cat-dd" id="dd-clothing">
-          <button onclick="setCatSub('clothing','','All Clothing');closeDDs()">All Clothing</button>
-          <button onclick="setCatSub('clothing','jackets','Jackets');closeDDs()">🧥 Jackets</button>
-          <button onclick="setCatSub('clothing','shirts','Shirts');closeDDs()">👕 Shirts</button>
-          <button onclick="setCatSub('clothing','pants','Pants');closeDDs()">👖 Pants</button>
-          <button onclick="setCatSub('clothing','boots','Boots');closeDDs()">🥾 Boots</button>
-          <button onclick="setCatSub('clothing','headwear','Headwear');closeDDs()">🧢 Headwear</button>
-          <button onclick="setCatSub('clothing','gloves','Gloves');closeDDs()">🧤 Gloves</button>
-          <button onclick="setCatSub('clothing','rainwear','Rainwear');closeDDs()">🌧️ Rainwear</button>
-        </div>
-      </div>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('gear')">🎒 Gear & Cases ▾</button>
-        <div class="cat-dd" id="dd-gear">
-          <button onclick="setCatSub('gear','','All Gear');closeDDs()">All Gear & Cases</button>
-          <button onclick="setCatSub('gear','backpacks','Backpacks');closeDDs()">🎒 Backpacks</button>
-          <button onclick="setCatSub('gear','rifle-cases','Rifle Cases');closeDDs()">🔫 Rifle Cases</button>
-          <button onclick="setCatSub('gear','hard-cases','Hard Cases');closeDDs()">🧳 Hard Cases</button>
-          <button onclick="setCatSub('gear','ammo-storage','Ammo Storage');closeDDs()">📦 Ammo Storage</button>
-          <button onclick="setCatSub('gear','shooting-gear','Shooting Gear');closeDDs()">🎯 Shooting Gear</button>
-          <button onclick="setCatSub('gear','slings','Slings & Holsters');closeDDs()">🔗 Slings & Holsters</button>
-          <button onclick="setCatSub('gear','gps','GPS & Comms');closeDDs()">📡 GPS & Comms</button>
-        </div>
-      </div>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('knives')">🔪 Knives ▾</button>
-        <div class="cat-dd" id="dd-knives">
-          <button onclick="setCatSub('knives','','All Knives');closeDDs()">All Knives</button>
-          <button onclick="setCatSub('knives','hunting-knives','Hunting Knives');closeDDs()">🔪 Hunting Knives</button>
-          <button onclick="setCatSub('knives','skinning-knives','Skinning Knives');closeDDs()">🔪 Skinning Knives</button>
-          <button onclick="setCatSub('knives','folding-knives','Folding Knives');closeDDs()">🔪 Folding Knives</button>
-          <button onclick="setCatSub('knives','fixed-blade','Fixed Blade');closeDDs()">🗡️ Fixed Blade</button>
-          <button onclick="setCatSub('knives','multi-tools','Multi-Tools');closeDDs()">🔧 Multi-Tools</button>
-          <button onclick="setCatSub('knives','sharpeners','Sharpeners');closeDDs()">⚙️ Sharpeners</button>
-        </div>
-      </div>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('bows')">🏹 Bows ▾</button>
-        <div class="cat-dd" id="dd-bows">
-          <button onclick="setCatSub('bows','','All Bows');closeDDs()">All Bows</button>
-          <button onclick="setCatSub('bows','compound','Compound Bows');closeDDs()">🏹 Compound Bows</button>
-          <button onclick="setCatSub('bows','recurve','Recurve Bows');closeDDs()">🏹 Recurve Bows</button>
-          <button onclick="setCatSub('bows','crossbow','Crossbows');closeDDs()">⚔️ Crossbows</button>
-          <button onclick="setCatSub('bows','youth','Youth Bows');closeDDs()">🏹 Youth Bows</button>
-          <button onclick="setCatSub('bows','bow-acc','Bow Accessories');closeDDs()">🔧 Accessories</button>
-        </div>
-      </div>
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('accessories')">🔧 Accessories ▾</button>
-        <div class="cat-dd" id="dd-accessories">
-          <button onclick="setCatSub('accessories','','All Accessories');closeDDs()">All Accessories</button>
-          <button onclick="setCatSub('accessories','shooting-acc','Shooting Accessories');closeDDs()">🎯 Shooting Accessories</button>
-          <button onclick="setCatSub('accessories','cleaning','Cleaning Kits');closeDDs()">🧹 Cleaning Kits</button>
-          <button onclick="setCatSub('accessories','lights','Lights & Torches');closeDDs()">🔦 Lights & Torches</button>
-          <button onclick="setCatSub('accessories','calls','Calls & Scents');closeDDs()">📯 Calls & Scents</button>
-          <button onclick="setCatSub('accessories','safety','Safety Gear');closeDDs()">🦺 Safety Gear</button>
-          <button onclick="setCatSub('accessories','maintenance','Maintenance Tools');closeDDs()">🔧 Maintenance Tools</button>
-        </div>
-      </div>
+    <p class="sec-sub" style="margin-bottom:24px">Verified hunters selling quality gear, optics, clothing and equipment across South Africa.</p>
+
+    <!-- CATEGORY TABS -->
+    <div class="ftabs" style="margin-bottom:24px;flex-wrap:wrap;gap:6px">
+      <button class="ftab on" onclick="mktCat(this,'all')">All Items</button>
+      <button class="ftab" onclick="mktCat(this,'optics')">🔭 Optics</button>
+      <button class="ftab" onclick="mktCat(this,'clothing')">👕 Clothing</button>
+      <button class="ftab" onclick="mktCat(this,'gear')">🎒 Gear & Cases</button>
+      <button class="ftab" onclick="mktCat(this,'knives')">🔪 Knives</button>
+      <button class="ftab" onclick="mktCat(this,'bows')">🏹 Bows</button>
+      <button class="ftab" onclick="mktCat(this,'accessories')">🔧 Accessories</button>
     </div>
-    <div id="cat-banner" style="display:none;margin-bottom:0">
-      <div style="height:200px;border-radius:0 0 4px 4px;overflow:hidden;position:relative">
-        <div id="cat-banner-img" style="position:absolute;inset:0;background-size:cover;background-position:center top"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,13,6,0.8) 0%,rgba(18,13,6,0.2) 60%,transparent 100%)"></div>
-        <div style="position:absolute;bottom:24px;left:32px">
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px">Category</div>
-          <div id="cat-banner-title" style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--ivory)"></div>
-          <div id="cat-banner-sub" style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.7);margin-top:4px"></div>
-        </div>
-      </div>
+
+    <!-- SEARCH -->
+    <div style="display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap">
+      <input type="text" id="mkt-search" placeholder="🔍  Search items..." oninput="mktSearch()" style="flex:1;min-width:200px;background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--bone);outline:none">
+      <button class="btn-hero-main" onclick="openOverlay('sellModal')" style="padding:12px 24px;white-space:nowrap">+ Sell Your Item</button>
     </div>
-    <div style="display:flex;gap:12px;margin:20px 0 24px;flex-wrap:wrap">
-      <input type="text" id="mkt-search" placeholder="🔍  Search items..." oninput="filterMarket()" style="flex:1;min-width:200px;background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--bone);outline:none">
-      <select id="mkt-sort" style="background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--sand);outline:none">
-        <option>Sort: Latest</option><option>Price: Low to High</option><option>Price: High to Low</option>
-      </select>
-      <button class="btn-hero-main" onclick="openSellForm()" style="padding:12px 24px;white-space:nowrap">+ Sell Your Item</button>
-    </div>
-    <div class="mkt-grid" id="mkt-grid"></div>
-    <div style="text-align:center;margin-top:36px">
-      <button class="btn-hero-main" onclick="showToast('Loading more items... 🛒')">Load More Items</button>
+
+    <!-- PRODUCTS GRID -->
+    <div class="mkt-grid" id="mkt-grid">
+      <!-- Filled by mktRender() -->
     </div>
   </div>
 </div>
@@ -950,26 +870,91 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <div class="sec-label">The Community</div>
     <h1 class="sec-title">WildHuntsa Forum</h1>
     <p class="sec-sub" style="margin-bottom:28px">Tips, sightings, trophy photos and reviews — from hunters, for hunters.</p>
-    <div class="ftabs">
+
+    <div class="ftabs" style="margin-bottom:28px">
       <button class="ftab on" onclick="ftab(this)">All Posts</button>
       <button class="ftab" onclick="ftab(this)">💡 Tips</button>
       <button class="ftab" onclick="ftab(this)">👁️ Sightings</button>
       <button class="ftab" onclick="ftab(this)">⭐ Reviews</button>
       <button class="ftab" onclick="ftab(this)">🏆 Trophies</button>
     </div>
+
     <div class="posts-grid">
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🦌<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">JB</div><div><div class="av-name">JaagBoer_Limpopo</div><div class="av-date">2 hours ago · Limpopo</div></div></div><div class="post-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread. Conditions perfect this week.</div><div class="post-footer"><span>❤️ 48</span><span>💬 12</span><span>👁️ 340</span></div></div></div>
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🔭<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">RS</div><div><div class="av-name">Rooikat_SA</div><div class="av-date">Yesterday · General</div></div></div><div class="post-title">Wind direction matters more than camo. Here's how I set up my approach in open bushveld for consistent success.</div><div class="post-footer"><span>❤️ 92</span><span>💬 34</span><span>👁️ 1.2k</span></div></div></div>
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">⭐<div class="post-cat pc-review">⭐ Review</div></div><div class="post-body"><div class="post-author-row"><div class="av">PV</div><div><div class="av-name">PietVanHunting</div><div class="av-date">3 days ago · N. Cape</div></div></div><div class="post-title">Booked Kalahari Dunes via WildHuntsa — incredible gemsbok hunt. Jan and his team are absolute professionals. 5 stars!</div><div class="post-footer"><span>❤️ 67</span><span>💬 18</span><span>👁️ 890</span></div></div></div>
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">💡<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">BK</div><div><div class="av-name">BushveldKing</div><div class="av-date">4 days ago · General</div></div></div><div class="post-title">Best months to hunt in Limpopo — a full seasonal breakdown for 12 popular species including rainfall data.</div><div class="post-footer"><span>❤️ 134</span><span>💬 45</span><span>👁️ 2.8k</span></div></div></div>
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🏆<div class="post-cat pc-trophy">🏆 Trophy</div></div><div class="post-body"><div class="post-author-row"><div class="av">KR</div><div><div class="av-name">KarooRifleman</div><div class="av-date">1 week ago · E. Cape</div></div></div><div class="post-title">My Groot Karoo dagga boy — full write-up with shot placement, distance (380m), and cartridge used. One shot, clean kill.</div><div class="post-footer"><span>❤️ 201</span><span>💬 78</span><span>👁️ 5.4k</span></div></div></div>
-      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🐗<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">TM</div><div><div class="av-name">ThornveldMike</div><div class="av-date">5 days ago · NW</div></div></div><div class="post-title">Big sounder of warthogs near Rustenburg. At least 3 quality boars. Waterhole active every morning from 05:30.</div><div class="post-footer"><span>❤️ 29</span><span>💬 7</span><span>👁️ 412</span></div></div></div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a1a08,#3d2810);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          🦌<div class="post-cat pc-sight">👁️ Sighting</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">JB</div><div><div class="av-name">JaagBoer_Limpopo</div><div class="av-date">2 hours ago · Limpopo</div></div></div>
+          <div class="post-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread. Conditions perfect this week. Water holes active at first light.</div>
+          <div class="post-footer"><span>❤️ 48</span><span>💬 12</span><span>👁️ 340</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a2a08,#2a3d10);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          🔭<div class="post-cat pc-tip">💡 Tips</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">RS</div><div><div class="av-name">Rooikat_SA</div><div class="av-date">Yesterday · General</div></div></div>
+          <div class="post-title">Wind direction matters more than camo. Here's how I set up my approach in open bushveld for consistent success on wary animals.</div>
+          <div class="post-footer"><span>❤️ 92</span><span>💬 34</span><span>👁️ 1.2k</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a2008,#3d3010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          ⭐<div class="post-cat pc-review">⭐ Review</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">PV</div><div><div class="av-name">PietVanHunting</div><div class="av-date">3 days ago · N. Cape</div></div></div>
+          <div class="post-title">Booked Kalahari Dunes via WildHuntsa — incredible gemsbok hunt. Jan and his team are absolute professionals. 5 stars without hesitation!</div>
+          <div class="post-footer"><span>❤️ 67</span><span>💬 18</span><span>👁️ 890</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#082a1a,#103d28);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          📋<div class="post-cat pc-tip">💡 Tips</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">BK</div><div><div class="av-name">BushveldKing</div><div class="av-date">4 days ago · General</div></div></div>
+          <div class="post-title">Best months to hunt in Limpopo — a full seasonal breakdown for 12 popular species. Includes rainfall data and bush density charts.</div>
+          <div class="post-footer"><span>❤️ 134</span><span>💬 45</span><span>👁️ 2.8k</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a0808,#3d1010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          🏆<div class="post-cat pc-trophy">🏆 Trophy</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">KR</div><div><div class="av-name">KarooRifleman</div><div class="av-date">1 week ago · E. Cape</div></div></div>
+          <div class="post-title">My Groot Karoo dagga boy — full write-up with shot placement, distance 380m, and cartridge used. One shot, clean ethical kill.</div>
+          <div class="post-footer"><span>❤️ 201</span><span>💬 78</span><span>👁️ 5.4k</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a1a2a,#282840);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
+          🐗<div class="post-cat pc-sight">👁️ Sighting</div>
+        </div>
+        <div class="post-body">
+          <div class="post-author-row"><div class="av">TM</div><div><div class="av-name">ThornveldMike</div><div class="av-date">5 days ago · NW</div></div></div>
+          <div class="post-title">Big sounder of warthogs near Rustenburg. At least 3 quality boars in the group. Waterhole active every morning from 05:30.</div>
+          <div class="post-footer"><span>❤️ 29</span><span>💬 7</span><span>👁️ 412</span></div>
+        </div>
+      </div>
+
     </div>
-    <div style="text-align:center;margin-top:36px"><button class="btn-hero-main" onclick="openAuth('register')">+ Share a Post</button></div>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn-hero-main" onclick="openOverlay('authModal')">+ Share a Post</button>
+    </div>
   </div>
 </div>
 
-<!-- ══════════ FARM DETAIL MODAL ══════════ -->
+<!-- ══════════ FARM DETAIL MODAL ══════════ --><!-- ══════════ FARM DETAIL MODAL ══════════ -->
 <div class="overlay" id="farmModal">
   <div class="modal-box farm-detail">
     <div class="fd-gallery" id="fd-gallery">
@@ -1181,7 +1166,7 @@ function gp(id) {
   });
   if(id==='home') renderFarms(farms.slice(0,3),'home-farms');
   if(id==='listings' || id==='provinces') renderFarms(farms,'listings-farms');
-  if(id==='marketplace') filterMarket();
+  if(id==='marketplace') mktSearch();
   if(id==='community') {} // static HTML posts
 }
 
@@ -1300,23 +1285,45 @@ const products = [
   {id:13,title:"Caldwell Lead Sled DFT 2 Shooting Rest",cat:"accessories",subcat:"shooting-acc",cond:"Used - Good",price:"R 3,600",seller:"ShotgunSam_NW",rating:"4.8",loc:"North West",img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"Caldwell Lead Sled DFT 2. Accepts 25kg lead. All parts included.",details:{Brand:"Caldwell",Model:"Lead Sled DFT 2",Condition:"Used - Good"}},
 ];
 
-let currentCatFilter = 'all';
-let currentSubFilter = '';
-const catBanners = {
-  optics:{img:"https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Optics.png.png",title:"Optics"},
-  clothing:{img:"https://images.unsplash.com/photo-1544441893-675973e31985?w=1200&q=80",title:"Clothing"},
-  gear:{img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",title:"Gear & Cases"},
-  knives:{img:"https://images.unsplash.com/photo-1564419320461-6870880221ad?w=1200&q=80",title:"Knives"},
-  bows:{img:"https://images.unsplash.com/photo-1566841498635-f06d4a519e72?w=1200&q=80",title:"Bows"},
-  accessories:{img:"https://images.unsplash.com/photo-1580894908361-967195033215?w=1200&q=80",title:"Accessories"},
-};
-function toggleCatDD(cat){const dd=document.getElementById('dd-'+cat);if(!dd)return;const wasOpen=dd.classList.contains('open');closeDDs();if(!wasOpen)dd.classList.add('open');}
-function closeDDs(){document.querySelectorAll('.cat-dd').forEach(d=>d.classList.remove('open'));}
-function setMainCat(btn,cat){document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));btn.classList.add('on');currentCatFilter=cat;currentSubFilter='';document.getElementById('cat-banner').style.display='none';filterMarket();closeDDs();}
-function setCatSub(cat,sub,subLabel){currentCatFilter=cat;currentSubFilter=sub;const banner=catBanners[cat];if(banner){document.getElementById('cat-banner').style.display='block';document.getElementById('cat-banner-img').style.backgroundImage=`url('${banner.img}')`;document.getElementById('cat-banner-title').textContent=banner.title;document.getElementById('cat-banner-sub').textContent=subLabel||'All '+banner.title;}filterMarket();}
-document.addEventListener('click',function(e){if(!e.target.closest('.cat-dd-wrap'))closeDDs();});
-function renderMarket(data){const grid=document.getElementById('mkt-grid');if(!grid)return;if(data.length===0){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--khaki)">No items found.</div>';return;}grid.innerHTML=data.map(p=>`<div class="mkt-card" onclick="openProduct(${p.id})"><div class="mkt-img" style="background-image:url('${p.img}');background-size:cover;background-position:center;position:relative"><div class="mkt-cond ${p.cond.startsWith('New')?'cond-new':'cond-used'}">${p.cond.split('-')[0].trim()}</div></div><div class="mkt-body"><div class="mkt-title">${p.title}</div><div class="mkt-seller">${p.seller} ⭐${p.rating} · 📍 ${p.loc}</div><div class="mkt-row"><span class="mkt-price">${p.price}</span><span class="mkt-msg" onclick="event.stopPropagation();showToast('Message sent! 💬','ok')">💬</span></div></div></div>`).join('');}
-function filterMarket(){const search=document.getElementById('mkt-search')?.value.toLowerCase()||'';let filtered=products;if(currentCatFilter&&currentCatFilter!=='all')filtered=filtered.filter(p=>p.cat===currentCatFilter);if(currentSubFilter)filtered=filtered.filter(p=>p.subcat===currentSubFilter);if(search)filtered=filtered.filter(p=>p.title.toLowerCase().includes(search)||p.desc.toLowerCase().includes(search));renderMarket(filtered);}
+let mktFilter = 'all';
+
+function mktCat(btn, cat) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+  mktFilter = cat;
+  mktSearch();
+}
+
+function mktSearch() {
+  const q = (document.getElementById('mkt-search')?.value || '').toLowerCase();
+  const items = products.filter(p => {
+    const catOk = mktFilter === 'all' || p.cat === mktFilter;
+    const searchOk = !q || p.title.toLowerCase().includes(q) || (p.desc||'').toLowerCase().includes(q);
+    return catOk && searchOk;
+  });
+  mktRender(items);
+}
+
+function mktRender(items) {
+  const grid = document.getElementById('mkt-grid');
+  if (!grid) return;
+  if (items.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--khaki);font-size:16px">No items found.</div>';
+    return;
+  }
+  grid.innerHTML = items.map(p => `
+    <div class="mkt-card" onclick="openProduct(${p.id})">
+      <div class="mkt-img" style="height:160px;background-image:url('${p.img}');background-size:cover;background-position:center;position:relative">
+        <div class="mkt-cond ${p.cond.startsWith('New') ? 'cond-new' : 'cond-used'}">${p.cond.split('-')[0].trim()}</div>
+      </div>
+      <div class="mkt-body">
+        <div class="mkt-title">${p.title}</div>
+        <div class="mkt-seller">${p.seller} · 📍 ${p.loc}</div>
+        <div class="mkt-row"><span class="mkt-price">${p.price}</span><span class="mkt-msg" onclick="event.stopPropagation();showToast('Message sent! 💬','ok')">💬</span></div>
+      </div>
+    </div>`).join('');
+}
+
 function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById('prod-modal-img').style.backgroundImage=`url('${p.img}')`;document.getElementById('prod-modal-cond').textContent=p.cond;document.getElementById('prod-modal-cond').style.background=p.cond.startsWith('New')?'#2d6a2d':'rgba(30,20,9,0.9)';document.getElementById('prod-modal-title').textContent=p.title;document.getElementById('prod-modal-seller').textContent=`${p.seller} · ⭐${p.rating} · 📍 ${p.loc}`;document.getElementById('prod-modal-price').textContent=p.price;document.getElementById('prod-modal-desc').textContent=p.desc;document.getElementById('prod-modal-details').innerHTML=Object.entries(p.details).map(([k,v])=>`<div style="background:rgba(18,13,6,0.5);padding:10px 14px;border-radius:2px"><div style="font-size:10px;color:var(--khaki);margin-bottom:2px">${k}</div><div style="font-size:14px;font-weight:600;color:var(--bone)">${v}</div></div>`).join('');openOverlay('productModal');}
 function openSellForm(){openOverlay('sellModal');}
 
@@ -1390,8 +1397,7 @@ function renderCal(){}
 window.addEventListener('DOMContentLoaded', function() {
   renderFarms(farms.slice(0,3),'home-farms');
   renderFarms(farms,'listings-farms');
-  // Render marketplace even though page is hidden - grid exists in DOM
-  filterMarket();
+  mktSearch();
   buildProvList();
 });
 </script>
