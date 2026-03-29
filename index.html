@@ -858,9 +858,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
 
     <!-- PRODUCTS GRID -->
-    <div class="mkt-grid" id="mkt-grid">
-      <!-- Filled by mktRender() -->
-    </div>
+    <div class="mkt-grid" id="mkt-grid"></div>
   </div>
 </div>
 
@@ -1166,8 +1164,8 @@ function gp(id) {
   });
   if(id==='home') renderFarms(farms.slice(0,3),'home-farms');
   if(id==='listings' || id==='provinces') renderFarms(farms,'listings-farms');
-  if(id==='marketplace') mktSearch();
-  if(id==='community') {} // static HTML posts
+  if(id==='marketplace') setTimeout(function(){ mktSearch(); }, 50);
+  if(id==='community') {} 
 }
 
 // ════ TOAST ════
@@ -1397,8 +1395,9 @@ function renderCal(){}
 window.addEventListener('DOMContentLoaded', function() {
   renderFarms(farms.slice(0,3),'home-farms');
   renderFarms(farms,'listings-farms');
-  mktSearch();
   buildProvList();
+  // Delay marketplace render slightly to ensure DOM is ready
+  setTimeout(function() { mktSearch(); }, 100);
 });
 </script>
 </body>
