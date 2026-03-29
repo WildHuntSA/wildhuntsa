@@ -71,7 +71,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:140px;display:flex;al
 .hero-landscape{position:absolute;bottom:0;left:0;right:0;height:60%}
 
 .hero-content{position:relative;z-index:10;padding:0 80px 80px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(201,125,26,0.35);padding:5px 14px;border-radius:2px;background:rgba(201,125,26,0.07);margin-bottom:24px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--earth);border:none;padding:6px 16px;border-radius:2px;background:var(--amber);margin-bottom:24px}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(52px,7.5vw,105px);font-weight:900;line-height:0.88;color:var(--ivory);margin-bottom:22px}
 .hero-h1 em{display:block;color:var(--gold);font-style:italic}
 .hero-p{font-size:17px;font-weight:300;line-height:1.65;color:rgba(237,224,204,0.68);max-width:480px;margin-bottom:36px}
@@ -321,8 +321,8 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 
 /* ── HOW IT WORKS ── */
 .hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(176,152,112,0.06);border:1px solid rgba(176,152,112,0.08);border-radius:4px;overflow:hidden}
-.hiw-item{background:var(--bark2);padding:36px 28px;position:relative;transition:background 0.2s}
-.hiw-item:hover{background:rgba(42,28,13,0.8)}
+.hiw-item{background:var(--bark2);padding:36px 28px;position:relative;transition:all 0.2s;cursor:pointer}
+.hiw-item:hover{background:rgba(201,125,26,0.12);border-left:2px solid var(--amber);transform:translateY(-2px)}
 .hiw-n{position:absolute;top:16px;right:20px;font-family:'Playfair Display',serif;font-size:68px;font-weight:900;color:rgba(176,152,112,0.06);line-height:1}
 .hiw-icon{font-size:30px;margin-bottom:18px}
 .hiw-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--ivory);margin-bottom:8px;letter-spacing:0.3px}
@@ -330,7 +330,8 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 
 /* ── CTA ── */
 .cta-box{background:linear-gradient(135deg,rgba(61,82,32,0.55),rgba(42,28,13,0.97));border:1px solid rgba(201,125,26,0.18);border-radius:4px;padding:56px 60px;display:flex;justify-content:space-between;align-items:center;gap:40px;position:relative;overflow:hidden}
-.cta-box::before{content:'';position:absolute;top:-40px;right:-40px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,125,26,0.08) 0%,transparent 70%)}
+.cta-box::before{content:'';position:absolute;top:-40px;right:-40px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,125,26,0.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+.cta-box>*{position:relative;z-index:1}
 .cta-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ivory);line-height:1.1;margin-bottom:12px}
 .cta-title em{color:var(--gold);font-style:italic}
 .cta-sub{font-size:15px;font-weight:300;color:rgba(237,224,204,0.55);max-width:400px;line-height:1.65}
@@ -357,25 +358,155 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .ftab:hover{border-color:var(--amber);color:var(--gold)}
 .ftab.on{background:rgba(201,125,26,0.12);border-color:var(--amber);color:var(--gold)}
 
-/* ── TOAST ── */
+#mob-btn{display:none}
+#mob-menu{display:none}
+
 .toast-wrap{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:8px}
 .toast{background:var(--bark2);border:1px solid rgba(176,152,112,0.18);border-left:3px solid var(--amber);border-radius:3px;padding:13px 18px;min-width:280px;font-size:14px;color:var(--bone);box-shadow:0 8px 32px rgba(0,0,0,0.45);animation:tIn 0.3s ease;display:flex;align-items:center;gap:10px}
 .toast.ok{border-left-color:#5a8a2a}
 .toast.err{border-left-color:var(--blood)}
 @keyframes tIn{from{transform:translateX(16px);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){.farms-grid{grid-template-columns:repeat(2,1fr)}.mkt-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.sec{padding:52px 22px}.sec-sm{padding:40px 22px}.hero-content{padding:0 22px 52px}.search-wrap{flex-direction:column}.sf{border-right:none;border-bottom:1px solid rgba(176,152,112,0.1)}.farms-grid{grid-template-columns:1fr}.mkt-grid{grid-template-columns:1fr 1fr}.hiw-grid{grid-template-columns:1fr 1fr}.province-layout{grid-template-columns:1fr}.posts-grid{grid-template-columns:1fr}.cta-box{flex-direction:column;padding:36px 24px}.footer-grid{grid-template-columns:1fr}.fd-grid{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.modal-box.farm-detail,.modal-box.booking,.modal-box.auth,.modal-box.onboard{max-width:100%}nav{padding:0 18px}.nav-center{display:none}hr.div{margin:0 22px}}
+/* ════ RESPONSIVE ════ */
+
+/* Tablet (1100px and below) */
+@media(max-width:1100px){
+  nav{padding:0 24px}
+  .hero-content{padding:0 40px 60px;max-width:70%}
+  .farms-grid{grid-template-columns:repeat(2,1fr)}
+  .mkt-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+  .sec{padding:52px 32px}
+}
+
+/* Mobile (768px and below) */
+@media(max-width:768px){
+  /* NAV */
+  nav{padding:0 16px;height:64px}
+  .nav-center{display:none!important}
+  .nav-logo img{height:50px}
+  .nav-right .btn-outline-sm{display:none}
+  #mob-btn{display:flex!important}
+
+  /* HERO */
+  .fs-hero{min-height:100svh}
+  .hero-content{padding:80px 20px 120px;max-width:100%}
+  .hero-eyebrow{font-size:9px;letter-spacing:2px;padding:5px 12px}
+  .hero-h1{font-size:36px;line-height:0.92}
+  .hero-p{font-size:14px;line-height:1.6;max-width:100%}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  .hstat-n{font-size:28px}
+  .hstat-l{font-size:10px}
+  .fs-animal-name{font-size:14px;right:16px;bottom:100px}
+  .fs-dots{bottom:80px}
+
+  /* SECTIONS */
+  .sec{padding:40px 16px}
+  .sec-sm{padding:28px 16px}
+  .sec-title{font-size:26px}
+  .sec-sub{font-size:14px}
+  hr.div{margin:0 16px}
+
+  /* GRIDS */
+  .farms-grid{grid-template-columns:1fr}
+  .mkt-grid{grid-template-columns:1fr 1fr}
+  .hiw-grid{grid-template-columns:1fr}
+  .posts-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .fd-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr!important}
+
+  /* BOOK CTA */
+  [style*="display:flex;align-items:center;justify-content:space-between;gap:32px"]{flex-direction:column!important;gap:16px!important;padding:24px 20px!important;text-align:center}
+
+  /* PROVINCE MAP */
+  [style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 280px"]{grid-template-columns:1fr!important}
+  [style*="grid-template-columns:1fr 300px"]{grid-template-columns:1fr!important}
+  #prov-right-list{display:none}
+
+  /* CTA BANNER */
+  .cta-box{flex-direction:column!important;padding:28px 20px!important;text-align:center!important;gap:20px!important}
+  .cta-btns{width:100%}
+  .cta-btns button{width:100%}
+  .cta-title{font-size:24px}
+
+  /* MODALS */
+  .modal-box{max-width:100%!important;margin:8px!important;border-radius:4px}
+  .overlay{padding:0!important;align-items:flex-end!important}
+
+  /* TABS */
+  .ftabs{gap:4px;flex-wrap:wrap}
+  .ftab{font-size:11px;padding:6px 10px;letter-spacing:0.5px}
+  .prov-pill{font-size:11px;padding:6px 12px}
+
+  /* MISC */
+  .hiw-item{padding:24px 20px}
+  .farm-card{border-radius:4px}
+}
+
+/* Small mobile (480px and below) */
+@media(max-width:480px){
+  .hero-h1{font-size:30px}
+  .mkt-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hstat-n{font-size:24px}
+  .footer-grid{grid-template-columns:1fr}
+  .sec-title{font-size:24px}
+  .farms-grid{grid-template-columns:1fr}
+}
 /* ── FULLSCREEN SLIDESHOW ── */
 .fs-slideshow{position:absolute;inset:0;z-index:0}
-.fs-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease;transform:scale(1.05);transition:opacity 1.2s ease, transform 8s ease}
+.fs-slide{position:absolute;inset:0;background-size:cover;background-position:center bottom;background-repeat:no-repeat;background-color:#120d06;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02);transition:opacity 1.2s ease,transform 8s ease}
 .fs-slide.active{opacity:1;transform:scale(1)}
 .fs-animal-name{position:absolute;bottom:36px;right:48px;z-index:10;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;font-style:italic;color:rgba(237,224,204,0.9);text-shadow:0 2px 12px rgba(0,0,0,0.8);letter-spacing:0.5px;transition:opacity 0.5s ease}
 .fs-dots{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:8px}
 .fs-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:all 0.3s;border:none}
 .fs-dot.on{background:var(--gold);width:20px;border-radius:3px}
 
+/* ── CATEGORY DROPDOWNS ── */
+.cat-dd-wrap{position:relative;display:inline-block}
+.cat-dd{display:none;position:absolute;top:100%;left:0;margin-top:4px;background:var(--bark2);border:1px solid rgba(201,125,26,0.3);border-radius:3px;z-index:500;min-width:200px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.6)}
+.cat-dd.open{display:block}
+.cat-dd button{display:block;width:100%;padding:11px 18px;background:none;border:none;border-bottom:1px solid rgba(176,152,112,0.06);color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;text-align:left;cursor:pointer;transition:background 0.15s}
+.cat-dd button:hover{background:rgba(201,125,26,0.12);color:var(--gold)}
+.cat-dd button:last-child{border-bottom:none}
+.cat-dd-btn{display:flex;align-items:center;gap:5px}
+
+.map-hover-card{display:none}
+/* ── SVG PROVINCE MAP ── */
+.svgp{fill:rgba(60,32,4,0.8);stroke:rgba(220,140,20,0.85);stroke-width:1.8;cursor:pointer;transition:all 0.3s}
+.svgp:hover,.svgp.active{fill:rgba(160,90,8,0.55);stroke:rgba(255,190,40,1);stroke-width:3;filter:drop-shadow(0 0 8px rgba(220,140,20,0.7))}
+.svgl{fill:rgba(255,195,80,0.85);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-anchor:middle}
+.svgdot{fill:rgba(255,185,40,0.95);cursor:pointer;filter:drop-shadow(0 0 6px rgba(255,180,30,0.8))}
+.svgdot:hover{fill:white;filter:drop-shadow(0 0 10px white)}
+/* ── PROVINCE HOTSPOTS ── */
+.prov-hotspot{position:absolute;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
+.prov-hotspot:hover{background:transparent}
+.prov-dot-pin{width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(224,168,48,0.8),0 0 20px rgba(224,168,48,0.4);opacity:0.85;transition:all 0.3s;animation:pinPulse 2s ease-in-out infinite}
+.prov-hotspot:hover .prov-dot-pin,.prov-hotspot.active .prov-dot-pin{width:16px;height:16px;box-shadow:0 0 16px rgba(224,168,48,1),0 0 32px rgba(224,168,48,0.6);opacity:1;animation:none}
+@keyframes pinPulse{0%,100%{transform:scale(1);opacity:0.7}50%{transform:scale(1.3);opacity:1}}
+
+.mp{fill:rgba(42,28,13,0.7);stroke:rgba(201,125,26,0.4);stroke-width:1.5;transition:all 0.3s;cursor:pointer}
+.mp:hover,.mp.active{fill:rgba(201,125,26,0.28);stroke:var(--gold);stroke-width:2.5;filter:drop-shadow(0 0 8px rgba(201,125,26,0.35))}
+.mp-label{fill:rgba(237,224,204,0.6);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px}
+.prov-pill{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:20px;border:1px solid rgba(176,152,112,0.2);background:rgba(18,13,6,0.6);color:var(--sand);cursor:pointer;transition:all 0.2s}
+.prov-pill:hover,.prov-pill.on{background:rgba(201,125,26,0.18);border-color:var(--amber);color:var(--gold)}
+.prov-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-radius:3px;cursor:pointer;transition:all 0.2s;border:1px solid transparent;gap:8px}
+.prov-row:hover,.prov-row.active{background:rgba(201,125,26,0.1);border-color:rgba(201,125,26,0.3)}
+.prov-row-left{display:flex;align-items:center;gap:10px}
+.prov-row-dot{width:7px;height:7px;border-radius:50%;background:var(--khaki);flex-shrink:0;transition:background 0.2s}
+.prov-row:hover .prov-row-dot,.prov-row.active .prov-row-dot{background:var(--amber)}
+.prov-row-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;color:var(--sand)}
+.prov-row:hover .prov-row-name,.prov-row.active .prov-row-name{color:var(--gold)}
+.prov-row-right{display:flex;align-items:center;gap:8px}
+.prov-row-count{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--amber)}
+.prov-row-arr{color:var(--khaki);font-size:11px;transition:transform 0.2s}
+.prov-row:hover .prov-row-arr{transform:translateX(3px);color:var(--amber)}
+.opt-sub-btn{display:block;width:100%;padding:12px 18px;background:none;border:none;border-bottom:1px solid rgba(176,152,112,0.08);color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.5px;text-align:left;cursor:pointer;transition:all 0.2s}
+.opt-sub-btn:last-child{border-bottom:none}
+.opt-sub-btn:hover{background:rgba(201,125,26,0.1);color:var(--gold)}
+.opt-sub-btn.active{background:rgba(201,125,26,0.15);color:var(--gold)}
 </style>
 </head>
 <body>
@@ -387,14 +518,23 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
   <div class="nav-center">
     <button class="nav-btn active" onclick="gp('home')">Explore</button>
-    <button class="nav-btn" onclick="gp('listings')">Farms</button>
-    <button class="nav-btn" onclick="gp('provinces')">Provinces</button>
+    
+    <button class="nav-btn" onclick="gp('provinces')">Browse Hunting Farms</button>
     <button class="nav-btn" onclick="gp('marketplace')">Marketplace</button>
     <button class="nav-btn" onclick="gp('community')">Community</button>
   </div>
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="openAuth('login')">Sign In</button>
     <button class="btn-sm btn-amber-sm" onclick="openOnboard()">List Your Farm</button>
+    <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
+  </div>
+  <!-- MOBILE DROPDOWN MENU -->
+  <div id="mob-menu" style="display:none;position:fixed;top:64px;left:0;right:0;background:rgba(18,13,6,0.98);border-bottom:1px solid rgba(201,125,26,0.2);z-index:799;padding:16px;flex-direction:column;gap:4px">
+    <button onclick="gp('home');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Explore</button>
+    <button onclick="gp('provinces');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Hunting Farms</button>
+    <button onclick="gp('marketplace');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
+    <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
+    <button onclick="openOnboard();toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
   </div>
 </nav>
 
@@ -440,31 +580,27 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
   <!-- FULL SCREEN SLIDESHOW BACKGROUNDS -->
   <div class="fs-slideshow" id="fs-slideshow">
-    <div class="fs-slide active" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/IMPALA.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Kudu__Greater_Kudu_.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Springbok.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blesbok.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Warthog.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blue_Wildebeest.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Gemsbok.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Zebra.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Eland.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Bushbuck.png.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Golden_wildebeest.png.png')"></div>
+    <div class="fs-slide active" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Impala.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Kudu.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blesbuck.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blue%20Wildebeest.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Eland.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Golden%20Wildebeest.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Nyala.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Oryx.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Springbuck.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Warthog.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Zebra.png')"></div>
   </div>
-
-  <!-- Animal name badge bottom right -->
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
-
-  <!-- Slide dots -->
   <div class="fs-dots" id="fs-dots"></div>
 
-  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 80px">
-    <div class="hero-eyebrow">🇿🇦 South Africa's #1 Hunting Marketplace</div>
+  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 80px;max-width:55%">
+    <div class="hero-eyebrow">🇿🇦 South Africa's Online Hunting Marketplace</div>
     <h1 class="hero-h1">Hunt the<em>Wild Heart</em>of Africa.</h1>
     <p class="hero-p">Book world-class hunting experiences directly from verified South African farm and game reserve owners. No middleman. Real availability. Online booking.</p>
-    <div class="hero-btns">
-      <button class="btn-hero-main" onclick="gp('listings')">Browse Farms</button>
+    <div class="hero-btns" style="display:none">
+      <button class="btn-hero-main" onclick="gp('provinces')">Browse Farms</button>
       <button class="btn-hero-sec" onclick="openOnboard()">List Your Farm Free</button>
     </div>
     <div class="hero-stats">
@@ -476,14 +612,15 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
-<!-- SEARCH -->
+<!-- BOOK YOUR HUNT CTA -->
 <div style="padding:0 80px;margin-top:-20px;position:relative;z-index:20">
-  <div class="search-wrap">
-    <div class="sf"><label>📍 Province</label><select><option value="">All Provinces</option><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select></div>
-    <div class="sf"><label>🦌 Species</label><select><option value="">Any Animal</option><option>Kudu</option><option>Impala</option><option>Buffalo</option><option>Gemsbok / Oryx</option><option>Warthog</option><option>Springbok</option><option>Sable Antelope</option><option>Blue Wildebeest</option><option>Eland</option><option>Zebra</option><option>Nyala</option><option>Bushbuck</option></select></div>
-    <div class="sf"><label>📅 Arrival</label><input type="date" id="s-arrive"></div>
-    <div class="sf"><label>💰 Budget</label><select><option>Any price</option><option>Under R5,000</option><option>R5,000 – R15,000</option><option>R15,000 – R30,000</option><option>R30,000 – R60,000</option><option>R60,000+</option></select></div>
-    <button class="search-go" onclick="gp('listings')">🔍 Search Farms</button>
+  <div style="background:rgba(30,20,9,0.97);border:1px solid rgba(201,125,26,0.25);border-radius:4px;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;backdrop-filter:blur(16px)">
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:8px">Ready to Hunt?</div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--ivory);line-height:1.1">Book Your <em style="color:var(--gold);font-style:italic">Hunting Adventure</em></div>
+      <div style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);margin-top:6px">Browse 340+ verified farms across all 9 provinces. Real availability. Instant booking.</div>
+    </div>
+    <button class="btn-hero-main" onclick="gp('provinces')" style="white-space:nowrap;padding:18px 48px;font-size:15px;flex-shrink:0">Browse Farms →</button>
   </div>
 </div>
 
@@ -491,7 +628,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <div class="sec">
   <div class="sec-head">
     <div><div class="sec-label">Featured Experiences</div><h2 class="sec-title">Top-Rated Farms</h2></div>
-    <a class="link-amber" onclick="gp('listings')">View all 340+ →</a>
+    <a class="link-amber" onclick="gp('provinces')">View all 340+ →</a>
   </div>
   <div class="farms-grid" id="home-farms"></div>
 </div>
@@ -501,11 +638,9 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- HOW IT WORKS -->
 <div class="sec">
   <div class="sec-head"><div><div class="sec-label">Simple Process</div><h2 class="sec-title">How WildHuntsa Works</h2></div></div>
-  <div class="hiw-grid">
-    <div class="hiw-item"><span class="hiw-n">01</span><div class="hiw-icon">🔍</div><div class="hiw-title">Search & Filter</div><p class="hiw-desc">Browse farms by province, species, price and dates. Find exactly what you need in seconds.</p></div>
-    <div class="hiw-item"><span class="hiw-n">02</span><div class="hiw-icon">📋</div><div class="hiw-title">Review & Select</div><p class="hiw-desc">View farm details, species pricing, photos and availability. Select your animals and dates — everything you need is on the listing.</p></div>
-    <div class="hiw-item"><span class="hiw-n">03</span><div class="hiw-icon">📅</div><div class="hiw-title">Book Online</div><p class="hiw-desc">Instant or request booking. Secure your dates with a deposit — calendar blocks automatically.</p></div>
-    <div class="hiw-item"><span class="hiw-n">04</span><div class="hiw-icon">🎯</div><div class="hiw-title">Hunt & Rate</div><p class="hiw-desc">Arrive and experience. Leave an honest review to help the community find great farms.</p></div>
+  <div class="hiw-grid" style="grid-template-columns:1fr 1fr">
+    <div class="hiw-item" onclick="gp('provinces')" style="cursor:pointer"><span class="hiw-n">01</span><div class="hiw-icon">🔍</div><div class="hiw-title">Search & Book</div><p class="hiw-desc">Browse farms by province, species, price and dates. Find exactly what you need and book instantly.</p></div>
+    <div class="hiw-item" onclick="gp('community')" style="cursor:pointer"><span class="hiw-n">02</span><div class="hiw-icon">⭐</div><div class="hiw-title">Hunter Reviews</div><p class="hiw-desc">Read honest reviews from verified hunters. Rate your experience and help the community find the best farms.</p></div>
   </div>
 </div>
 
@@ -516,7 +651,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="cta-box">
     <div>
       <h2 class="cta-title">Own a farm or <em>game reserve?</em></h2>
-      <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — 10% commission per booking, nothing upfront.</p>
+      <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — no upfront costs, no monthly fees.</p>
     </div>
     <div class="cta-btns">
       <button class="btn-hero-main" onclick="openOnboard()">List Your Farm Free</button>
@@ -529,7 +664,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <footer>
   <div class="footer-grid">
     <div><div class="footer-brand-logo"><img src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/wildhunt_logo_hd.png.png" alt="WildHuntsa" style="height:60px;width:auto;filter:drop-shadow(0 2px 8px rgba(201,125,26,0.3))"></div><p class="footer-desc">South Africa's leading hunting marketplace. Connecting hunters with premium game farms and reserves across all 9 provinces.</p><div class="footer-socials"><div class="fsoc">📘</div><div class="fsoc">📸</div><div class="fsoc">🐦</div><div class="fsoc">📺</div></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="gp('listings')">Browse Farms</a></li><li><a onclick="gp('provinces')">Province Map</a></li><li><a>Species Guide</a></li><li><a onclick="gp('marketplace')">Marketplace</a></li><li><a onclick="gp('community')">Community</a></li></ul></div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="gp('provinces')">Browse Farms</a></li><li><a onclick="gp('provinces')">Province Map</a></li><li><a>Species Guide</a></li><li><a onclick="gp('marketplace')">Marketplace</a></li><li><a onclick="gp('community')">Community</a></li></ul></div>
     <div class="footer-col"><h4>Farm Owners</h4><ul><li><a onclick="openOnboard()">List Your Farm</a></li><li><a>Pricing & Fees</a></li><li><a>Owner Dashboard</a></li><li><a>Featured Listings</a></li><li><a>WhatsApp Onboarding</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a>About WildHuntsa</a></li><li><a>Hunting Regulations</a></li><li><a>Legal & Licensing</a></li><li><a>Privacy Policy</a></li><li><a>Contact Us</a></li></ul></div>
   </div>
@@ -559,75 +694,152 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ══════════ PAGE: PROVINCES ══════════ -->
 <div class="page" id="page-provinces">
   <div class="sec">
-    <div class="sec-label">Explore by Location</div>
-    <h1 class="sec-title">Hunting Across South Africa</h1>
-    <p class="sec-sub" style="margin-bottom:36px">Click a province to explore farms in that region.</p>
-    <div class="province-layout">
-      <div class="map-area">
-        <!-- Simplified SA Map SVG -->
-        <svg class="sa-map-svg" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
-          <!-- Limpopo -->
-          <path class="province-path" id="mp-limpopo" d="M180,60 L380,60 L420,80 L440,140 L400,180 L340,200 L280,210 L220,190 L170,160 L150,110 Z" onclick="selectProvince('Limpopo',128)" onmousemove="showTT(event,'Limpopo','128 farms')" onmouseleave="hideTT()"/>
-          <text x="290" y="135" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="12" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">LIMPOPO</text>
-          <!-- North West -->
-          <path class="province-path" id="mp-nw" d="M150,190 L220,190 L240,230 L220,280 L180,300 L130,280 L110,240 L120,200 Z" onclick="selectProvince('North West',74)" onmousemove="showTT(event,'North West','74 farms')" onmouseleave="hideTT()"/>
-          <text x="175" y="248" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">NORTH WEST</text>
-          <!-- Gauteng -->
-          <path class="province-path" id="mp-gp" d="M240,190 L280,185 L300,210 L280,235 L250,240 L230,220 Z" onclick="selectProvince('Gauteng',12)" onmousemove="showTT(event,'Gauteng','12 farms')" onmouseleave="hideTT()"/>
-          <text x="263" y="217" text-anchor="middle" fill="rgba(237,224,204,0.45)" font-size="9" font-family="Barlow Condensed" font-weight="700" pointer-events="none">GP</text>
-          <!-- Mpumalanga -->
-          <path class="province-path" id="mp-mp" d="M300,185 L380,185 L410,210 L400,260 L360,270 L310,255 L290,225 Z" onclick="selectProvince('Mpumalanga',41)" onmousemove="showTT(event,'Mpumalanga','41 farms')" onmouseleave="hideTT()"/>
-          <text x="350" y="228" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">MPUMALANGA</text>
-          <!-- Northern Cape -->
-          <path class="province-path" id="mp-nc" d="M50,200 L130,200 L150,260 L160,360 L120,420 L60,430 L20,380 L10,300 L20,230 Z" onclick="selectProvince('Northern Cape',58)" onmousemove="showTT(event,'Northern Cape','58 farms')" onmouseleave="hideTT()"/>
-          <text x="85" y="320" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">N. CAPE</text>
-          <!-- Free State -->
-          <path class="province-path" id="mp-fs" d="M160,280 L260,265 L310,290 L320,360 L280,390 L200,390 L150,360 L145,310 Z" onclick="selectProvince('Free State',22)" onmousemove="showTT(event,'Free State','22 farms')" onmouseleave="hideTT()"/>
-          <text x="232" y="335" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">FREE STATE</text>
-          <!-- KwaZulu-Natal -->
-          <path class="province-path" id="mp-kzn" d="M370,260 L440,230 L480,280 L470,360 L420,400 L360,390 L330,350 L340,290 Z" onclick="selectProvince('KwaZulu-Natal',19)" onmousemove="showTT(event,'KwaZulu-Natal','19 farms')" onmouseleave="hideTT()"/>
-          <text x="405" y="320" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">KZN</text>
-          <!-- Eastern Cape -->
-          <path class="province-path" id="mp-ec" d="M160,390 L290,395 L340,370 L380,400 L370,470 L280,490 L160,470 L130,430 Z" onclick="selectProvince('Eastern Cape',17)" onmousemove="showTT(event,'Eastern Cape','17 farms')" onmouseleave="hideTT()"/>
-          <text x="255" y="440" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="10" font-family="Barlow Condensed" font-weight="700" letter-spacing="1" pointer-events="none">EASTERN CAPE</text>
-          <!-- Western Cape -->
-          <path class="province-path" id="mp-wc" d="M60,390 L150,380 L155,430 L130,475 L70,490 L25,450 L20,410 Z" onclick="selectProvince('Western Cape',8)" onmousemove="showTT(event,'Western Cape','8 farms')" onmouseleave="hideTT()"/>
-          <text x="88" y="438" text-anchor="middle" fill="rgba(237,224,204,0.5)" font-size="9" font-family="Barlow Condensed" font-weight="700" pointer-events="none">W. CAPE</text>
-          <!-- Dots for farms -->
-          <circle cx="290" cy="135" r="4" fill="var(--amber)" opacity="0.7"><animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/></circle>
-          <circle cx="175" cy="248" r="3" fill="var(--amber)" opacity="0.6"><animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite"/></circle>
-          <circle cx="85" cy="300" r="3" fill="var(--amber)" opacity="0.6"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/></circle>
-          <circle cx="232" cy="335" r="3" fill="var(--amber)" opacity="0.5"><animate attributeName="r" values="3;4;3" dur="2.2s" repeatCount="indefinite"/></circle>
-          <circle cx="350" cy="228" r="3" fill="var(--amber)" opacity="0.6"><animate attributeName="r" values="3;5;3" dur="1.8s" repeatCount="indefinite"/></circle>
-        </svg>
-        <div class="map-tooltip" id="mapTT"><div class="tt-name" id="tt-name"></div><div class="tt-count" id="tt-count"></div></div>
-      </div>
-      <div class="province-panel">
-        <div class="sec-label">Select Province</div>
-        <div class="sec-title" style="font-size:26px">Find Your Hunt</div>
-        <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);margin-top:4px">Click a province on the map or select below</p>
-        <ul class="prov-list">
-          <li class="prov-item" onclick="selectProvince('Limpopo',128)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Limpopo</span></div><span class="prov-count">128 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('North West',74)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">North West</span></div><span class="prov-count">74 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Northern Cape',58)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Northern Cape</span></div><span class="prov-count">58 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Mpumalanga',41)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Mpumalanga</span></div><span class="prov-count">41 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Free State',22)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Free State</span></div><span class="prov-count">22 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('KwaZulu-Natal',19)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">KwaZulu-Natal</span></div><span class="prov-count">19 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Eastern Cape',17)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Eastern Cape</span></div><span class="prov-count">17 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Gauteng',12)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Gauteng</span></div><span class="prov-count">12 farms</span></li>
-          <li class="prov-item" onclick="selectProvince('Western Cape',8)"><div class="prov-left"><div class="prov-dot"></div><span class="prov-name">Western Cape</span></div><span class="prov-count">8 farms</span></li>
-        </ul>
-        <div class="prov-bar"><div class="prov-bar-fill" id="provBar" style="width:0%"></div></div>
+    <div style="text-align:center;margin-bottom:32px">
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--ivory)">Select Province</h1>
+      <p style="font-size:15px;font-weight:300;color:rgba(237,224,204,0.5);margin-top:8px">Hover a province to see farms. Click to explore.</p>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+        <button class="prov-pill on" onclick="provFilter(this,'all')">All Hunts</button>
+        <button class="prov-pill" onclick="provFilter(this,'big-game')">Big Game</button>
+        <button class="prov-pill" onclick="provFilter(this,'plains')">Plains Game</button>
+        <button class="prov-pill" onclick="provFilter(this,'budget')">Budget</button>
+        <button class="prov-pill" onclick="provFilter(this,'premium')">Premium</button>
       </div>
     </div>
-    <!-- Province results -->
-    <div id="prov-results" style="margin-top:40px;display:none">
-      <div class="sec-head">
-        <div><div class="sec-label" id="prov-result-label"></div><h2 class="sec-title" id="prov-result-title"></h2></div>
-        <a class="link-amber" onclick="gp('listings')">View all →</a>
+
+    <div style="display:grid;grid-template-columns:1fr 260px;gap:0;background:rgba(10,7,3,0.9);border:1px solid rgba(201,125,26,0.15);border-radius:8px;overflow:hidden">
+
+      <!-- MAP IMAGE WITH HOTSPOTS -->
+      <div style="position:relative;background:#1a0e05;display:flex;align-items:center;justify-content:center;padding:0;min-height:520px" id="map-container">
+
+        <!-- SVG Province Map -->
+        <div style="position:relative;width:100%">
+          <svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:520px;display:block">
+            <defs>
+              <filter id="glow1">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="glow2">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <radialGradient id="mapbg" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="#3a1e08"/>
+                <stop offset="100%" stop-color="#0e0700"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Background -->
+            <rect width="800" height="620" fill="url(#mapbg)"/>
+
+            <!-- LIMPOPO -->
+            <path class="svgp" data-name="Limpopo" data-count="128" data-species="Kudu, Impala, Bushbuck"
+              d="M340,40 L375,30 L425,26 L485,28 L545,36 L592,50 L620,72 L632,100 L628,130 L612,150 L588,162 L558,170 L520,172 L488,166 L455,160 L420,156 L390,154 L362,158 L342,164 L322,158 L305,145 L290,125 L286,100 L290,76 L310,55 Z"
+              onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"/>
+            <text x="458" y="105" class="svgl" pointer-events="none">LIMPOPO</text>
+            <circle class="svgdot" cx="458" cy="118" r="7" onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')">
+              <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- NORTH WEST -->
+            <path class="svgp" data-name="North West" data-count="74" data-species="Kudu, Blesbok, Wildebeest"
+              d="M286,168 L322,158 L342,164 L362,158 L376,175 L380,202 L375,230 L358,254 L334,268 L306,274 L278,268 L256,250 L248,226 L252,200 L262,178 Z"
+              onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"/>
+            <text x="314" y="215" class="svgl" font-size="11" pointer-events="none">NORTH WEST</text>
+            <circle class="svgdot" cx="314" cy="230" r="6" onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')">
+              <animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- GAUTENG -->
+            <path class="svgp" data-name="Gauteng" data-count="12" data-species="Impala, Blesbok, Steenbok"
+              d="M390,154 L420,156 L438,168 L440,192 L430,212 L408,218 L388,214 L376,202 L376,175 Z"
+              onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"/>
+            <text x="410" y="187" class="svgl" font-size="9" pointer-events="none">GAUTENG</text>
+            <circle class="svgdot" cx="410" cy="200" r="5" onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')">
+              <animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- MPUMALANGA -->
+            <path class="svgp" data-name="Mpumalanga" data-count="41" data-species="Impala, Kudu, Nyala"
+              d="M438,168 L488,166 L520,172 L558,170 L588,162 L612,178 L622,205 L615,232 L600,255 L575,272 L548,278 L520,276 L498,264 L480,245 L470,222 L450,208 L440,192 Z"
+              onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"/>
+            <text x="545" y="218" class="svgl" font-size="10" pointer-events="none">MPUMALANGA</text>
+            <circle class="svgdot" cx="545" cy="232" r="6" onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')">
+              <animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- NORTHERN CAPE -->
+            <path class="svgp" data-name="Northern Cape" data-count="58" data-species="Gemsbok, Springbok, Eland"
+              d="M75,168 L125,155 L178,150 L225,148 L258,148 L286,158 L286,168 L262,178 L252,200 L248,226 L240,262 L232,298 L220,335 L205,368 L186,400 L165,425 L140,442 L114,448 L88,440 L65,420 L48,395 L36,362 L30,328 L32,292 L38,258 L48,225 L60,198 Z"
+              onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"/>
+            <text x="152" y="300" class="svgl" font-size="11" pointer-events="none">NORTHERN</text>
+            <text x="152" y="318" class="svgl" font-size="11" pointer-events="none">CAPE</text>
+            <circle class="svgdot" cx="152" cy="335" r="6" onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')">
+              <animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- FREE STATE -->
+            <path class="svgp" data-name="Free State" data-count="22" data-species="Blesbok, Springbok, Wildebeest"
+              d="M306,274 L334,268 L358,254 L375,230 L388,214 L408,218 L430,212 L450,208 L470,222 L480,245 L488,272 L482,305 L468,330 L450,348 L425,358 L398,360 L370,355 L345,344 L325,328 L312,308 L306,290 Z"
+              onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"/>
+            <text x="395" y="295" class="svgl" font-size="11" pointer-events="none">FREE STATE</text>
+            <circle class="svgdot" cx="395" cy="310" r="6" onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')">
+              <animate attributeName="r" values="4;7;4" dur="2.6s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- KWAZULU-NATAL -->
+            <path class="svgp" data-name="KwaZulu-Natal" data-count="19" data-species="Nyala, Bushbuck, Impala"
+              d="M498,264 L520,276 L548,278 L575,272 L600,282 L618,305 L628,335 L622,362 L605,388 L580,408 L552,420 L525,422 L500,412 L480,392 L470,368 L468,345 L468,330 L482,305 L488,272 Z"
+              onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"/>
+            <text x="552" y="348" class="svgl" font-size="10" pointer-events="none">KWAZULU-NATAL</text>
+            <circle class="svgdot" cx="552" cy="362" r="6" onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')">
+              <animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- EASTERN CAPE -->
+            <path class="svgp" data-name="Eastern Cape" data-count="17" data-species="Buffalo, Kudu, Sable"
+              d="M205,405 L232,392 L262,380 L295,368 L325,355 L345,344 L368,355 L398,360 L425,358 L450,368 L468,392 L462,420 L445,442 L420,458 L390,468 L355,472 L320,468 L288,455 L260,440 L235,422 Z"
+              onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"/>
+            <text x="365" y="420" class="svgl" font-size="11" pointer-events="none">EASTERN CAPE</text>
+            <circle class="svgdot" cx="365" cy="435" r="5" onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')">
+              <animate attributeName="r" values="3;6;3" dur="2.1s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- WESTERN CAPE -->
+            <path class="svgp" data-name="Western Cape" data-count="8" data-species="Springbok, Gemsbok, Eland"
+              d="M88,440 L114,448 L140,455 L165,465 L188,478 L205,492 L200,518 L182,538 L158,550 L130,555 L105,548 L82,530 L62,508 L50,482 L48,458 L58,442 Z"
+              onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"/>
+            <text x="128" y="498" class="svgl" font-size="10" pointer-events="none">WESTERN CAPE</text>
+            <circle class="svgdot" cx="128" cy="512" r="5" onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')">
+              <animate attributeName="r" values="3;5;3" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        <!-- HOVER POPUP -->
+        <div id="prov-popup" style="display:none;position:absolute;background:rgba(10,7,3,0.96);border:1px solid rgba(201,125,26,0.5);border-radius:6px;padding:18px 22px;min-width:200px;pointer-events:none;z-index:50;box-shadow:0 8px 40px rgba(0,0,0,0.7)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="color:var(--amber)">📍</span><div id="pp-name" style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold)"></div></div>
+          <div id="pp-count" style="font-size:15px;color:var(--bone);margin-bottom:5px"></div>
+          <div id="pp-species" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki)"></div>
+          <div style="margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber)">Click to explore →</div>
+        </div>
       </div>
-      <div class="farms-grid" id="prov-farms-grid"></div>
+      <!-- RIGHT PANEL -->
+      <div style="border-left:1px solid rgba(201,125,26,0.1);padding:28px 22px;display:flex;flex-direction:column">
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory);margin-bottom:4px">Provinces</div>
+        <div style="font-size:12px;color:var(--khaki);margin-bottom:20px">Click to browse farms</div>
+        <div style="display:flex;flex-direction:column;gap:2px;flex:1" id="prov-right-list"></div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- PROVINCE FARM RESULTS - below map -->
+<div id="prov-results" style="display:none;background:var(--earth)">
+  <div class="sec" style="padding-top:32px">
+    <div class="sec-head">
+      <div><div class="sec-label" id="prov-result-label"></div><h2 class="sec-title" id="prov-result-title"></h2></div>
+      <a class="link-amber" onclick="document.getElementById('prov-results').style.display='none'">✕ Close</a>
+    </div>
+    <div class="farms-grid" id="prov-farms-grid"></div>
   </div>
 </div>
 
@@ -636,31 +848,105 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="sec">
     <div class="sec-label">Buy & Sell</div>
     <h1 class="sec-title">Hunting Marketplace</h1>
-    <p class="sec-sub" style="margin-bottom:28px">Verified hunters selling quality gear, optics and equipment.</p>
-    <div class="ftabs">
-      <button class="ftab on" onclick="ftab(this)">All Items</button>
-      <button class="ftab" onclick="ftab(this)">🔭 Optics</button>
-      <button class="ftab" onclick="ftab(this)">👕 Clothing</button>
-      <button class="ftab" onclick="ftab(this)">🎒 Gear</button>
-      <button class="ftab" onclick="ftab(this)">🔧 Accessories</button>
+    <p class="sec-sub" style="margin-bottom:28px">Verified hunters selling quality gear, optics, clothing and equipment across South Africa.</p>
+    <div class="ftabs" style="margin-bottom:0;flex-wrap:wrap;gap:4px;align-items:center">
+      <button class="ftab on" onclick="setMainCat(this,'all')">All Items</button>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('optics')">🔭 Optics ▾</button>
+        <div class="cat-dd" id="dd-optics">
+          <button onclick="setCatSub('optics','','All Optics');closeDDs()">All Optics</button>
+          <button onclick="setCatSub('optics','rifle-scopes','Rifle Scopes');closeDDs()">🎯 Rifle Scopes</button>
+          <button onclick="setCatSub('optics','binoculars','Binoculars');closeDDs()">👁️ Binoculars</button>
+          <button onclick="setCatSub('optics','rangefinders','Rangefinders');closeDDs()">📏 Rangefinders</button>
+          <button onclick="setCatSub('optics','thermal','Thermal & Night Vision');closeDDs()">🌡️ Thermal & Night Vision</button>
+          <button onclick="setCatSub('optics','red-dot','Red Dot Sights');closeDDs()">🔴 Red Dot Sights</button>
+          <button onclick="setCatSub('optics','optics-acc','Optics Accessories');closeDDs()">🔧 Accessories</button>
+        </div>
+      </div>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('clothing')">👕 Clothing ▾</button>
+        <div class="cat-dd" id="dd-clothing">
+          <button onclick="setCatSub('clothing','','All Clothing');closeDDs()">All Clothing</button>
+          <button onclick="setCatSub('clothing','jackets','Jackets');closeDDs()">🧥 Jackets</button>
+          <button onclick="setCatSub('clothing','shirts','Shirts');closeDDs()">👕 Shirts</button>
+          <button onclick="setCatSub('clothing','pants','Pants');closeDDs()">👖 Pants</button>
+          <button onclick="setCatSub('clothing','boots','Boots');closeDDs()">🥾 Boots</button>
+          <button onclick="setCatSub('clothing','headwear','Headwear');closeDDs()">🧢 Headwear</button>
+          <button onclick="setCatSub('clothing','gloves','Gloves');closeDDs()">🧤 Gloves</button>
+          <button onclick="setCatSub('clothing','rainwear','Rainwear');closeDDs()">🌧️ Rainwear</button>
+        </div>
+      </div>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('gear')">🎒 Gear & Cases ▾</button>
+        <div class="cat-dd" id="dd-gear">
+          <button onclick="setCatSub('gear','','All Gear');closeDDs()">All Gear & Cases</button>
+          <button onclick="setCatSub('gear','backpacks','Backpacks');closeDDs()">🎒 Backpacks</button>
+          <button onclick="setCatSub('gear','rifle-cases','Rifle Cases');closeDDs()">🔫 Rifle Cases</button>
+          <button onclick="setCatSub('gear','hard-cases','Hard Cases');closeDDs()">🧳 Hard Cases</button>
+          <button onclick="setCatSub('gear','ammo-storage','Ammo Storage');closeDDs()">📦 Ammo Storage</button>
+          <button onclick="setCatSub('gear','shooting-gear','Shooting Gear');closeDDs()">🎯 Shooting Gear</button>
+          <button onclick="setCatSub('gear','slings','Slings & Holsters');closeDDs()">🔗 Slings & Holsters</button>
+          <button onclick="setCatSub('gear','gps','GPS & Comms');closeDDs()">📡 GPS & Comms</button>
+        </div>
+      </div>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('knives')">🔪 Knives ▾</button>
+        <div class="cat-dd" id="dd-knives">
+          <button onclick="setCatSub('knives','','All Knives');closeDDs()">All Knives</button>
+          <button onclick="setCatSub('knives','hunting-knives','Hunting Knives');closeDDs()">🔪 Hunting Knives</button>
+          <button onclick="setCatSub('knives','skinning-knives','Skinning Knives');closeDDs()">🔪 Skinning Knives</button>
+          <button onclick="setCatSub('knives','folding-knives','Folding Knives');closeDDs()">🔪 Folding Knives</button>
+          <button onclick="setCatSub('knives','fixed-blade','Fixed Blade');closeDDs()">🗡️ Fixed Blade</button>
+          <button onclick="setCatSub('knives','multi-tools','Multi-Tools');closeDDs()">🔧 Multi-Tools</button>
+          <button onclick="setCatSub('knives','sharpeners','Sharpeners');closeDDs()">⚙️ Sharpeners</button>
+        </div>
+      </div>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('bows')">🏹 Bows ▾</button>
+        <div class="cat-dd" id="dd-bows">
+          <button onclick="setCatSub('bows','','All Bows');closeDDs()">All Bows</button>
+          <button onclick="setCatSub('bows','compound','Compound Bows');closeDDs()">🏹 Compound Bows</button>
+          <button onclick="setCatSub('bows','recurve','Recurve Bows');closeDDs()">🏹 Recurve Bows</button>
+          <button onclick="setCatSub('bows','crossbow','Crossbows');closeDDs()">⚔️ Crossbows</button>
+          <button onclick="setCatSub('bows','youth','Youth Bows');closeDDs()">🏹 Youth Bows</button>
+          <button onclick="setCatSub('bows','bow-acc','Bow Accessories');closeDDs()">🔧 Accessories</button>
+        </div>
+      </div>
+      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('accessories')">🔧 Accessories ▾</button>
+        <div class="cat-dd" id="dd-accessories">
+          <button onclick="setCatSub('accessories','','All Accessories');closeDDs()">All Accessories</button>
+          <button onclick="setCatSub('accessories','shooting-acc','Shooting Accessories');closeDDs()">🎯 Shooting Accessories</button>
+          <button onclick="setCatSub('accessories','cleaning','Cleaning Kits');closeDDs()">🧹 Cleaning Kits</button>
+          <button onclick="setCatSub('accessories','lights','Lights & Torches');closeDDs()">🔦 Lights & Torches</button>
+          <button onclick="setCatSub('accessories','calls','Calls & Scents');closeDDs()">📯 Calls & Scents</button>
+          <button onclick="setCatSub('accessories','safety','Safety Gear');closeDDs()">🦺 Safety Gear</button>
+          <button onclick="setCatSub('accessories','maintenance','Maintenance Tools');closeDDs()">🔧 Maintenance Tools</button>
+        </div>
+      </div>
     </div>
-    <div class="mkt-grid">
-      <div class="mkt-card"><div class="mkt-img">🔭<div class="mkt-cond cond-used">Used - Good</div></div><div class="mkt-body"><div class="mkt-title">Swarovski Z6i 2.5-15x56 BT Rifle Scope</div><div class="mkt-seller">JaagBoer_Limpopo ⭐ 4.9</div><div class="mkt-row"><span class="mkt-price">R18,500</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🎒<div class="mkt-cond cond-new">New</div></div><div class="mkt-body"><div class="mkt-title">Deerhunter Approach Jacket — Size L Realtree Camo</div><div class="mkt-seller">BushveldKing ⭐ 5.0</div><div class="mkt-row"><span class="mkt-price">R1,890</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🧳<div class="mkt-cond cond-used">Used - Fair</div></div><div class="mkt-body"><div class="mkt-title">Pelican 1750 Long Rifle Case with Foam</div><div class="mkt-seller">HunterSA_Gauteng ⭐ 4.7</div><div class="mkt-row"><span class="mkt-price">R2,200</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🔦<div class="mkt-cond cond-new">New</div></div><div class="mkt-body"><div class="mkt-title">Surefire G2X Pro Flashlight + Holster</div><div class="mkt-seller">KalahariRifleman ⭐ 4.8</div><div class="mkt-row"><span class="mkt-price">R1,450</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🥾<div class="mkt-cond cond-used">Used - Good</div></div><div class="mkt-body"><div class="mkt-title">Meindl Bhutan MFS Hunting Boots Size 44</div><div class="mkt-seller">Rooikat_Hunter ⭐ 4.6</div><div class="mkt-row"><span class="mkt-price">R3,100</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">📡<div class="mkt-cond cond-new">New</div></div><div class="mkt-body"><div class="mkt-title">Garmin inReach Mini 2 Satellite Communicator</div><div class="mkt-seller">WildernessGear ⭐ 5.0</div><div class="mkt-row"><span class="mkt-price">R8,999</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🎯<div class="mkt-cond cond-used">Used - Good</div></div><div class="mkt-body"><div class="mkt-title">Caldwell Lead Sled DFT 2 Shooting Rest</div><div class="mkt-seller">ShotgunSam_NW ⭐ 4.8</div><div class="mkt-row"><span class="mkt-price">R3,600</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
-      <div class="mkt-card"><div class="mkt-img">🌡️<div class="mkt-cond cond-new">New</div></div><div class="mkt-body"><div class="mkt-title">Kestrel 5700 Ballistics Weather Meter with Applied</div><div class="mkt-seller">LongRange_SA ⭐ 4.9</div><div class="mkt-row"><span class="mkt-price">R7,200</span><span class="mkt-msg" onclick="showToast('Message sent to seller! 💬')">💬</span></div></div></div>
+    <div id="cat-banner" style="display:none;margin-bottom:0">
+      <div style="height:200px;border-radius:0 0 4px 4px;overflow:hidden;position:relative">
+        <div id="cat-banner-img" style="position:absolute;inset:0;background-size:cover;background-position:center top"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,13,6,0.8) 0%,rgba(18,13,6,0.2) 60%,transparent 100%)"></div>
+        <div style="position:absolute;bottom:24px;left:32px">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px">Category</div>
+          <div id="cat-banner-title" style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--ivory)"></div>
+          <div id="cat-banner-sub" style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.7);margin-top:4px"></div>
+        </div>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:36px"><button class="btn-hero-main" onclick="openAuth('register');showToast('Sign in to list your item 🛒')">+ List Your Item</button></div>
+    <div style="display:flex;gap:12px;margin:20px 0 24px;flex-wrap:wrap">
+      <input type="text" id="mkt-search" placeholder="🔍  Search items..." oninput="filterMarket()" style="flex:1;min-width:200px;background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--bone);outline:none">
+      <select id="mkt-sort" style="background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--sand);outline:none">
+        <option>Sort: Latest</option><option>Price: Low to High</option><option>Price: High to Low</option>
+      </select>
+      <button class="btn-hero-main" onclick="openSellForm()" style="padding:12px 24px;white-space:nowrap">+ Sell Your Item</button>
+    </div>
+    <div class="mkt-grid" id="mkt-grid"></div>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn-hero-main" onclick="showToast('Loading more items... 🛒')">Load More Items</button>
+    </div>
   </div>
 </div>
 
 <!-- ══════════ PAGE: COMMUNITY ══════════ -->
 <div class="page" id="page-community">
-  <div class="sec" style="background:rgba(30,20,9,0.4)">
+  <div class="sec">
     <div class="sec-label">The Community</div>
     <h1 class="sec-title">WildHuntsa Forum</h1>
     <p class="sec-sub" style="margin-bottom:28px">Tips, sightings, trophy photos and reviews — from hunters, for hunters.</p>
@@ -672,12 +958,12 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <button class="ftab" onclick="ftab(this)">🏆 Trophies</button>
     </div>
     <div class="posts-grid">
-      <div class="post-card"><div class="post-img">🦌<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">JB</div><div><div class="av-name">JaagBoer_Limpopo</div><div class="av-date">2 hours ago · Limpopo</div></div></div><div class="post-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread. Conditions perfect this week. Water holes active at first light.</div><div class="post-footer"><span>❤️ 48</span><span>💬 12</span><span>👁️ 340</span></div></div></div>
-      <div class="post-card"><div class="post-img">🔭<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">RS</div><div><div class="av-name">Rooikat_SA</div><div class="av-date">Yesterday · General</div></div></div><div class="post-title">Wind direction matters more than camo. Here's how I set up my approach in open bushveld for consistent success...</div><div class="post-footer"><span>❤️ 92</span><span>💬 34</span><span>👁️ 1.2k</span></div></div></div>
-      <div class="post-card"><div class="post-img">🏆<div class="post-cat pc-review">⭐ Review</div></div><div class="post-body"><div class="post-author-row"><div class="av">PV</div><div><div class="av-name">PietVanHunting</div><div class="av-date">3 days ago · N. Cape</div></div></div><div class="post-title">Booked Kalahari Dunes via WildHuntsa — incredible gemsbok hunt. Jan and his team are absolute professionals. 5 stars!</div><div class="post-footer"><span>❤️ 67</span><span>💬 18</span><span>👁️ 890</span></div></div></div>
-      <div class="post-card"><div class="post-img">🌡️<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">BK</div><div><div class="av-name">BushveldKing</div><div class="av-date">4 days ago · General</div></div></div><div class="post-title">Best months to hunt in Limpopo — a full seasonal breakdown for 12 popular species. Includes rainfall data and bush density.</div><div class="post-footer"><span>❤️ 134</span><span>💬 45</span><span>👁️ 2.8k</span></div></div></div>
-      <div class="post-card"><div class="post-img">🦬<div class="post-cat pc-trophy">🏆 Trophy</div></div><div class="post-body"><div class="post-author-row"><div class="av">KR</div><div><div class="av-name">KarooRifleman</div><div class="av-date">1 week ago · E. Cape</div></div></div><div class="post-title">My Groot Karoo dagga boy — full write-up with shot placement, distance (380m), and cartridge used. One shot, clean kill.</div><div class="post-footer"><span>❤️ 201</span><span>💬 78</span><span>👁️ 5.4k</span></div></div></div>
-      <div class="post-card"><div class="post-img">🐗<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">TM</div><div><div class="av-name">ThornveldMike</div><div class="av-date">5 days ago · NW</div></div></div><div class="post-title">Big sounder of warthogs near Rustenburg. At least 3 quality boars. Waterhole active every morning from 05:30.</div><div class="post-footer"><span>❤️ 29</span><span>💬 7</span><span>👁️ 412</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🦌<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">JB</div><div><div class="av-name">JaagBoer_Limpopo</div><div class="av-date">2 hours ago · Limpopo</div></div></div><div class="post-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread. Conditions perfect this week.</div><div class="post-footer"><span>❤️ 48</span><span>💬 12</span><span>👁️ 340</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🔭<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">RS</div><div><div class="av-name">Rooikat_SA</div><div class="av-date">Yesterday · General</div></div></div><div class="post-title">Wind direction matters more than camo. Here's how I set up my approach in open bushveld for consistent success.</div><div class="post-footer"><span>❤️ 92</span><span>💬 34</span><span>👁️ 1.2k</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">⭐<div class="post-cat pc-review">⭐ Review</div></div><div class="post-body"><div class="post-author-row"><div class="av">PV</div><div><div class="av-name">PietVanHunting</div><div class="av-date">3 days ago · N. Cape</div></div></div><div class="post-title">Booked Kalahari Dunes via WildHuntsa — incredible gemsbok hunt. Jan and his team are absolute professionals. 5 stars!</div><div class="post-footer"><span>❤️ 67</span><span>💬 18</span><span>👁️ 890</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">💡<div class="post-cat pc-tip">💡 Tips</div></div><div class="post-body"><div class="post-author-row"><div class="av">BK</div><div><div class="av-name">BushveldKing</div><div class="av-date">4 days ago · General</div></div></div><div class="post-title">Best months to hunt in Limpopo — a full seasonal breakdown for 12 popular species including rainfall data.</div><div class="post-footer"><span>❤️ 134</span><span>💬 45</span><span>👁️ 2.8k</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🏆<div class="post-cat pc-trophy">🏆 Trophy</div></div><div class="post-body"><div class="post-author-row"><div class="av">KR</div><div><div class="av-name">KarooRifleman</div><div class="av-date">1 week ago · E. Cape</div></div></div><div class="post-title">My Groot Karoo dagga boy — full write-up with shot placement, distance (380m), and cartridge used. One shot, clean kill.</div><div class="post-footer"><span>❤️ 201</span><span>💬 78</span><span>👁️ 5.4k</span></div></div></div>
+      <div class="post-card"><div class="post-img" style="background:#2a1a08;display:flex;align-items:center;justify-content:center;font-size:48px;height:150px;position:relative">🐗<div class="post-cat pc-sight">👁️ Sighting</div></div><div class="post-body"><div class="post-author-row"><div class="av">TM</div><div><div class="av-name">ThornveldMike</div><div class="av-date">5 days ago · NW</div></div></div><div class="post-title">Big sounder of warthogs near Rustenburg. At least 3 quality boars. Waterhole active every morning from 05:30.</div><div class="post-footer"><span>❤️ 29</span><span>💬 7</span><span>👁️ 412</span></div></div></div>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn-hero-main" onclick="openAuth('register')">+ Share a Post</button></div>
   </div>
@@ -693,271 +979,249 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
     <div class="fd-body">
       <div class="fd-header">
-        <div>
-          <div class="fd-title" id="fd-title"></div>
-          <div class="fd-loc" id="fd-loc">📍</div>
-        </div>
-        <div class="fd-rating-block">
-          <div class="fd-stars" id="fd-stars"></div>
-          <div class="fd-reviews" id="fd-reviews"></div>
-        </div>
+        <div><div class="fd-title" id="fd-title"></div><div class="fd-loc" id="fd-loc">📍</div></div>
+        <div class="fd-rating-block"><div class="fd-stars" id="fd-stars"></div><div class="fd-reviews" id="fd-reviews"></div></div>
       </div>
       <p class="fd-desc" id="fd-desc"></p>
       <div class="fd-grid">
-        <div class="fd-box">
-          <div class="fd-box-title">🦌 Species & Pricing</div>
-          <div id="fd-animals"></div>
-        </div>
-        <div class="fd-box">
-          <div class="fd-box-title">🏕️ Included</div>
-          <div id="fd-amenities"></div>
-        </div>
+        <div class="fd-box"><div class="fd-box-title">🦌 Species & Pricing</div><div id="fd-animals"></div></div>
+        <div class="fd-box"><div class="fd-box-title">✅ Amenities</div><div class="fd-amenities" id="fd-amenities"></div></div>
       </div>
-    </div>
-    <div class="fd-footer">
-      <button class="btn-full amber" onclick="closeOverlay('farmModal');openBooking(currentFarm)">📅 Book This Farm</button>
+      <button class="btn-full" onclick="openBooking(currentFarm);closeOverlay('farmModal')" style="width:100%;padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);border:none;border-radius:2px;color:var(--earth);cursor:pointer;margin-top:16px">📅 Book This Farm</button>
     </div>
   </div>
 </div>
 
 <!-- ══════════ BOOKING MODAL ══════════ -->
 <div class="overlay" id="bookingModal">
-  <div class="modal-box booking">
+  <div class="modal-box booking" style="max-width:620px;max-height:92vh;overflow-y:auto">
     <div class="bk-header">
-      <div><div class="bk-title" id="bk-title">Book Your Hunt</div><div class="bk-sub">🔒 Secure booking · Instant or request</div></div>
+      <div><div class="bk-title" id="bk-title">Book Your Hunt</div><div class="bk-sub">Confirm your dates and species</div></div>
       <button class="modal-close-btn" onclick="closeOverlay('bookingModal')">✕</button>
     </div>
     <div class="bk-body">
       <div class="fg">
-        <div class="fi"><label class="fl">Arrival Date</label><input type="date" class="finput" id="bk-arrive"></div>
-        <div class="fi"><label class="fl">Departure Date</label><input type="date" class="finput" id="bk-depart"></div>
-        <div class="fi"><label class="fl">Hunters</label><select class="fselect"><option>1 Hunter</option><option>2 Hunters</option><option>3 Hunters</option><option>4 Hunters</option><option>5+ (Group)</option></select></div>
-        <div class="fi"><label class="fl">Hunt Type</label><select class="fselect"><option>Trophy Hunting (PHC)</option><option>Biltong / Meat Hunt</option><option>Guided Hunt</option><option>Self-Guided</option><option>Bow Hunt</option></select></div>
-        <div class="fi full"><label class="fl">Target Species</label><div class="animal-chips" id="bk-chips"></div></div>
-        <div class="fi full"><label class="fl">Message to Owner</label><textarea class="ftextarea" placeholder="Experience level, preferred calibre, trophy requirements..."></textarea></div>
+        <div class="fi"><label class="fl">📅 Arrival Date</label><input type="date" class="finput" id="bk-arrive"></div>
+        <div class="fi"><label class="fl">📅 Departure Date</label><input type="date" class="finput" id="bk-depart"></div>
+        <div class="fi"><label class="fl">👥 Number of Hunters</label><select class="fselect" id="bk-hunters"><option>1 Hunter</option><option>2 Hunters</option><option>3 Hunters</option><option>4+ Hunters</option></select></div>
+        <div class="fi"><label class="fl">🏕️ Hunt Type</label><select class="fselect"><option>Trophy Hunt</option><option>Biltong Hunt</option><option>Bow Hunt</option><option>Family Hunt</option></select></div>
+        <div class="fi full"><label class="fl">🦌 Species (select all that apply)</label><div class="achips" id="bk-chips"></div></div>
+        <div class="fi full"><label class="fl">💬 Message to Farm Owner</label><textarea class="ftextarea" placeholder="Any special requests, dietary requirements, or questions..."></textarea></div>
       </div>
-      <div class="bk-summary">
-        <div class="bks-title">Cost Estimate</div>
-        <div class="bks-line"><span>Kudu Trophy Hunt</span><span>R 9,350</span></div>
-        <div class="bks-line"><span>Accommodation (3 nights)</span><span>R 2,700</span></div>
-        <div class="bks-line"><span>Skinning & caping</span><span>R 450</span></div>
-        <div class="bks-line tot"><span>Total</span><span class="tot-val">R 12,500</span></div>
+      <div class="bk-estimate" id="bk-estimate">
+        <div class="bke-row"><span>Estimated Total</span><span class="bke-val" id="bke-total">R 0</span></div>
+        <div style="font-size:11px;color:var(--khaki);margin-top:4px">Final pricing confirmed by farm owner</div>
       </div>
     </div>
     <div class="bk-footer">
       <button class="btn-sm btn-outline-sm" onclick="closeOverlay('bookingModal')">Cancel</button>
-      <button class="btn-sm btn-amber-sm" style="padding:8px 24px" onclick="showToast('Booking request sent! 🎯 You\'ll be confirmed within 2 hrs.','ok');closeOverlay('bookingModal')">Request Booking →</button>
+      <button class="btn-sm btn-amber-sm" onclick="showToast('Booking request sent! Farm owner will confirm within 24hrs. 🎉','ok');closeOverlay('bookingModal')">Send Booking Request →</button>
     </div>
   </div>
 </div>
 
 <!-- ══════════ AUTH MODAL ══════════ -->
 <div class="overlay" id="authModal">
-  <div class="modal-box auth">
+  <div class="modal-box auth" style="max-width:440px">
     <div class="bk-header">
-      <div><div class="bk-title">🦌 Join WildHuntsa</div><div class="bk-sub">South Africa's hunting community</div></div>
+      <div><div class="bk-title" id="auth-title">Sign In</div><div class="bk-sub">Welcome back to WildHuntsa</div></div>
       <button class="modal-close-btn" onclick="closeOverlay('authModal')">✕</button>
     </div>
     <div class="bk-body">
-      <div class="auth-tabs">
-        <button class="atab on" onclick="switchAuth(this,'login')" id="at-login">Sign In</button>
-        <button class="atab" onclick="switchAuth(this,'register')" id="at-reg">Create Account</button>
-      </div>
-      <div id="auth-login-form">
-        <div class="fg">
-          <div class="fi full"><label class="fl">Email</label><input type="email" class="finput" placeholder="jager@example.co.za"></div>
-          <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" placeholder="••••••••"></div>
-        </div>
-      </div>
-      <div id="auth-reg-form" style="display:none">
-        <div class="utype-row">
-          <div class="utype on" onclick="selUtype(this)"><div class="utype-icon">🎯</div><div class="utype-label">Hunter</div><div class="utype-desc">Browse & book</div></div>
-          <div class="utype" onclick="selUtype(this)"><div class="utype-icon">🌿</div><div class="utype-label">Farm Owner</div><div class="utype-desc">List property</div></div>
-          <div class="utype" onclick="selUtype(this)"><div class="utype-icon">🛒</div><div class="utype-label">Vendor</div><div class="utype-desc">Sell gear</div></div>
-        </div>
-        <div class="fg">
-          <div class="fi"><label class="fl">First Name</label><input type="text" class="finput" placeholder="Pieter"></div>
-          <div class="fi"><label class="fl">Last Name</label><input type="text" class="finput" placeholder="van der Berg"></div>
-          <div class="fi full"><label class="fl">Email</label><input type="email" class="finput" placeholder="pieter@example.co.za"></div>
-          <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" placeholder="Min 8 characters"></div>
-          <div class="fi full"><label class="fl">Province</label><select class="fselect"><option value="">Select Province</option><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select></div>
+      <div class="fg">
+        <div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" placeholder="hunter@email.com"></div>
+        <div class="fi full" id="auth-name-field" style="display:none"><label class="fl">Full Name</label><input type="text" class="finput" placeholder="Your name"></div>
+        <div class="fi full"><label class="fl">Password</label><input type="password" class="finput" placeholder="••••••••"></div>
+        <div class="fi full" id="auth-type-field" style="display:none">
+          <label class="fl">I am a...</label>
+          <select class="fselect">
+            <option>Hunter</option><option>Farm Owner / PH</option><option>Marketplace Vendor</option>
+          </select>
         </div>
       </div>
     </div>
+    <div class="bk-footer" style="flex-direction:column;gap:10px">
+      <button class="btn-sm btn-amber-sm" style="width:100%;padding:14px" onclick="showToast('Welcome back! 🦌','ok');closeOverlay('authModal')">Sign In</button>
+      <button onclick="toggleAuth()" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;cursor:pointer" id="auth-toggle-btn">Don't have an account? Register free →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SELL ITEM MODAL ══════════ -->
+<div class="overlay" id="sellModal">
+  <div class="modal-box" style="max-width:600px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div><div class="bk-title">🛒 List Your Item</div><div class="bk-sub">Reach thousands of hunters across SA · Free to list</div></div>
+      <button class="modal-close-btn" onclick="closeOverlay('sellModal')">✕</button>
+    </div>
+    <div class="bk-body">
+      <div class="fg">
+        <div class="fi full"><label class="fl">Item Title</label><input type="text" class="finput" placeholder="e.g. Swarovski Z6i 2.5-15x56 Rifle Scope"></div>
+        <div class="fi"><label class="fl">Category</label>
+          <select class="fselect">
+            <option>Rifle Scopes</option><option>Binoculars</option><option>Rangefinders</option>
+            <option>Thermal & Night Vision</option><option>Red Dot Sights</option><option>Clothing</option>
+            <option>Boots</option><option>Gear & Cases</option><option>Knives</option><option>Bows</option><option>Accessories</option>
+          </select>
+        </div>
+        <div class="fi"><label class="fl">Condition</label>
+          <select class="fselect"><option>New</option><option>Like New</option><option>Used - Good</option><option>Used - Fair</option></select>
+        </div>
+        <div class="fi"><label class="fl">Asking Price (Rands)</label><input type="number" class="finput" placeholder="e.g. 18500"></div>
+        <div class="fi"><label class="fl">Province</label>
+          <select class="fselect"><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select>
+        </div>
+        <div class="fi full"><label class="fl">Description</label><textarea class="ftextarea" placeholder="Brand, model, specs, reason for selling..."></textarea></div>
+        <div class="fi full"><label class="fl">Your WhatsApp Number</label><input type="tel" class="finput" placeholder="+27 71 123 4567"></div>
+      </div>
+    </div>
     <div class="bk-footer">
-      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('authModal')">Cancel</button>
-      <button class="btn-sm btn-amber-sm" style="flex:1;padding:9px" onclick="showToast('Welcome to WildHuntsa! 🦌','ok');closeOverlay('authModal')">Continue →</button>
+      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('sellModal')">Cancel</button>
+      <button class="btn-sm btn-amber-sm" onclick="showToast('Item listed! Goes live after review.','ok');closeOverlay('sellModal')">List Item →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PRODUCT DETAIL MODAL ══════════ -->
+<div class="overlay" id="productModal">
+  <div class="modal-box" style="max-width:700px;max-height:92vh;overflow-y:auto">
+    <div style="height:280px;position:relative;border-radius:6px 6px 0 0;overflow:hidden">
+      <div id="prod-modal-img" style="width:100%;height:100%;background-size:cover;background-position:center;background-color:#1a1208"></div>
+      <button class="fd-close" onclick="closeOverlay('productModal')">✕</button>
+      <div id="prod-modal-cond" style="position:absolute;top:14px;left:14px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:2px"></div>
+    </div>
+    <div style="padding:28px 32px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:20px">
+        <div><div id="prod-modal-title" style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory);margin-bottom:6px"></div><div id="prod-modal-seller" style="font-size:13px;color:var(--khaki)"></div></div>
+        <div id="prod-modal-price" style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:var(--gold);white-space:nowrap"></div>
+      </div>
+      <div id="prod-modal-desc" style="font-size:14px;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:20px"></div>
+      <div id="prod-modal-details" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px"></div>
+      <div style="display:flex;gap:12px">
+        <button onclick="showToast('Message sent to seller! 💬','ok');closeOverlay('productModal')" style="flex:1;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:2px;cursor:pointer;background:var(--amber);border:none;color:var(--earth)">💬 Contact Seller</button>
+        <button onclick="showToast('Added to watchlist! ♥','ok');closeOverlay('productModal')" style="flex:1;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:2px;cursor:pointer;background:transparent;border:1px solid rgba(176,152,112,0.3);color:var(--sand)">♡ Watchlist</button>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ══════════ FARM ONBOARDING MODAL ══════════ -->
 <div class="overlay" id="onboardModal">
-  <div class="modal-box onboard">
-    <div class="ob-header">
+  <div class="modal-box onboard" style="max-width:700px;max-height:95vh;overflow-y:auto">
+    <div class="bk-header">
       <div><div class="bk-title">🌿 List Your Farm</div><div class="bk-sub">Takes about 5 minutes · Free to list</div></div>
       <button class="modal-close-btn" onclick="closeOverlay('onboardModal')">✕</button>
     </div>
-    <!-- Progress -->
-    <div class="ob-progress">
-      <div class="ob-step active" id="ob-s1"><div class="ob-step-num">1</div><div class="ob-step-label">Farm Info</div></div>
-      <div class="ob-step" id="ob-s2"><div class="ob-step-num">2</div><div class="ob-step-label">Species</div></div>
-      <div class="ob-step" id="ob-s3"><div class="ob-step-num">3</div><div class="ob-step-label">Photos</div></div>
-      <div class="ob-step" id="ob-s4"><div class="ob-step-num">4</div><div class="ob-step-label">Calendar</div></div>
-      <div class="ob-step" id="ob-s5"><div class="ob-step-num">5</div><div class="ob-step-label">Preview</div></div>
-    </div>
-    <div class="ob-body">
-      <!-- Step 1: Farm Info -->
-      <div class="ob-pane active" id="ob-p1">
-        <div class="fg">
-          <div class="fi full"><label class="fl">Farm / Reserve Name</label><input type="text" class="finput" placeholder="e.g. Bushveld Legacy Farm" id="ob-farmname"></div>
-          <div class="fi full"><label class="fl">Short Description</label><textarea class="ftextarea" placeholder="Describe your farm, landscape, experience you offer..." id="ob-desc" style="min-height:80px"></textarea></div>
-          <div class="fi"><label class="fl">Province</label><select class="fselect" id="ob-province"><option value="">Select Province</option><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select></div>
-          <div class="fi"><label class="fl">Nearest Town</label><input type="text" class="finput" placeholder="e.g. Vaalwater" id="ob-town"></div>
-          <div class="fi"><label class="fl">Farm Size (hectares)</label><input type="number" class="finput" placeholder="e.g. 2500" id="ob-size"></div>
-          <div class="fi"><label class="fl">Hunt Type Offered</label><select class="fselect"><option>Trophy Hunting</option><option>Biltong / Meat Hunt</option><option>Both Trophy & Biltong</option><option>Bow Hunting</option><option>Driven Hunt</option></select></div>
-          <div class="fi full"><label class="fl">Your WhatsApp Number</label><input type="tel" class="finput" placeholder="+27 71 123 4567" id="ob-wa"></div>
-          <div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" placeholder="owner@yourfarm.co.za" id="ob-email"></div>
-        </div>
-      </div>
-      <!-- Step 2: Species & Pricing -->
-      <div class="ob-pane" id="ob-p2">
-        <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);margin-bottom:18px;line-height:1.6">Add each animal you offer and set the trophy / harvest price. You can edit this anytime from your dashboard.</p>
-        <div class="species-builder" id="species-builder">
-          <div class="species-row"><input type="text" class="finput" placeholder="Animal name (e.g. Kudu Bull)"><input type="text" class="finput price" placeholder="Price (e.g. R8500)"><button class="remove-btn" onclick="removeSpeciesRow(this)">✕</button></div>
-          <div class="species-row"><input type="text" class="finput" placeholder="Animal name (e.g. Impala Ewe)"><input type="text" class="finput price" placeholder="Price (e.g. R1200)"><button class="remove-btn" onclick="removeSpeciesRow(this)">✕</button></div>
-          <div class="species-row"><input type="text" class="finput" placeholder="Animal name (e.g. Warthog)"><input type="text" class="finput price" placeholder="Price (e.g. R950)"><button class="remove-btn" onclick="removeSpeciesRow(this)">✕</button></div>
-        </div>
-        <button class="add-species-btn" onclick="addSpeciesRow()">+ Add Another Animal</button>
-        <div style="margin-top:20px;padding:14px;background:rgba(18,13,6,0.4);border:1px solid rgba(176,152,112,0.1);border-radius:3px">
-          <div class="fl" style="margin-bottom:8px">Package Deals (Optional)</div>
-          <textarea class="ftextarea" placeholder="e.g. 5-Day Package: 1x Kudu + 2x Impala + 1x Warthog + Accommodation = R18,500&#10;Describe any bundled deals here..."></textarea>
-        </div>
-      </div>
-      <!-- Step 3: Photos -->
-      <div class="ob-pane" id="ob-p3">
-        <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);margin-bottom:16px;line-height:1.6">Upload 5–15 photos. Include landscape shots, accommodation, animals on the farm, and hunting action. First photo becomes your cover image.</p>
-        <div class="photo-drop" id="photoDrop" onclick="document.getElementById('photoInput').click()" ondragover="photoDragOver(event)" ondrop="photoDrop(event)" ondragleave="this.classList.remove('over')">
-          <div class="photo-drop-icon">📸</div>
-          <p>Click to upload or drag & drop photos here</p>
-          <span>JPG, PNG · Max 10MB each · Up to 15 photos</span>
-          <input type="file" id="photoInput" multiple accept="image/*" style="display:none" onchange="handlePhotos(this.files)">
-        </div>
-        <div class="photo-previews" id="photoPreviews"></div>
-        <div style="margin-top:16px;padding:12px 14px;background:rgba(61,82,32,0.15);border:1px solid rgba(61,82,32,0.3);border-radius:3px;font-size:13px;color:rgba(237,224,204,0.55)">
-          💡 <strong style="color:var(--sage)">Pro tip:</strong> Farms with 10+ photos get 3x more bookings. Show the landscape, accommodation, animals and your hunting vehicle.
-        </div>
-      </div>
-      <!-- Step 4: Calendar / Availability -->
-      <div class="ob-pane" id="ob-p4">
-        <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);margin-bottom:16px;line-height:1.6">Click dates to mark them as available (green). Hunters can only book available dates. You can update this anytime from your dashboard — changes reflect instantly.</p>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-          <div class="sec-label" id="cal-month-label">March 2026</div>
-          <div style="display:flex;gap:8px">
-            <button onclick="calNav(-1)" style="background:rgba(176,152,112,0.1);border:1px solid rgba(176,152,112,0.15);color:var(--sand);width:28px;height:28px;border-radius:2px;cursor:pointer;font-size:14px">‹</button>
-            <button onclick="calNav(1)" style="background:rgba(176,152,112,0.1);border:1px solid rgba(176,152,112,0.15);color:var(--sand);width:28px;height:28px;border-radius:2px;cursor:pointer;font-size:14px">›</button>
-          </div>
-        </div>
-        <div class="cal-grid" id="cal-grid"></div>
-        <div class="cal-legend">
-          <div class="cal-leg-item"><div class="cal-dot" style="background:rgba(61,82,32,0.6);border:1px solid rgba(90,112,48,0.5)"></div>Available</div>
-          <div class="cal-leg-item"><div class="cal-dot" style="background:rgba(122,24,24,0.4)"></div>Unavailable</div>
-          <div class="cal-leg-item"><div class="cal-dot" style="border:1px solid var(--amber)"></div>Today</div>
-        </div>
-        <div style="margin-top:16px">
-          <div class="fl" style="margin-bottom:8px">Booking Type</div>
-          <div style="display:flex;gap:10px">
-            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--sand)"><input type="radio" name="bktype" checked style="accent-color:var(--amber)"> Instant Booking (auto-confirm)</label>
-            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:var(--sand)"><input type="radio" name="bktype" style="accent-color:var(--amber)"> Request Only (you approve each)</label>
-          </div>
-        </div>
-      </div>
-      <!-- Step 5: Preview & Submit -->
-      <div class="ob-pane" id="ob-p5">
-        <div style="background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.12);border-radius:4px;overflow:hidden;margin-bottom:16px">
-          <div style="height:140px;background:linear-gradient(135deg,var(--grass),var(--bark2));display:flex;align-items:center;justify-content:center;font-size:64px">🌿</div>
-          <div style="padding:18px">
-            <div id="prev-name" style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory);margin-bottom:4px">Your Farm Name</div>
-            <div id="prev-loc" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);letter-spacing:1px;margin-bottom:10px">📍 Province</div>
-            <div id="prev-desc" style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.55);line-height:1.5;margin-bottom:12px">Your description will appear here...</div>
-            <div id="prev-species" style="display:flex;gap:5px;flex-wrap:wrap"></div>
-          </div>
-        </div>
-        <div style="padding:14px;background:rgba(61,82,32,0.12);border:1px solid rgba(61,82,32,0.25);border-radius:3px;font-size:13px;color:rgba(237,224,204,0.6);line-height:1.7">
-          ✅ Your listing will be reviewed within 24 hours<br>
-          ✅ We'll WhatsApp you when it goes live<br>
-          ✅ You get a dashboard to manage bookings, messages & availability<br>
-          ✅ No upfront cost — we take 10% commission per booking only
-        </div>
-      </div>
-    </div>
-    <div class="ob-footer">
-      <button class="btn-sm btn-outline-sm" id="ob-back" onclick="obNav(-1)" style="display:none">← Back</button>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);letter-spacing:1px" id="ob-step-indicator">Step 1 of 5</div>
-      <button class="btn-sm btn-amber-sm" id="ob-next" onclick="obNav(1)">Next Step →</button>
+    <div class="ob-steps" id="ob-steps"></div>
+    <div class="bk-body" id="ob-body"></div>
+    <div class="bk-footer">
+      <button class="btn-sm btn-outline-sm" id="ob-back" onclick="obNav(-1)">← Back</button>
+      <button class="btn-sm btn-amber-sm" id="ob-next" onclick="obNav(1)">Next →</button>
     </div>
   </div>
 </div>
 
-<!-- ── TOASTS ── -->
-<div class="toast-wrap" id="toastWrap"></div>
+<!-- ══════════ CTA ══════════ -->
+<div class="sec-sm">
+  <div class="cta-box" style="position:relative;z-index:1">
+    <div>
+      <h2 class="cta-title">Own a farm or <em>game reserve?</em></h2>
+      <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — no upfront costs, no monthly fees.</p>
+    </div>
+    <div class="cta-btns" style="position:relative;z-index:2">
+      <button class="btn-hero-main" onclick="openOnboard()" style="position:relative;z-index:2">List Your Farm Free</button>
+      <button class="btn-hero-sec" onclick="showToast('Opening WhatsApp... 📱')">Talk to Us on WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>WildHuntsa</h4><p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.4);line-height:1.6;margin-top:8px">South Africa's online hunting marketplace. Connecting hunters with verified farms across all 9 provinces.</p></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a onclick="gp('provinces')">Browse Farms</a></li><li><a onclick="gp('provinces')">Province Map</a></li><li><a onclick="gp('marketplace')">Marketplace</a></li><li><a onclick="gp('community')">Community</a></li></ul></div>
+      <div class="footer-col"><h4>Farm Owners</h4><ul><li><a onclick="openOnboard()">List Your Farm</a></li><li><a>Pricing & Fees</a></li><li><a>Owner Dashboard</a></li><li><a>Featured Listings</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a>Help Centre</a></li><li><a>Contact Us</a></li><li><a>Privacy Policy</a></li><li><a>Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 WildHuntsa. All rights reserved.</span><span>🇿🇦 Proudly South African</span></div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-// ════ DATA ════
-const farms = [
-  {id:1,name:"Bushveld Legacy Farm",province:"Limpopo",town:"Vaalwater",desc:"Premium bushveld hunting in the heart of Limpopo. Acacia savanna with exceptional kudu genetics and abundant plains game. Comfortable lodge with 6 rooms.",species:[{n:"Kudu Bull",p:"R 8,500"},{n:"Impala",p:"R 1,200"},{n:"Warthog",p:"R 950"},{n:"Blue Wildebeest",p:"R 6,800"},{n:"Steenbok",p:"R 680"}],amenities:["🏕️ 6-room lodge","🚗 Game vehicle","👨‍🍳 Full board","🔪 Skinning facility","❄️ Cold storage","📦 Trophy packing"],badges:["fb-feat","fb-inst"],badgeLabels:["⭐ Featured","⚡ Instant"],rating:4.9,reviews:47,price:"R 8,500",unit:"/kudu",emoji:"🌅",gradient:"linear-gradient(135deg,#2d4a0e,#4a3010,#1a1208)"},
-  {id:2,name:"Kalahari Dunes Reserve",province:"Northern Cape",town:"Upington",desc:"Authentic Kalahari hunting experience on 12,000 hectares of pristine red dune country. Gemsbok, springbok and eland in breathtaking scenery.",species:[{n:"Gemsbok",p:"R 4,200"},{n:"Springbok",p:"R 980"},{n:"Eland",p:"R 8,500"},{n:"Red Hartebeest",p:"R 3,800"}],amenities:["🏕️ 4-room bush camp","🚗 Game vehicle","👨‍🍳 Full board","🔪 Skinning facility","📸 Trophy photos"],badges:["fb-inst"],badgeLabels:["⚡ Instant Book"],rating:4.8,reviews:32,price:"R 22,000",unit:"/package",emoji:"🏜️",gradient:"linear-gradient(135deg,#5c3a0a,#8b6a1a,#2d1f0e)"},
-  {id:3,name:"Groot Karoo Safari",province:"Eastern Cape",town:"Graaff-Reinet",desc:"Eastern Cape's premier big game destination. Famous for exceptional buffalo hunting and rare sable antelope on 18,000 hectares of Karoo bushveld.",species:[{n:"Buffalo (Dagga Boy)",p:"R 85,000"},{n:"Sable Antelope",p:"R 22,000"},{n:"Zebra",p:"R 5,500"},{n:"Kudu Bull",p:"R 9,200"}],amenities:["🏚️ Exclusive lodge","🚗 3 game vehicles","👨‍🍳 Chef & bar","🔪 Full trophy room","✈️ Airstrip access"],badges:["fb-new"],badgeLabels:["🆕 New Listing"],rating:5.0,reviews:8,price:"R 85,000",unit:"/buffalo",emoji:"🌿",gradient:"linear-gradient(135deg,#1a3a20,#2d5a10,#0a1a0a)"},
-  {id:4,name:"Magalies Mountain Lodge",province:"North West",town:"Rustenburg",desc:"Malaria-free hunting in the Magaliesberg mountains. Excellent kudu and blue wildebeest hunting with spectacular mountain views. 90 min from Johannesburg.",species:[{n:"Kudu Bull",p:"R 7,200"},{n:"Blue Wildebeest",p:"R 5,800"},{n:"Blesbok",p:"R 2,200"},{n:"Impala",p:"R 1,100"},{n:"Warthog",p:"R 880"}],amenities:["🏕️ 5-room lodge","🚗 Game vehicle","👨‍🍳 Full board","🔪 Skinning facility","🏊 Pool"],badges:["fb-inst"],badgeLabels:["⚡ Instant Book"],rating:4.7,reviews:28,price:"R 6,200",unit:"/kudu",emoji:"⛰️",gradient:"linear-gradient(135deg,#3a2a4a,#1a3a1a)"},
-  {id:5,name:"Highveld Plains Hunting",province:"Mpumalanga",town:"Witbank",desc:"Classic Highveld hunting on productive open plains. Large impala population, excellent stalking kudu and multiple plains game species. Good roads throughout.",species:[{n:"Impala",p:"R 1,050"},{n:"Kudu Bull",p:"R 7,800"},{n:"Steenbok",p:"R 650"},{n:"Bushpig",p:"R 1,400"},{n:"Duiker",p:"R 580"}],amenities:["🏕️ 4-room farmhouse","🚗 Game vehicle","👨‍🍳 Full board","🔪 Skinning & biltong"],badges:["fb-feat"],badgeLabels:["⭐ Featured"],rating:4.9,reviews:61,price:"R 4,500",unit:"/impala",emoji:"🌾",gradient:"linear-gradient(135deg,#3a2a0a,#5a4a10)"},
-  {id:6,name:"Drakensberg Outpost",province:"KwaZulu-Natal",town:"Dundee",desc:"KwaZulu-Natal hunting in the foothills of the Drakensberg. Nyala, bushbuck and warthog in dense thicket country. Unique hunting experience unlike the bushveld.",species:[{n:"Nyala Bull",p:"R 9,500"},{n:"Bushbuck Ram",p:"R 4,200"},{n:"Warthog",p:"R 920"},{n:"Impala",p:"R 1,150"}],amenities:["🏕️ 3-room cottage","🚗 Game vehicle","👨‍🍳 Breakfast & dinner","🔪 Skinning facility"],badges:[],badgeLabels:[],rating:4.6,reviews:19,price:"R 9,500",unit:"/nyala",emoji:"🏔️",gradient:"linear-gradient(135deg,#0a2a3a,#1a4a2a)"}
-];
-
-let currentFarm = null;
-let calOffset = 0;
-let calSelected = new Set();
-let obStep = 1;
-let photoCount = 0;
-
-// ════ FULLSCREEN SLIDESHOW ════
-const fsSlides = document.querySelectorAll('.fs-slide');
-const fsDots = document.getElementById('fs-dots');
-const fsName = document.getElementById('fs-animal-name');
-const animalNames = ['Impala','Greater Kudu','Springbok','Blesbok','Warthog','Blue Wildebeest','Gemsbok','Zebra','Eland','Bushbuck','Golden Wildebeest'];
-let fsIdx = 0;
-let fsTimer;
-
-// Build dots
-fsSlides.forEach((_, i) => {
-  const d = document.createElement('button');
-  d.className = 'fs-dot' + (i===0?' on':'');
-  d.onclick = () => goFsSlide(i);
-  fsDots.appendChild(d);
-});
-
-function goFsSlide(n) {
-  fsSlides[fsIdx].classList.remove('active');
-  fsDots.children[fsIdx].classList.remove('on');
-  fsIdx = (n + fsSlides.length) % fsSlides.length;
-  fsSlides[fsIdx].classList.add('active');
-  fsDots.children[fsIdx].classList.add('on');
-  fsName.style.opacity = '0';
-  setTimeout(() => { fsName.textContent = animalNames[fsIdx]; fsName.style.opacity = '1'; }, 400);
+// ════ MOBILE MENU ════
+function toggleMobileMenu() {
+  const menu = document.getElementById('mob-menu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
-
-fsTimer = setInterval(() => goFsSlide(fsIdx + 1), 4000);
+function checkMobile() {
+  const btn = document.getElementById('mob-btn');
+  if(btn) btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+}
+window.addEventListener('resize', checkMobile);
+checkMobile();
 
 // ════ PAGE NAV ════
 function gp(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id)?.classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const map = {home:0,listings:1,provinces:2,marketplace:3,community:4};
-  document.querySelectorAll('.nav-btn')[map[id] ?? 0]?.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  const pg = document.getElementById('page-' + id);
+  if(pg) pg.classList.add('active');
+  window.scrollTo(0,0);
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.remove('active');
+    if(
+      (id==='home' && b.textContent.trim()==='Explore') ||
+      (id==='provinces' && b.textContent.trim()==='Browse Hunting Farms') ||
+      (id==='marketplace' && b.textContent.trim()==='Marketplace') ||
+      (id==='community' && b.textContent.trim()==='Community')
+    ) b.classList.add('active');
+  });
   if(id==='home') renderFarms(farms.slice(0,3),'home-farms');
-  if(id==='listings') renderFarms(farms,'listings-farms');
+  if(id==='listings' || id==='provinces') renderFarms(farms,'listings-farms');
+  if(id==='marketplace') filterMarket();
+  if(id==='community') {} // static HTML posts
 }
+
+// ════ TOAST ════
+function showToast(msg, type='info') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type==='ok'?' ok':'');
+  setTimeout(()=>t.className='toast',3000);
+}
+
+// ════ TABS ════
+function ftab(btn) { btn.closest('.ftabs').querySelectorAll('.ftab').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); }
+
+// ════ OVERLAYS ════
+function openOverlay(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeOverlay(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if(e.target===o) closeOverlay(o.id); }));
+
+// ════ AUTH ════
+let authMode = 'login';
+function openAuth(mode) { authMode=mode; updateAuthModal(); openOverlay('authModal'); }
+function toggleAuth() { authMode = authMode==='login'?'register':'login'; updateAuthModal(); }
+function updateAuthModal() {
+  const isReg = authMode==='register';
+  document.getElementById('auth-title').textContent = isReg ? 'Create Account' : 'Sign In';
+  document.getElementById('auth-name-field').style.display = isReg ? 'block' : 'none';
+  document.getElementById('auth-type-field').style.display = isReg ? 'block' : 'none';
+  document.getElementById('auth-toggle-btn').textContent = isReg ? 'Already have an account? Sign in →' : 'Don\'t have an account? Register free →';
+}
+
+// ════ FARMS DATA ════
+const farms = [
+  {id:1,name:"Bushveld Legacy Farm",province:"Limpopo",town:"Bela-Bela",rating:4.9,reviews:47,price:"R 4,200",unit:"per animal",desc:"Premier big game hunting on 8,000 hectares of pristine Limpopo bushveld. Specialising in trophy kudu, buffalo and sable. Full luxury accommodation available.",badges:["instant","trophy"],badgeLabels:["⚡ Instant","🏆 Trophy"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"R 8,500"},{n:"Buffalo",p:"R 45,000"},{n:"Sable",p:"R 22,000"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"},{n:"Eland",p:"R 6,500"}],amenities:["🏠 Luxury lodge","🍽️ Full catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility","📡 WiFi"],calDates:{2025:{3:[5,6,7,12,13,14,19,20]}}},
+  {id:2,name:"Kalahari Dunes Reserve",province:"Northern Cape",town:"Upington",rating:4.8,reviews:31,price:"R 2,800",unit:"per animal",desc:"Authentic Kalahari plains game hunting. Gemsbok, springbok and eland in the iconic red sand dunes landscape. Self-catering or catered options.",badges:["plains"],badgeLabels:["🦌 Plains"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"R 4,200"},{n:"Springbok",p:"R 1,200"},{n:"Eland",p:"R 5,800"},{n:"Blesbok",p:"R 1,500"},{n:"Warthog",p:"R 800"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],calDates:{}},
+  {id:3,name:"Groot Karoo Safari",province:"Eastern Cape",town:"Graaff-Reinet",rating:4.7,reviews:28,price:"R 3,100",unit:"per animal",desc:"Dramatic Karoo landscape hunting. Buffalo, plains game and big 5 packages available. Professional hunters on staff. Taxidermy on site.",badges:["big-game","trophy"],badgeLabels:["🦬 Big Game","🏆 Trophy"],img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",imgPos:"center",species:[{n:"Buffalo",p:"R 38,000"},{n:"Kudu",p:"R 7,200"},{n:"Springbok",p:"R 1,100"},{n:"Gemsbok",p:"R 3,800"},{n:"Warthog",p:"R 750"}],amenities:["🏠 Farmhouse","🍽️ Full board","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}},
+  {id:4,name:"Magalies Mountain Lodge",province:"North West",town:"Rustenburg",rating:4.6,reviews:19,price:"R 1,900",unit:"per animal",desc:"Family-friendly hunting farm in the Magaliesberg. Excellent for first-time hunters. Blesbok, impala and warthog. Comfortable lodge accommodation.",badges:["budget","instant"],badgeLabels:["💰 Budget","⚡ Instant"],img:"https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,200"},{n:"Impala",p:"R 1,600"},{n:"Warthog",p:"R 800"},{n:"Kudu",p:"R 7,000"}],amenities:["🏡 Lodge","🍽️ Breakfast","❄️ Cold storage","🔪 Skinning"],calDates:{}},
+  {id:5,name:"Highveld Plains Hunting",province:"Mpumalanga",town:"Middelburg",rating:4.8,reviews:22,price:"R 2,400",unit:"per animal",desc:"Open highveld hunting for plains game species. Excellent blesbok and black wildebeest populations. Close to Johannesburg — ideal weekend hunt.",badges:["plains","instant"],badgeLabels:["🦌 Plains","⚡ Instant"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,000"},{n:"Black Wildebeest",p:"R 3,500"},{n:"Springbok",p:"R 1,200"},{n:"Zebra",p:"R 5,500"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],calDates:{}},
+  {id:6,name:"Drakensberg Outpost",province:"KwaZulu-Natal",town:"Winterton",rating:4.9,reviews:35,price:"R 3,800",unit:"per animal",desc:"Breathtaking Drakensberg foothills hunting. Nyala, bushbuck and mountain reedbuck specialist. 5-star lodge with spa and pool. Perfect hunting safari.",badges:["trophy","premium"],badgeLabels:["🏆 Trophy","⭐ Premium"],img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",imgPos:"center",species:[{n:"Nyala",p:"R 5,500"},{n:"Bushbuck",p:"R 4,200"},{n:"Mountain Reedbuck",p:"R 3,800"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"}],amenities:["🏠 5-Star lodge","🍽️ Fine dining","🏊 Pool & spa","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}}
+];
 
 // ════ RENDER FARMS ════
 function renderFarms(data, containerId) {
@@ -966,10 +1230,10 @@ function renderFarms(data, containerId) {
   c.innerHTML = data.map(f => `
     <div class="farm-card" onclick="openFarm(${f.id})">
       <div class="farm-img">
-        <div class="farm-img-bg" style="background:${f.gradient}">${f.emoji}</div>
+        <div class="farm-img-bg" style="background-image:url('${f.img}');background-size:cover;background-position:${f.imgPos||'center'};width:100%;height:100%;position:absolute;inset:0;transition:transform 0.5s"></div>
         <div class="farm-img-overlay"></div>
         <div class="farm-badges">${f.badges.map((b,i)=>`<div class="fbadge ${b}">${f.badgeLabels[i]}</div>`).join('')}</div>
-        <button class="farm-fav" onclick="event.stopPropagation();toggleFav(this)">♡</button>
+        <button class="farm-fav" onclick="event.stopPropagation();this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button>
         <div class="farm-img-bottom">
           <span class="farm-province-tag">📍 ${f.province}</span>
           <span class="farm-rating-tag">★ ${f.rating} <span style="font-size:11px;color:var(--khaki)">(${f.reviews})</span></span>
@@ -988,6 +1252,7 @@ function renderFarms(data, containerId) {
 }
 
 // ════ FARM DETAIL ════
+let currentFarm = null;
 function openFarm(id) {
   const f = farms.find(x => x.id === id);
   if(!f) return;
@@ -997,12 +1262,7 @@ function openFarm(id) {
   document.getElementById('fd-stars').textContent = '★'.repeat(Math.round(f.rating)) + ' ' + f.rating;
   document.getElementById('fd-reviews').textContent = `${f.reviews} verified reviews`;
   document.getElementById('fd-desc').textContent = f.desc;
-  document.getElementById('fd-gal-main').style.background = f.gradient;
-  document.getElementById('fd-gal-main').style.display = 'flex';
-  document.getElementById('fd-gal-main').style.alignItems = 'center';
-  document.getElementById('fd-gal-main').style.justifyContent = 'center';
-  document.getElementById('fd-gal-main').style.fontSize = '100px';
-  document.getElementById('fd-gal-main').textContent = f.emoji;
+  document.getElementById('fd-gal-main').style.cssText = `background-image:url('${f.img}');background-size:cover;background-position:center;height:280px;border-radius:6px 6px 0 0`;
   document.getElementById('fd-animals').innerHTML = f.species.map(s=>`<div class="animal-price-row"><span class="apn">${s.n}</span><span class="app">${s.p}</span></div>`).join('');
   document.getElementById('fd-amenities').innerHTML = f.amenities.map(a=>`<div class="fd-amenity">${a}</div>`).join('');
   openOverlay('farmModal');
@@ -1014,7 +1274,7 @@ function openBooking(id) {
   currentFarm = id;
   if(f) document.getElementById('bk-title').textContent = f.name;
   const chips = document.getElementById('bk-chips');
-  const species = f ? f.species.slice(0,6) : [{n:'Kudu'},{n:'Impala'},{n:'Warthog'},{n:'Gemsbok'},{n:'Eland'},{n:'Springbok'}];
+  const species = f ? f.species.slice(0,6) : [{n:'Kudu'},{n:'Impala'},{n:'Warthog'}];
   chips.innerHTML = species.map(s=>`<div class="achip" onclick="this.classList.toggle('on')">${s.n.split(' ')[0]}</div>`).join('');
   const today = new Date(); today.setDate(today.getDate()+7);
   document.getElementById('bk-arrive').value = today.toISOString().split('T')[0];
@@ -1023,171 +1283,117 @@ function openBooking(id) {
   openOverlay('bookingModal');
 }
 
+// ════ MARKETPLACE ════
+const products = [
+  {id:1,title:"Swarovski Z6i 2.5-15x56 BT Rifle Scope",cat:"optics",subcat:"rifle-scopes",cond:"Used - Good",price:"R 18,500",seller:"JaagBoer_Limpopo",rating:"4.9",loc:"Limpopo",img:"https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&q=80",desc:"Excellent condition Swarovski Z6i with BT illumination. Includes original box, caps and 30mm rings.",details:{Brand:"Swarovski",Model:"Z6i 2.5-15x56",Tube:"30mm",Condition:"Used - Good"}},
+  {id:2,title:"Deerhunter Approach Jacket - Realtree Camo Size L",cat:"clothing",subcat:"jackets",cond:"New",price:"R 1,890",seller:"BushveldKing",rating:"5.0",loc:"North West",img:"https://images.unsplash.com/photo-1544441893-675973e31985?w=600&q=80",desc:"Brand new Deerhunter Approach jacket in Realtree Edge camo. Waterproof membrane, quiet fabric.",details:{Brand:"Deerhunter",Size:"Large",Waterproof:"Yes",Condition:"New"}},
+  {id:3,title:"Pelican 1750 Long Rifle Case",cat:"gear",subcat:"rifle-cases",cond:"Used - Fair",price:"R 2,200",seller:"HunterSA_Gauteng",rating:"4.7",loc:"Gauteng",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",desc:"Pelican 1750 long case with custom foam. Watertight, crushproof.",details:{Brand:"Pelican",Model:"1750",Length:"137cm",Condition:"Used - Fair"}},
+  {id:4,title:"Garmin inReach Mini 2 Satellite Communicator",cat:"gear",subcat:"gps",cond:"New",price:"R 8,999",seller:"WildernessGear",rating:"5.0",loc:"Western Cape",img:"https://images.unsplash.com/photo-1510759395231-72b17d622279?w=600&q=80",desc:"Brand new Garmin inReach Mini 2. Two-way satellite messaging, SOS, GPS tracking.",details:{Brand:"Garmin",Model:"inReach Mini 2",Condition:"New"}},
+  {id:5,title:"Meindl Bhutan MFS Hunting Boots - Size 44",cat:"clothing",subcat:"boots",cond:"Used - Good",price:"R 3,100",seller:"Rooikat_Hunter",rating:"4.6",loc:"Eastern Cape",img:"https://images.unsplash.com/photo-1520219306100-ec4afba42e4d?w=600&q=80",desc:"Meindl Bhutan MFS Gore-Tex boots, size 44. Used for 2 seasons, still excellent condition.",details:{Brand:"Meindl",Model:"Bhutan MFS",Size:"44 EU",Condition:"Used - Good"}},
+  {id:6,title:"Kestrel 5700 Elite Weather Meter",cat:"accessories",subcat:"shooting-acc",cond:"New",price:"R 7,200",seller:"LongRange_SA",rating:"4.9",loc:"Northern Cape",img:"https://images.unsplash.com/photo-1580894908361-967195033215?w=600&q=80",desc:"New Kestrel 5700 Elite with Applied Ballistics. Full weather station and ballistics solver.",details:{Brand:"Kestrel",Model:"5700 Elite",Bluetooth:"Yes",Condition:"New"}},
+  {id:7,title:"Leatherman Signal Multi-Tool - Coyote Tan",cat:"knives",subcat:"multi-tools",cond:"New",price:"R 1,450",seller:"BushveldKing",rating:"5.0",loc:"Limpopo",img:"https://images.unsplash.com/photo-1564419320461-6870880221ad?w=600&q=80",desc:"Brand new Leatherman Signal, 19 tools including firestarter and serrated blade.",details:{Brand:"Leatherman",Model:"Signal",Tools:"19",Condition:"New"}},
+  {id:8,title:"Mathews Phase4 33 Compound Bow - 70lb",cat:"bows",subcat:"compound",cond:"Used - Good",price:"R 22,000",seller:"BowHunterZA",rating:"4.8",loc:"Mpumalanga",img:"https://images.unsplash.com/photo-1566841498635-f06d4a519e72?w=600&q=80",desc:"Mathews Phase4 33, 70lb draw. Includes Trophy Ridge sight, QAD rest and stabiliser.",details:{Brand:"Mathews",Model:"Phase4 33",Draw:"70lb",Condition:"Used - Good"}},
+  {id:9,title:"Vortex Razor HD 10x42 Binoculars",cat:"optics",subcat:"binoculars",cond:"Used - Good",price:"R 9,800",seller:"JaagBoer_Limpopo",rating:"4.9",loc:"Limpopo",img:"https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=80",desc:"Vortex Razor HD 10x42 in excellent condition. APO HD glass, XR coatings.",details:{Brand:"Vortex",Model:"Razor HD",Magnification:"10x42",Condition:"Used - Good"}},
+  {id:10,title:"Pulsar Thermion 2 XP50 Pro Thermal Scope",cat:"optics",subcat:"thermal",cond:"Used - Good",price:"R 68,000",seller:"NightHunterSA",rating:"4.8",loc:"North West",img:"https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80",desc:"Pulsar Thermion 2 XP50 Pro thermal scope. 1 season use, pristine condition.",details:{Brand:"Pulsar",Model:"Thermion 2 XP50 Pro",Type:"Thermal",Condition:"Used - Good"}},
+  {id:11,title:"Leica Rangemaster CRF 2800 Rangefinder",cat:"optics",subcat:"rangefinders",cond:"New",price:"R 12,500",seller:"LongRange_SA",rating:"5.0",loc:"Gauteng",img:"https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&q=80",desc:"Brand new Leica CRF 2800. Measures to 2800m, Bluetooth to Kestrel.",details:{Brand:"Leica",Model:"CRF 2800",Range:"2800m",Condition:"New"}},
+  {id:12,title:"Sitka Gear Traverse Pant - Subalpine XL",cat:"clothing",subcat:"pants",cond:"Used - Good",price:"R 2,800",seller:"MountainHunterKZN",rating:"4.7",loc:"KwaZulu-Natal",img:"https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80",desc:"Sitka Traverse pants Optifade Subalpine XL. One season use, no damage.",details:{Brand:"Sitka",Model:"Traverse Pant",Size:"XL",Condition:"Used - Good"}},
+  {id:13,title:"Caldwell Lead Sled DFT 2 Shooting Rest",cat:"accessories",subcat:"shooting-acc",cond:"Used - Good",price:"R 3,600",seller:"ShotgunSam_NW",rating:"4.8",loc:"North West",img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"Caldwell Lead Sled DFT 2. Accepts 25kg lead. All parts included.",details:{Brand:"Caldwell",Model:"Lead Sled DFT 2",Condition:"Used - Good"}},
+];
+
+let currentCatFilter = 'all';
+let currentSubFilter = '';
+const catBanners = {
+  optics:{img:"https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Optics.png.png",title:"Optics"},
+  clothing:{img:"https://images.unsplash.com/photo-1544441893-675973e31985?w=1200&q=80",title:"Clothing"},
+  gear:{img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",title:"Gear & Cases"},
+  knives:{img:"https://images.unsplash.com/photo-1564419320461-6870880221ad?w=1200&q=80",title:"Knives"},
+  bows:{img:"https://images.unsplash.com/photo-1566841498635-f06d4a519e72?w=1200&q=80",title:"Bows"},
+  accessories:{img:"https://images.unsplash.com/photo-1580894908361-967195033215?w=1200&q=80",title:"Accessories"},
+};
+function toggleCatDD(cat){const dd=document.getElementById('dd-'+cat);if(!dd)return;const wasOpen=dd.classList.contains('open');closeDDs();if(!wasOpen)dd.classList.add('open');}
+function closeDDs(){document.querySelectorAll('.cat-dd').forEach(d=>d.classList.remove('open'));}
+function setMainCat(btn,cat){document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));btn.classList.add('on');currentCatFilter=cat;currentSubFilter='';document.getElementById('cat-banner').style.display='none';filterMarket();closeDDs();}
+function setCatSub(cat,sub,subLabel){currentCatFilter=cat;currentSubFilter=sub;const banner=catBanners[cat];if(banner){document.getElementById('cat-banner').style.display='block';document.getElementById('cat-banner-img').style.backgroundImage=`url('${banner.img}')`;document.getElementById('cat-banner-title').textContent=banner.title;document.getElementById('cat-banner-sub').textContent=subLabel||'All '+banner.title;}filterMarket();}
+document.addEventListener('click',function(e){if(!e.target.closest('.cat-dd-wrap'))closeDDs();});
+function renderMarket(data){const grid=document.getElementById('mkt-grid');if(!grid)return;if(data.length===0){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--khaki)">No items found.</div>';return;}grid.innerHTML=data.map(p=>`<div class="mkt-card" onclick="openProduct(${p.id})"><div class="mkt-img" style="background-image:url('${p.img}');background-size:cover;background-position:center;position:relative"><div class="mkt-cond ${p.cond.startsWith('New')?'cond-new':'cond-used'}">${p.cond.split('-')[0].trim()}</div></div><div class="mkt-body"><div class="mkt-title">${p.title}</div><div class="mkt-seller">${p.seller} ⭐${p.rating} · 📍 ${p.loc}</div><div class="mkt-row"><span class="mkt-price">${p.price}</span><span class="mkt-msg" onclick="event.stopPropagation();showToast('Message sent! 💬','ok')">💬</span></div></div></div>`).join('');}
+function filterMarket(){const search=document.getElementById('mkt-search')?.value.toLowerCase()||'';let filtered=products;if(currentCatFilter&&currentCatFilter!=='all')filtered=filtered.filter(p=>p.cat===currentCatFilter);if(currentSubFilter)filtered=filtered.filter(p=>p.subcat===currentSubFilter);if(search)filtered=filtered.filter(p=>p.title.toLowerCase().includes(search)||p.desc.toLowerCase().includes(search));renderMarket(filtered);}
+function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById('prod-modal-img').style.backgroundImage=`url('${p.img}')`;document.getElementById('prod-modal-cond').textContent=p.cond;document.getElementById('prod-modal-cond').style.background=p.cond.startsWith('New')?'#2d6a2d':'rgba(30,20,9,0.9)';document.getElementById('prod-modal-title').textContent=p.title;document.getElementById('prod-modal-seller').textContent=`${p.seller} · ⭐${p.rating} · 📍 ${p.loc}`;document.getElementById('prod-modal-price').textContent=p.price;document.getElementById('prod-modal-desc').textContent=p.desc;document.getElementById('prod-modal-details').innerHTML=Object.entries(p.details).map(([k,v])=>`<div style="background:rgba(18,13,6,0.5);padding:10px 14px;border-radius:2px"><div style="font-size:10px;color:var(--khaki);margin-bottom:2px">${k}</div><div style="font-size:14px;font-weight:600;color:var(--bone)">${v}</div></div>`).join('');openOverlay('productModal');}
+function openSellForm(){openOverlay('sellModal');}
+
 // ════ PROVINCE MAP ════
-function showTT(e, name, count) {
-  const tt = document.getElementById('mapTT');
-  document.getElementById('tt-name').textContent = name;
-  document.getElementById('tt-count').textContent = count;
-  tt.style.opacity = '1';
-  tt.style.left = (e.offsetX + 12) + 'px';
-  tt.style.top = (e.offsetY - 20) + 'px';
-}
-function hideTT() { document.getElementById('mapTT').style.opacity = '0'; }
+const provData=[
+  {name:'Limpopo',count:128,species:'Kudu, Impala, Bushbuck'},
+  {name:'North West',count:74,species:'Kudu, Blesbok, Wildebeest'},
+  {name:'Northern Cape',count:58,species:'Gemsbok, Springbok, Eland'},
+  {name:'Mpumalanga',count:41,species:'Impala, Kudu, Nyala'},
+  {name:'Free State',count:22,species:'Blesbok, Springbok, Wildebeest'},
+  {name:'KwaZulu-Natal',count:19,species:'Nyala, Bushbuck, Impala'},
+  {name:'Eastern Cape',count:17,species:'Buffalo, Kudu, Sable'},
+  {name:'Gauteng',count:12,species:'Impala, Blesbok, Steenbok'},
+  {name:'Western Cape',count:8,species:'Springbok, Gemsbok, Eland'},
+];
+function buildProvList(){const list=document.getElementById('prov-right-list');if(!list)return;list.innerHTML=provData.map(p=>`<div class="prov-row" onclick="selectProvince('${p.name}',${p.count},'${p.species}')"><div class="prov-row-left"><div class="prov-row-dot"></div><span class="prov-row-name">${p.name}</span></div><div class="prov-row-right"><span class="prov-row-count">${p.count}</span><span class="prov-row-arr">›</span></div></div>`).join('');}
+document.querySelectorAll('.svgp').forEach(path=>{
+  path.addEventListener('mouseenter',function(e){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));this.classList.add('active');showProvPopup(e,this.dataset.name,this.dataset.count,this.dataset.species);document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===this.dataset.name);});});
+  path.addEventListener('mouseleave',function(){setTimeout(()=>{const popup=document.getElementById('prov-popup');if(popup)popup.style.display='none';this.classList.remove('active');document.querySelectorAll('.prov-row').forEach(r=>r.classList.remove('active'));},300);});
+});
+function showProvPopup(e,name,count,species){const popup=document.getElementById('prov-popup');document.getElementById('pp-name').textContent=name;document.getElementById('pp-count').textContent=count+' Hunting Farms';document.getElementById('pp-species').textContent='Top: '+species;popup.style.display='block';try{const cont=document.getElementById('map-container').getBoundingClientRect();let left=e.clientX-cont.left+10;let top=e.clientY-cont.top-100;if(left+210>cont.width)left=e.clientX-cont.left-220;if(top<5)top=e.clientY-cont.top+20;popup.style.left=left+'px';popup.style.top=top+'px';}catch(err){}}
+function selectProvince(name,count,species){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===name);});const provFarms=farms.filter(f=>f.province===name);const resultsDiv=document.getElementById('prov-results');document.getElementById('prov-result-label').textContent=count+' Farms in '+name;document.getElementById('prov-result-title').textContent='Hunting in '+name;renderFarms(provFarms.length>0?provFarms:farms.slice(0,2),'prov-farms-grid');resultsDiv.style.display='block';showToast('Showing '+count+' farms in '+name+' 📍');resultsDiv.scrollIntoView({behavior:'smooth',block:'start'});}
+function provFilter(btn,filter){document.querySelectorAll('.prov-pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');}
+function hoverProv(){}function unhoverProv(){}function showTT(){}function hideTT(){}
 
-function selectProvince(name, count) {
-  document.querySelectorAll('.province-path').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.prov-item').forEach(p => p.classList.remove('active'));
-  const provFarms = farms.filter(f => f.province === name);
-  const resultsDiv = document.getElementById('prov-results');
-  document.getElementById('prov-result-label').textContent = `${count} Farms in ${name}`;
-  document.getElementById('prov-result-title').textContent = `Hunting in ${name}`;
-  renderFarms(provFarms.length > 0 ? provFarms : farms.slice(0,2), 'prov-farms-grid');
-  resultsDiv.style.display = 'block';
-  document.getElementById('provBar').style.width = Math.round((count/128)*100) + '%';
-  showToast(`Showing ${count} farms in ${name} 📍`);
-  document.querySelectorAll('.prov-item').forEach(p => { if(p.querySelector('.prov-name').textContent === name) p.classList.add('active'); });
-  resultsDiv.scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-// ════ CALENDAR ════
-function renderCal() {
-  const now = new Date();
-  now.setMonth(now.getMonth() + calOffset);
-  const y = now.getFullYear(), m = now.getMonth();
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('cal-month-label').textContent = months[m] + ' ' + y;
-  const firstDay = new Date(y, m, 1).getDay();
-  const daysInMonth = new Date(y, m+1, 0).getDate();
-  const today = new Date();
-  const days = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-  let html = days.map(d => `<div class="cal-head">${d}</div>`).join('');
-  for(let i=0;i<firstDay;i++) html += '<div></div>';
-  for(let d=1;d<=daysInMonth;d++) {
-    const dateKey = y+'-'+m+'-'+d;
-    const isToday = (today.getDate()===d && today.getMonth()===m && today.getFullYear()===y);
-    const isAvail = calSelected.has(dateKey);
-    const isPast = new Date(y,m,d) < today;
-    let cls = 'cal-day';
-    if(isPast) cls += ' block';
-    else if(isAvail) cls += ' avail';
-    if(isToday) cls += ' today';
-    html += `<div class="${cls}" onclick="toggleCalDay('${dateKey}',this)">${d}</div>`;
-  }
-  document.getElementById('cal-grid').innerHTML = html;
-}
-function toggleCalDay(key, el) {
-  if(el.classList.contains('block')) return;
-  if(calSelected.has(key)) { calSelected.delete(key); el.classList.remove('avail'); }
-  else { calSelected.add(key); el.classList.add('avail'); }
-}
-function calNav(dir) { calOffset += dir; renderCal(); }
+// ════ SLIDESHOW ════
+const fsSlides=document.querySelectorAll('.fs-slide');
+const fsDots=document.getElementById('fs-dots');
+const fsName=document.getElementById('fs-animal-name');
+const animalNames=['Impala','Greater Kudu','Blesbuck','Blue Wildebeest','Eland','Golden Wildebeest','Nyala','Oryx','Springbuck','Warthog','Zebra'];
+let fsIdx=0;
+fsSlides.forEach((_,i)=>{const d=document.createElement('button');d.className='fs-dot'+(i===0?' on':'');d.onclick=()=>goFsSlide(i);if(fsDots)fsDots.appendChild(d);});
+function goFsSlide(n){fsSlides[fsIdx].classList.remove('active');if(fsDots&&fsDots.children[fsIdx])fsDots.children[fsIdx].classList.remove('on');fsIdx=(n+fsSlides.length)%fsSlides.length;fsSlides[fsIdx].classList.add('active');if(fsDots&&fsDots.children[fsIdx])fsDots.children[fsIdx].classList.add('on');if(fsName){fsName.style.opacity='0';setTimeout(()=>{fsName.textContent=animalNames[fsIdx];fsName.style.opacity='1';},400);}}
+setInterval(()=>goFsSlide(fsIdx+1),4500);
 
 // ════ ONBOARDING ════
-function openOnboard() {
-  obStep = 1; updateObStep();
-  openOverlay('onboardModal');
-  renderCal();
-}
-function obNav(dir) {
-  if(dir === 1 && obStep === 5) { submitFarm(); return; }
-  obStep = Math.max(1, Math.min(5, obStep + dir));
-  updateObStep();
-  if(obStep === 5) updatePreview();
-}
-function updateObStep() {
-  for(let i=1;i<=5;i++) {
-    const step = document.getElementById('ob-s'+i);
-    const pane = document.getElementById('ob-p'+i);
-    step.classList.toggle('active', i === obStep);
-    step.classList.toggle('done', i < obStep);
-    pane.classList.toggle('active', i === obStep);
-  }
-  document.getElementById('ob-back').style.display = obStep > 1 ? 'block' : 'none';
-  document.getElementById('ob-next').textContent = obStep === 5 ? '🚀 Submit Listing' : 'Next Step →';
-  document.getElementById('ob-step-indicator').textContent = `Step ${obStep} of 5`;
-}
-function updatePreview() {
-  const name = document.getElementById('ob-farmname')?.value || 'Your Farm Name';
-  const province = document.getElementById('ob-province')?.value || 'Province';
-  const town = document.getElementById('ob-town')?.value || '';
-  const desc = document.getElementById('ob-desc')?.value || 'Your description will appear here...';
-  document.getElementById('prev-name').textContent = name;
-  document.getElementById('prev-loc').textContent = '📍 ' + (town ? town + ', ' : '') + province;
-  document.getElementById('prev-desc').textContent = desc.substring(0,120) + (desc.length > 120 ? '...' : '');
-  const rows = document.querySelectorAll('.species-row');
-  const species = Array.from(rows).map(r => r.querySelector('input').value).filter(v => v.trim());
-  document.getElementById('prev-species').innerHTML = species.slice(0,5).map(s=>`<span class="sp-tag">${s}</span>`).join('');
-}
-function submitFarm() {
-  closeOverlay('onboardModal');
-  showToast('🎉 Your farm has been submitted! We\'ll WhatsApp you within 24hrs to go live.','ok');
-}
-function addSpeciesRow() {
-  const b = document.getElementById('species-builder');
-  const row = document.createElement('div');
-  row.className = 'species-row';
-  row.innerHTML = `<input type="text" class="finput" placeholder="Animal name"><input type="text" class="finput price" placeholder="Price (e.g. R3500)"><button class="remove-btn" onclick="removeSpeciesRow(this)">✕</button>`;
-  b.appendChild(row);
-}
-function removeSpeciesRow(btn) {
-  const rows = document.querySelectorAll('.species-row');
-  if(rows.length > 1) btn.parentElement.remove();
-}
+let obStep=1;
+const obStepData=[
+  {title:'Farm Details',desc:'Tell us about your farm'},
+  {title:'Species & Pricing',desc:'What can hunters hunt?'},
+  {title:'Photos',desc:'Show your farm'},
+  {title:'Availability',desc:'Set your calendar'},
+  {title:'Preview',desc:'Review & submit'},
+];
+function updateObStep(){
+  const steps=document.getElementById('ob-steps');
+  if(steps)steps.innerHTML=obStepData.map((s,i)=>`<div class="ob-step ${i+1===obStep?'active':i+1<obStep?'done':''}"><div class="ob-step-n">${i+1<obStep?'✓':i+1}</div><div class="ob-step-label">${s.title}</div></div>`).join('');
+  const body=document.getElementById('ob-body');
+  const back=document.getElementById('ob-back');
+  const next=document.getElementById('ob-next');
+  if(back)back.style.display=obStep===1?'none':'block';
+  if(next)next.textContent=obStep===5?'Submit Listing →':'Next →';
+  const steps2=[
+    `<div class="fg"><div class="fi full"><label class="fl">Farm Name</label><input type="text" class="finput" placeholder="e.g. Bushveld Legacy Farm"></div><div class="fi"><label class="fl">Province</label><select class="fselect"><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select></div><div class="fi"><label class="fl">Nearest Town</label><input type="text" class="finput" placeholder="e.g. Bela-Bela"></div><div class="fi full"><label class="fl">Farm Description</label><textarea class="ftextarea" placeholder="Describe your farm, landscape, hunting experience..."></textarea></div><div class="fi"><label class="fl">Farm Size (hectares)</label><input type="number" class="finput" placeholder="e.g. 5000"></div><div class="fi"><label class="fl">Years in Operation</label><input type="number" class="finput" placeholder="e.g. 15"></div><div class="fi full"><label class="fl">WhatsApp Contact</label><input type="tel" class="finput" placeholder="+27 71 123 4567"></div><div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" placeholder="owner@farm.co.za"></div></div>`,
+    `<div class="fg" id="species-rows"><div class="species-row fi full"><label class="fl">Species & Trophy Fees</label><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input type="text" class="finput" placeholder="Species (e.g. Kudu)"><input type="text" class="finput" placeholder="Trophy fee (e.g. R 8,500)"></div></div></div><button class="add-species-btn" onclick="addSpeciesRow()">+ Add Another Animal</button><div style="margin-top:20px;padding:16px;background:rgba(18,13,6,0.4);border:1px solid rgba(176,152,112,0.1);border-radius:3px"><div class="fl" style="margin-bottom:12px">🏕️ Accommodation & Additional Fees</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div class="fi"><label class="fl">Accommodation (per person/night)</label><input type="text" class="finput" placeholder="e.g. R650"></div><div class="fi"><label class="fl">Skinning & Caping Fee</label><input type="text" class="finput" placeholder="e.g. R350 per animal"></div><div class="fi"><label class="fl">Cold Storage (per day)</label><input type="text" class="finput" placeholder="e.g. R50 per day"></div><div class="fi"><label class="fl">Game Vehicle (per day)</label><input type="text" class="finput" placeholder="e.g. R800 per day"></div><div class="fi"><label class="fl">Trophy Packing & Dipping</label><input type="text" class="finput" placeholder="e.g. R500 per trophy"></div><div class="fi"><label class="fl">Taxidermy (if offered)</label><input type="text" class="finput" placeholder="e.g. On request"></div><div class="fi"><label class="fl">Meals (if not included)</label><input type="text" class="finput" placeholder="e.g. R250 per day full board"></div><div class="fi"><label class="fl">Observer / Non-Hunter Fee</label><input type="text" class="finput" placeholder="e.g. R400 per day"></div></div><div class="fi" style="margin-top:10px"><label class="fl">Other Fees</label><textarea class="ftextarea" placeholder="Any other fees hunters should know about..." style="min-height:60px"></textarea></div></div>`,
+    `<div style="text-align:center;padding:40px 20px"><div style="font-size:48px;margin-bottom:16px">📸</div><p style="color:var(--sand);margin-bottom:20px">Upload up to 10 photos of your farm, lodge, hunting areas and wildlife.</p><div class="photo-drop" onclick="document.getElementById('ob-photos').click()" style="padding:40px;border:2px dashed rgba(176,152,112,0.2);border-radius:4px;cursor:pointer"><p style="color:var(--khaki)">Click to upload photos</p><input type="file" id="ob-photos" multiple accept="image/*" style="display:none"></div></div>`,
+    `<div style="text-align:center;padding:20px"><div style="font-size:48px;margin-bottom:16px">📅</div><p style="color:var(--sand);margin-bottom:20px">Set your available hunting dates. Hunters will only see available slots.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px"><div class="fi"><label class="fl">Season Open</label><input type="date" class="finput"></div><div class="fi"><label class="fl">Season Close</label><input type="date" class="finput"></div></div></div>`,
+    `<div style="text-align:center;padding:40px 20px"><div style="font-size:64px;margin-bottom:16px">🦌</div><h3 style="color:var(--ivory);margin-bottom:12px">Ready to go live!</h3><p style="color:var(--sand);margin-bottom:8px">Your listing will be reviewed within 24 hours.</p><p style="color:var(--khaki);font-size:13px">Once approved, hunters across SA can find and book your farm.</p></div>`
+  ];
+  if(body)body.innerHTML=steps2[obStep-1]||'';}
+function obNav(dir){if(dir===1&&obStep===5){submitFarm();return;}obStep=Math.max(1,Math.min(5,obStep+dir));updateObStep();}
+function addSpeciesRow(){const rows=document.getElementById('species-rows');if(!rows)return;const div=document.createElement('div');div.className='species-row fi full';div.style.marginTop='10px';div.innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input type="text" class="finput" placeholder="Species"><input type="text" class="finput" placeholder="Trophy fee"></div>';rows.appendChild(div);}
+function submitFarm(){showToast('Farm submitted! We\'ll review and go live within 24hrs. 🎉','ok');closeOverlay('onboardModal');}
+function openOnboard(){obStep=1;updateObStep();openOverlay('onboardModal');}
 
-// ════ PHOTOS ════
-function handlePhotos(files) {
-  const prev = document.getElementById('photoPreviews');
-  const emojis = ['🌅','🦌','🏕️','🌿','🏜️','⛰️','🌾','🐗','🦬','🎯'];
-  Array.from(files).slice(0, 15 - photoCount).forEach((file, i) => {
-    photoCount++;
-    const div = document.createElement('div');
-    div.className = 'photo-prev';
-    div.innerHTML = `${emojis[i % emojis.length]}<button class="rm-photo" onclick="this.parentElement.remove();photoCount--">✕</button>`;
-    prev.appendChild(div);
-  });
-  showToast(`${Math.min(files.length, 15)} photos added 📸`, 'ok');
-}
-function photoDragOver(e) { e.preventDefault(); document.getElementById('photoDrop').classList.add('over'); }
-function photoDrop(e) { e.preventDefault(); document.getElementById('photoDrop').classList.remove('over'); handlePhotos(e.dataTransfer.files); }
-
-// ════ AUTH ════
-function openAuth(tab) {
-  switchAuth(tab === 'login' ? document.getElementById('at-login') : document.getElementById('at-reg'), tab);
-  openOverlay('authModal');
-}
-function switchAuth(btn, tab) {
-  document.querySelectorAll('.atab').forEach(t => t.classList.remove('on'));
-  btn.classList.add('on');
-  document.getElementById('auth-login-form').style.display = tab === 'login' ? 'block' : 'none';
-  document.getElementById('auth-reg-form').style.display = tab === 'register' ? 'block' : 'none';
-}
-function selUtype(el) { document.querySelectorAll('.utype').forEach(u => u.classList.remove('on')); el.classList.add('on'); }
-
-// ════ OVERLAYS ════
-function openOverlay(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
-function closeOverlay(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
-document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if(e.target === o) closeOverlay(o.id); }));
-document.addEventListener('keydown', e => { if(e.key === 'Escape') document.querySelectorAll('.overlay.open').forEach(o => closeOverlay(o.id)); });
-
-// ════ MISC ════
-function ftab(btn) { btn.closest('.ftabs').querySelectorAll('.ftab').forEach(t => t.classList.remove('on')); btn.classList.add('on'); }
-function toggleFav(btn) { btn.classList.toggle('on'); btn.textContent = btn.classList.contains('on') ? '♥' : '♡'; if(btn.classList.contains('on')) showToast('Added to favourites ♥'); }
-
-function showToast(msg, type='') {
-  const w = document.getElementById('toastWrap');
-  const t = document.createElement('div');
-  t.className = 'toast ' + type;
-  t.innerHTML = (type==='ok' ? '✅' : 'ℹ️') + ' ' + msg;
-  w.appendChild(t);
-  setTimeout(() => { t.style.opacity='0'; t.style.transform='translateX(16px)'; t.style.transition='all 0.3s'; setTimeout(()=>t.remove(),300); }, 3500);
-}
+// ════ CALENDAR (used in onboarding) ════
+let calOffset=0;
+function renderCal(){}
 
 // ════ INIT ════
-const today = new Date(); today.setDate(today.getDate()+7);
-const sa = document.getElementById('s-arrive');
-if(sa) sa.value = today.toISOString().split('T')[0];
-
-renderFarms(farms.slice(0,3), 'home-farms');
+window.addEventListener('DOMContentLoaded', function() {
+  renderFarms(farms.slice(0,3),'home-farms');
+  renderFarms(farms,'listings-farms');
+  // Render marketplace even though page is hidden - grid exists in DOM
+  filterMarket();
+  buildProvList();
+});
 </script>
 </body>
 </html>
