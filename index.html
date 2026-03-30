@@ -377,6 +377,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   .mkt-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr 1fr}
   .sec{padding:52px 32px}
+  .hiw-grid{grid-template-columns:1fr 1fr}
 }
 
 /* Mobile (768px and below) */
@@ -389,22 +390,23 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   #mob-btn{display:flex!important}
 
   /* HERO */
-  .fs-hero{min-height:100svh}
-  .hero-content{padding:80px 20px 120px;max-width:100%}
+  .hero{min-height:100svh}
+  .hero-content{padding:80px 20px 100px;max-width:100%}
   .hero-eyebrow{font-size:9px;letter-spacing:2px;padding:5px 12px}
   .hero-h1{font-size:36px;line-height:0.92}
   .hero-p{font-size:14px;line-height:1.6;max-width:100%}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-  .hstat-n{font-size:28px}
+  .hstat-n{font-size:26px}
   .hstat-l{font-size:10px}
-  .fs-animal-name{font-size:14px;right:16px;bottom:100px}
-  .fs-dots{bottom:80px}
+  .fs-animal-name{font-size:14px;right:16px;bottom:80px}
+  .fs-dots{bottom:60px}
 
   /* SECTIONS */
-  .sec{padding:40px 16px}
-  .sec-sm{padding:28px 16px}
+  .sec{padding:36px 16px}
+  .sec-sm{padding:24px 16px}
   .sec-title{font-size:26px}
   .sec-sub{font-size:14px}
+  .sec-head{flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:28px}
   hr.div{margin:0 16px}
 
   /* GRIDS */
@@ -416,33 +418,51 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   .fd-grid{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr!important}
 
-  /* BOOK CTA */
-  [style*="display:flex;align-items:center;justify-content:space-between;gap:32px"]{flex-direction:column!important;gap:16px!important;padding:24px 20px!important;text-align:center}
+  /* BOOK YOUR HUNT CTA block */
+  [style*="padding:0 80px;margin-top:-20px"]{padding:0 16px!important;margin-top:-10px!important}
+  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"]{flex-direction:column!important;padding:22px 18px!important;gap:16px!important;text-align:center!important}
+  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"] button{width:100%!important}
+
+  /* CTA BANNER */
+  .cta-box{flex-direction:column!important;padding:28px 20px!important;text-align:center!important;gap:20px!important}
+  .cta-btns{width:100%}
+  .cta-btns button{width:100%!important}
+  .cta-title{font-size:24px}
 
   /* PROVINCE MAP */
   [style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 280px"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 300px"]{grid-template-columns:1fr!important}
   #prov-right-list{display:none}
-
-  /* CTA BANNER */
-  .cta-box{flex-direction:column!important;padding:28px 20px!important;text-align:center!important;gap:20px!important}
-  .cta-btns{width:100%}
-  .cta-btns button{width:100%}
-  .cta-title{font-size:24px}
+  #map-container{min-height:360px!important}
 
   /* MODALS */
-  .modal-box{max-width:100%!important;margin:8px!important;border-radius:4px}
+  .modal-box{max-width:100%!important;margin:0!important;border-radius:8px 8px 0 0}
   .overlay{padding:0!important;align-items:flex-end!important}
+  .fd-gallery{height:220px!important}
+  .bk-body{padding:18px!important}
+  .bk-header{padding:18px!important}
 
   /* TABS */
   .ftabs{gap:4px;flex-wrap:wrap}
   .ftab{font-size:11px;padding:6px 10px;letter-spacing:0.5px}
   .prov-pill{font-size:11px;padding:6px 12px}
+  .cat-dd-wrap .ftab{font-size:11px;padding:6px 8px}
+
+  /* FARM CARDS */
+  .farm-img{height:180px}
+  .farm-body{padding:14px}
+  .farm-name{font-size:17px}
+  .fp-price{font-size:20px}
+
+  /* FOOTER */
+  footer{padding:36px 16px 20px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
 
   /* MISC */
-  .hiw-item{padding:24px 20px}
-  .farm-card{border-radius:4px}
+  .hiw-item{padding:24px 18px}
+  .hiw-grid{gap:1px}
+  .mkt-card .mkt-img{height:130px}
 }
 
 /* Small mobile (480px and below) */
@@ -450,12 +470,232 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   .hero-h1{font-size:30px}
   .mkt-grid{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr 1fr}
-  .hstat-n{font-size:24px}
+  .hstat-n{font-size:22px}
   .footer-grid{grid-template-columns:1fr}
-  .sec-title{font-size:24px}
+  .sec-title{font-size:22px}
   .farms-grid{grid-template-columns:1fr}
+  .posts-grid{grid-template-columns:1fr}
+  .nav-right .btn-amber-sm{font-size:11px;padding:6px 12px}
 }
-/* ── FULLSCREEN SLIDESHOW ── */
+/* ══════════ COMMUNITY v3 ══════════ */
+.comm-hero{position:relative;background:linear-gradient(170deg,rgba(12,8,3,0.08) 0%,rgba(12,8,3,0.94) 100%),url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=80') center/cover no-repeat;padding:160px 80px 56px}
+.comm-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(61,82,32,0.18) 0%,transparent 60%);pointer-events:none}
+.comm-hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1200px;margin:0 auto}
+.comm-hero-h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,58px);font-weight:900;color:var(--ivory);line-height:1.05;margin-bottom:14px}
+.comm-hero-h1 em{color:var(--gold);font-style:italic;display:block}
+.comm-hero-sub{font-size:15px;font-weight:300;color:rgba(237,224,204,0.6);max-width:500px;line-height:1.7;margin-bottom:18px}
+.comm-hero-live{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#ff5533;box-shadow:0 0 8px #ff5533;animation:pinPulse 1.5s ease-in-out infinite;flex-shrink:0}
+/* CTAs */
+.comm-hero-ctas{display:flex;flex-direction:column;gap:10px;min-width:240px}
+.comm-cta-primary{background:var(--amber);border:none;color:var(--earth);padding:16px 22px;border-radius:3px;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:14px;text-align:left;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;box-shadow:0 6px 24px rgba(201,125,26,0.35)}
+.comm-cta-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,125,26,0.5)}
+.comm-cta-secondary{background:rgba(30,20,9,0.85);border:1px solid rgba(201,125,26,0.4);color:var(--bone);padding:14px 22px;border-radius:3px;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:14px;text-align:left;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase}
+.comm-cta-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+.comm-cta-ghost{background:transparent;border:1px solid rgba(176,152,112,0.2);color:var(--sand);padding:12px 22px;border-radius:3px;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:14px;text-align:left;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase}
+.comm-cta-ghost:hover{border-color:rgba(201,125,26,0.35);color:var(--bone)}
+/* FILTER BAR */
+.comm-filter-bar{background:rgba(14,10,4,0.98);border-top:1px solid rgba(176,152,112,0.08);border-bottom:1px solid rgba(176,152,112,0.08);padding:0 80px;position:sticky;top:140px;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.comm-tabs-wrap{display:flex;overflow-x:auto}
+.comm-tab{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:15px 18px;background:none;border:none;border-bottom:2px solid transparent;color:var(--sand);cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.comm-tab:hover{color:var(--gold)}
+.comm-tab.on{color:var(--gold);border-bottom-color:var(--amber)}
+.comm-sort-select{background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.18);border-radius:2px;padding:7px 12px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);outline:none;cursor:pointer;flex-shrink:0}
+/* BODY LAYOUT */
+.comm-body{display:grid;grid-template-columns:1fr 300px;gap:28px;padding:32px 80px 60px;max-width:1400px}
+/* FEATURED */
+.comm-featured-wrap{margin-bottom:24px}
+.comm-featured-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.comm-featured{border-radius:5px;overflow:hidden;border:1px solid rgba(176,152,112,0.1);cursor:pointer;transition:all 0.3s}
+.comm-featured:hover{border-color:rgba(201,125,26,0.3);box-shadow:0 12px 48px rgba(0,0,0,0.5)}
+.comm-featured-img{min-height:300px;display:flex;align-items:flex-end}
+.comm-featured-body{padding:32px 36px}
+.comm-featured-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--ivory);line-height:1.25;margin-bottom:0}
+/* TRENDING */
+.comm-trending-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:24px}
+.comm-trend-chip{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:7px 14px;border-radius:20px;border:1px solid rgba(176,152,112,0.16);background:rgba(22,14,5,0.8);color:var(--sand);cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0}
+.comm-trend-chip:hover{border-color:var(--amber);color:var(--gold);background:rgba(201,125,26,0.08)}
+/* POST CARDS */
+.cpost{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.22s;display:grid;grid-template-columns:108px 1fr}
+.cpost:hover{border-color:rgba(201,125,26,0.3);box-shadow:0 5px 20px rgba(0,0,0,0.35);transform:translateX(4px)}
+.cpost-img{display:flex;align-items:center;justify-content:center;font-size:34px;position:relative;min-height:125px}
+.cbadge{position:absolute;bottom:7px;left:7px;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:2px}
+.cbadge-sight{background:rgba(50,80,20,0.9);color:#b8e060}
+.cbadge-tip{background:rgba(100,80,15,0.9);color:#f0d058}
+.cbadge-review{background:rgba(110,25,25,0.9);color:#ffaaaa}
+.cbadge-trophy{background:rgba(140,105,10,0.9);color:#f8e050}
+.cbadge-gear{background:rgba(20,40,80,0.9);color:#88bbff}
+.cpost-body{padding:13px 16px;display:flex;flex-direction:column;gap:7px}
+.cpost-meta-row{display:flex;align-items:center;gap:9px}
+.comm-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--khaki),var(--grass));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--ivory);flex-shrink:0}
+.cpost-author{font-size:12px;font-weight:600;color:var(--bone)}
+.cpost-location{font-weight:400;color:var(--khaki)}
+.cpost-time{font-size:10px;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.3px}
+.cpost-hot{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;color:#ff7744;background:rgba(160,50,10,0.18);border:1px solid rgba(200,70,20,0.3);padding:2px 7px;border-radius:2px;flex-shrink:0}
+.cpost-title{font-size:13px;font-weight:500;color:var(--bone);line-height:1.45;margin:0}
+.cpost-snippet{font-size:12px;font-weight:300;color:rgba(237,224,204,0.42);line-height:1.5;margin:0}
+.cpost-tags{display:flex;gap:5px;flex-wrap:wrap}
+.ctag{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:2px 8px;border-radius:10px;background:rgba(50,72,20,0.35);border:1px solid rgba(80,110,30,0.3);color:#88b040}
+.cpost-actions{display:flex;align-items:center;gap:5px;margin-top:auto;flex-wrap:wrap}
+.cpost-actions button{background:none;border:1px solid rgba(176,152,112,0.1);border-radius:2px;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;padding:4px 9px;cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.cpost-actions button:hover,.cpost-actions button.active{border-color:rgba(201,125,26,0.4);color:var(--amber);background:rgba(201,125,26,0.07)}
+.cpost-actions button span{opacity:0.6;margin-left:3px}
+.cpost-views{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--khaki);white-space:nowrap}
+/* PILLS */
+.cpill{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;display:inline-block}
+.cpill-review{background:rgba(180,140,10,0.2);border:1px solid rgba(200,160,20,0.4);color:var(--gold)}
+.cpill-hot{background:rgba(180,60,20,0.2);border:1px solid rgba(220,80,20,0.4);color:#ff8855}
+.comm-ts{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:rgba(237,224,204,0.4)}
+.comm-author-block{display:flex;align-items:center;gap:10px}
+.comm-av-name{font-size:13px;font-weight:600;color:var(--bone)}
+.comm-av-meta{font-size:11px;color:var(--khaki)}
+.comm-action-btn{background:rgba(20,12,4,0.7);border:1px solid rgba(176,152,112,0.15);border-radius:2px;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;transition:all 0.2s}
+.comm-action-btn:hover,.comm-action-btn.liked{border-color:var(--amber);color:var(--gold)}
+/* SIDEBAR */
+.comm-sidebar{display:flex;flex-direction:column;gap:16px}
+.comm-sb-card{background:rgba(26,17,7,0.8);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:18px}
+.comm-sb-cta{background:linear-gradient(135deg,rgba(55,75,22,0.45),rgba(38,24,8,0.96));border-color:rgba(201,125,26,0.22);text-align:center}
+.comm-sb-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.comm-contrib{display:flex;align-items:center;gap:8px}
+.contrib-rank{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--gold);width:20px;flex-shrink:0}
+.comm-species-row{display:flex;align-items:center;gap:8px;font-size:13px}
+.comm-sp-name{color:var(--sand);width:58px;font-size:12px;flex-shrink:0}
+.comm-sp-bar{flex:1;background:rgba(176,152,112,0.08);border-radius:2px;height:5px;overflow:hidden}
+.comm-sp-bar div{height:100%;background:linear-gradient(90deg,var(--grass),var(--amber));border-radius:2px}
+.comm-sp-pct{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gold);width:30px;text-align:right}
+.comm-prov-row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:2px;cursor:pointer;transition:background 0.18s;font-size:13px;color:var(--sand)}
+.comm-prov-row:hover{background:rgba(201,125,26,0.08);color:var(--gold)}
+.comm-prov-row span:last-child{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--amber)}
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .comm-hero{padding:140px 32px 48px}
+  .comm-filter-bar{padding:0 32px}
+  .comm-body{padding:28px 32px 48px;grid-template-columns:1fr 260px}
+}
+@media(max-width:768px){
+  .comm-hero{padding:100px 16px 36px}
+  .comm-hero-content{grid-template-columns:1fr;gap:24px}
+  .comm-hero-ctas{flex-direction:row;flex-wrap:wrap}
+  .comm-cta-primary,.comm-cta-secondary,.comm-cta-ghost{flex:1;min-width:140px}
+  .comm-filter-bar{padding:0 12px;top:64px}
+  .comm-body{padding:20px 16px 40px;grid-template-columns:1fr}
+  .comm-sidebar{display:none}
+  .cpost{grid-template-columns:80px 1fr}
+  .cpost-img{min-height:100px;font-size:26px}
+  .comm-featured-img{min-height:260px}
+  .comm-featured-body{padding:20px}
+}
+.community-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.community-kicker{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.community-title{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,62px);font-weight:900;color:var(--ivory);line-height:1.05;margin-bottom:14px}
+.community-title em{color:var(--gold);font-style:italic}
+.community-sub{font-size:15px;font-weight:300;color:rgba(237,224,204,0.6);max-width:500px;line-height:1.65;margin-bottom:24px}
+.community-hero-stats{display:flex;gap:28px;margin-bottom:20px}
+.community-stat-n{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1}
+.community-stat-l{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--khaki);margin-top:2px}
+.community-hero-actions{display:flex;flex-direction:column;gap:10px;flex-shrink:0;min-width:200px}
+.community-hero-actions .btn-hero-main,.community-hero-actions .btn-hero-sec{width:100%;text-align:center}
+
+/* FEATURED CARD */
+.community-featured-card{border-radius:6px;overflow:hidden;border:1px solid rgba(176,152,112,0.12)}
+.community-featured-image{min-height:360px;display:flex;align-items:flex-end;transition:transform 0.4s}
+.community-featured-card:hover .community-featured-image{transform:scale(1.01)}
+.community-featured-content{padding:40px 44px;max-width:680px}
+.community-featured-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.community-featured-title{font-family:'Playfair Display',serif;font-size:clamp(20px,2.8vw,32px);font-weight:700;color:var(--ivory);line-height:1.2;margin-bottom:12px}
+.community-featured-desc{font-size:14px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:22px;max-width:520px}
+.community-featured-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.featured-author{display:flex;align-items:center;gap:10px}
+.featured-stats{display:flex;gap:8px}
+.post-pill{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;display:inline-block}
+.pill-trophy{background:rgba(180,140,10,0.2);border:1px solid rgba(200,160,20,0.4);color:var(--gold)}
+.pill-hot{background:rgba(180,60,20,0.2);border:1px solid rgba(220,80,20,0.4);color:#ff8855}
+.comm-action-btn{background:rgba(30,20,9,0.6);border:1px solid rgba(176,152,112,0.15);border-radius:2px;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;transition:all 0.2s}
+.comm-action-btn:hover,.comm-action-btn.liked{border-color:var(--amber);color:var(--gold)}
+
+/* FILTER BAR */
+.community-filter-wrap{background:rgba(18,13,6,0.98);border-top:1px solid rgba(176,152,112,0.08);border-bottom:1px solid rgba(176,152,112,0.08);padding:0 80px;position:sticky;top:140px;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.community-filters{display:flex;align-items:stretch;gap:0;overflow-x:auto}
+.comm-tab{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:15px 20px;background:none;border:none;border-bottom:2px solid transparent;color:var(--sand);cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.comm-tab:hover{color:var(--gold)}
+.comm-tab.on{color:var(--gold);border-bottom-color:var(--amber)}
+
+/* TRENDING STRIP */
+.trending-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
+.trend-card{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.5px;padding:9px 16px;border-radius:20px;border:1px solid rgba(176,152,112,0.16);background:rgba(30,20,9,0.6);color:var(--sand);cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0}
+.trend-card:hover{border-color:var(--amber);color:var(--gold);background:rgba(201,125,26,0.1)}
+
+/* MAIN LAYOUT */
+.community-layout{display:grid;grid-template-columns:1fr 300px;gap:28px}
+.community-feed-col{}
+
+/* POST CARDS */
+.community-grid{display:flex;flex-direction:column;gap:12px}
+.community-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.25s;display:grid;grid-template-columns:110px 1fr}
+.community-card:hover{border-color:rgba(201,125,26,0.3);box-shadow:0 6px 24px rgba(0,0,0,0.4);transform:translateX(4px)}
+.community-card-img{display:flex;align-items:center;justify-content:center;font-size:36px;position:relative;min-height:130px}
+.community-card-badge{position:absolute;bottom:6px;left:6px;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:2px}
+.badge-sight{background:rgba(61,82,32,0.9);color:#b0d870}
+.badge-tip{background:rgba(110,85,15,0.9);color:#f0d060}
+.badge-review{background:rgba(120,24,24,0.9);color:#ffaaaa}
+.badge-trophy{background:rgba(150,110,10,0.9);color:#f8e060}
+.community-card-time{position:absolute;top:6px;right:6px;font-family:'Barlow Condensed',sans-serif;font-size:8px;color:rgba(237,224,204,0.38);letter-spacing:0.3px}
+.community-card-trending{position:absolute;top:6px;left:6px;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;color:#ff8855;background:rgba(160,50,10,0.2);border:1px solid rgba(200,70,20,0.35);padding:2px 6px;border-radius:2px}
+.community-card-body{padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+.community-card-body h3{font-size:13px;font-weight:500;color:var(--bone);line-height:1.45;margin:0}
+.community-card-snippet{font-size:12px;font-weight:300;color:rgba(237,224,204,0.45);line-height:1.5;margin:0}
+.community-card-meta{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:0.5px;color:var(--khaki)}
+.community-card-tags{display:flex;gap:5px;flex-wrap:wrap}
+.community-tag{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:2px 8px;border-radius:10px;background:rgba(61,82,32,0.3);border:1px solid rgba(90,112,48,0.3);color:#88b040}
+.community-card-actions{display:flex;align-items:center;gap:6px;margin-top:auto}
+.community-card-actions button{background:none;border:1px solid rgba(176,152,112,0.1);border-radius:2px;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;padding:4px 9px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.community-card-actions button:hover,.community-card-actions button.active{border-color:rgba(201,125,26,0.4);color:var(--amber);background:rgba(201,125,26,0.08)}
+
+/* SIDEBAR */
+.community-sidebar{display:flex;flex-direction:column;gap:16px}
+.community-sidebar-card{background:rgba(30,20,9,0.7);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:18px}
+.community-sidebar-card.cta-card{background:linear-gradient(135deg,rgba(61,82,32,0.4),rgba(42,28,13,0.95));border-color:rgba(201,125,26,0.2);text-align:center}
+.sidebar-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.contributor-row{display:flex;align-items:center;gap:8px}
+.contrib-rank{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--gold);width:20px;flex-shrink:0}
+.species-bar-row{display:flex;align-items:center;gap:8px}
+.species-name{font-size:12px;color:var(--sand);width:56px;flex-shrink:0}
+.species-bar{flex:1;background:rgba(176,152,112,0.1);border-radius:2px;height:5px;overflow:hidden}
+.species-pct{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--gold);width:30px;text-align:right}
+.prov-sidebar-row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:2px;cursor:pointer;transition:background 0.2s;font-size:13px;color:var(--sand)}
+.prov-sidebar-row:hover{background:rgba(201,125,26,0.08);color:var(--gold)}
+.prov-sidebar-row span:last-child{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--amber)}
+
+/* COMMUNITY RESPONSIVE */
+@media(max-width:1100px){
+  .community-hero{padding:140px 32px 44px}
+  .community-filter-wrap{padding:0 32px}
+  .community-layout{grid-template-columns:1fr 260px}
+}
+@media(max-width:768px){
+  .community-hero{padding:100px 16px 36px}
+  .community-hero-inner{grid-template-columns:1fr;gap:20px}
+  .community-hero-actions{flex-direction:row;min-width:unset}
+  .community-hero-actions .btn-hero-main,.community-hero-actions .btn-hero-sec{width:auto}
+  .community-filter-wrap{padding:0 16px;top:64px;flex-wrap:wrap;gap:0}
+  .community-filters{width:100%}
+  .community-featured-content{padding:24px 20px}
+  .community-featured-image{min-height:280px}
+  .community-layout{grid-template-columns:1fr}
+  .community-sidebar{display:none}
+  .community-card{grid-template-columns:80px 1fr}
+  .community-card-img{min-height:100px;font-size:28px}
+}
+
+/* ── DISCUSSION MODAL ── */
+.disc-type-btn{display:flex;flex-direction:column;gap:4px;padding:14px;background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.14);border-radius:3px;cursor:pointer;transition:all 0.2s;text-align:left}
+.disc-type-btn:has(input:checked),.disc-type-btn.selected{border-color:var(--amber);background:rgba(201,125,26,0.1)}
+.disc-type-btn:hover{border-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.06)}
+.disc-type-icon{font-size:22px;margin-bottom:4px}
+.disc-type-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;color:var(--bone)}
+.disc-type-desc{font-size:11px;font-weight:300;color:var(--khaki);line-height:1.4}
+.disc-topic-chip{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:6px 13px;border-radius:20px;border:1px solid rgba(176,152,112,0.16);background:rgba(30,20,9,0.6);color:var(--sand);cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.disc-topic-chip:hover{border-color:var(--amber);color:var(--gold);background:rgba(201,125,26,0.1)}
 .fs-slideshow{position:absolute;inset:0;z-index:0}
 .fs-slide{position:absolute;inset:0;background-size:cover;background-position:center bottom;background-repeat:no-repeat;background-color:#120d06;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02);transition:opacity 1.2s ease,transform 8s ease}
 .fs-slide.active{opacity:1;transform:scale(1)}
@@ -521,7 +761,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     
     <button class="nav-btn" onclick="gp('provinces')">Browse Hunting Farms</button>
     <button class="nav-btn" onclick="gp('marketplace')">Marketplace</button>
-    <button class="nav-btn" onclick="gp('community')">Community</button>
+    <button class="nav-btn" onclick="gp('community')">The Hunting Community</button>
   </div>
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="openAuth('login')">Sign In</button>
@@ -533,7 +773,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('home');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Explore</button>
     <button onclick="gp('provinces');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Hunting Farms</button>
     <button onclick="gp('marketplace');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
-    <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
+    <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">The Hunting Community</button>
     <button onclick="openOnboard();toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
   </div>
 </nav>
@@ -690,9 +930,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <div style="display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap">
         <button class="prov-pill on" onclick="provFilter(this,'all')">All Hunts</button>
         <button class="prov-pill" onclick="provFilter(this,'big-game')">Big Game</button>
-        <button class="prov-pill" onclick="provFilter(this,'plains')">Plains Game</button>
-        <button class="prov-pill" onclick="provFilter(this,'budget')">Budget</button>
-        <button class="prov-pill" onclick="provFilter(this,'premium')">Premium</button>
+        <button class="prov-pill" onclick="provFilter(this,'plains')">Plains Hunting</button>
+        <button class="prov-pill" onclick="provFilter(this,'bushveld')">Bushveld Hunting</button>
       </div>
     </div>
 
@@ -912,18 +1151,6 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('guns')">🔫 Guns ▾</button>
-        <div class="cat-dd" id="dd-guns">
-          <button onclick="mktCatSub('guns','','All Guns');closeDDs()">All Guns</button>
-          <button onclick="mktCatSub('guns','rifles','Rifles');closeDDs()">🔫 Rifles</button>
-          <button onclick="mktCatSub('guns','shotguns','Shotguns');closeDDs()">🔫 Shotguns</button>
-          <button onclick="mktCatSub('guns','handguns','Handguns');closeDDs()">🔫 Handguns</button>
-          <button onclick="mktCatSub('guns','ammo','Ammunition');closeDDs()">📦 Ammunition</button>
-          <button onclick="mktCatSub('guns','cleaning','Cleaning & Maintenance');closeDDs()">🔧 Cleaning & Maintenance</button>
-          <button onclick="mktCatSub('guns','parts','Parts & Upgrades');closeDDs()">⚙️ Parts & Upgrades</button>
-        </div>
-      </div>
-
       <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('accessories')">🔧 Accessories ▾</button>
         <div class="cat-dd" id="dd-accessories">
           <button onclick="mktCatSub('accessories','','All Accessories');closeDDs()">All Accessories</button>
@@ -950,90 +1177,471 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══════════ PAGE: COMMUNITY ══════════ -->
 <div class="page" id="page-community">
-  <div class="sec">
-    <div class="sec-label">The Community</div>
-    <h1 class="sec-title">WildHuntsa Forum</h1>
-    <p class="sec-sub" style="margin-bottom:28px">Tips, sightings, trophy photos and reviews — from hunters, for hunters.</p>
 
-    <div class="ftabs" style="margin-bottom:28px">
-      <button class="ftab on" onclick="commFilter(this,'all')">All Posts</button>
-      <button class="ftab" onclick="commFilter(this,'tip')">💡 Tips</button>
-      <button class="ftab" onclick="commFilter(this,'sight')">👁️ Sightings</button>
-      <button class="ftab" onclick="commFilter(this,'review')">⭐ Reviews</button>
-      <button class="ftab" onclick="commFilter(this,'trophy')">🏆 Trophies</button>
+  <!-- ══ 1. HERO HOOK ══ -->
+  <div class="comm-hero">
+    <div class="comm-hero-bg"></div>
+    <div class="comm-hero-content">
+      <div class="comm-hero-left">
+        <div class="sec-label" style="margin-bottom:12px">🇿🇦 WildHuntsa Community</div>
+        <h1 class="comm-hero-h1">Real Hunting Experiences<br><em>from Across South Africa</em></h1>
+        <p class="comm-hero-sub">Trusted reviews, sightings, tips and trophy stories — from verified South African hunters, for South African hunters.</p>
+        <div class="comm-hero-live">
+          <span class="live-dot"></span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--sand)">247 hunters online now</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki)">· 14,302 posts · 2,847 members</span>
+        </div>
+      </div>
+      <!-- ══ 2. DOMINANT CTAs ══ -->
+      <div class="comm-hero-ctas">
+        <button class="comm-cta-primary" onclick="openOverlay('createPostModal')">
+          <span style="font-size:20px">✍️</span>
+          <div>
+            <div style="font-size:14px;font-weight:800;letter-spacing:1px">Write a Review</div>
+            <div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px">Rate a farm you've hunted</div>
+          </div>
+        </button>
+        <button class="comm-cta-secondary" onclick="openOverlay('discussionModal')">
+          <span style="font-size:20px">💬</span>
+          <div>
+            <div style="font-size:14px;font-weight:800;letter-spacing:1px">Start Discussion</div>
+            <div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px">Ask the community anything</div>
+          </div>
+        </button>
+        <button class="comm-cta-ghost" onclick="openOverlay('createPostModal')">
+          <span style="font-size:18px">📸</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;letter-spacing:1px">Upload Hunt Photos</div>
+            <div style="font-size:11px;font-weight:400;opacity:0.7;margin-top:2px">Share your trophies & sightings</div>
+          </div>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <div class="posts-grid">
+  <!-- ══ 3. FILTER TABS ══ -->
+  <div class="comm-filter-bar">
+    <div class="comm-tabs-wrap">
+      <button class="comm-tab on" onclick="commFilter(this,'all')">🔥 All Posts</button>
+      <button class="comm-tab" onclick="commFilter(this,'review')">⭐ Reviews</button>
+      <button class="comm-tab" onclick="commFilter(this,'sight')">👁️ Sightings</button>
+      <button class="comm-tab" onclick="commFilter(this,'tip')">💡 Tips & Tactics</button>
+      <button class="comm-tab" onclick="commFilter(this,'trophy')">🏆 Trophies</button>
+      <button class="comm-tab" onclick="commFilter(this,'gear')">🔧 Gear Talk</button>
+    </div>
+    <select onchange="commSort(this.value)" class="comm-sort-select">
+      <option value="latest">Latest First</option>
+      <option value="popular">Most Popular</option>
+      <option value="trending">Trending 🔥</option>
+    </select>
+  </div>
 
-      <div class="post-card" data-cat="sight">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a1a08,#3d2810);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          🦌<div class="post-cat pc-sight">👁️ Sighting</div>
-        </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">JB</div><div><div class="av-name">JaagBoer_Limpopo</div><div class="av-date">2 hours ago · Limpopo</div></div></div>
-          <div class="post-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread. Conditions perfect this week. Water holes active at first light.</div>
-          <div class="post-footer"><span>❤️ 48</span><span>💬 12</span><span>👁️ 340</span></div>
+  <div class="comm-body">
+
+    <!-- ══ LEFT FEED ══ -->
+    <div class="comm-feed">
+
+      <!-- ══ 4. FEATURED REVIEW ══ -->
+      <div class="comm-featured-wrap">
+        <div class="comm-featured-label">⭐ Featured Review</div>
+        <div class="comm-featured" onclick="showToast('Opening featured review... 📖')">
+          <div class="comm-featured-img" style="background:linear-gradient(90deg,rgba(8,5,2,0.97) 42%,rgba(8,5,2,0.5) 75%,rgba(8,5,2,0.15) 100%),url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80') right center/cover">
+            <div class="comm-featured-body">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+                <span class="cpill cpill-review">⭐ Review</span>
+                <span class="cpill cpill-hot">🔥 This Week's Top Post</span>
+                <span class="comm-ts">2 hours ago</span>
+              </div>
+              <div style="font-size:13px;font-style:italic;color:rgba(237,224,204,0.6);margin-bottom:8px;font-weight:300">"Unbelievable bushveld experience, highly recommended..."</div>
+              <h2 class="comm-featured-title">Kalahari Dunes Reserve — world-class gemsbok hunt, professional team and stunning Kalahari landscape. 5 stars without hesitation.</h2>
+              <div style="display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap">
+                <div class="comm-author-block">
+                  <div class="comm-av" style="background:linear-gradient(135deg,var(--amber),var(--rust))">PV</div>
+                  <div>
+                    <div class="comm-av-name">Pieter van der Merwe</div>
+                    <div class="comm-av-meta">Northern Cape · Verified Hunter · ⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:8px;margin-left:auto">
+                  <button class="comm-action-btn" onclick="event.stopPropagation();this.classList.toggle('liked')">❤️ 67</button>
+                  <button class="comm-action-btn" onclick="event.stopPropagation()">💬 18</button>
+                  <button class="comm-action-btn" onclick="event.stopPropagation()">👁️ 890</button>
+                </div>
+              </div>
+              <button class="farm-book-btn" style="margin-top:18px;padding:9px 22px;font-size:12px" onclick="event.stopPropagation();showToast('Opening full review 📖')">Read Full Review →</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="tip">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a2a08,#2a3d10);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          🔭<div class="post-cat pc-tip">💡 Tips</div>
-        </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">RS</div><div><div class="av-name">Rooikat_SA</div><div class="av-date">Yesterday · General</div></div></div>
-          <div class="post-title">Wind direction matters more than camo. Here's how I set up my approach in open bushveld for consistent success on wary animals.</div>
-          <div class="post-footer"><span>❤️ 92</span><span>💬 34</span><span>👁️ 1.2k</span></div>
-        </div>
-      </div>
-
-      <div class="post-card" data-cat="review">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a2008,#3d3010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          ⭐<div class="post-cat pc-review">⭐ Review</div>
-        </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">PV</div><div><div class="av-name">PietVanHunting</div><div class="av-date">3 days ago · N. Cape</div></div></div>
-          <div class="post-title">Booked Kalahari Dunes via WildHuntsa — incredible gemsbok hunt. Jan and his team are absolute professionals. 5 stars without hesitation!</div>
-          <div class="post-footer"><span>❤️ 67</span><span>💬 18</span><span>👁️ 890</span></div>
+      <!-- TRENDING STRIP -->
+      <div style="margin-bottom:6px">
+        <div class="sec-label" style="margin-bottom:12px">🔥 Trending Now</div>
+        <div class="comm-trending-strip">
+          <div class="comm-trend-chip">🦌 Early kudu rut reports — Limpopo</div>
+          <div class="comm-trend-chip">🌾 Best plains game weekends</div>
+          <div class="comm-trend-chip">🏆 Trophy photos — Northern Cape</div>
+          <div class="comm-trend-chip">💡 Wind-reading in bushveld</div>
+          <div class="comm-trend-chip">🔫 Best calibre for kudu at 250m?</div>
+          <div class="comm-trend-chip">🐗 Big warthog boars — Rustenburg</div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="tip">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#082a1a,#103d28);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          📋<div class="post-cat pc-tip">💡 Tips</div>
-        </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">BK</div><div><div class="av-name">BushveldKing</div><div class="av-date">4 days ago · General</div></div></div>
-          <div class="post-title">Best months to hunt in Limpopo — a full seasonal breakdown for 12 popular species. Includes rainfall data and bush density charts.</div>
-          <div class="post-footer"><span>❤️ 134</span><span>💬 45</span><span>👁️ 2.8k</span></div>
+      <!-- ══ 5. POST FEED ══ -->
+      <div style="display:flex;flex-direction:column;gap:10px" id="comm-feed">
+
+        <!-- POST 1 - SIGHTING -->
+        <article class="cpost" data-cat="sight" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#152810,#244018)">👁️
+            <span class="cbadge cbadge-sight">Sighting</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av">JB</div>
+              <div>
+                <div class="cpost-author">Johan Bezuidenhout <span class="cpost-location">· Limpopo</span></div>
+                <div class="cpost-time">2 hours ago</div>
+              </div>
+              <span class="cpost-hot">🔥 Hot</span>
+            </div>
+            <h3 class="cpost-title">Massive kudu bull spotted near Waterberg — estimated 60"+ spread, conditions perfect all week</h3>
+            <p class="cpost-snippet">Water holes active at first light. Strong movement on the eastern ridgeline both mornings. Worth the drive.</p>
+            <div class="cpost-tags"><span class="ctag">Kudu</span><span class="ctag">Waterberg</span><span class="ctag">Limpopo</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>48</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>12</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 340 views</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 2 - TIP -->
+        <article class="cpost" data-cat="tip" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#162208,#243610)">💡
+            <span class="cbadge cbadge-tip">Tips</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av" style="background:linear-gradient(135deg,var(--grass),var(--sage))">RS</div>
+              <div>
+                <div class="cpost-author">Riaan Swanepoel <span class="cpost-location">· General</span></div>
+                <div class="cpost-time">Yesterday · 412 posts</div>
+              </div>
+            </div>
+            <h3 class="cpost-title">Wind direction matters more than camo — a practical approach guide for open bushveld hunting</h3>
+            <p class="cpost-snippet">Approach angles, scent control, and exactly when to pause. Works every time on wary animals in flat terrain.</p>
+            <div class="cpost-tags"><span class="ctag">Strategy</span><span class="ctag">Bushveld</span><span class="ctag">Wind</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>92</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>34</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 1.2k views</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 3 - REVIEW with STARS -->
+        <article class="cpost" data-cat="review" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#28180a,#3d2510)">⭐
+            <span class="cbadge cbadge-review">Review</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av" style="background:linear-gradient(135deg,var(--amber),#a04010)">PV</div>
+              <div>
+                <div class="cpost-author">Pieter van der Merwe <span class="cpost-location">· Northern Cape</span></div>
+                <div class="cpost-time">3 days ago · 156 posts</div>
+              </div>
+              <div style="font-size:15px;color:var(--gold);margin-left:auto;flex-shrink:0">★★★★★</div>
+            </div>
+            <h3 class="cpost-title">Kalahari Dunes — excellent gemsbok hunt and professional hosting throughout the entire trip</h3>
+            <p class="cpost-snippet">Full write-up: booking process, accommodation, guides, trophy quality. Would go back without hesitation.</p>
+            <div class="cpost-tags"><span class="ctag">Kalahari Dunes</span><span class="ctag">Gemsbok</span><span class="ctag">N. Cape</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>67</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>18</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 890 views</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 4 - TROPHY -->
+        <article class="cpost" data-cat="trophy" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#280808,#401010)">🏆
+            <span class="cbadge cbadge-trophy">Trophy</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av" style="background:linear-gradient(135deg,#5a2020,#8a3030)">KR</div>
+              <div>
+                <div class="cpost-author">Karel Roodt <span class="cpost-location">· Eastern Cape</span></div>
+                <div class="cpost-time">1 week ago · 312 posts</div>
+              </div>
+            </div>
+            <h3 class="cpost-title">My Groot Karoo buffalo — shot placement, 380m, cartridge details. One shot, clean ethical kill</h3>
+            <p class="cpost-snippet">Full write-up with recovery notes, field dressing and taxidermist recommendations in the Eastern Cape.</p>
+            <div class="cpost-tags"><span class="ctag">Buffalo</span><span class="ctag">Karoo</span><span class="ctag">E. Cape</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>201</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>78</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 5.4k views</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 5 - GEAR -->
+        <article class="cpost" data-cat="gear" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#101828,#182438)">🔧
+            <span class="cbadge cbadge-gear">Gear Talk</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av" style="background:linear-gradient(135deg,var(--sky),#306080)">LR</div>
+              <div>
+                <div class="cpost-author">Louis Rautenbach <span class="cpost-location">· Gauteng</span></div>
+                <div class="cpost-time">4 days ago · 88 posts</div>
+              </div>
+            </div>
+            <h3 class="cpost-title">Swarovski vs Vortex for African hunting — honest comparison after 3 seasons of field use</h3>
+            <p class="cpost-snippet">Both tested on plains game. Verdict may surprise you. Full breakdown of clarity, durability and value for money.</p>
+            <div class="cpost-tags"><span class="ctag">Optics</span><span class="ctag">Gear</span><span class="ctag">Rifles</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>114</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>52</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 1.8k views</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- POST 6 - SIGHTING -->
+        <article class="cpost" data-cat="sight" onclick="showToast('Opening post 📖')">
+          <div class="cpost-img" style="background:linear-gradient(135deg,#1a1a2a,#282840)">🐗
+            <span class="cbadge cbadge-sight">Sighting</span>
+          </div>
+          <div class="cpost-body">
+            <div class="cpost-meta-row">
+              <div class="comm-av" style="background:linear-gradient(135deg,#404060,#606090)">TM</div>
+              <div>
+                <div class="cpost-author">Thinus Meyer <span class="cpost-location">· North West</span></div>
+                <div class="cpost-time">5 days ago · 78 posts</div>
+              </div>
+            </div>
+            <h3 class="cpost-title">Big sounder of warthogs near Rustenburg — 3 quality boars, waterhole active from 05:30 daily</h3>
+            <p class="cpost-snippet">Good movement on the northern side around the edge cover. Worth setting up an early blind this week.</p>
+            <div class="cpost-tags"><span class="ctag">Warthog</span><span class="ctag">North West</span><span class="ctag">Waterhole</span></div>
+            <div class="cpost-actions">
+              <button onclick="event.stopPropagation();this.classList.toggle('active')">❤️ Like <span>29</span></button>
+              <button onclick="event.stopPropagation()">💬 Join Discussion <span>7</span></button>
+              <button onclick="event.stopPropagation();showToast('Link copied! 🔗','ok')">↗️ Share</button>
+              <span class="cpost-views">👁️ 412 views</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- end feed -->
+
+      <div style="text-align:center;margin-top:24px">
+        <button class="btn-hero-sec" onclick="showToast('Loading more posts... 📜')" style="padding:12px 32px">Load More Posts</button>
+      </div>
+    </div><!-- end feed col -->
+
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="comm-sidebar">
+
+      <!-- WRITE A REVIEW CTA -->
+      <div class="comm-sb-card comm-sb-cta">
+        <div style="font-size:28px;margin-bottom:8px">✍️</div>
+        <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ivory);margin-bottom:6px">Share Your Experience</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6;margin-bottom:14px">Your honest reviews help fellow hunters choose the right farm.</div>
+        <button onclick="openOverlay('createPostModal')" class="btn-hero-main" style="width:100%;padding:11px;font-size:13px;margin-bottom:8px">✍️ Write a Review</button>
+        <button onclick="openOverlay('discussionModal')" class="btn-hero-sec" style="width:100%;padding:10px;font-size:12px">💬 Start Discussion</button>
+      </div>
+
+      <!-- TOP CONTRIBUTORS -->
+      <div class="comm-sb-card">
+        <div class="comm-sb-label">🏅 Top Contributors</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div class="comm-contrib"><span class="contrib-rank">#1</span><div class="comm-av" style="background:linear-gradient(135deg,var(--amber),var(--rust));width:32px;height:32px;font-size:11px">BK</div><div style="flex:1"><div class="cpost-author" style="font-size:12px">BushveldKing</div><div class="cpost-time">623 posts · Limpopo</div></div><span style="font-size:14px">🔥</span></div>
+          <div class="comm-contrib"><span class="contrib-rank">#2</span><div class="comm-av" style="background:linear-gradient(135deg,var(--grass),var(--sage));width:32px;height:32px;font-size:11px">RS</div><div style="flex:1"><div class="cpost-author" style="font-size:12px">Rooikat_SA</div><div class="cpost-time">412 posts · General</div></div></div>
+          <div class="comm-contrib"><span class="contrib-rank">#3</span><div class="comm-av" style="background:linear-gradient(135deg,#5a2020,#8a3030);width:32px;height:32px;font-size:11px">KR</div><div style="flex:1"><div class="cpost-author" style="font-size:12px">Karel Roodt</div><div class="cpost-time">312 posts · E. Cape</div></div></div>
+          <div class="comm-contrib"><span class="contrib-rank">#4</span><div class="comm-av" style="width:32px;height:32px;font-size:11px">JB</div><div style="flex:1"><div class="cpost-author" style="font-size:12px">Johan Bezuidenhout</div><div class="cpost-time">89 posts · Limpopo</div></div></div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="trophy">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#2a0808,#3d1010);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          🏆<div class="post-cat pc-trophy">🏆 Trophy</div>
-        </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">KR</div><div><div class="av-name">KarooRifleman</div><div class="av-date">1 week ago · E. Cape</div></div></div>
-          <div class="post-title">My Groot Karoo dagga boy — full write-up with shot placement, distance 380m, and cartridge used. One shot, clean ethical kill.</div>
-          <div class="post-footer"><span>❤️ 201</span><span>💬 78</span><span>👁️ 5.4k</span></div>
+      <!-- ACTIVE SPECIES -->
+      <div class="comm-sb-card">
+        <div class="comm-sb-label">🦌 Most Discussed Species</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div class="comm-species-row"><span>🦌</span><span class="comm-sp-name">Kudu</span><div class="comm-sp-bar"><div style="width:85%"></div></div><span class="comm-sp-pct">85%</span></div>
+          <div class="comm-species-row"><span>🐗</span><span class="comm-sp-name">Warthog</span><div class="comm-sp-bar"><div style="width:72%"></div></div><span class="comm-sp-pct">72%</span></div>
+          <div class="comm-species-row"><span>🦬</span><span class="comm-sp-name">Buffalo</span><div class="comm-sp-bar"><div style="width:58%"></div></div><span class="comm-sp-pct">58%</span></div>
+          <div class="comm-species-row"><span>🦊</span><span class="comm-sp-name">Gemsbok</span><div class="comm-sp-bar"><div style="width:44%"></div></div><span class="comm-sp-pct">44%</span></div>
+          <div class="comm-species-row"><span>🐆</span><span class="comm-sp-name">Impala</span><div class="comm-sp-bar"><div style="width:38%"></div></div><span class="comm-sp-pct">38%</span></div>
         </div>
       </div>
 
-      <div class="post-card" data-cat="sight">
-        <div class="post-img" style="height:140px;background:linear-gradient(135deg,#1a1a2a,#282840);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative">
-          🐗<div class="post-cat pc-sight">👁️ Sighting</div>
+      <!-- BROWSE FARMS -->
+      <div class="comm-sb-card">
+        <div class="comm-sb-label">📍 Active Provinces</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:12px">
+          <div class="comm-prov-row" onclick="gp('provinces')"><span>🌿 Limpopo</span><span>128 farms →</span></div>
+          <div class="comm-prov-row" onclick="gp('provinces')"><span>🏔️ Northern Cape</span><span>58 farms →</span></div>
+          <div class="comm-prov-row" onclick="gp('provinces')"><span>🌾 North West</span><span>74 farms →</span></div>
+          <div class="comm-prov-row" onclick="gp('provinces')"><span>🦬 Mpumalanga</span><span>41 farms →</span></div>
         </div>
-        <div class="post-body">
-          <div class="post-author-row"><div class="av">TM</div><div><div class="av-name">ThornveldMike</div><div class="av-date">5 days ago · NW</div></div></div>
-          <div class="post-title">Big sounder of warthogs near Rustenburg. At least 3 quality boars in the group. Waterhole active every morning from 05:30.</div>
-          <div class="post-footer"><span>❤️ 29</span><span>💬 7</span><span>👁️ 412</span></div>
+        <button onclick="gp('provinces')" class="btn-hero-sec" style="width:100%;padding:9px;font-size:12px">Browse All 340+ Farms →</button>
+      </div>
+
+    </aside>
+  </div><!-- end comm-body -->
+</div>
+
+<!-- ══════════ START DISCUSSION MODAL ══════════ -->
+<div class="overlay" id="discussionModal">
+  <div class="modal-box" style="max-width:580px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div>
+        <div class="bk-title">💬 Start a Discussion</div>
+        <div class="bk-sub">Ask a question, start a debate, get advice from the community</div>
+      </div>
+      <button class="modal-close-btn" onclick="closeOverlay('discussionModal')">✕</button>
+    </div>
+    <div class="bk-body">
+
+      <!-- TOPIC TYPE -->
+      <div class="fi full" style="margin-bottom:18px">
+        <label class="fl" style="margin-bottom:10px">What kind of discussion?</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <label class="disc-type-btn" id="dtype-question">
+            <input type="radio" name="disc-type" value="question" checked style="display:none">
+            <div class="disc-type-icon">❓</div>
+            <div class="disc-type-label">Question</div>
+            <div class="disc-type-desc">Ask the community for advice or info</div>
+          </label>
+          <label class="disc-type-btn" id="dtype-debate">
+            <input type="radio" name="disc-type" value="debate" style="display:none">
+            <div class="disc-type-icon">🗣️</div>
+            <div class="disc-type-label">Debate</div>
+            <div class="disc-type-desc">Start a healthy hunting debate</div>
+          </label>
+          <label class="disc-type-btn" id="dtype-advice">
+            <input type="radio" name="disc-type" value="advice" style="display:none">
+            <div class="disc-type-icon">💡</div>
+            <div class="disc-type-label">Advice Needed</div>
+            <div class="disc-type-desc">Looking for recommendations</div>
+          </label>
+          <label class="disc-type-btn" id="dtype-general">
+            <input type="radio" name="disc-type" value="general" style="display:none">
+            <div class="disc-type-icon">🔥</div>
+            <div class="disc-type-label">General Chat</div>
+            <div class="disc-type-desc">Anything hunting-related</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- POPULAR TOPIC STARTERS -->
+      <div style="margin-bottom:18px">
+        <label class="fl" style="margin-bottom:10px">Popular Topics — tap to use</label>
+        <div style="display:flex;flex-wrap:wrap;gap:7px">
+          <button class="disc-topic-chip" onclick="document.getElementById('disc-title').value=this.dataset.topic" data-topic="Best calibre for trophy kudu at 250m+?">🔫 Best calibre for kudu?</button>
+          <button class="disc-topic-chip" onclick="document.getElementById('disc-title').value=this.dataset.topic" data-topic="Recommended plains game farms in Limpopo under R3,000/day?">🌿 Plains game farms Limpopo?</button>
+          <button class="disc-topic-chip" onclick="document.getElementById('disc-title').value=this.dataset.topic" data-topic="Morning hunt vs evening hunt — which produces better results?">🌅 Morning vs evening hunt?</button>
+          <button class="disc-topic-chip" onclick="document.getElementById('disc-title').value=this.dataset.topic" data-topic="What's your go-to camo for Bushveld?">👕 Best Bushveld camo?</button>
+          <button class="disc-topic-chip" onclick="document.getElementById('disc-title').value=this.dataset.topic" data-topic="How do you handle trophy measurement disputes on farm?">📏 Trophy measurement disputes?</button>
+        </div>
+      </div>
+
+      <div class="fg">
+        <div class="fi full">
+          <label class="fl">Your Question or Topic</label>
+          <input type="text" class="finput" id="disc-title" placeholder="e.g. Best calibre for trophy kudu at 250m+?" maxlength="140">
+          <div style="font-size:11px;color:var(--khaki);margin-top:5px;font-family:'Barlow Condensed',sans-serif">Be specific — clear questions get better answers</div>
+        </div>
+        <div class="fi full">
+          <label class="fl">Context (optional)</label>
+          <textarea class="ftextarea" style="min-height:80px" placeholder="Add more detail to help the community give you better answers — your experience level, specific scenario, location, etc."></textarea>
+        </div>
+        <div class="fi">
+          <label class="fl">Category</label>
+          <select class="fselect">
+            <option>🔫 Rifles & Calibres</option>
+            <option>🌿 Farm & Destination</option>
+            <option>🦌 Species & Behaviour</option>
+            <option>👕 Gear & Equipment</option>
+            <option>📋 Regulations & Licensing</option>
+            <option>🏹 Bow Hunting</option>
+            <option>💼 First-time Hunter</option>
+            <option>🌍 General</option>
+          </select>
+        </div>
+        <div class="fi">
+          <label class="fl">Province (optional)</label>
+          <select class="fselect">
+            <option value="">All Provinces</option>
+            <option>Limpopo</option><option>North West</option><option>Northern Cape</option>
+            <option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option>
+            <option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- COMMUNITY RULES REMINDER -->
+      <div style="background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.1);border-radius:3px;padding:14px;margin-top:16px;display:flex;gap:12px;align-items:flex-start">
+        <div style="font-size:18px;flex-shrink:0">🤝</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6">
+          <strong style="color:var(--sand);font-weight:600">Community Rules:</strong> Keep it respectful and hunting-focused. No politics, no spam, no illegal activity. Treat every hunter the way you'd want to be treated in the field.
         </div>
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:36px">
-      <button class="btn-hero-main" onclick="openOverlay('authModal')">+ Share a Post</button>
+    <div class="bk-footer">
+      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('discussionModal')">Cancel</button>
+      <button class="btn-sm btn-amber-sm" style="padding:9px 28px" onclick="postDiscussion()">Post Discussion →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CREATE POST MODAL ══════════ -->
+<div class="overlay" id="createPostModal">
+  <div class="modal-box" style="max-width:600px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div><div class="bk-title">📸 Share Your Hunt</div><div class="bk-sub">Your story matters to the community</div></div>
+      <button class="modal-close-btn" onclick="closeOverlay('createPostModal')">✕</button>
+    </div>
+    <div class="bk-body">
+      <div class="fg">
+        <div class="fi full">
+          <label class="fl">Category</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <label style="display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid rgba(176,152,112,0.2);border-radius:2px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);background:rgba(18,13,6,0.4)"><input type="radio" name="post-cat" value="sight" style="accent-color:var(--amber)"> 👁️ Sighting</label>
+            <label style="display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid rgba(176,152,112,0.2);border-radius:2px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);background:rgba(18,13,6,0.4)"><input type="radio" name="post-cat" value="tip" style="accent-color:var(--amber)"> 💡 Tip</label>
+            <label style="display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid rgba(176,152,112,0.2);border-radius:2px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);background:rgba(18,13,6,0.4)"><input type="radio" name="post-cat" value="review" style="accent-color:var(--amber)"> ⭐ Farm Review</label>
+            <label style="display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid rgba(176,152,112,0.2);border-radius:2px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);background:rgba(18,13,6,0.4)"><input type="radio" name="post-cat" value="trophy" style="accent-color:var(--amber)"> 🏆 Trophy</label>
+          </div>
+        </div>
+        <div class="fi full"><label class="fl">Title</label><input type="text" class="finput" placeholder="e.g. 62-inch Kudu Bull — Waterberg 2026" maxlength="120"></div>
+        <div class="fi full"><label class="fl">Your Story</label><textarea class="ftextarea" style="min-height:120px" placeholder="Tell the community what happened — the more detail, the better. Include location, species, conditions, distances..."></textarea></div>
+        <div class="fi"><label class="fl">Province</label>
+          <select class="fselect"><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select>
+        </div>
+        <div class="fi"><label class="fl">Species</label><input type="text" class="finput" placeholder="e.g. Kudu, Buffalo, Warthog"></div>
+        <div class="fi full">
+          <label class="fl">Photos (optional)</label>
+          <div class="photo-drop" style="padding:24px;text-align:center;border:2px dashed rgba(176,152,112,0.2);border-radius:3px;cursor:pointer" onclick="document.getElementById('post-photos').click()">
+            <div style="font-size:28px;margin-bottom:6px">📸</div>
+            <p style="font-size:13px;color:var(--sand)">Click to add photos</p>
+            <input type="file" id="post-photos" multiple accept="image/*" style="display:none">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bk-footer">
+      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('createPostModal')">Cancel</button>
+      <button class="btn-sm btn-amber-sm" style="padding:9px 28px" onclick="showToast('Post shared with the community! 🎉','ok');closeOverlay('createPostModal')">Share Post →</button>
     </div>
   </div>
 </div>
@@ -1093,8 +1701,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <div class="overlay" id="authModal">
   <div class="modal-box auth" style="max-width:460px">
     <div style="display:flex;border-bottom:1px solid rgba(176,152,112,0.12)">
-      <button id="tab-signin" onclick="authTab('signin')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Sign In</button>
-      <button id="tab-register" onclick="authTab('register')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid transparent;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Register Free</button>
+      <button id="tab-signin" onclick="switchAuthTab('signin')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Sign In</button>
+      <button id="tab-register" onclick="switchAuthTab('register')" style="flex:1;padding:18px;background:none;border:none;border-bottom:2px solid transparent;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);cursor:pointer;margin-bottom:-1px;transition:all 0.2s">Register Free</button>
       <button class="modal-close-btn" onclick="closeOverlay('authModal')" style="padding:18px 20px">✕</button>
     </div>
 
@@ -1113,7 +1721,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       </div>
       <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
         <button class="btn-hero-main" style="width:100%;padding:14px;font-size:14px" onclick="doSignIn()">Sign In →</button>
-        <div style="text-align:center;font-size:13px;color:var(--khaki)">Don't have an account? <button onclick="authTab('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Register free →</button></div>
+        <div style="text-align:center;font-size:13px;color:var(--khaki)">Don't have an account? <button onclick="switchAuthTab('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Register free →</button></div>
       </div>
     </div>
 
@@ -1145,7 +1753,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       </div>
       <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
         <button class="btn-hero-main" style="width:100%;padding:14px;font-size:14px" onclick="doRegister()">Create My Account →</button>
-        <div style="text-align:center;font-size:13px;color:var(--khaki)">Already have an account? <button onclick="authTab('signin')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Sign in →</button></div>
+        <div style="text-align:center;font-size:13px;color:var(--khaki)">Already have an account? <button onclick="switchAuthTab('signin')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700">Sign in →</button></div>
       </div>
     </div>
   </div>
@@ -1234,7 +1842,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <li><a onclick="gp('provinces')" style="cursor:pointer">Browse Farms</a></li>
         <li><a onclick="gp('provinces')" style="cursor:pointer">Province Map</a></li>
         <li><a onclick="gp('marketplace')" style="cursor:pointer">Marketplace</a></li>
-        <li><a onclick="gp('community')" style="cursor:pointer">Community</a></li>
+        <li><a onclick="gp('community')" style="cursor:pointer">The Hunting Community</a></li>
       </ul></div>
       <div class="footer-col"><h4>Farm Owners</h4><ul>
         <li><a onclick="openOnboard()" style="cursor:pointer">List Your Farm</a></li>
@@ -1527,14 +2135,24 @@ function provFilter(btn,filter){document.querySelectorAll('.prov-pill').forEach(
 function hoverProv(){}function unhoverProv(){}function showTT(){}function hideTT(){}
 
 // ════ COMMUNITY FILTER ════
+function postDiscussion() {
+  const title = document.getElementById('disc-title')?.value;
+  if(!title) { showToast('Please enter a question or topic ⚠️','err'); return; }
+  showToast('Discussion posted! Hunters will reply soon 💬','ok');
+  closeOverlay('discussionModal');
+  document.getElementById('disc-title').value = '';
+}
+
+// ════ COMMUNITY FILTER ════
 function commFilter(btn, cat) {
-  document.querySelectorAll('#page-community .ftab').forEach(t => t.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('.post-card').forEach(card => {
+  document.querySelectorAll('.comm-tab').forEach(t => t.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  document.querySelectorAll('.cpost').forEach(card => {
     const show = cat === 'all' || card.dataset.cat === cat;
-    card.style.display = show ? 'block' : 'none';
+    card.style.display = show ? 'grid' : 'none';
   });
 }
+function commSort(val) { showToast('Sorted by: ' + val + ' 🔃'); }
 
 // ════ SLIDESHOW ════
 const fsSlides=document.querySelectorAll('.fs-slide');
@@ -1585,8 +2203,16 @@ window.addEventListener('DOMContentLoaded', function() {
   renderFarms(farms.slice(0,3),'home-farms');
   renderFarms(farms,'listings-farms');
   buildProvList();
-  // Delay marketplace render slightly to ensure DOM is ready
   setTimeout(function() { mktSearch(); }, 100);
+  // Discussion type selector highlight
+  document.querySelectorAll('.disc-type-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.disc-type-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+  });
+  const firstDisc = document.querySelector('.disc-type-btn');
+  if(firstDisc) firstDisc.classList.add('selected');
 });
 </script>
 </body>
