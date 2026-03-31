@@ -2315,6 +2315,8 @@ function toggleMktDD(id, btn, cat) {
 }
 function closeMktDDs() { document.querySelectorAll('.mkt-sub-dd').forEach(d => d.classList.remove('open')); }
 document.addEventListener('click', function(e){ if(!e.target.closest('.mkt-cat-dd-wrap') && !e.target.closest('.mkt-sub-dd')) closeMktDDs(); });
+document.addEventListener('scroll', function(){ closeMktDDs(); }, true);
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMktDDs(); });
 
 function mktCat(btn, cat) {
   document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
