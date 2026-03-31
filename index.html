@@ -370,112 +370,132 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 /* ════ RESPONSIVE ════ */
 
 /* Tablet (1100px and below) */
+/* ═══════════════════════════════
+   RESPONSIVE — ALL BREAKPOINTS
+   ═══════════════════════════════ */
+
+/* TABLET */
 @media(max-width:1100px){
   nav{padding:0 24px}
-  .hero-content{padding:0 40px 60px;max-width:70%}
+  .hero-content{padding:0 40px 60px;max-width:72%}
+  .sec{padding:48px 32px}
+  .sec-sm{padding:32px}
   .farms-grid{grid-template-columns:repeat(2,1fr)}
   .mkt-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr 1fr}
-  .sec{padding:52px 32px}
   .hiw-grid{grid-template-columns:1fr 1fr}
+  .comm-hero{padding:150px 40px 48px}
+  .comm-filter-bar{padding:0 32px}
+  .comm-body{padding:28px 32px 48px;grid-template-columns:1fr 260px}
+  .community-layout{grid-template-columns:1fr 260px}
 }
 
-/* Mobile (768px and below) */
+/* MOBILE */
 @media(max-width:768px){
-  /* NAV */
   nav{padding:0 16px;height:64px}
   .nav-center{display:none!important}
-  .nav-logo img{height:50px}
+  .nav-logo img{height:48px}
   .nav-right .btn-outline-sm{display:none}
-  #mob-btn{display:flex!important}
+  #mob-btn{display:flex!important;align-items:center;justify-content:center}
 
-  /* HERO */
   .hero{min-height:100svh}
-  .hero-content{padding:80px 20px 100px;max-width:100%}
+  .hero-content{padding:72px 20px 100px;max-width:100%}
   .hero-eyebrow{font-size:9px;letter-spacing:2px;padding:5px 12px}
-  .hero-h1{font-size:36px;line-height:0.92}
+  .hero-h1{font-size:34px;line-height:0.95}
   .hero-p{font-size:14px;line-height:1.6;max-width:100%}
-  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-  .hstat-n{font-size:26px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+  .hstat-n{font-size:24px}
   .hstat-l{font-size:10px}
   .fs-animal-name{font-size:14px;right:16px;bottom:80px}
   .fs-dots{bottom:60px}
 
-  /* SECTIONS */
-  .sec{padding:36px 16px}
-  .sec-sm{padding:24px 16px}
-  .sec-title{font-size:26px}
-  .sec-sub{font-size:14px}
-  .sec-head{flex-direction:column;gap:12px;align-items:flex-start;margin-bottom:28px}
+  .sec{padding:32px 16px}
+  .sec-sm{padding:22px 16px}
+  .sec-title{font-size:24px}
+  .sec-sub{font-size:13px}
+  .sec-head{flex-direction:column;gap:10px;align-items:flex-start;margin-bottom:24px}
   hr.div{margin:0 16px}
 
-  /* GRIDS */
+  [style*="padding:0 80px;margin-top:-20px"]{padding:0 12px!important;margin-top:-8px!important}
+  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"]{flex-direction:column!important;padding:20px 16px!important;gap:14px!important;text-align:center!important}
+  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"] button{width:100%!important}
+
   .farms-grid{grid-template-columns:1fr}
   .mkt-grid{grid-template-columns:1fr 1fr}
-  .hiw-grid{grid-template-columns:1fr}
+  .hiw-grid{grid-template-columns:1fr;gap:1px}
   .posts-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .fd-grid{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr!important}
 
-  /* BOOK YOUR HUNT CTA block */
-  [style*="padding:0 80px;margin-top:-20px"]{padding:0 16px!important;margin-top:-10px!important}
-  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"]{flex-direction:column!important;padding:22px 18px!important;gap:16px!important;text-align:center!important}
-  [style*="padding:28px 40px;display:flex;align-items:center;justify-content:space-between"] button{width:100%!important}
+  .farm-img{height:175px}
+  .farm-body{padding:13px}
+  .farm-name{font-size:16px}
+  .fp-price{font-size:19px}
 
-  /* CTA BANNER */
-  .cta-box{flex-direction:column!important;padding:28px 20px!important;text-align:center!important;gap:20px!important}
-  .cta-btns{width:100%}
-  .cta-btns button{width:100%!important}
-  .cta-title{font-size:24px}
+  .ftabs{gap:4px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+  .ftab{font-size:11px;padding:6px 10px;letter-spacing:0.5px;flex-shrink:0}
+  .prov-pill{font-size:11px;padding:6px 12px}
+  .cat-dd-wrap .ftab{font-size:11px;padding:6px 8px}
+  .cat-dd{min-width:160px}
 
-  /* PROVINCE MAP */
   [style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 280px"]{grid-template-columns:1fr!important}
   [style*="grid-template-columns:1fr 300px"]{grid-template-columns:1fr!important}
   #prov-right-list{display:none}
-  #map-container{min-height:360px!important}
+  #map-container{min-height:320px!important}
 
-  /* MODALS */
-  .modal-box{max-width:100%!important;margin:0!important;border-radius:8px 8px 0 0}
+  .cta-box{flex-direction:column!important;padding:24px 18px!important;text-align:center!important;gap:16px!important}
+  .cta-title{font-size:22px}
+  .cta-btns{width:100%}
+  .cta-btns button{width:100%!important}
+
   .overlay{padding:0!important;align-items:flex-end!important}
-  .fd-gallery{height:220px!important}
-  .bk-body{padding:18px!important}
-  .bk-header{padding:18px!important}
+  .modal-box{max-width:100%!important;width:100%!important;margin:0!important;border-radius:12px 12px 0 0;max-height:90vh!important}
+  .fd-gallery{height:200px!important}
+  .bk-body{padding:16px!important}
+  .bk-header{padding:16px!important}
+  .bk-footer{padding:12px 16px 20px!important}
 
-  /* TABS */
-  .ftabs{gap:4px;flex-wrap:wrap}
-  .ftab{font-size:11px;padding:6px 10px;letter-spacing:0.5px}
-  .prov-pill{font-size:11px;padding:6px 12px}
-  .cat-dd-wrap .ftab{font-size:11px;padding:6px 8px}
+  .comm-hero{padding:90px 16px 32px}
+  .comm-hero-content{grid-template-columns:1fr;gap:20px}
+  .comm-hero-ctas{flex-direction:column;min-width:unset}
+  .comm-cta-primary,.comm-cta-secondary,.comm-cta-ghost{width:100%}
+  .comm-filter-bar{padding:0 12px;top:64px;flex-wrap:wrap}
+  .comm-tabs-wrap{width:100%;overflow-x:auto}
+  .comm-sort-select{width:100%;margin:0 0 6px}
+  .comm-body{padding:16px;grid-template-columns:1fr}
+  .comm-sidebar{display:none}
+  .comm-featured-img{min-height:240px}
+  .comm-featured-body{padding:18px}
+  .comm-featured-title{font-size:18px}
+  .cpost{grid-template-columns:80px 1fr}
+  .cpost-img{min-height:100px;font-size:26px}
+  .cpost-snippet{display:none}
+  .cpost-actions button{font-size:9px;padding:3px 7px}
+  .community-layout{grid-template-columns:1fr}
+  .community-sidebar{display:none}
 
-  /* FARM CARDS */
-  .farm-img{height:180px}
-  .farm-body{padding:14px}
-  .farm-name{font-size:17px}
-  .fp-price{font-size:20px}
-
-  /* FOOTER */
-  footer{padding:36px 16px 20px}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
-
-  /* MISC */
-  .hiw-item{padding:24px 18px}
-  .hiw-grid{gap:1px}
+  footer{padding:32px 16px 20px}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
+  .hiw-item{padding:20px 16px}
   .mkt-card .mkt-img{height:130px}
 }
 
-/* Small mobile (480px and below) */
+/* SMALL PHONE */
 @media(max-width:480px){
-  .hero-h1{font-size:30px}
+  .hero-h1{font-size:28px}
   .mkt-grid{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr 1fr}
-  .hstat-n{font-size:22px}
+  .hstat-n{font-size:21px}
   .footer-grid{grid-template-columns:1fr}
-  .sec-title{font-size:22px}
+  .sec-title{font-size:21px}
   .farms-grid{grid-template-columns:1fr}
-  .posts-grid{grid-template-columns:1fr}
-  .nav-right .btn-amber-sm{font-size:11px;padding:6px 12px}
+  .nav-right .btn-amber-sm{font-size:10px;padding:5px 10px}
+  .comm-hero-h1{font-size:26px}
+  .cpost{grid-template-columns:70px 1fr}
+  .cpost-img{font-size:22px}
+  .comm-featured-img{min-height:200px}
 }
 /* ══════════ COMMUNITY v3 ══════════ */
 .comm-hero{position:relative;background:linear-gradient(170deg,rgba(12,8,3,0.08) 0%,rgba(12,8,3,0.94) 100%),url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=80') center/cover no-repeat;padding:160px 80px 56px}
@@ -666,26 +686,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .prov-sidebar-row:hover{background:rgba(201,125,26,0.08);color:var(--gold)}
 .prov-sidebar-row span:last-child{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--amber)}
 
-/* COMMUNITY RESPONSIVE */
-@media(max-width:1100px){
-  .community-hero{padding:140px 32px 44px}
-  .community-filter-wrap{padding:0 32px}
-  .community-layout{grid-template-columns:1fr 260px}
-}
-@media(max-width:768px){
-  .community-hero{padding:100px 16px 36px}
-  .community-hero-inner{grid-template-columns:1fr;gap:20px}
-  .community-hero-actions{flex-direction:row;min-width:unset}
-  .community-hero-actions .btn-hero-main,.community-hero-actions .btn-hero-sec{width:auto}
-  .community-filter-wrap{padding:0 16px;top:64px;flex-wrap:wrap;gap:0}
-  .community-filters{width:100%}
-  .community-featured-content{padding:24px 20px}
-  .community-featured-image{min-height:280px}
-  .community-layout{grid-template-columns:1fr}
-  .community-sidebar{display:none}
-  .community-card{grid-template-columns:80px 1fr}
-  .community-card-img{min-height:100px;font-size:28px}
-}
+
 
 /* ── DISCUSSION MODAL ── */
 .disc-type-btn{display:flex;flex-direction:column;gap:4px;padding:14px;background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.14);border-radius:3px;cursor:pointer;transition:all 0.2s;text-align:left}
@@ -754,7 +755,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo" onclick="gp('home')">
-    <img src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/wildhunt_logo_hd.png.png" alt="WildHuntsa Logo">
+    <img src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/wildhunt_logo_hd.png.png" alt="WildHuntsa Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;align-items:center;gap:8px"><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold)">Wild</span><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--bone)">Hunt<em style='color:var(--amber)'>sa</em></span></div>
   </div>
   <div class="nav-center">
     <button class="nav-btn active" onclick="gp('home')">Explore</button>
@@ -938,115 +939,74 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <div style="display:grid;grid-template-columns:1fr 260px;gap:0;background:rgba(10,7,3,0.9);border:1px solid rgba(201,125,26,0.15);border-radius:8px;overflow:hidden">
 
       <!-- MAP IMAGE WITH HOTSPOTS -->
-      <div style="position:relative;background:radial-gradient(ellipse at 40% 40%,#1e0e04 0%,#0a0502 100%);display:flex;align-items:center;justify-content:center;padding:0;min-height:520px" id="map-container">
-
-        <!-- SVG Province Map -->
+      <div style="position:relative;background:#0a0500;display:flex;align-items:center;justify-content:center;padding:0;min-height:480px" id="map-container">
         <div style="position:relative;width:100%">
-          <svg viewBox="0 0 1000 740" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:520px;display:block">
-  <defs>
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="b1"/>
-      <feGaussianBlur stdDeviation="8" result="b2"/>
-      <feColorMatrix in="b2" type="matrix" values="1 0.6 0 0 0  0.6 0.3 0 0 0  0 0 0 0 0  0 0 0 1 0" result="orange2"/>
-      <feColorMatrix in="b1" type="matrix" values="1 0.8 0 0 0  0.8 0.5 0 0 0  0 0 0 0 0  0 0 0 1.5 0" result="orange1"/>
-      <feMerge><feMergeNode in="orange2"/><feMergeNode in="orange1"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="hover-glow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="6" result="b1"/>
-      <feGaussianBlur stdDeviation="14" result="b2"/>
-      <feColorMatrix in="b2" type="matrix" values="1 0.7 0 0 0.1  0.7 0.4 0 0 0  0 0 0 0 0  0 0 0 1.2 0" result="o2"/>
-      <feColorMatrix in="b1" type="matrix" values="1 0.9 0 0 0.1  0.9 0.6 0 0 0  0 0 0 0 0  0 0 0 2 0" result="o1"/>
-      <feMerge><feMergeNode in="o2"/><feMergeNode in="o1"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
-      <stop offset="0%" stop-color="#1e0e04"/>
-      <stop offset="70%" stop-color="#0f0602"/>
-      <stop offset="100%" stop-color="#060300"/>
-    </radialGradient>
-    <radialGradient id="pf" cx="40%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="rgba(100,58,12,0.65)"/>
-      <stop offset="100%" stop-color="rgba(28,14,4,0.85)"/>
-    </radialGradient>
-    <radialGradient id="pf-h" cx="40%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="rgba(200,120,20,0.55)"/>
-      <stop offset="100%" stop-color="rgba(120,65,10,0.7)"/>
-    </radialGradient>
-  </defs>
-  <rect width="1000" height="740" fill="url(#bg)"/>
 
-  <!-- === LIMPOPO - top, stretches east === -->
-  <path class="svgp" id="sp-limpopo" data-name="Limpopo" data-count="128" data-species="Kudu, Impala, Bushbuck"
-    d="M370,38 L415,26 L475,20 L550,22 L620,30 L672,48 L702,72 L712,102 L706,134 L686,156 L656,170 L618,178 L575,182 L530,178 L488,172 L448,166 L410,162 L378,164 L354,158 L332,142 L314,120 L310,94 L318,66 Z"
-    onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"/>
-  <text x="510" y="106" class="svgl" pointer-events="none">LIMPOPO</text>
-  <circle class="svgdot" cx="510" cy="122" r="6" onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"><animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/></circle>
+          <!-- YOUR PREMIUM MAP IMAGE -->
+          <img
+            src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/SA%20Province.jpg"
+            alt="South Africa Province Map"
+            style="width:100%;height:auto;display:block;min-height:480px;object-fit:contain">
 
-  <!-- === NORTH WEST === -->
-  <path class="svgp" id="sp-nw" data-name="North West" data-count="74" data-species="Kudu, Blesbok, Wildebeest"
-    d="M314,172 L354,164 L378,170 L398,184 L402,212 L396,242 L376,268 L348,284 L318,290 L288,282 L264,262 L256,236 L260,208 L274,184 Z"
-    onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"/>
-  <text x="330" y="230" class="svgl" font-size="11" pointer-events="none">NORTH WEST</text>
-  <circle class="svgdot" cx="330" cy="248" r="5" onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"><animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/></circle>
+          <!-- INVISIBLE CLICKABLE HOTSPOTS (% positioned, scales with image) -->
+          <div class="map-hs" style="left:50%;top:5%;width:24%;height:22%"
+            onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"
+            onmouseenter="showProvPopupXY(event,'Limpopo',128,'Kudu, Impala, Bushbuck')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === GAUTENG - small central === -->
-  <path class="svgp" id="sp-gp" data-name="Gauteng" data-count="12" data-species="Impala, Blesbok, Steenbok"
-    d="M410,162 L448,166 L466,178 L468,202 L456,224 L430,230 L406,224 L394,210 L396,186 Z"
-    onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"/>
-  <text x="432" y="197" class="svgl" font-size="8.5" pointer-events="none">GAUTENG</text>
-  <circle class="svgdot" cx="432" cy="212" r="4" onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:62%;top:26%;width:18%;height:20%"
+            onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"
+            onmouseenter="showProvPopupXY(event,'Mpumalanga',41,'Impala, Kudu, Nyala')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === MPUMALANGA === -->
-  <path class="svgp" id="sp-mp" data-name="Mpumalanga" data-count="41" data-species="Impala, Kudu, Nyala"
-    d="M466,178 L530,178 L575,182 L618,178 L656,170 L678,190 L688,220 L680,252 L660,276 L630,292 L598,298 L566,296 L540,284 L518,264 L506,240 L482,224 L456,220 L456,200 Z"
-    onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"/>
-  <text x="582" y="234" class="svgl" font-size="10" pointer-events="none">MPUMALANGA</text>
-  <circle class="svgdot" cx="582" cy="250" r="5" onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"><animate attributeName="r" values="4;7;4" dur="2.2s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:51%;top:28%;width:10%;height:10%"
+            onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"
+            onmouseenter="showProvPopupXY(event,'Gauteng',12,'Impala, Blesbok, Steenbok')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === NORTHERN CAPE - massive left province === -->
-  <path class="svgp" id="sp-nc" data-name="Northern Cape" data-count="58" data-species="Gemsbok, Springbok, Eland"
-    d="M78,182 L132,168 L188,162 L238,160 L264,162 L274,184 L260,208 L256,236 L248,274 L238,314 L224,354 L208,390 L186,422 L160,448 L130,464 L100,470 L72,458 L50,434 L32,404 L20,366 L14,326 L16,286 L24,248 L38,212 L56,192 Z"
-    onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"/>
-  <text x="158" y="308" class="svgl" font-size="12" pointer-events="none">NORTHERN</text>
-  <text x="158" y="326" class="svgl" font-size="12" pointer-events="none">CAPE</text>
-  <circle class="svgdot" cx="158" cy="346" r="6" onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"><animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:36%;top:22%;width:16%;height:18%"
+            onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"
+            onmouseenter="showProvPopupXY(event,'North West',74,'Kudu, Blesbok, Wildebeest')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === FREE STATE - central === -->
-  <path class="svgp" id="sp-fs" data-name="Free State" data-count="22" data-species="Blesbok, Springbok, Wildebeest"
-    d="M318,296 L348,290 L376,274 L396,248 L406,228 L430,236 L456,228 L480,232 L506,248 L518,272 L526,304 L518,338 L500,362 L478,378 L450,386 L420,388 L390,382 L362,368 L340,350 L326,328 L316,310 Z"
-    onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"/>
-  <text x="420" y="322" class="svgl" font-size="11" pointer-events="none">FREE STATE</text>
-  <circle class="svgdot" cx="420" cy="338" r="5" onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"><animate attributeName="r" values="4;7;4" dur="2.6s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:41%;top:38%;width:24%;height:22%"
+            onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"
+            onmouseenter="showProvPopupXY(event,'Free State',22,'Blesbok, Springbok, Wildebeest')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === KWAZULU-NATAL - east coast === -->
-  <path class="svgp" id="sp-kzn" data-name="KwaZulu-Natal" data-count="19" data-species="Nyala, Bushbuck, Impala"
-    d="M540,290 L566,302 L598,304 L630,298 L660,282 L682,300 L696,330 L692,364 L672,394 L646,416 L614,432 L582,438 L552,430 L526,412 L510,388 L506,362 L510,338 L518,314 L526,304 Z"
-    onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"/>
-  <text x="602" y="366" class="svgl" font-size="10" pointer-events="none">KWAZULU-NATAL</text>
-  <circle class="svgdot" cx="602" cy="382" r="5" onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"><animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:63%;top:42%;width:18%;height:26%"
+            onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
+            onmouseenter="showProvPopupXY(event,'KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === EASTERN CAPE === -->
-  <path class="svgp" id="sp-ec" data-name="Eastern Cape" data-count="17" data-species="Buffalo, Kudu, Sable"
-    d="M210,428 L242,414 L276,400 L314,386 L340,356 L362,372 L390,386 L420,394 L450,392 L478,382 L506,366 L510,392 L504,420 L484,448 L458,468 L426,482 L390,490 L354,490 L318,482 L284,466 L254,448 L228,428 Z"
-    onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"/>
-  <text x="380" y="440" class="svgl" font-size="11" pointer-events="none">EASTERN CAPE</text>
-  <circle class="svgdot" cx="380" cy="456" r="5" onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"><animate attributeName="r" values="3;6;3" dur="2.1s" repeatCount="indefinite"/></circle>
+          <div class="map-hs" style="left:8%;top:25%;width:28%;height:42%"
+            onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"
+            onmouseenter="showProvPopupXY(event,'Northern Cape',58,'Gemsbok, Springbok, Eland')"
+            onmouseleave="hideProvPopup()"></div>
 
-  <!-- === WESTERN CAPE === -->
-  <path class="svgp" id="sp-wc" data-name="Western Cape" data-count="8" data-species="Springbok, Gemsbok, Eland"
-    d="M86,462 L114,470 L140,478 L164,490 L186,504 L202,520 L196,548 L176,570 L148,584 L118,588 L90,578 L64,558 L44,532 L34,504 L38,478 L56,466 Z"
-    onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"/>
-  <text x="116" y="524" class="svgl" font-size="9.5" pointer-events="none">WESTERN CAPE</text>
-  <circle class="svgdot" cx="116" cy="542" r="5" onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"><animate attributeName="r" values="3;5;3" dur="3.2s" repeatCount="indefinite"/></circle>
-</svg>
-        <!-- HOVER POPUP -->
-        <div id="prov-popup" style="display:none;position:absolute;background:rgba(10,7,3,0.96);border:1px solid rgba(201,125,26,0.5);border-radius:6px;padding:18px 22px;min-width:200px;pointer-events:none;z-index:50;box-shadow:0 8px 40px rgba(0,0,0,0.7)">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="color:var(--amber)">📍</span><div id="pp-name" style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold)"></div></div>
-          <div id="pp-count" style="font-size:15px;color:var(--bone);margin-bottom:5px"></div>
-          <div id="pp-species" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki)"></div>
-          <div style="margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber)">Click to explore →</div>
+          <div class="map-hs" style="left:40%;top:60%;width:28%;height:22%"
+            onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"
+            onmouseenter="showProvPopupXY(event,'Eastern Cape',17,'Buffalo, Kudu, Sable')"
+            onmouseleave="hideProvPopup()"></div>
+
+          <div class="map-hs" style="left:8%;top:65%;width:30%;height:28%"
+            onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"
+            onmouseenter="showProvPopupXY(event,'Western Cape',8,'Springbok, Gemsbok, Eland')"
+            onmouseleave="hideProvPopup()"></div>
+
+          <!-- HOVER POPUP -->
+          <div id="prov-popup" style="display:none;position:absolute;background:rgba(8,5,2,0.97);border:1px solid rgba(201,125,26,0.55);border-radius:5px;padding:14px 18px;min-width:190px;pointer-events:none;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,0.7)">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+              <span style="color:var(--amber);font-size:14px">📍</span>
+              <div id="pp-name" style="font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold)"></div>
+            </div>
+            <div id="pp-count" style="font-size:14px;color:var(--bone);margin-bottom:4px"></div>
+            <div id="pp-species" style="font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--khaki);margin-bottom:10px"></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber)">Click to explore →</div>
+          </div>
         </div>
-      </div>
-      <!-- RIGHT PANEL -->
+
+            <!-- RIGHT PANEL -->
       <div style="border-left:1px solid rgba(201,125,26,0.1);padding:28px 22px;display:flex;flex-direction:column">
         <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory);margin-bottom:4px">Provinces</div>
         <div style="font-size:12px;color:var(--khaki);margin-bottom:20px">Click to browse farms</div>
@@ -2129,10 +2089,46 @@ document.querySelectorAll('.svgp').forEach(path=>{
   path.addEventListener('mouseenter',function(e){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));this.classList.add('active');showProvPopup(e,this.dataset.name,this.dataset.count,this.dataset.species);document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===this.dataset.name);});});
   path.addEventListener('mouseleave',function(){setTimeout(()=>{const popup=document.getElementById('prov-popup');if(popup)popup.style.display='none';this.classList.remove('active');document.querySelectorAll('.prov-row').forEach(r=>r.classList.remove('active'));},300);});
 });
-function showProvPopup(e,name,count,species){const popup=document.getElementById('prov-popup');document.getElementById('pp-name').textContent=name;document.getElementById('pp-count').textContent=count+' Hunting Farms';document.getElementById('pp-species').textContent='Top: '+species;popup.style.display='block';try{const cont=document.getElementById('map-container').getBoundingClientRect();let left=e.clientX-cont.left+10;let top=e.clientY-cont.top-100;if(left+210>cont.width)left=e.clientX-cont.left-220;if(top<5)top=e.clientY-cont.top+20;popup.style.left=left+'px';popup.style.top=top+'px';}catch(err){}}
+function showProvPopupXY(e,name,count,species){
+  const popup=document.getElementById('prov-popup');
+  if(!popup) return;
+  document.getElementById('pp-name').textContent=name;
+  document.getElementById('pp-count').textContent=count+' Hunting Farms';
+  document.getElementById('pp-species').textContent='Top: '+species;
+  popup.style.display='block';
+  try{
+    const cont=document.getElementById('map-container').getBoundingClientRect();
+    let left=e.clientX-cont.left+14;
+    let top=e.clientY-cont.top-110;
+    if(left+200>cont.width) left=e.clientX-cont.left-215;
+    if(top<5) top=e.clientY-cont.top+20;
+    popup.style.left=left+'px';
+    popup.style.top=top+'px';
+  }catch(err){}
+}
+function hideProvPopup(){const p=document.getElementById('prov-popup');if(p)p.style.display='none';}
+function showProvPopup(e,name,count,species){showProvPopupXY(e,name,count,species);}
 function selectProvince(name,count,species){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===name);});const provFarms=farms.filter(f=>f.province===name);const resultsDiv=document.getElementById('prov-results');document.getElementById('prov-result-label').textContent=count+' Farms in '+name;document.getElementById('prov-result-title').textContent='Hunting in '+name;renderFarms(provFarms.length>0?provFarms:farms.slice(0,2),'prov-farms-grid');resultsDiv.style.display='block';showToast('Showing '+count+' farms in '+name+' 📍');resultsDiv.scrollIntoView({behavior:'smooth',block:'start'});}
 function provFilter(btn,filter){document.querySelectorAll('.prov-pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');}
 function hoverProv(){}function unhoverProv(){}function showTT(){}function hideTT(){}
+function hideProvPopup(){const p=document.getElementById('prov-popup');if(p)p.style.display='none';}
+function showProvPopupXY(e,name,count,species){
+  const popup=document.getElementById('prov-popup');
+  if(!popup)return;
+  document.getElementById('pp-name').textContent=name;
+  document.getElementById('pp-count').textContent=count+' Hunting Farms';
+  document.getElementById('pp-species').textContent='Top species: '+species;
+  popup.style.display='block';
+  try{
+    const cont=document.getElementById('map-container').getBoundingClientRect();
+    let left=e.clientX-cont.left+14;
+    let top=e.clientY-cont.top-120;
+    if(left+200>cont.width)left=e.clientX-cont.left-210;
+    if(top<5)top=e.clientY-cont.top+20;
+    popup.style.left=left+'px';
+    popup.style.top=top+'px';
+  }catch(err){}
+}
 
 // ════ COMMUNITY FILTER ════
 function postDiscussion() {
