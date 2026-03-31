@@ -688,7 +688,120 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 
 
-/* ── DISCUSSION MODAL ── */
+/* ══════════ MARKETPLACE v2 ══════════ */
+/* HERO */
+.mkt-hero{position:relative;padding:160px 80px 60px;overflow:hidden;background:#080500}
+.mkt-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(201,125,26,0.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(61,82,32,0.12) 0%,transparent 50%),url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=1400&q=60') right center/50% auto no-repeat;opacity:0.4}
+.mkt-hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1200px;margin:0 auto}
+.mkt-hero-kicker{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.mkt-hero-h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5.5vw,72px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:16px}
+.mkt-hero-h1 em{display:block;color:var(--gold);font-style:italic}
+.mkt-hero-sub{font-size:16px;font-weight:300;color:rgba(237,224,204,0.58);max-width:460px;line-height:1.7;margin-bottom:28px}
+.mkt-hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.mkt-btn-primary{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:14px 32px;border-radius:2px;cursor:pointer;transition:all 0.22s;display:flex;align-items:center;gap:8px}
+.mkt-btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,125,26,0.4)}
+.mkt-btn-secondary{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:transparent;border:1px solid rgba(201,125,26,0.4);color:var(--sand);padding:14px 32px;border-radius:2px;cursor:pointer;transition:all 0.22s}
+.mkt-btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+.mkt-hero-stats{display:flex;flex-direction:column;gap:20px;text-align:right}
+.mkt-stat-n{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1}
+.mkt-stat-l{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--khaki);margin-top:2px}
+/* CATEGORIES */
+.mkt-cats-wrap{background:rgba(10,7,2,0.97);border-top:1px solid rgba(176,152,112,0.08);border-bottom:1px solid rgba(176,152,112,0.08);padding:0 80px}
+.mkt-cats{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.mkt-cats::-webkit-scrollbar{display:none}
+.mkt-cat{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 22px;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;flex-shrink:0;min-width:90px}
+.mkt-cat:hover{border-bottom-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.05)}
+.mkt-cat.on{border-bottom-color:var(--amber);background:rgba(201,125,26,0.08)}
+.mkt-cat-icon{font-size:22px}
+.mkt-cat-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--sand)}
+.mkt-cat.on .mkt-cat-label{color:var(--gold)}
+.mkt-cat-count{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--khaki)}
+.mkt-cat.on .mkt-cat-count{color:var(--amber)}
+/* CATEGORY DROPDOWNS */
+.mkt-cat-dd-wrap{position:relative}
+.mkt-sub-dd{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--bark2);border:1px solid rgba(201,125,26,0.3);border-radius:3px;z-index:500;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.7);overflow:hidden}
+.mkt-sub-dd.open{display:block}
+.mkt-sub-dd div{padding:11px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.4px;color:var(--sand);cursor:pointer;transition:all 0.15s;border-bottom:1px solid rgba(176,152,112,0.06)}
+.mkt-sub-dd div:last-child{border-bottom:none}
+.mkt-sub-dd div:hover{background:rgba(201,125,26,0.12);color:var(--gold)}
+/* BODY */
+.mkt-body{padding:32px 80px 60px;max-width:1400px}
+/* SEARCH BAR */
+.mkt-search-bar{display:flex;gap:14px;margin-bottom:16px;align-items:stretch}
+.mkt-search-input-wrap{flex:1;position:relative;display:flex;align-items:center;background:rgba(18,12,4,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;transition:border-color 0.2s}
+.mkt-search-input-wrap:focus-within{border-color:var(--amber)}
+.mkt-search-icon{position:absolute;left:16px;font-size:16px;pointer-events:none}
+.mkt-search-input{flex:1;background:transparent;border:none;outline:none;padding:14px 18px 14px 44px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--bone)}
+.mkt-search-input::placeholder{color:rgba(176,152,112,0.38)}
+/* FILTERS */
+.mkt-filters-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:36px;flex-wrap:wrap}
+.mkt-filter-group{display:flex;gap:10px;flex-wrap:wrap}
+.mkt-filter-select{background:rgba(18,12,4,0.8);border:1px solid rgba(176,152,112,0.16);border-radius:2px;padding:8px 14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.5px;color:var(--sand);outline:none;cursor:pointer;transition:border-color 0.2s}
+.mkt-filter-select:hover{border-color:rgba(201,125,26,0.35)}
+.mkt-result-count{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);letter-spacing:0.5px}
+/* SECTION HEADS */
+.mkt-section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
+.mkt-section-kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.mkt-section-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ivory)}
+.mkt-view-all{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);background:none;border:none;cursor:pointer;transition:color 0.2s}
+.mkt-view-all:hover{color:var(--gold)}
+/* FEATURED CARDS */
+.mkt-featured-wrap{margin-bottom:48px}
+.mkt-featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mkt-feat-card{border-radius:4px;overflow:hidden;border:1px solid rgba(176,152,112,0.1);cursor:pointer;transition:all 0.25s;background:var(--bark2)}
+.mkt-feat-card:hover{border-color:rgba(201,125,26,0.35);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+.mkt-feat-img{height:200px;position:relative;overflow:hidden}
+.mkt-feat-overlay{position:absolute;inset:0;background:rgba(8,5,2,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s}
+.mkt-feat-card:hover .mkt-feat-overlay{opacity:1}
+.mkt-feat-overlay span{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,125,26,0.5);padding:10px 24px;border-radius:2px}
+.mkt-feat-badge{position:absolute;top:12px;left:12px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:2px}
+.new-badge{background:rgba(50,90,20,0.9);color:#b0e060}
+.used-badge{background:rgba(120,80,20,0.9);color:#f0c060}
+.mkt-feat-body{padding:16px}
+.mkt-feat-title{font-size:14px;font-weight:500;color:var(--bone);margin-bottom:5px;line-height:1.35}
+.mkt-feat-meta{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--khaki);margin-bottom:10px}
+.mkt-feat-price{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--gold)}
+/* LISTING CARDS */
+.mkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mkt-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.22s}
+.mkt-card:hover{transform:translateY(-3px);border-color:rgba(201,125,26,0.28);box-shadow:0 10px 32px rgba(0,0,0,0.45)}
+.mkt-card-img{height:155px;position:relative;overflow:hidden}
+.mkt-card-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.4s}
+.mkt-card:hover .mkt-card-img-bg{transform:scale(1.06)}
+.mkt-card-badge{position:absolute;top:9px;right:9px;font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:2px 8px;border-radius:2px}
+.mkt-card-body{padding:13px}
+.mkt-card-title{font-size:12px;font-weight:500;color:var(--bone);margin-bottom:5px;line-height:1.35}
+.mkt-card-meta{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--khaki);margin-bottom:8px}
+.mkt-card-footer{display:flex;align-items:center;justify-content:space-between}
+.mkt-card-price{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--gold)}
+.mkt-card-msg{font-size:15px;cursor:pointer;transition:transform 0.2s;background:rgba(201,125,26,0.1);border:1px solid rgba(201,125,26,0.2);border-radius:2px;padding:4px 8px}
+.mkt-card-msg:hover{transform:scale(1.15)}
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .mkt-hero{padding:140px 32px 48px}
+  .mkt-cats-wrap{padding:0 32px}
+  .mkt-body{padding:28px 32px 48px}
+  .mkt-grid{grid-template-columns:repeat(3,1fr)}
+  .mkt-featured-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .mkt-hero{padding:100px 16px 36px}
+  .mkt-hero-content{grid-template-columns:1fr}
+  .mkt-hero-stats{flex-direction:row;justify-content:flex-start;text-align:left}
+  .mkt-cats-wrap{padding:0}
+  .mkt-cat{padding:14px 14px;min-width:70px}
+  .mkt-cat-icon{font-size:18px}
+  .mkt-body{padding:20px 16px 40px}
+  .mkt-search-bar{flex-direction:column}
+  .mkt-grid{grid-template-columns:1fr 1fr}
+  .mkt-featured-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .mkt-grid{grid-template-columns:1fr}
+  .mkt-featured-grid{grid-template-columns:1fr}
+}
+
+
 .disc-type-btn{display:flex;flex-direction:column;gap:4px;padding:14px;background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.14);border-radius:3px;cursor:pointer;transition:all 0.2s;text-align:left}
 .disc-type-btn:has(input:checked),.disc-type-btn.selected{border-color:var(--amber);background:rgba(201,125,26,0.1)}
 .disc-type-btn:hover{border-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.06)}
@@ -1044,109 +1157,258 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══════════ PAGE: MARKETPLACE ══════════ -->
 <div class="page" id="page-marketplace">
-  <div class="sec">
-    <div class="sec-label">Buy & Sell</div>
-    <h1 class="sec-title">Hunting Marketplace</h1>
-    <p class="sec-sub" style="margin-bottom:24px">Verified hunters selling quality gear, optics, clothing and equipment across South Africa.</p>
 
-    <!-- CATEGORY TABS WITH DROPDOWNS -->
-    <div class="ftabs" style="margin-bottom:24px;flex-wrap:wrap;gap:6px;align-items:center">
-      <button class="ftab on" onclick="mktCat(this,'all')">All Items</button>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('guns')">🔫 Guns ▾</button>
-        <div class="cat-dd" id="dd-guns">
-          <button onclick="mktCatSub('guns','','All Guns');closeDDs()">All Guns</button>
-          <button onclick="mktCatSub('guns','rifles','Rifles');closeDDs()">🎯 Rifles</button>
-          <button onclick="mktCatSub('guns','shotguns','Shotguns');closeDDs()">🔫 Shotguns</button>
-          <button onclick="mktCatSub('guns','handguns','Handguns');closeDDs()">🔫 Handguns</button>
-          <button onclick="mktCatSub('guns','ammo','Ammunition');closeDDs()">📦 Ammunition</button>
-          <button onclick="mktCatSub('guns','parts','Parts & Accessories');closeDDs()">🔧 Parts & Accessories</button>
+  <!-- ══ HERO ══ -->
+  <div class="mkt-hero">
+    <div class="mkt-hero-bg"></div>
+    <div class="mkt-hero-content">
+      <div class="mkt-hero-left">
+        <div class="mkt-hero-kicker">🇿🇦 South Africa's Hunting Marketplace</div>
+        <h1 class="mkt-hero-h1">Buy & Sell<br><em>Hunting Gear</em></h1>
+        <p class="mkt-hero-sub">Optics, rifles, clothing and equipment — bought and sold by verified South African hunters.</p>
+        <div class="mkt-hero-btns">
+          <button class="mkt-btn-primary" onclick="document.getElementById('mkt-listings').scrollIntoView({behavior:'smooth'})">
+            Browse Gear <span>→</span>
+          </button>
+          <button class="mkt-btn-secondary" onclick="openOverlay('sellModal')">
+            Sell Your Gear
+          </button>
         </div>
       </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('optics')">🔭 Optics ▾</button>
-        <div class="cat-dd" id="dd-optics">
-          <button onclick="mktCatSub('optics','','All Optics');closeDDs()">All Optics</button>
-          <button onclick="mktCatSub('optics','rifle-scopes','Rifle Scopes');closeDDs()">🎯 Rifle Scopes</button>
-          <button onclick="mktCatSub('optics','binoculars','Binoculars');closeDDs()">👁️ Binoculars</button>
-          <button onclick="mktCatSub('optics','rangefinders','Rangefinders');closeDDs()">📏 Rangefinders</button>
-          <button onclick="mktCatSub('optics','thermal','Thermal & Night Vision');closeDDs()">🌡️ Thermal & Night Vision</button>
-          <button onclick="mktCatSub('optics','red-dot','Red Dot Sights');closeDDs()">🔴 Red Dot Sights</button>
-          <button onclick="mktCatSub('optics','optics-acc','Accessories');closeDDs()">🔧 Accessories</button>
-        </div>
-      </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('clothing')">👕 Clothing ▾</button>
-        <div class="cat-dd" id="dd-clothing">
-          <button onclick="mktCatSub('clothing','','All Clothing');closeDDs()">All Clothing</button>
-          <button onclick="mktCatSub('clothing','jackets','Jackets');closeDDs()">🧥 Jackets</button>
-          <button onclick="mktCatSub('clothing','shirts','Shirts');closeDDs()">👕 Shirts</button>
-          <button onclick="mktCatSub('clothing','pants','Pants');closeDDs()">👖 Pants</button>
-          <button onclick="mktCatSub('clothing','boots','Boots');closeDDs()">🥾 Boots</button>
-          <button onclick="mktCatSub('clothing','headwear','Headwear');closeDDs()">🧢 Headwear</button>
-          <button onclick="mktCatSub('clothing','gloves','Gloves');closeDDs()">🧤 Gloves</button>
-          <button onclick="mktCatSub('clothing','rainwear','Rainwear');closeDDs()">🌧️ Rainwear</button>
-        </div>
-      </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('gear')">🎒 Gear & Cases ▾</button>
-        <div class="cat-dd" id="dd-gear">
-          <button onclick="mktCatSub('gear','','All Gear');closeDDs()">All Gear & Cases</button>
-          <button onclick="mktCatSub('gear','backpacks','Backpacks');closeDDs()">🎒 Backpacks</button>
-          <button onclick="mktCatSub('gear','rifle-cases','Rifle Cases');closeDDs()">🔫 Rifle Cases</button>
-          <button onclick="mktCatSub('gear','hard-cases','Hard Cases');closeDDs()">🧳 Hard Cases</button>
-          <button onclick="mktCatSub('gear','ammo-storage','Ammo Storage');closeDDs()">📦 Ammo Storage</button>
-          <button onclick="mktCatSub('gear','shooting-gear','Shooting Gear');closeDDs()">🎯 Shooting Gear</button>
-          <button onclick="mktCatSub('gear','slings','Slings & Holsters');closeDDs()">🔗 Slings & Holsters</button>
-          <button onclick="mktCatSub('gear','gps','GPS & Comms');closeDDs()">📡 GPS & Comms</button>
-        </div>
-      </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('knives')">🔪 Knives ▾</button>
-        <div class="cat-dd" id="dd-knives">
-          <button onclick="mktCatSub('knives','','All Knives');closeDDs()">All Knives</button>
-          <button onclick="mktCatSub('knives','hunting-knives','Hunting Knives');closeDDs()">🔪 Hunting Knives</button>
-          <button onclick="mktCatSub('knives','skinning-knives','Skinning Knives');closeDDs()">🔪 Skinning Knives</button>
-          <button onclick="mktCatSub('knives','folding-knives','Folding Knives');closeDDs()">🔪 Folding Knives</button>
-          <button onclick="mktCatSub('knives','fixed-blade','Fixed Blade');closeDDs()">🗡️ Fixed Blade</button>
-          <button onclick="mktCatSub('knives','multi-tools','Multi-Tools');closeDDs()">🔧 Multi-Tools</button>
-          <button onclick="mktCatSub('knives','sharpeners','Sharpeners');closeDDs()">⚙️ Sharpeners</button>
-        </div>
-      </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('bows')">🏹 Bows ▾</button>
-        <div class="cat-dd" id="dd-bows">
-          <button onclick="mktCatSub('bows','','All Bows');closeDDs()">All Bows</button>
-          <button onclick="mktCatSub('bows','compound','Compound Bows');closeDDs()">🏹 Compound Bows</button>
-          <button onclick="mktCatSub('bows','recurve','Recurve Bows');closeDDs()">🏹 Recurve Bows</button>
-          <button onclick="mktCatSub('bows','crossbow','Crossbows');closeDDs()">⚔️ Crossbows</button>
-          <button onclick="mktCatSub('bows','youth','Youth Bows');closeDDs()">🏹 Youth Bows</button>
-          <button onclick="mktCatSub('bows','bow-acc','Accessories');closeDDs()">🔧 Accessories</button>
-        </div>
-      </div>
-
-      <div class="cat-dd-wrap"><button class="ftab cat-dd-btn" onclick="toggleCatDD('accessories')">🔧 Accessories ▾</button>
-        <div class="cat-dd" id="dd-accessories">
-          <button onclick="mktCatSub('accessories','','All Accessories');closeDDs()">All Accessories</button>
-          <button onclick="mktCatSub('accessories','shooting-acc','Shooting Accessories');closeDDs()">🎯 Shooting Accessories</button>
-          <button onclick="mktCatSub('accessories','cleaning','Cleaning Kits');closeDDs()">🧹 Cleaning Kits</button>
-          <button onclick="mktCatSub('accessories','lights','Lights & Torches');closeDDs()">🔦 Lights & Torches</button>
-          <button onclick="mktCatSub('accessories','calls','Calls & Scents');closeDDs()">📯 Calls & Scents</button>
-          <button onclick="mktCatSub('accessories','safety','Safety Gear');closeDDs()">🦺 Safety Gear</button>
-          <button onclick="mktCatSub('accessories','maintenance','Maintenance Tools');closeDDs()">🔧 Maintenance Tools</button>
-        </div>
+      <div class="mkt-hero-stats">
+        <div class="mkt-stat"><div class="mkt-stat-n">1,240+</div><div class="mkt-stat-l">Active Listings</div></div>
+        <div class="mkt-stat"><div class="mkt-stat-n">340+</div><div class="mkt-stat-l">Verified Sellers</div></div>
+        <div class="mkt-stat"><div class="mkt-stat-n">Free</div><div class="mkt-stat-l">To List</div></div>
       </div>
     </div>
-
-    <!-- SEARCH -->
-    <div style="display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap">
-      <input type="text" id="mkt-search" placeholder="🔍  Search items..." oninput="mktSearch()" style="flex:1;min-width:200px;background:rgba(30,20,9,0.9);border:1px solid rgba(176,152,112,0.2);border-radius:3px;padding:12px 18px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--bone);outline:none">
-      <button class="btn-hero-main" onclick="openOverlay('sellModal')" style="padding:12px 24px;white-space:nowrap">+ Sell Your Item</button>
-    </div>
-
-    <!-- PRODUCTS GRID -->
-    <div class="mkt-grid" id="mkt-grid"></div>
   </div>
+
+  <!-- ══ CATEGORY CARDS ══ -->
+  <div class="mkt-cats-wrap">
+    <div class="mkt-cats" id="mkt-cat-row">
+      <div class="mkt-cat on" onclick="mktCat(this,'all')">
+        <div class="mkt-cat-icon">🎯</div>
+        <div class="mkt-cat-label">All Items</div>
+        <div class="mkt-cat-count">1,240+</div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('guns-dd',this,'guns')">
+          <div class="mkt-cat-icon">🔫</div>
+          <div class="mkt-cat-label">Guns ▾</div>
+          <div class="mkt-cat-count">284</div>
+        </div>
+        <div class="mkt-sub-dd" id="guns-dd">
+          <div onclick="mktCatSub('guns','','All Guns');closeMktDDs()">All Guns</div>
+          <div onclick="mktCatSub('guns','rifles','Rifles');closeMktDDs()">🎯 Rifles</div>
+          <div onclick="mktCatSub('guns','shotguns','Shotguns');closeMktDDs()">🔫 Shotguns</div>
+          <div onclick="mktCatSub('guns','handguns','Handguns');closeMktDDs()">🔫 Handguns</div>
+          <div onclick="mktCatSub('guns','ammo','Ammunition');closeMktDDs()">📦 Ammunition</div>
+          <div onclick="mktCatSub('guns','parts','Parts & Upgrades');closeMktDDs()">⚙️ Parts & Upgrades</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('optics-dd',this,'optics')">
+          <div class="mkt-cat-icon">🔭</div>
+          <div class="mkt-cat-label">Optics ▾</div>
+          <div class="mkt-cat-count">318</div>
+        </div>
+        <div class="mkt-sub-dd" id="optics-dd">
+          <div onclick="mktCatSub('optics','','All Optics');closeMktDDs()">All Optics</div>
+          <div onclick="mktCatSub('optics','rifle-scopes','Rifle Scopes');closeMktDDs()">🎯 Rifle Scopes</div>
+          <div onclick="mktCatSub('optics','binoculars','Binoculars');closeMktDDs()">👁️ Binoculars</div>
+          <div onclick="mktCatSub('optics','rangefinders','Rangefinders');closeMktDDs()">📏 Rangefinders</div>
+          <div onclick="mktCatSub('optics','thermal','Thermal & Night Vision');closeMktDDs()">🌡️ Thermal</div>
+          <div onclick="mktCatSub('optics','red-dot','Red Dot Sights');closeMktDDs()">🔴 Red Dot Sights</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('clothing-dd',this,'clothing')">
+          <div class="mkt-cat-icon">👕</div>
+          <div class="mkt-cat-label">Clothing ▾</div>
+          <div class="mkt-cat-count">192</div>
+        </div>
+        <div class="mkt-sub-dd" id="clothing-dd">
+          <div onclick="mktCatSub('clothing','','All Clothing');closeMktDDs()">All Clothing</div>
+          <div onclick="mktCatSub('clothing','jackets','Jackets');closeMktDDs()">🧥 Jackets</div>
+          <div onclick="mktCatSub('clothing','shirts','Shirts');closeMktDDs()">👕 Shirts</div>
+          <div onclick="mktCatSub('clothing','pants','Pants');closeMktDDs()">👖 Pants</div>
+          <div onclick="mktCatSub('clothing','boots','Boots');closeMktDDs()">🥾 Boots</div>
+          <div onclick="mktCatSub('clothing','headwear','Headwear');closeMktDDs()">🧢 Headwear</div>
+          <div onclick="mktCatSub('clothing','gloves','Gloves');closeMktDDs()">🧤 Gloves</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('gear-dd',this,'gear')">
+          <div class="mkt-cat-icon">🎒</div>
+          <div class="mkt-cat-label">Gear ▾</div>
+          <div class="mkt-cat-count">156</div>
+        </div>
+        <div class="mkt-sub-dd" id="gear-dd">
+          <div onclick="mktCatSub('gear','','All Gear');closeMktDDs()">All Gear & Cases</div>
+          <div onclick="mktCatSub('gear','backpacks','Backpacks');closeMktDDs()">🎒 Backpacks</div>
+          <div onclick="mktCatSub('gear','rifle-cases','Rifle Cases');closeMktDDs()">🔫 Rifle Cases</div>
+          <div onclick="mktCatSub('gear','hard-cases','Hard Cases');closeMktDDs()">🧳 Hard Cases</div>
+          <div onclick="mktCatSub('gear','gps','GPS & Comms');closeMktDDs()">📡 GPS & Comms</div>
+          <div onclick="mktCatSub('gear','slings','Slings & Holsters');closeMktDDs()">🔗 Slings & Holsters</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('knives-dd',this,'knives')">
+          <div class="mkt-cat-icon">🔪</div>
+          <div class="mkt-cat-label">Knives ▾</div>
+          <div class="mkt-cat-count">94</div>
+        </div>
+        <div class="mkt-sub-dd" id="knives-dd">
+          <div onclick="mktCatSub('knives','','All Knives');closeMktDDs()">All Knives</div>
+          <div onclick="mktCatSub('knives','hunting-knives','Hunting Knives');closeMktDDs()">🔪 Hunting Knives</div>
+          <div onclick="mktCatSub('knives','skinning-knives','Skinning Knives');closeMktDDs()">🔪 Skinning Knives</div>
+          <div onclick="mktCatSub('knives','folding-knives','Folding Knives');closeMktDDs()">🔪 Folding Knives</div>
+          <div onclick="mktCatSub('knives','multi-tools','Multi-Tools');closeMktDDs()">🔧 Multi-Tools</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('bows-dd',this,'bows')">
+          <div class="mkt-cat-icon">🏹</div>
+          <div class="mkt-cat-label">Bows ▾</div>
+          <div class="mkt-cat-count">67</div>
+        </div>
+        <div class="mkt-sub-dd" id="bows-dd">
+          <div onclick="mktCatSub('bows','','All Bows');closeMktDDs()">All Bows</div>
+          <div onclick="mktCatSub('bows','compound','Compound Bows');closeMktDDs()">🏹 Compound Bows</div>
+          <div onclick="mktCatSub('bows','recurve','Recurve Bows');closeMktDDs()">🏹 Recurve Bows</div>
+          <div onclick="mktCatSub('bows','crossbow','Crossbows');closeMktDDs()">⚔️ Crossbows</div>
+          <div onclick="mktCatSub('bows','bow-acc','Bow Accessories');closeMktDDs()">🔧 Accessories</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('acc-dd',this,'accessories')">
+          <div class="mkt-cat-icon">🔧</div>
+          <div class="mkt-cat-label">Accessories ▾</div>
+          <div class="mkt-cat-count">129</div>
+        </div>
+        <div class="mkt-sub-dd" id="acc-dd">
+          <div onclick="mktCatSub('accessories','','All Accessories');closeMktDDs()">All Accessories</div>
+          <div onclick="mktCatSub('accessories','shooting-acc','Shooting Accessories');closeMktDDs()">🎯 Shooting Accessories</div>
+          <div onclick="mktCatSub('accessories','cleaning','Cleaning Kits');closeMktDDs()">🧹 Cleaning Kits</div>
+          <div onclick="mktCatSub('accessories','lights','Lights & Torches');closeMktDDs()">🔦 Torches</div>
+          <div onclick="mktCatSub('accessories','calls','Calls & Scents');closeMktDDs()">📯 Calls & Scents</div>
+          <div onclick="mktCatSub('accessories','safety','Safety Gear');closeMktDDs()">🦺 Safety Gear</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mkt-body">
+
+    <!-- ══ SEARCH + ACTION BAR ══ -->
+    <div class="mkt-search-bar">
+      <div class="mkt-search-input-wrap">
+        <span class="mkt-search-icon">🔍</span>
+        <input type="text" id="mkt-search" class="mkt-search-input"
+          placeholder="Search gear (e.g. rifle scope, camo jacket...)"
+          oninput="mktSearch()">
+      </div>
+      <button class="mkt-btn-primary" onclick="openOverlay('sellModal')" style="white-space:nowrap;flex-shrink:0">
+        + Sell Your Item
+      </button>
+    </div>
+
+    <!-- ══ FILTERS ══ -->
+    <div class="mkt-filters-row">
+      <div class="mkt-filter-group">
+        <select class="mkt-filter-select" onchange="mktSearch()">
+          <option value="">All Conditions</option>
+          <option value="new">New</option>
+          <option value="used">Used - Good</option>
+          <option value="used-fair">Used - Fair</option>
+        </select>
+        <select class="mkt-filter-select" onchange="mktSearch()">
+          <option value="">All Provinces</option>
+          <option>Limpopo</option><option>North West</option><option>Northern Cape</option>
+          <option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option>
+          <option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option>
+        </select>
+        <select class="mkt-filter-select" onchange="mktSearch()">
+          <option value="">Any Price</option>
+          <option>Under R 1,000</option>
+          <option>R 1,000 – R 5,000</option>
+          <option>R 5,000 – R 20,000</option>
+          <option>R 20,000+</option>
+        </select>
+      </div>
+      <div id="mkt-result-count" class="mkt-result-count">Showing all listings</div>
+    </div>
+
+    <!-- ══ FEATURED LISTINGS ══ -->
+    <div class="mkt-featured-wrap" id="mkt-listings">
+      <div class="mkt-section-head">
+        <div>
+          <div class="mkt-section-kicker">⭐ Hand-picked</div>
+          <h2 class="mkt-section-title">Featured Listings</h2>
+        </div>
+        <button class="mkt-view-all" onclick="mktCat(document.querySelector('.mkt-cat'),'all')">View All →</button>
+      </div>
+      <div class="mkt-featured-grid">
+
+        <div class="mkt-feat-card" onclick="openProduct(1)">
+          <div class="mkt-feat-img" style="background:linear-gradient(135deg,#1a1008,#2a2010),url('https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&q=80') center/cover">
+            <div class="mkt-feat-badge new-badge">New</div>
+            <div class="mkt-feat-overlay"><span>View Details →</span></div>
+          </div>
+          <div class="mkt-feat-body">
+            <div class="mkt-feat-title">Swarovski Z6i 2.5-15x56 Rifle Scope</div>
+            <div class="mkt-feat-meta">JaagBoer · 📍 Limpopo · 2 days ago</div>
+            <div class="mkt-feat-price">R 18,500</div>
+          </div>
+        </div>
+
+        <div class="mkt-feat-card" onclick="openProduct(8)">
+          <div class="mkt-feat-img" style="background:linear-gradient(135deg,#0a1020,#141830),url('https://images.unsplash.com/photo-1566841498635-f06d4a519e72?w=600&q=80') center/cover">
+            <div class="mkt-feat-badge used-badge">Used</div>
+            <div class="mkt-feat-overlay"><span>View Details →</span></div>
+          </div>
+          <div class="mkt-feat-body">
+            <div class="mkt-feat-title">Mathews Phase4 33 Compound Bow</div>
+            <div class="mkt-feat-meta">BowHunterZA · 📍 Mpumalanga · 1 day ago</div>
+            <div class="mkt-feat-price">R 22,000</div>
+          </div>
+        </div>
+
+        <div class="mkt-feat-card" onclick="openProduct(10)">
+          <div class="mkt-feat-img" style="background:linear-gradient(135deg,#080818,#101028),url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80') center/cover">
+            <div class="mkt-feat-badge used-badge">Used</div>
+            <div class="mkt-feat-overlay"><span>View Details →</span></div>
+          </div>
+          <div class="mkt-feat-body">
+            <div class="mkt-feat-title">Pulsar Thermion 2 XP50 Pro Thermal</div>
+            <div class="mkt-feat-meta">NightHunterSA · 📍 North West · 3 days ago</div>
+            <div class="mkt-feat-price">R 68,000</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ ALL LISTINGS ══ -->
+    <div>
+      <div class="mkt-section-head">
+        <div>
+          <div class="mkt-section-kicker">Latest</div>
+          <h2 class="mkt-section-title">All Listings</h2>
+        </div>
+      </div>
+      <div class="mkt-grid" id="mkt-grid"></div>
+    </div>
+
+  </div><!-- end mkt-body -->
 </div>
 
 <!-- ══════════ PAGE: COMMUNITY ══════════ -->
@@ -2024,33 +2286,35 @@ const products = [
   {id:13,title:"Caldwell Lead Sled DFT 2 Shooting Rest",cat:"accessories",subcat:"shooting-acc",cond:"Used - Good",price:"R 3,600",seller:"ShotgunSam_NW",rating:"4.8",loc:"North West",img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"Caldwell Lead Sled DFT 2. Accepts 25kg lead. All parts included.",details:{Brand:"Caldwell",Model:"Lead Sled DFT 2",Condition:"Used - Good"}},
 ];
 
+// ════ MARKETPLACE ════
 let mktFilter = 'all';
 let mktSub = '';
 
-function toggleCatDD(cat) {
-  const dd = document.getElementById('dd-'+cat);
+function toggleMktDD(id, btn, cat) {
+  const dd = document.getElementById(id);
   if(!dd) return;
   const wasOpen = dd.classList.contains('open');
-  closeDDs();
-  if(!wasOpen) dd.classList.add('open');
+  closeMktDDs();
+  if(!wasOpen) {
+    dd.classList.add('open');
+    document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
+    btn.classList.add('on');
+    mktFilter = cat; mktSub = '';
+    mktSearch();
+  }
 }
-function closeDDs() { document.querySelectorAll('.cat-dd').forEach(d=>d.classList.remove('open')); }
-document.addEventListener('click', function(e){ if(!e.target.closest('.cat-dd-wrap')) closeDDs(); });
+function closeMktDDs() { document.querySelectorAll('.mkt-sub-dd').forEach(d => d.classList.remove('open')); }
+document.addEventListener('click', function(e){ if(!e.target.closest('.mkt-cat-dd-wrap')) closeMktDDs(); });
 
 function mktCat(btn, cat) {
-  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));
-  btn.classList.add('on');
+  document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
+  if(btn) btn.classList.add('on');
   mktFilter = cat;
   mktSub = '';
   mktSearch();
-  closeDDs();
 }
 
-function mktCatSub(cat, sub, label) {
-  mktFilter = cat;
-  mktSub = sub;
-  mktSearch();
-}
+function mktCatSub(cat, sub, label) { mktFilter = cat; mktSub = sub; mktSearch(); }
 
 function mktSearch() {
   const q = (document.getElementById('mkt-search')?.value || '').toLowerCase();
@@ -2060,6 +2324,8 @@ function mktSearch() {
     const searchOk = !q || p.title.toLowerCase().includes(q) || (p.desc||'').toLowerCase().includes(q);
     return catOk && subOk && searchOk;
   });
+  const countEl = document.getElementById('mkt-result-count');
+  if(countEl) countEl.textContent = `Showing ${items.length} listing${items.length!==1?'s':''}`;
   mktRender(items);
 }
 
@@ -2067,18 +2333,22 @@ function mktRender(items) {
   const grid = document.getElementById('mkt-grid');
   if (!grid) return;
   if (items.length === 0) {
-    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--khaki);font-size:16px">No items found.</div>';
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--khaki);font-size:16px">No items found matching your search.</div>';
     return;
   }
   grid.innerHTML = items.map(p => `
     <div class="mkt-card" onclick="openProduct(${p.id})">
-      <div class="mkt-img" style="height:160px;background-image:url('${p.img}');background-size:cover;background-position:center;position:relative">
-        <div class="mkt-cond ${p.cond.startsWith('New') ? 'cond-new' : 'cond-used'}">${p.cond.split('-')[0].trim()}</div>
+      <div class="mkt-card-img">
+        <div class="mkt-card-img-bg" style="background-image:url('${p.img}')"></div>
+        <div class="mkt-card-badge ${p.cond.startsWith('New') ? 'new-badge' : 'used-badge'}">${p.cond.split('-')[0].trim()}</div>
       </div>
-      <div class="mkt-body">
-        <div class="mkt-title">${p.title}</div>
-        <div class="mkt-seller">${p.seller} · 📍 ${p.loc}</div>
-        <div class="mkt-row"><span class="mkt-price">${p.price}</span><span class="mkt-msg" onclick="event.stopPropagation();showToast('Message sent! 💬','ok')">💬</span></div>
+      <div class="mkt-card-body">
+        <div class="mkt-card-title">${p.title}</div>
+        <div class="mkt-card-meta">${p.seller} · 📍 ${p.loc}</div>
+        <div class="mkt-card-footer">
+          <span class="mkt-card-price">${p.price}</span>
+          <span class="mkt-card-msg" onclick="event.stopPropagation();showToast('Message sent! 💬','ok')">💬</span>
+        </div>
       </div>
     </div>`).join('');
 }
