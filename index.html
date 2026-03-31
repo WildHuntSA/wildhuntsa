@@ -706,8 +706,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .mkt-stat-n{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1}
 .mkt-stat-l{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--khaki);margin-top:2px}
 /* CATEGORIES */
-.mkt-cats-wrap{background:rgba(10,7,2,0.97);border-top:1px solid rgba(176,152,112,0.08);border-bottom:1px solid rgba(176,152,112,0.08);padding:0 80px}
-.mkt-cats{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.mkt-cats-wrap{background:rgba(10,7,2,0.97);border-top:1px solid rgba(176,152,112,0.08);border-bottom:1px solid rgba(176,152,112,0.08);padding:0 80px;position:relative;z-index:200;overflow:visible}
+.mkt-cats{display:flex;gap:0;overflow-x:auto;overflow-y:visible;scrollbar-width:none;position:relative;padding-bottom:0}
 .mkt-cats::-webkit-scrollbar{display:none}
 .mkt-cat{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 22px;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;flex-shrink:0;min-width:90px}
 .mkt-cat:hover{border-bottom-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.05)}
@@ -718,8 +718,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .mkt-cat-count{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--khaki)}
 .mkt-cat.on .mkt-cat-count{color:var(--amber)}
 /* CATEGORY DROPDOWNS */
-.mkt-cat-dd-wrap{position:relative}
-.mkt-sub-dd{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--bark2);border:1px solid rgba(201,125,26,0.3);border-radius:3px;z-index:500;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.7);overflow:hidden}
+.mkt-cat-dd-wrap{position:static}
+.mkt-sub-dd{display:none;position:fixed;background:var(--bark2);border:1px solid rgba(201,125,26,0.35);border-radius:3px;z-index:9000;min-width:200px;box-shadow:0 12px 40px rgba(0,0,0,0.9);overflow:hidden;white-space:nowrap}
 .mkt-sub-dd.open{display:block}
 .mkt-sub-dd div{padding:11px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.4px;color:var(--sand);cursor:pointer;transition:all 0.15s;border-bottom:1px solid rgba(176,152,112,0.06)}
 .mkt-sub-dd div:last-child{border-bottom:none}
@@ -2284,6 +2284,9 @@ const products = [
   {id:11,title:"Leica Rangemaster CRF 2800 Rangefinder",cat:"optics",subcat:"rangefinders",cond:"New",price:"R 12,500",seller:"LongRange_SA",rating:"5.0",loc:"Gauteng",img:"https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&q=80",desc:"Brand new Leica CRF 2800. Measures to 2800m, Bluetooth to Kestrel.",details:{Brand:"Leica",Model:"CRF 2800",Range:"2800m",Condition:"New"}},
   {id:12,title:"Sitka Gear Traverse Pant - Subalpine XL",cat:"clothing",subcat:"pants",cond:"Used - Good",price:"R 2,800",seller:"MountainHunterKZN",rating:"4.7",loc:"KwaZulu-Natal",img:"https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80",desc:"Sitka Traverse pants Optifade Subalpine XL. One season use, no damage.",details:{Brand:"Sitka",Model:"Traverse Pant",Size:"XL",Condition:"Used - Good"}},
   {id:13,title:"Caldwell Lead Sled DFT 2 Shooting Rest",cat:"accessories",subcat:"shooting-acc",cond:"Used - Good",price:"R 3,600",seller:"ShotgunSam_NW",rating:"4.8",loc:"North West",img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"Caldwell Lead Sled DFT 2. Accepts 25kg lead. All parts included.",details:{Brand:"Caldwell",Model:"Lead Sled DFT 2",Condition:"Used - Good"}},
+  {id:14,title:"Tikka T3x Lite .308 Win — 1 season, excellent condition",cat:"guns",subcat:"rifles",cond:"Used - Good",price:"R 14,900",seller:"BushveldKing",rating:"4.8",loc:"Limpopo",img:"https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&q=80",desc:"Tikka T3x Lite .308 Win, stainless barrel, synthetic stock. One season use, no scope.",details:{Brand:"Tikka",Model:"T3x Lite",Calibre:".308 Win",Condition:"Used - Good"}},
+  {id:15,title:"Browning X-Bolt Hunter .300 Win Mag — Excellent",cat:"guns",subcat:"rifles",cond:"Used - Good",price:"R 22,500",seller:"KarooRifleman",rating:"4.9",loc:"Eastern Cape",img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",desc:"Browning X-Bolt Hunter .300 Win Mag. Walnut stock, TRUELOCK bolt. Comes with Leupold bases.",details:{Brand:"Browning",Model:"X-Bolt Hunter",Calibre:".300 Win Mag",Condition:"Used - Good"}},
+  {id:16,title:"Federal Premium .308 Win 168gr BTHP — 200 rounds",cat:"guns",subcat:"ammo",cond:"New",price:"R 3,800",seller:"LongRange_SA",rating:"5.0",loc:"Gauteng",img:"https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80",desc:"Federal Premium Gold Medal .308 Win 168gr BTHP. 200 rounds factory packed.",details:{Brand:"Federal",Type:"Gold Medal",Calibre:".308 Win",Condition:"New"}}
 ];
 
 // ════ MARKETPLACE ════
@@ -2296,7 +2299,14 @@ function toggleMktDD(id, btn, cat) {
   const wasOpen = dd.classList.contains('open');
   closeMktDDs();
   if(!wasOpen) {
+    // Position using fixed coords from button rect
+    const rect = btn.getBoundingClientRect();
+    dd.style.top = (rect.bottom + 4) + 'px';
+    dd.style.left = Math.max(4, rect.left - (dd.offsetWidth / 2) + (rect.width / 2)) + 'px';
     dd.classList.add('open');
+    // Adjust if off-screen right
+    const ddRect = dd.getBoundingClientRect();
+    if(ddRect.right > window.innerWidth - 8) dd.style.left = (window.innerWidth - ddRect.width - 8) + 'px';
     document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
     btn.classList.add('on');
     mktFilter = cat; mktSub = '';
@@ -2304,7 +2314,7 @@ function toggleMktDD(id, btn, cat) {
   }
 }
 function closeMktDDs() { document.querySelectorAll('.mkt-sub-dd').forEach(d => d.classList.remove('open')); }
-document.addEventListener('click', function(e){ if(!e.target.closest('.mkt-cat-dd-wrap')) closeMktDDs(); });
+document.addEventListener('click', function(e){ if(!e.target.closest('.mkt-cat-dd-wrap') && !e.target.closest('.mkt-sub-dd')) closeMktDDs(); });
 
 function mktCat(btn, cat) {
   document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
