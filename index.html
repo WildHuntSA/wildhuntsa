@@ -1065,7 +1065,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
             alt="South Africa Province Map"
             style="width:100%;height:auto;display:block;min-height:480px;object-fit:contain">
 
-          <!-- CLICKABLE HOTSPOTS — precisely over each province name label -->
+          <!-- CLICKABLE HOTSPOTS — over province name labels -->
 
           <!-- LIMPOPO -->
           <div class="map-dot-hs" style="left:66.7%;top:14.4%;width:100px;height:22px"
@@ -1073,53 +1073,31 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
             onmouseenter="showProvPopupXY(event,'Limpopo',128,'Kudu, Impala, Bushbuck')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- NORTH WEST -->
-          <div class="map-dot-hs" style="left:43%;top:35.6%;width:110px;height:22px"
+          <!-- NORTH WEST — moved up and right -->
+          <div class="map-dot-hs" style="left:49%;top:31%;width:110px;height:22px"
             onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseenter="showProvPopupXY(event,'North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- GAUTENG -->
-          <div class="map-dot-hs" style="left:57.5%;top:32.1%;width:85px;height:22px"
+          <!-- GAUTENG — moved right -->
+          <div class="map-dot-hs" style="left:63%;top:32.1%;width:85px;height:22px"
             onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseenter="showProvPopupXY(event,'Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- MPUMALANGA -->
-          <div class="map-dot-hs" style="left:66%;top:42.3%;width:120px;height:22px"
+          <!-- MPUMALANGA — moved right -->
+          <div class="map-dot-hs" style="left:72%;top:42.3%;width:120px;height:22px"
             onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseenter="showProvPopupXY(event,'Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- FREE STATE -->
-          <div class="map-dot-hs" style="left:48%;top:54%;width:105px;height:22px"
-            onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"
-            onmouseenter="showProvPopupXY(event,'Free State',22,'Blesbok, Springbok, Wildebeest')"
-            onmouseleave="hideProvPopup()"></div>
-
-          <!-- NORTHERN CAPE -->
-          <div class="map-dot-hs" style="left:19%;top:63.3%;width:125px;height:22px"
-            onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"
-            onmouseenter="showProvPopupXY(event,'Northern Cape',58,'Gemsbok, Springbok, Eland')"
-            onmouseleave="hideProvPopup()"></div>
-
-          <!-- EASTERN CAPE -->
-          <div class="map-dot-hs" style="left:44%;top:77.9%;width:115px;height:22px"
-            onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"
-            onmouseenter="showProvPopupXY(event,'Eastern Cape',17,'Buffalo, Kudu, Sable')"
-            onmouseleave="hideProvPopup()"></div>
-
-          <!-- KWAZULU-NATAL — right coast, not labelled in cropped view but positioned right -->
+          <!-- KWAZULU-NATAL -->
           <div class="map-dot-hs" style="left:67%;top:60%;width:130px;height:22px"
             onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
             onmouseenter="showProvPopupXY(event,'KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- WESTERN CAPE -->
-          <div class="map-dot-hs" style="left:15%;top:89.1%;width:120px;height:22px"
-            onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"
-            onmouseenter="showProvPopupXY(event,'Western Cape',8,'Springbok, Gemsbok, Eland')"
-            onmouseleave="hideProvPopup()"></div>
+          <!-- FREE STATE, EASTERN CAPE, WESTERN CAPE, NORTHERN CAPE — removed as requested -->
 
           <!-- HOVER POPUP -->
           <div id="prov-popup" style="display:none;position:absolute;background:rgba(8,5,2,0.97);border:1px solid rgba(201,125,26,0.55);border-radius:5px;padding:14px 18px;min-width:190px;pointer-events:none;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,0.7)">
