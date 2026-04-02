@@ -839,8 +839,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .prov-hotspot:hover{background:transparent}
 .prov-dot-pin{width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(224,168,48,0.8),0 0 20px rgba(224,168,48,0.4);opacity:0.85;transition:all 0.3s;animation:pinPulse 2s ease-in-out infinite}
 /* ── IMAGE MAP DOT HOTSPOTS ── */
-.map-dot-hs{position:absolute;width:36px;height:36px;transform:translate(-50%,-50%);cursor:pointer;z-index:20;border-radius:50%}
-.map-dot-hs:hover{background:rgba(255,180,30,0.2);box-shadow:0 0 16px rgba(255,160,20,0.6)}
+.map-dot-hs{position:absolute;cursor:pointer;z-index:20;transform:translate(-0%,-50%);border-radius:4px;border:1px solid transparent;transition:all 0.2s}
+.map-dot-hs:hover{background:rgba(255,180,30,0.15);border-color:rgba(255,180,30,0.5);box-shadow:0 0 12px rgba(255,160,20,0.4)}
 .map-dot-ring{display:none}
 .prov-hotspot:hover .prov-dot-pin,.prov-hotspot.active .prov-dot-pin{width:16px;height:16px;box-shadow:0 0 16px rgba(224,168,48,1),0 0 32px rgba(224,168,48,0.6);opacity:1;animation:none}
 @keyframes pinPulse{0%,100%{transform:scale(1);opacity:0.7}50%{transform:scale(1.3);opacity:1}}
@@ -1065,58 +1065,58 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
             alt="South Africa Province Map"
             style="width:100%;height:auto;display:block;min-height:480px;object-fit:contain">
 
-          <!-- CLICKABLE HOTSPOTS — precisely on each dot in the image -->
+          <!-- CLICKABLE HOTSPOTS — precisely over each province name label -->
 
-          <!-- Limpopo dot: top right area -->
-          <div class="map-dot-hs" style="left:70%;top:26%"
+          <!-- LIMPOPO -->
+          <div class="map-dot-hs" style="left:66.7%;top:14.4%;width:100px;height:22px"
             onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"
             onmouseenter="showProvPopupXY(event,'Limpopo',128,'Kudu, Impala, Bushbuck')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- North West dot -->
-          <div class="map-dot-hs" style="left:37%;top:43%"
+          <!-- NORTH WEST -->
+          <div class="map-dot-hs" style="left:43%;top:35.6%;width:110px;height:22px"
             onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseenter="showProvPopupXY(event,'North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- Gauteng dot: small province -->
-          <div class="map-dot-hs" style="left:52%;top:41%"
+          <!-- GAUTENG -->
+          <div class="map-dot-hs" style="left:57.5%;top:32.1%;width:85px;height:22px"
             onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseenter="showProvPopupXY(event,'Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- Mpumalanga dot -->
-          <div class="map-dot-hs" style="left:79%;top:44%"
+          <!-- MPUMALANGA -->
+          <div class="map-dot-hs" style="left:66%;top:42.3%;width:120px;height:22px"
             onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseenter="showProvPopupXY(event,'Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- Free State dot: centre of map -->
-          <div class="map-dot-hs" style="left:50%;top:56%"
+          <!-- FREE STATE -->
+          <div class="map-dot-hs" style="left:48%;top:54%;width:105px;height:22px"
             onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"
             onmouseenter="showProvPopupXY(event,'Free State',22,'Blesbok, Springbok, Wildebeest')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- KwaZulu-Natal dot: right coast -->
-          <div class="map-dot-hs" style="left:70%;top:66%"
-            onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
-            onmouseenter="showProvPopupXY(event,'KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
-            onmouseleave="hideProvPopup()"></div>
-
-          <!-- Northern Cape dot: large left province -->
-          <div class="map-dot-hs" style="left:20%;top:65%"
+          <!-- NORTHERN CAPE -->
+          <div class="map-dot-hs" style="left:19%;top:63.3%;width:125px;height:22px"
             onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"
             onmouseenter="showProvPopupXY(event,'Northern Cape',58,'Gemsbok, Springbok, Eland')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- Eastern Cape dot: bottom centre -->
-          <div class="map-dot-hs" style="left:46%;top:78%"
+          <!-- EASTERN CAPE -->
+          <div class="map-dot-hs" style="left:44%;top:77.9%;width:115px;height:22px"
             onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"
             onmouseenter="showProvPopupXY(event,'Eastern Cape',17,'Buffalo, Kudu, Sable')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- Western Cape dot: bottom left -->
-          <div class="map-dot-hs" style="left:16%;top:87%"
+          <!-- KWAZULU-NATAL — right coast, not labelled in cropped view but positioned right -->
+          <div class="map-dot-hs" style="left:67%;top:60%;width:130px;height:22px"
+            onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
+            onmouseenter="showProvPopupXY(event,'KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
+            onmouseleave="hideProvPopup()"></div>
+
+          <!-- WESTERN CAPE -->
+          <div class="map-dot-hs" style="left:15%;top:89.1%;width:120px;height:22px"
             onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"
             onmouseenter="showProvPopupXY(event,'Western Cape',8,'Springbok, Gemsbok, Eland')"
             onmouseleave="hideProvPopup()"></div>
