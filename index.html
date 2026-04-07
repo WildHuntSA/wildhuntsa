@@ -2012,7 +2012,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <div class="bk-option-list" id="bk-services-list">
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="350" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="350" data-multiply="species" onchange="calcBooking()">
             <div><div class="bk-opt-name">🔪 Slaughter & Butcher</div><div class="bk-opt-desc">Professional on-site slaughter and butchering</div></div>
           </div>
           <div class="bk-opt-price">R 350 <span>/ animal</span></div>
@@ -2494,12 +2494,16 @@ function calcBooking() {
   }
 
   // Services
+  const speciesCount = document.querySelectorAll('.bk-species-row.selected').length || 1;
   document.querySelectorAll('.bk-chk:checked').forEach(chk => {
     const row = chk.closest('.bk-option-row');
     const name = row.querySelector('.bk-opt-name').textContent;
     const price = parseInt(chk.dataset.price);
-    rows.push({label:name, val:'R '+price.toLocaleString()});
-    total += price;
+    const multiply = chk.dataset.multiply === 'species' ? speciesCount : 1;
+    const lineTotal = price * multiply;
+    const label = multiply > 1 ? `${name} (${multiply} animals)` : name;
+    rows.push({label, val:'R '+lineTotal.toLocaleString()});
+    total += lineTotal;
   });
 
   const rowsEl = document.getElementById('bk-breakdown-rows');
