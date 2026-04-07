@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WildHuntsa — South Africa's Hunting Marketplace</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=Barlow+Condensed:wght@300;400;500;600;700;800&amp;family=Barlow:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --earth: #120d06;
@@ -35,7 +35,7 @@ body { font-family:'Barlow',sans-serif; background:var(--earth); color:var(--bon
 ::-webkit-scrollbar-thumb{background:var(--khaki);border-radius:3px}
 
 /* NOISE */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.5}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:800;height:140px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(18,13,6,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(176,152,112,0.12)}
@@ -135,7 +135,7 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 .farm-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.3s;position:relative}
 .farm-card:hover{transform:translateY(-5px);border-color:rgba(201,125,26,0.3);box-shadow:0 24px 64px rgba(0,0,0,0.5)}
 .farm-img{height:210px;position:relative;overflow:hidden}
-.farm-img-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:72px;transition:transform 0.5s}
+.farm-img-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:72px;transition:transform 0.5s;background-size:cover;background-position:center;background-repeat:no-repeat}
 .farm-card:hover .farm-img-bg{transform:scale(1.06)}
 .farm-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(18,13,6,0.85) 100%)}
 .farm-badges{position:absolute;top:12px;left:12px;display:flex;gap:6px;z-index:2}
@@ -750,7 +750,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .mkt-featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .mkt-feat-card{border-radius:4px;overflow:hidden;border:1px solid rgba(176,152,112,0.1);cursor:pointer;transition:all 0.25s;background:var(--bark2)}
 .mkt-feat-card:hover{border-color:rgba(201,125,26,0.35);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.5)}
-.mkt-feat-img{height:200px;position:relative;overflow:hidden}
+.mkt-feat-img{height:200px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
 .mkt-feat-overlay{position:absolute;inset:0;background:rgba(8,5,2,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.25s}
 .mkt-feat-card:hover .mkt-feat-overlay{opacity:1}
 .mkt-feat-overlay span{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,125,26,0.5);padding:10px 24px;border-radius:2px}
@@ -802,6 +802,57 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 }
 
 
+/* ══ BOOKING CALCULATOR ══ */
+.bk-section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.bk-species-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.bk-species-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s}
+.bk-species-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
+.bk-species-row.selected{border-color:var(--amber);background:rgba(201,125,26,0.1)}
+.bk-species-left{display:flex;align-items:center;gap:10px}
+.bk-species-name{font-size:13px;font-weight:500;color:var(--bone)}
+.bk-species-price{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--gold)}
+.bk-chk-circle{width:18px;height:18px;border-radius:50%;border:2px solid rgba(176,152,112,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:10px}
+.bk-species-row.selected .bk-chk-circle{background:var(--amber);border-color:var(--amber);color:var(--earth)}
+.bk-option-list{display:flex;flex-direction:column;gap:6px}
+.bk-option-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;gap:12px}
+.bk-option-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
+.bk-option-row:has(.bk-chk:checked){border-color:var(--amber);background:rgba(201,125,26,0.08)}
+.bk-option-left{display:flex;align-items:center;gap:12px;flex:1}
+.bk-chk{width:16px;height:16px;accent-color:var(--amber);flex-shrink:0;cursor:pointer}
+.bk-opt-name{font-size:13px;font-weight:500;color:var(--bone)}
+.bk-opt-desc{font-size:11px;color:var(--khaki);margin-top:2px}
+.bk-opt-price{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--gold);white-space:nowrap;text-align:right}
+.bk-opt-price span{font-size:10px;font-weight:400;color:var(--khaki);display:block}
+/* Accommodation rows */
+.bk-accom-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;gap:12px}
+.bk-accom-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
+.bk-accom-row.selected{border-color:var(--amber);background:rgba(201,125,26,0.08)}
+.bk-accom-name{font-size:13px;font-weight:500;color:var(--bone)}
+.bk-accom-desc{font-size:11px;color:var(--khaki);margin-top:2px}
+.bk-accom-price{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--gold);white-space:nowrap;text-align:right}
+.bk-accom-price span{font-size:10px;font-weight:400;color:var(--khaki);display:block}
+/* Breakdown */
+.bk-breakdown{background:rgba(8,5,2,0.6);border:1px solid rgba(201,125,26,0.2);border-radius:4px;padding:18px 20px;margin-top:20px}
+.bk-breakdown-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.bk-breakdown-rows{display:flex;flex-direction:column;gap:8px;min-height:32px}
+.bk-br-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--bone)}
+.bk-br-row span:last-child{font-family:'Barlow Condensed',sans-serif;font-weight:600;color:var(--gold)}
+.bk-br-empty{font-size:12px;color:rgba(176,152,112,0.4);text-align:center;padding:8px 0}
+.bk-breakdown-divider{height:1px;background:rgba(176,152,112,0.12);margin:12px 0}
+.bk-breakdown-total{display:flex;justify-content:space-between;align-items:center}
+.bk-breakdown-total span:first-child{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--bone)}
+.bk-total-val{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--gold)}
+@media(max-width:520px){.bk-species-grid{grid-template-columns:1fr}}
+.pp-section{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(176,152,112,0.07)}
+.pp-section:last-child{border-bottom:none}
+.pp-num{width:28px;height:28px;border-radius:50%;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.3);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;margin-top:2px}
+.pp-body{flex:1}
+.pp-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.5px;color:var(--bone);margin-bottom:8px;text-transform:uppercase}
+.pp-text{font-size:13px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.7;margin:0}
+.pp-list{margin:8px 0 0 16px;display:flex;flex-direction:column;gap:5px}
+.pp-list li{font-size:13px;font-weight:300;color:rgba(237,224,204,0.55);line-height:1.5;padding-left:4px}
+.pp-list li::marker{color:var(--amber)}
+/* ── DISCUSSION MODAL ── */
 .disc-type-btn{display:flex;flex-direction:column;gap:4px;padding:14px;background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.14);border-radius:3px;cursor:pointer;transition:all 0.2s;text-align:left}
 .disc-type-btn:has(input:checked),.disc-type-btn.selected{border-color:var(--amber);background:rgba(201,125,26,0.1)}
 .disc-type-btn:hover{border-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.06)}
@@ -811,7 +862,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .disc-topic-chip{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:6px 13px;border-radius:20px;border:1px solid rgba(176,152,112,0.16);background:rgba(30,20,9,0.6);color:var(--sand);cursor:pointer;transition:all 0.2s;white-space:nowrap}
 .disc-topic-chip:hover{border-color:var(--amber);color:var(--gold);background:rgba(201,125,26,0.1)}
 .fs-slideshow{position:absolute;inset:0;z-index:0}
-.fs-slide{position:absolute;inset:0;background-size:cover;background-position:center bottom;background-repeat:no-repeat;background-color:#120d06;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02);transition:opacity 1.2s ease,transform 8s ease}
+.fs-slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#120d06;opacity:0;transition:opacity 1.2s ease,transform 8s ease}
 .fs-slide.active{opacity:1;transform:scale(1)}
 .fs-animal-name{position:absolute;bottom:36px;right:48px;z-index:10;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;font-style:italic;color:rgba(237,224,204,0.9);text-shadow:0 2px 12px rgba(0,0,0,0.8);letter-spacing:0.5px;transition:opacity 0.5s ease}
 .fs-dots{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:8px}
@@ -872,7 +923,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo" onclick="gp('home')">
-    <img src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/wildhunt_logo_hd.png.png" alt="WildHuntsa Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;align-items:center;gap:8px"><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold)">Wild</span><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--bone)">Hunt<em style='color:var(--amber)'>sa</em></span></div>
+    <img src="https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/wildhunt_logo_hd.png.png" alt="WildHuntsa Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none;align-items:center;gap:8px"><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold)">Wild</span><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--bone)">Hunt<em style='color:var(--amber)'>sa</em></span></div>
   </div>
   <div class="nav-center">
     <button class="nav-btn active" onclick="gp('home')">Explore</button>
@@ -938,17 +989,17 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
   <!-- FULL SCREEN SLIDESHOW BACKGROUNDS -->
   <div class="fs-slideshow" id="fs-slideshow">
-    <div class="fs-slide active" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Impala.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Kudu.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blesbuck.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Blue%20Wildebeest.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Eland.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Golden%20Wildebeest.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Nyala.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Oryx.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Springbuck.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Warthog.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/Zebra.png')"></div>
+    <div class="fs-slide active" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Impala.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Kudu.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blesbuck.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blue%20Wildebeest.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Eland.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Golden%20Wildebeest.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Nyala.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Oryx.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Springbuck.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Warthog.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Zebra.png')"></div>
   </div>
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
   <div class="fs-dots" id="fs-dots"></div>
@@ -1061,8 +1112,9 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
           <!-- YOUR PREMIUM MAP IMAGE -->
           <img
-            src="https://raw.githubusercontent.com/WildHuntSA/wildhuntsa/main/SA%20Province.jpg"
+            src="https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Provinces.png"
             alt="South Africa Province Map"
+            onerror="this.src='https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Provinces.png'"
             style="width:100%;height:auto;display:block;min-height:480px;object-fit:contain">
 
           <!-- CLICKABLE HOTSPOTS — precisely over province name labels (verified live) -->
@@ -1907,29 +1959,133 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══════════ BOOKING MODAL ══════════ -->
 <div class="overlay" id="bookingModal">
-  <div class="modal-box booking" style="max-width:620px;max-height:92vh;overflow-y:auto">
-    <div class="bk-header">
-      <div><div class="bk-title" id="bk-title">Book Your Hunt</div><div class="bk-sub">Confirm your dates and species</div></div>
+  <div class="modal-box booking" style="max-width:680px;max-height:92vh;overflow-y:auto">
+
+    <!-- Header -->
+    <div class="bk-header" style="position:sticky;top:0;z-index:10;background:var(--bark2)">
+      <div>
+        <div class="bk-title" id="bk-title">Book Your Hunt</div>
+        <div class="bk-sub" id="bk-farm-name">Select your package below</div>
+      </div>
       <button class="modal-close-btn" onclick="closeOverlay('bookingModal')">✕</button>
     </div>
+
     <div class="bk-body">
-      <div class="fg">
-        <div class="fi"><label class="fl">📅 Arrival Date</label><input type="date" class="finput" id="bk-arrive"></div>
-        <div class="fi"><label class="fl">📅 Departure Date</label><input type="date" class="finput" id="bk-depart"></div>
-        <div class="fi"><label class="fl">👥 Number of Hunters</label><select class="fselect" id="bk-hunters"><option>1 Hunter</option><option>2 Hunters</option><option>3 Hunters</option><option>4+ Hunters</option></select></div>
-        <div class="fi"><label class="fl">🏕️ Hunt Type</label><select class="fselect"><option>Trophy Hunt</option><option>Biltong Hunt</option><option>Bow Hunt</option><option>Family Hunt</option></select></div>
-        <div class="fi full"><label class="fl">🦌 Species (select all that apply)</label><div class="achips" id="bk-chips"></div></div>
-        <div class="fi full"><label class="fl">💬 Message to Farm Owner</label><textarea class="ftextarea" placeholder="Any special requests, dietary requirements, or questions..."></textarea></div>
+
+      <!-- DATES & HUNTERS -->
+      <div class="bk-section-label">📅 Trip Details</div>
+      <div class="fg" style="margin-bottom:0">
+        <div class="fi"><label class="fl">Arrival Date</label><input type="date" class="finput" id="bk-arrive" onchange="calcBooking()"></div>
+        <div class="fi"><label class="fl">Departure Date</label><input type="date" class="finput" id="bk-depart" onchange="calcBooking()"></div>
+        <div class="fi"><label class="fl">Hunters</label>
+          <select class="fselect" id="bk-hunters" onchange="calcBooking()">
+            <option value="1">1 Hunter</option>
+            <option value="2">2 Hunters</option>
+            <option value="3">3 Hunters</option>
+            <option value="4">4 Hunters</option>
+          </select>
+        </div>
+        <div class="fi"><label class="fl">Hunt Type</label>
+          <select class="fselect" id="bk-type">
+            <option>Trophy Hunt</option>
+            <option>Biltong Hunt</option>
+            <option>Bow Hunt</option>
+            <option>Family Hunt</option>
+          </select>
+        </div>
       </div>
-      <div class="bk-estimate" id="bk-estimate">
-        <div class="bke-row"><span>Estimated Total</span><span class="bke-val" id="bke-total">R 0</span></div>
-        <div style="font-size:11px;color:var(--khaki);margin-top:4px">Final pricing confirmed by farm owner</div>
+
+      <!-- SPECIES -->
+      <div class="bk-section-label" style="margin-top:20px">🦌 Species Selection <span style="font-size:11px;color:var(--khaki);font-weight:400;letter-spacing:0">(tick to add to quote)</span></div>
+      <div class="bk-species-grid" id="bk-species-grid">
+        <!-- populated by JS -->
       </div>
+
+      <!-- ACCOMMODATION -->
+      <div class="bk-section-label" style="margin-top:20px">🏠 Accommodation</div>
+      <div class="bk-option-list" id="bk-accom-list">
+        <!-- populated by JS -->
+      </div>
+
+      <!-- SERVICES -->
+      <div class="bk-section-label" style="margin-top:20px">🔧 Additional Services</div>
+      <div class="bk-option-list" id="bk-services-list">
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="350" onchange="calcBooking()">
+            <div><div class="bk-opt-name">🔪 Slaughter & Butcher</div><div class="bk-opt-desc">Professional on-site slaughter and butchering</div></div>
+          </div>
+          <div class="bk-opt-price">R 350 <span>/ animal</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="280" onchange="calcBooking()">
+            <div><div class="bk-opt-name">🧊 Cold Storage</div><div class="bk-opt-desc">Refrigerated storage for your meat</div></div>
+          </div>
+          <div class="bk-opt-price">R 280 <span>/ day</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="1200" onchange="calcBooking()">
+            <div><div class="bk-opt-name">🦌 Taxidermy (Basic)</div><div class="bk-opt-desc">Skull & horn mount per trophy</div></div>
+          </div>
+          <div class="bk-opt-price">R 1,200 <span>/ trophy</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="850" onchange="calcBooking()">
+            <div><div class="bk-opt-name">🚗 Game Vehicle</div><div class="bk-opt-desc">4x4 hunting vehicle with tracker</div></div>
+          </div>
+          <div class="bk-opt-price">R 850 <span>/ day</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="600" onchange="calcBooking()">
+            <div><div class="bk-opt-name">👨‍🌾 Professional Hunter</div><div class="bk-opt-desc">Licensed PH to accompany your hunt</div></div>
+          </div>
+          <div class="bk-opt-price">R 600 <span>/ day</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="450" onchange="calcBooking()">
+            <div><div class="bk-opt-name">🔫 Rifle Hire</div><div class="bk-opt-desc">Calibre of your choice, ammo included</div></div>
+          </div>
+          <div class="bk-opt-price">R 450 <span>/ day</span></div>
+        </label>
+        <label class="bk-option-row">
+          <div class="bk-option-left">
+            <input type="checkbox" class="bk-chk" data-price="200" onchange="calcBooking()">
+            <div><div class="bk-opt-name">📸 Trophy Photography</div><div class="bk-opt-desc">Professional photos of your trophies</div></div>
+          </div>
+          <div class="bk-opt-price">R 200 <span>/ session</span></div>
+        </label>
+      </div>
+
+      <!-- MESSAGE -->
+      <div class="bk-section-label" style="margin-top:20px">💬 Message to Farm Owner</div>
+      <textarea class="ftextarea" placeholder="Special requests, dietary requirements, questions..." style="margin-bottom:0"></textarea>
+
+      <!-- PRICE BREAKDOWN -->
+      <div class="bk-breakdown" id="bk-breakdown">
+        <div class="bk-breakdown-title">💰 Price Breakdown</div>
+        <div class="bk-breakdown-rows" id="bk-breakdown-rows">
+          <div class="bk-br-empty">Select species and services above to see your quote</div>
+        </div>
+        <div class="bk-breakdown-divider"></div>
+        <div class="bk-breakdown-total">
+          <span>Estimated Total</span>
+          <span class="bk-total-val" id="bk-total-val">R 0</span>
+        </div>
+        <div style="font-size:11px;color:var(--khaki);margin-top:6px;text-align:center">Final pricing confirmed by farm owner · Deposit may be required</div>
+      </div>
+
     </div>
+
     <div class="bk-footer">
       <button class="btn-sm btn-outline-sm" onclick="closeOverlay('bookingModal')">Cancel</button>
-      <button class="btn-sm btn-amber-sm" onclick="showToast('Booking request sent! Farm owner will confirm within 24hrs. 🎉','ok');closeOverlay('bookingModal')">Send Booking Request →</button>
+      <button class="btn-sm btn-amber-sm" onclick="submitBooking()">Send Booking Request →</button>
     </div>
+
   </div>
 </div>
 
@@ -2089,11 +2245,11 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <div class="footer-col"><h4>Support</h4><ul>
         <li><a onclick="showToast('Help Centre coming soon! 🛠️')" style="cursor:pointer">Help Centre</a></li>
         <li><a onclick="showToast('Email us: info@wildhuntsa.com 📧')" style="cursor:pointer">Contact Us</a></li>
-        <li><a onclick="showToast('Privacy Policy coming soon! 📄')" style="cursor:pointer">Privacy Policy</a></li>
-        <li><a onclick="showToast('Terms of Service coming soon! 📄')" style="cursor:pointer">Terms of Service</a></li>
+        <li><a onclick="openOverlay('privacyModal')" style="cursor:pointer">Privacy Policy</a></li>
+        <li><a onclick="openOverlay('tosModal')" style="cursor:pointer">Terms of Service</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 WildHuntsa. All rights reserved.</span><span>🇿🇦 Proudly South African</span></div>
+    <div class="footer-bottom"><span>© 2026 WildHuntsa. All rights reserved.</span><span style="display:flex;gap:16px;align-items:center"><a onclick="openOverlay('privacyModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Privacy Policy</a><span style="opacity:0.2">·</span><a onclick="openOverlay('tosModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Terms of Service</a><span style="opacity:0.2">·</span><span>🇿🇦 Proudly South African</span></span></div>
   </div>
 </footer>
 
@@ -2258,15 +2414,108 @@ function openFarm(id) {
 function openBooking(id) {
   const f = farms.find(x => x.id === id);
   currentFarm = id;
-  if(f) document.getElementById('bk-title').textContent = f.name;
-  const chips = document.getElementById('bk-chips');
-  const species = f ? f.species.slice(0,6) : [{n:'Kudu'},{n:'Impala'},{n:'Warthog'}];
-  chips.innerHTML = species.map(s=>`<div class="achip" onclick="this.classList.toggle('on')">${s.n.split(' ')[0]}</div>`).join('');
+  document.getElementById('bk-title').textContent = 'Book ' + (f ? f.name : 'Hunt');
+  document.getElementById('bk-farm-name').textContent = f ? f.province + ' · ' + f.town : '';
+
+  // Default dates
   const today = new Date(); today.setDate(today.getDate()+7);
   document.getElementById('bk-arrive').value = today.toISOString().split('T')[0];
   const dep = new Date(today); dep.setDate(dep.getDate()+4);
   document.getElementById('bk-depart').value = dep.toISOString().split('T')[0];
+
+  // Species grid
+  const grid = document.getElementById('bk-species-grid');
+  const species = f ? f.species : [{n:'Kudu',p:'R 8,500'},{n:'Impala',p:'R 1,800'},{n:'Warthog',p:'R 900'}];
+  grid.innerHTML = species.map(s => `
+    <div class="bk-species-row" onclick="this.classList.toggle('selected');calcBooking()">
+      <div class="bk-species-left">
+        <div class="bk-chk-circle">✓</div>
+        <div class="bk-species-name">${s.n}</div>
+      </div>
+      <div class="bk-species-price">${s.p}</div>
+    </div>`).join('');
+
+  // Accommodation
+  const accomList = document.getElementById('bk-accom-list');
+  const accoms = [
+    {name:'🏕️ No Accommodation', desc:'Self-arranged or day visitor', price:0, unit:''},
+    {name:'🛏️ Budget Room', desc:'Basic en-suite, bed & breakfast', price:850, unit:'p.p / night'},
+    {name:'🏠 Standard Lodge', desc:'Comfortable lodge, all meals included', price:1400, unit:'p.p / night'},
+    {name:'⭐ Luxury Suite', desc:'Premium suite, fine dining included', price:2800, unit:'p.p / night'},
+  ];
+  accomList.innerHTML = accoms.map((a,i) => `
+    <div class="bk-accom-row ${i===0?'selected':''}" onclick="selectAccom(this)">
+      <div>
+        <div class="bk-accom-name">${a.name}</div>
+        <div class="bk-accom-desc">${a.desc}</div>
+      </div>
+      <div class="bk-accom-price" data-price="${a.price}">${a.price > 0 ? 'R '+a.price.toLocaleString() : 'Free'}<span>${a.unit}</span></div>
+    </div>`).join('');
+
+  // Reset services
+  document.querySelectorAll('.bk-chk').forEach(c => c.checked = false);
+  calcBooking();
   openOverlay('bookingModal');
+}
+
+function selectAccom(el) {
+  document.querySelectorAll('.bk-accom-row').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  calcBooking();
+}
+
+function calcBooking() {
+  const hunters = parseInt(document.getElementById('bk-hunters')?.value || 1);
+  const arrive = document.getElementById('bk-arrive')?.value;
+  const depart = document.getElementById('bk-depart')?.value;
+  const nights = (arrive && depart) ? Math.max(1, Math.round((new Date(depart)-new Date(arrive))/(1000*60*60*24))) : 1;
+
+  const rows = [];
+  let total = 0;
+
+  // Species
+  document.querySelectorAll('.bk-species-row.selected').forEach(el => {
+    const name = el.querySelector('.bk-species-name').textContent;
+    const price = parseInt(el.querySelector('.bk-species-price').textContent.replace(/\D/g,''));
+    rows.push({label:'🦌 '+name, val:'R '+price.toLocaleString()});
+    total += price;
+  });
+
+  // Accommodation
+  const selAccom = document.querySelector('.bk-accom-row.selected');
+  if (selAccom) {
+    const price = parseInt(selAccom.querySelector('.bk-accom-price').dataset.price) || 0;
+    if (price > 0) {
+      const name = selAccom.querySelector('.bk-accom-name').textContent.replace(/[^\w\s]/gu,'').trim();
+      const lineTotal = price * hunters * nights;
+      rows.push({label:`🏠 ${name} (${hunters} hunter${hunters>1?'s':''} × ${nights} night${nights>1?'s':''})`, val:'R '+lineTotal.toLocaleString()});
+      total += lineTotal;
+    }
+  }
+
+  // Services
+  document.querySelectorAll('.bk-chk:checked').forEach(chk => {
+    const row = chk.closest('.bk-option-row');
+    const name = row.querySelector('.bk-opt-name').textContent;
+    const price = parseInt(chk.dataset.price);
+    rows.push({label:name, val:'R '+price.toLocaleString()});
+    total += price;
+  });
+
+  const rowsEl = document.getElementById('bk-breakdown-rows');
+  const totalEl = document.getElementById('bk-total-val');
+  rowsEl.innerHTML = rows.length === 0
+    ? '<div class="bk-br-empty">Select species and services above to see your quote</div>'
+    : rows.map(r=>`<div class="bk-br-row"><span>${r.label}</span><span>${r.val}</span></div>`).join('');
+  totalEl.textContent = 'R ' + total.toLocaleString();
+}
+
+function submitBooking() {
+  const arrive = document.getElementById('bk-arrive').value;
+  const depart = document.getElementById('bk-depart').value;
+  if (!arrive || !depart) { showToast('Please select arrival and departure dates ⚠️','err'); return; }
+  showToast('Booking request sent! Farm owner will confirm within 24hrs. 🎉','ok');
+  closeOverlay('bookingModal');
 }
 
 // ════ MARKETPLACE ════
@@ -2507,5 +2756,181 @@ window.addEventListener('DOMContentLoaded', function() {
   if(firstDisc) firstDisc.classList.add('selected');
 });
 </script>
+
+<!-- ══════════ PRIVACY POLICY MODAL ══════════ -->
+<div class="overlay" id="privacyModal">
+  <div class="modal-box" style="max-width:680px;max-height:90vh;overflow-y:auto">
+
+    <!-- Header -->
+    <div style="padding:28px 32px 20px;border-bottom:1px solid rgba(176,152,112,0.1);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:var(--bark2);z-index:10">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px">Legal</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ivory);margin:0">Privacy Policy</h2>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);margin-top:4px;letter-spacing:0.5px">WildHunt SA · Last Updated: April 2026</div>
+      </div>
+      <button class="modal-close-btn" onclick="closeOverlay('privacyModal')" style="font-size:22px;margin-top:2px">✕</button>
+    </div>
+
+    <!-- Content -->
+    <div style="padding:28px 32px;display:flex;flex-direction:column;gap:24px">
+
+      <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.65);line-height:1.7">
+        WildHunt SA ("we", "our", or "us") respects your privacy and is committed to protecting your personal information in accordance with the laws of South Africa.
+      </p>
+
+      <div class="pp-section">
+        <div class="pp-num">1</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Information We Collect</h3>
+          <p class="pp-text">We may collect the following information when you use our platform:</p>
+          <ul class="pp-list">
+            <li>Name and surname</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Profile information</li>
+            <li>Booking details (farm, dates, animals selected)</li>
+            <li>Payment-related information (processed via third-party providers)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">2</div>
+        <div class="pp-body">
+          <h3 class="pp-title">How We Use Your Information</h3>
+          <p class="pp-text">We use your information to:</p>
+          <ul class="pp-list">
+            <li>Process bookings</li>
+            <li>Connect hunters with farm owners</li>
+            <li>Send booking confirmations and updates</li>
+            <li>Improve our platform and user experience</li>
+            <li>Provide customer support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">3</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Sharing of Information</h3>
+          <p class="pp-text">We may share your information with:</p>
+          <ul class="pp-list">
+            <li>Farm owners (to fulfill bookings)</li>
+            <li>Payment providers (e.g. PayFast, Ozow)</li>
+            <li>Service providers that help operate the platform</li>
+          </ul>
+          <p class="pp-text" style="margin-top:10px;color:var(--amber);font-weight:500">We do not sell your personal information.</p>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">4</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Data Security</h3>
+          <p class="pp-text">We take reasonable steps to protect your personal data from unauthorized access, loss, or misuse.</p>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">5</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Cookies</h3>
+          <p class="pp-text">WildHunt SA may use cookies to improve your browsing experience and analyze site traffic.</p>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">6</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Your Rights</h3>
+          <p class="pp-text">You have the right to:</p>
+          <ul class="pp-list">
+            <li>Access your personal data</li>
+            <li>Request corrections</li>
+            <li>Request deletion of your data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">7</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Third-Party Links</h3>
+          <p class="pp-text">Our platform may contain links to external farm websites or services. We are not responsible for their privacy practices.</p>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">8</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Changes to This Policy</h3>
+          <p class="pp-text">We may update this policy from time to time. Updates will be posted on this page.</p>
+        </div>
+      </div>
+
+      <div class="pp-section">
+        <div class="pp-num">9</div>
+        <div class="pp-body">
+          <h3 class="pp-title">Contact Us</h3>
+          <p class="pp-text">If you have any questions about this Privacy Policy, please contact us at <span style="color:var(--amber)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147d7a727b54637d78707c617a6067753a777b79">[email&#160;protected]</a></span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:16px 32px 24px;border-top:1px solid rgba(176,152,112,0.08);display:flex;justify-content:flex-end">
+      <button class="btn-hero-main" onclick="closeOverlay('privacyModal')" style="padding:11px 28px;font-size:13px">Close</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ TERMS OF SERVICE MODAL ══════════ -->
+<div class="overlay" id="tosModal">
+  <div class="modal-box" style="max-width:680px;max-height:90vh;overflow-y:auto">
+
+    <div style="padding:28px 32px 20px;border-bottom:1px solid rgba(176,152,112,0.1);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:var(--bark2);z-index:10">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:6px">Legal</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ivory);margin:0">Terms of Service</h2>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);margin-top:4px;letter-spacing:0.5px">WildHunt SA · Last Updated: April 2026</div>
+      </div>
+      <button class="modal-close-btn" onclick="closeOverlay('tosModal')" style="font-size:22px;margin-top:2px">✕</button>
+    </div>
+
+    <div style="padding:28px 32px;display:flex;flex-direction:column;gap:4px">
+      <p class="pp-text" style="margin-bottom:20px">By using WildHunt SA, you agree to the following terms:</p>
+
+      <div class="pp-section"><div class="pp-num">1</div><div class="pp-body"><h3 class="pp-title">Platform Purpose</h3><p class="pp-text">WildHunt SA is a platform that connects hunters with farm owners offering hunting experiences in South Africa.</p></div></div>
+
+      <div class="pp-section"><div class="pp-num">2</div><div class="pp-body"><h3 class="pp-title">User Responsibilities</h3><p class="pp-text">Users agree to:</p><ul class="pp-list"><li>Provide accurate information</li><li>Use the platform legally and ethically</li><li>Respect farm rules and hunting regulations</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">3</div><div class="pp-body"><h3 class="pp-title">Bookings & Payments</h3><ul class="pp-list"><li>Bookings are made through the platform</li><li>Payments may include deposits or full payment</li><li>Payment terms are set by the farm owner</li><li>WildHunt SA may facilitate payments but is not responsible for farm service delivery</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">4</div><div class="pp-body"><h3 class="pp-title">Cancellations & Refunds</h3><ul class="pp-list"><li>Cancellation policies may vary per farm</li><li>Refunds are subject to the farm owner's terms</li><li>WildHunt SA is not responsible for disputes but may assist where possible</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">5</div><div class="pp-body"><h3 class="pp-title">Limitation of Liability</h3><p class="pp-text">WildHunt SA is not liable for:</p><ul class="pp-list"><li>Hunting outcomes</li><li>Injury, loss, or damage during hunts</li><li>Disputes between hunters and farm owners</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">6</div><div class="pp-body"><h3 class="pp-title">Farm Listings</h3><ul class="pp-list"><li>Farm owners are responsible for accurate listings</li><li>WildHunt SA does not guarantee the accuracy of farm information</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">7</div><div class="pp-body"><h3 class="pp-title">User Conduct</h3><p class="pp-text">Users may not:</p><ul class="pp-list"><li>Use the platform for illegal activities</li><li>Misrepresent information</li><li>Interfere with platform functionality</li></ul></div></div>
+
+      <div class="pp-section"><div class="pp-num">8</div><div class="pp-body"><h3 class="pp-title">Account Suspension</h3><p class="pp-text">We reserve the right to suspend or terminate accounts that violate these terms.</p></div></div>
+
+      <div class="pp-section"><div class="pp-num">9</div><div class="pp-body"><h3 class="pp-title">Changes to Terms</h3><p class="pp-text">We may update these terms at any time. Continued use of the platform means you accept the updated terms.</p></div></div>
+
+      <div class="pp-section"><div class="pp-num">10</div><div class="pp-body"><h3 class="pp-title">Governing Law</h3><p class="pp-text">These terms are governed by the laws of South Africa.</p></div></div>
+
+      <div class="pp-section"><div class="pp-num">11</div><div class="pp-body"><h3 class="pp-title">Contact</h3><p class="pp-text">For any questions regarding these terms, contact us at <span style="color:var(--amber)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb6b1b9b09fa8b6b3bbb7aab1abacbef1bcb0b2">[email&#160;protected]</a></span></p></div></div>
+    </div>
+
+    <div style="padding:16px 32px 24px;border-top:1px solid rgba(176,152,112,0.08);display:flex;justify-content:flex-end">
+      <button class="btn-hero-main" onclick="closeOverlay('tosModal')" style="padding:11px 28px;font-size:13px">Close</button>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
