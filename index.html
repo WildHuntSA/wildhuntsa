@@ -106,6 +106,60 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:140px;display:flex;al
 .link-amber:hover{color:var(--gold)}
 hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 
+/* ── HOMEPAGE: HOW IT WORKS ── */
+.hiw3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;position:relative}
+.hiw3-grid::before{content:'';position:absolute;top:44px;left:calc(16.6% + 16px);right:calc(16.6% + 16px);height:2px;background:linear-gradient(90deg,var(--amber),var(--gold),var(--amber));opacity:0.25;z-index:0}
+.hiw3-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.08);padding:40px 32px 36px;text-align:center;position:relative;transition:all 0.25s}
+.hiw3-card:first-child{border-radius:6px 0 0 6px}
+.hiw3-card:last-child{border-radius:0 6px 6px 0}
+.hiw3-card:hover{background:rgba(42,28,13,0.9);border-color:rgba(201,125,26,0.2);transform:translateY(-3px)}
+.hiw3-step-num{width:56px;height:56px;border-radius:50%;background:rgba(201,125,26,0.12);border:2px solid rgba(201,125,26,0.35);font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+.hiw3-icon{font-size:32px;margin-bottom:14px}
+.hiw3-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:0.5px;color:var(--ivory);margin-bottom:10px}
+.hiw3-desc{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.65}
+
+/* ── HOMEPAGE: PROVINCE GRID ── */
+.prov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.prov-grid-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:20px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.22s}
+.prov-grid-card:hover{border-color:rgba(201,125,26,0.4);background:rgba(42,28,13,0.9);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35)}
+.prov-grid-dot{width:10px;height:10px;border-radius:50%;background:var(--grass);flex-shrink:0;transition:background 0.2s}
+.prov-grid-card:hover .prov-grid-dot{background:var(--amber)}
+.prov-grid-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.3px;color:var(--sand);transition:color 0.2s}
+.prov-grid-card:hover .prov-grid-name{color:var(--gold)}
+.prov-grid-count{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--amber);margin-left:auto}
+.prov-grid-arr{color:var(--khaki);font-size:11px;margin-left:4px;transition:transform 0.2s}
+.prov-grid-card:hover .prov-grid-arr{transform:translateX(3px);color:var(--amber)}
+
+/* ── HOMEPAGE: WHY USE ── */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
+.why-card{display:flex;gap:18px;align-items:flex-start;background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:24px}
+.why-icon-wrap{width:48px;height:48px;border-radius:3px;background:rgba(201,125,26,0.1);border:1px solid rgba(201,125,26,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.why-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:0.3px;color:var(--ivory);margin-bottom:6px}
+.why-desc{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6}
+
+/* ── HOMEPAGE: TRUST BAR ── */
+.trust-bar{display:flex;align-items:center;justify-content:center;gap:36px;padding:18px 80px;background:rgba(18,13,6,0.6);border-bottom:1px solid rgba(176,152,112,0.08);flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.8px;color:rgba(237,224,204,0.5);white-space:nowrap}
+.trust-item span:first-child{color:var(--amber);font-size:14px}
+
+/* ── HOMEPAGE: FINAL CTA ── */
+.home-final-cta{background:linear-gradient(135deg,rgba(61,82,32,0.6) 0%,rgba(18,13,6,0.98) 50%,rgba(42,28,13,0.95) 100%);padding:80px;text-align:center;position:relative;overflow:hidden}
+.home-final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,125,26,0.08) 0%,transparent 60%);pointer-events:none}
+
+@media(max-width:1100px){
+  .hiw3-grid{grid-template-columns:1fr;gap:8px}.hiw3-grid::before{display:none}
+  .hiw3-card{border-radius:4px!important}
+  .prov-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .trust-bar{padding:14px 32px;gap:20px}
+  .home-final-cta{padding:56px 32px}
+}
+@media(max-width:768px){
+  .prov-grid{grid-template-columns:1fr 1fr}
+  .trust-bar{padding:12px 16px;gap:14px}
+  .home-final-cta{padding:48px 16px}
+}
+
 /* ── PROVINCE MAP ── */
 .province-section{background:var(--bark)}
 .province-layout{display:grid;grid-template-columns:1fr 380px;gap:0;border:1px solid rgba(176,152,112,0.1);border-radius:6px;overflow:hidden}
@@ -1180,122 +1234,244 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ══════════ PAGE: HOME ══════════ -->
 <div class="page active" id="page-home">
 
-<!-- HERO -->
-<div class="hero">
+<!-- ══ HERO ══ -->
+<div class="hero" style="min-height:100vh">
   <div class="hero-bg"></div>
   <div class="hero-gradient"></div>
   <div class="hero-sun"></div>
-  <svg class="hero-landscape" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice">
-    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(74,94,42,0.0)"/><stop offset="100%" stop-color="rgba(61,82,32,0.4)"/></linearGradient></defs>
-    <rect width="1440" height="500" fill="url(#sky)"/>
-    <!-- Ground -->
-    <ellipse cx="720" cy="520" rx="900" ry="100" fill="rgba(42,28,13,0.8)"/>
-    <!-- Acacia trees -->
-    <g opacity="0.22">
-      <rect x="140" y="310" width="18" height="190" fill="#2a1c0d"/>
-      <ellipse cx="149" cy="295" rx="75" ry="32" fill="#2a1c0d"/>
-      <ellipse cx="120" cy="305" rx="45" ry="20" fill="#2a1c0d"/>
-      <ellipse cx="178" cy="300" rx="50" ry="22" fill="#2a1c0d"/>
-      <rect x="400" y="270" width="22" height="230" fill="#2a1c0d"/>
-      <ellipse cx="411" cy="252" rx="95" ry="36" fill="#2a1c0d"/>
-      <ellipse cx="375" cy="265" rx="55" ry="22" fill="#2a1c0d"/>
-      <ellipse cx="447" cy="260" rx="60" ry="24" fill="#2a1c0d"/>
-      <rect x="1100" y="290" width="20" height="210" fill="#2a1c0d"/>
-      <ellipse cx="1110" cy="272" rx="85" ry="33" fill="#2a1c0d"/>
-      <rect x="1300" y="330" width="16" height="170" fill="#2a1c0d"/>
-      <ellipse cx="1308" cy="315" rx="65" ry="26" fill="#2a1c0d"/>
-      <!-- Kudu -->
-      <ellipse cx="850" cy="410" rx="55" ry="30" fill="#2a1c0d"/>
-      <rect x="845" y="385" width="14" height="36" fill="#2a1c0d"/>
-      <ellipse cx="852" cy="380" rx="19" ry="16" fill="#2a1c0d"/>
-      <path d="M848 365 Q838 335 842 312" stroke="#2a1c0d" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <path d="M856 365 Q866 335 862 312" stroke="#2a1c0d" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <rect x="832" y="438" width="9" height="48" fill="#2a1c0d"/>
-      <rect x="848" y="438" width="9" height="48" fill="#2a1c0d"/>
-      <rect x="864" y="438" width="9" height="48" fill="#2a1c0d"/>
-      <rect x="878" y="438" width="9" height="48" fill="#2a1c0d"/>
-    </g>
-  </svg>
 
-  <!-- FULL SCREEN SLIDESHOW BACKGROUNDS -->
+  <!-- Slideshow backgrounds -->
   <div class="fs-slideshow" id="fs-slideshow">
     <div class="fs-slide active" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Impala.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Kudu.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blesbuck.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blue%20Wildebeest.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Eland.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Golden%20Wildebeest.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Nyala.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Oryx.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Springbuck.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Warthog.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Zebra.png')"></div>
   </div>
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
   <div class="fs-dots" id="fs-dots"></div>
 
-  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 80px;max-width:55%">
-    <div class="hero-eyebrow">🇿🇦 South Africa's Online Hunting Marketplace</div>
-    <h1 class="hero-h1">Hunt the<em>Wild Heart</em>of Africa.</h1>
-    <p class="hero-p">Book world-class hunting experiences directly from verified South African farm and game reserve owners. No middleman. Real availability. Online booking.</p>
-    <div class="hero-btns" style="display:none">
-      <button class="btn-hero-main" onclick="gp('provinces')">Browse Farms</button>
-      <button class="btn-hero-sec" onclick="gp('list')">List Your Farm Free</button>
+  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 100px;max-width:680px">
+    <div class="hero-eyebrow">🇿🇦 South Africa's Hunting Marketplace</div>
+    <h1 class="hero-h1">Find Hunting Farms<em>Across South Africa</em></h1>
+    <p class="hero-p" style="font-size:18px;max-width:520px">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
+    <div class="hero-btns" style="display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap">
+      <button class="btn-hero-main" style="padding:16px 40px;font-size:15px" onclick="gp('provinces')">Browse Farms</button>
+      <button class="btn-hero-sec" style="padding:16px 40px;font-size:15px" onclick="gp('list')">List Your Farm</button>
     </div>
-    <div class="hero-stats">
-      <div><div class="hstat-n">340+</div><div class="hstat-l">Farms</div></div>
-      <div><div class="hstat-n">62</div><div class="hstat-l">Species</div></div>
-      <div><div class="hstat-n">9</div><div class="hstat-l">Provinces</div></div>
-      <div><div class="hstat-n">4.8★</div><div class="hstat-l">Avg Rating</div></div>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(237,224,204,0.4)">Connecting hunters with farms across all 9 provinces</p>
+  </div>
+</div>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust-bar">
+  <div class="trust-item"><span>✓</span> No booking fees</div>
+  <div class="trust-item" style="background:rgba(176,152,112,0.08);width:1px;height:20px;padding:0"></div>
+  <div class="trust-item"><span>✓</span> Direct contact with farm owners</div>
+  <div class="trust-item" style="background:rgba(176,152,112,0.08);width:1px;height:20px;padding:0"></div>
+  <div class="trust-item"><span>✓</span> All 9 provinces</div>
+  <div class="trust-item" style="background:rgba(176,152,112,0.08);width:1px;height:20px;padding:0"></div>
+  <div class="trust-item"><span>✓</span> Free listings during launch</div>
+</div>
+
+<!-- ══ HOW IT WORKS ══ -->
+<div class="sec" style="background:var(--bark)">
+  <div style="text-align:center;margin-bottom:52px">
+    <div class="sec-label" style="display:flex;justify-content:center">Simple Process</div>
+    <h2 class="sec-title" style="font-size:clamp(30px,4vw,48px)">How It Works</h2>
+    <p style="font-size:15px;font-weight:300;color:rgba(237,224,204,0.45);margin-top:6px">Three simple steps to plan your next hunt</p>
+  </div>
+  <div class="hiw3-grid">
+    <div class="hiw3-card">
+      <div class="hiw3-step-num">1</div>
+      <div class="hiw3-icon">🔍</div>
+      <div class="hiw3-title">Browse Farms</div>
+      <p class="hiw3-desc">Explore hunting farms across all 9 South African provinces. Filter by species, location and farm type to find the right fit.</p>
+      <button onclick="gp('provinces')" style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:8px 18px;border-radius:2px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.background='rgba(201,125,26,0.12)'" onmouseout="this.style.background='none'">Browse Farms →</button>
+    </div>
+    <div class="hiw3-card">
+      <div class="hiw3-step-num">2</div>
+      <div class="hiw3-icon">📬</div>
+      <div class="hiw3-title">Send an Enquiry</div>
+      <p class="hiw3-desc">Found a farm you like? Send a direct enquiry through WildHunt SA. Tell the farm what you're looking for — species, dates, group size.</p>
+      <button onclick="gp('provinces')" style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:8px 18px;border-radius:2px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.background='rgba(201,125,26,0.12)'" onmouseout="this.style.background='none'">Start Enquiry →</button>
+    </div>
+    <div class="hiw3-card">
+      <div class="hiw3-step-num">3</div>
+      <div class="hiw3-icon">🦌</div>
+      <div class="hiw3-title">Plan Your Hunt</div>
+      <p class="hiw3-desc">The farm contacts you directly to discuss details, pricing and dates. All arrangements are made between you and the farm owner — no middleman.</p>
+      <button onclick="gp('contact')" style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid rgba(176,152,112,0.2);color:var(--khaki);padding:8px 18px;border-radius:2px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(201,125,26,0.3)';this.style.color='var(--amber)'" onmouseout="this.style.borderColor='rgba(176,152,112,0.2)';this.style.color='var(--khaki)'">Any Questions →</button>
     </div>
   </div>
 </div>
 
-<!-- BOOK YOUR HUNT CTA -->
-<div style="padding:0 80px;margin-top:-20px;position:relative;z-index:20">
-  <div style="background:rgba(30,20,9,0.97);border:1px solid rgba(201,125,26,0.25);border-radius:4px;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;backdrop-filter:blur(16px)">
-    <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:8px">Ready to Hunt?</div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--ivory);line-height:1.1">Book Your <em style="color:var(--gold);font-style:italic">Hunting Adventure</em></div>
-      <div style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);margin-top:6px">Browse 340+ verified farms across all 9 provinces. Real availability. Instant booking.</div>
-    </div>
-    <button class="btn-hero-main" onclick="gp('provinces')" style="white-space:nowrap;padding:18px 48px;font-size:15px;flex-shrink:0">Browse Farms →</button>
-  </div>
-</div>
+<hr class="div">
 
-<!-- FEATURED FARMS -->
+<!-- ══ BROWSE BY PROVINCE ══ -->
 <div class="sec">
   <div class="sec-head">
-    <div><div class="sec-label">Featured Experiences</div><h2 class="sec-title">Top-Rated Farms</h2></div>
-    <a class="link-amber" onclick="gp('provinces')">View all 340+ →</a>
+    <div>
+      <div class="sec-label">Explore by Region</div>
+      <h2 class="sec-title">Browse by Province</h2>
+      <p class="sec-sub">Click any province to see farms in that area</p>
+    </div>
+    <a class="link-amber" onclick="gp('provinces')">View Map →</a>
+  </div>
+  <div class="prov-grid">
+    <div class="prov-grid-card" onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Limpopo</div>
+      <div class="prov-grid-count">128 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Northern Cape</div>
+      <div class="prov-grid-count">58 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">North West</div>
+      <div class="prov-grid-count">74 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Eastern Cape</div>
+      <div class="prov-grid-count">17 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Mpumalanga</div>
+      <div class="prov-grid-count">41 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Free State</div>
+      <div class="prov-grid-count">22 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">KwaZulu-Natal</div>
+      <div class="prov-grid-count">19 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Western Cape</div>
+      <div class="prov-grid-count">8 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+    <div class="prov-grid-card" onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok');gp('provinces')">
+      <div class="prov-grid-dot"></div>
+      <div class="prov-grid-name">Gauteng</div>
+      <div class="prov-grid-count">12 farms</div>
+      <div class="prov-grid-arr">›</div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- ══ FEATURED FARMS ══ -->
+<div class="sec">
+  <div class="sec-head">
+    <div>
+      <div class="sec-label">Handpicked</div>
+      <h2 class="sec-title">Featured Hunting Farms</h2>
+    </div>
+    <a class="link-amber" onclick="gp('provinces')">View all farms →</a>
   </div>
   <div class="farms-grid" id="home-farms"></div>
-</div>
-
-<hr class="div">
-
-<!-- HOW IT WORKS -->
-<div class="sec">
-  <div class="sec-head"><div><div class="sec-label">Simple Process</div><h2 class="sec-title">How WildHuntsa Works</h2></div></div>
-  <div class="hiw-grid" style="grid-template-columns:1fr 1fr">
-    <div class="hiw-item" onclick="gp('provinces')" style="cursor:pointer"><span class="hiw-n">01</span><div class="hiw-icon">🔍</div><div class="hiw-title">Search & Book</div><p class="hiw-desc">Browse farms by province, species, price and dates. Find exactly what you need and book instantly.</p></div>
-    <div class="hiw-item" onclick="gp('community')" style="cursor:pointer"><span class="hiw-n">02</span><div class="hiw-icon">⭐</div><div class="hiw-title">Hunter Reviews</div><p class="hiw-desc">Read honest reviews from verified hunters. Rate your experience and help the community find the best farms.</p></div>
+  <div style="text-align:center;margin-top:36px">
+    <button class="btn-hero-sec" style="padding:14px 48px;font-size:14px" onclick="gp('provinces')">Browse All Farms</button>
   </div>
 </div>
 
 <hr class="div">
 
-<!-- CTA BANNER -->
-<div class="sec">
-  <div class="cta-box">
+<!-- ══ WHY USE WILDHUNT SA ══ -->
+<div class="sec" style="background:var(--bark)">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
     <div>
-      <h2 class="cta-title">Own a farm or <em>game reserve?</em></h2>
-      <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — no upfront costs, no monthly fees.</p>
+      <div class="sec-label">Our Promise</div>
+      <h2 class="sec-title">Why Hunters Use WildHunt SA</h2>
+      <p class="sec-sub" style="margin-bottom:32px">We built WildHunt SA to make it easy for South African hunters to find great farms and connect directly with owners — no friction, no fees.</p>
+      <button class="btn-hero-main" style="padding:14px 36px" onclick="gp('provinces')">Start Browsing</button>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap">📞</div>
+        <div>
+          <div class="why-title">Direct Contact</div>
+          <p class="why-desc">You communicate directly with farm owners. No call centres, no third-party gatekeepers.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🆓</div>
+        <div>
+          <div class="why-title">No Booking Fees</div>
+          <p class="why-desc">WildHunt SA charges no fees to hunters. Browse and enquire completely free of charge.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">🇿🇦</div>
+        <div>
+          <div class="why-title">SA Hunting Focus</div>
+          <p class="why-desc">Built specifically for South African hunting. All farms are local, all species are South African.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">📬</div>
+        <div>
+          <div class="why-title">Simple Enquiry Process</div>
+          <p class="why-desc">Found a farm you like? Send an enquiry in under a minute. The farm will contact you directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- ══ LIST YOUR FARM ══ -->
+<div class="sec">
+  <div class="cta-box" style="background:linear-gradient(135deg,rgba(61,82,32,0.55),rgba(42,28,13,0.97))">
+    <div>
+      <div class="sec-label">Farm Owners</div>
+      <h2 class="cta-title">List Your Farm on WildHunt SA</h2>
+      <p class="cta-sub">Get enquiries from hunters across South Africa. Free listings during launch. No commission — you keep everything you earn.</p>
+      <div style="display:flex;gap:20px;margin-top:24px;flex-wrap:wrap;align-items:center">
+        <div style="display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.8px;color:rgba(237,224,204,0.5)"><span style="color:var(--amber)">✓</span> Free during launch</div>
+        <div style="display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.8px;color:rgba(237,224,204,0.5)"><span style="color:var(--amber)">✓</span> No commission</div>
+        <div style="display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.8px;color:rgba(237,224,204,0.5)"><span style="color:var(--amber)">✓</span> Direct enquiries</div>
+      </div>
     </div>
     <div class="cta-btns">
-      <button class="btn-hero-main" onclick="gp('list')">List Your Farm Free</button>
-      <button class="btn-hero-sec" onclick="window.location.href='mailto:info@wildhuntsa.com'">Email Us</button>
+      <button class="btn-hero-main" style="padding:15px 40px" onclick="gp('list')">List Your Farm</button>
+      <button class="btn-hero-sec" style="padding:14px 36px" onclick="window.location.href='mailto:info@wildhuntsa.com'">Contact Us</button>
     </div>
+  </div>
+</div>
+
+<!-- ══ FINAL CTA ══ -->
+<div class="home-final-cta">
+  <div style="position:relative;z-index:1;max-width:560px;margin:0 auto">
+    <div class="sec-label" style="display:flex;justify-content:center;margin-bottom:16px">Start Today</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:16px">Ready to Plan<em style="color:var(--gold);font-style:italic;display:block">Your Next Hunt?</em></h2>
+    <p style="font-size:16px;font-weight:300;color:rgba(237,224,204,0.5);margin-bottom:36px;line-height:1.65">Browse farms and send your first enquiry today. It's free, it's direct, and the farm contacts you.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <button class="btn-hero-main" style="padding:16px 48px;font-size:15px" onclick="gp('provinces')">Browse Farms</button>
+      <button class="btn-hero-sec" style="padding:16px 36px" onclick="gp('contact')">Contact Us</button>
+    </div>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(237,224,204,0.25);margin-top:28px">No fees · No middleman · Direct to farm owners</p>
   </div>
 </div>
 
@@ -1304,9 +1480,12 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ══════════ PAGE: FARMS / LISTINGS ══════════ -->
 <div class="page" id="page-listings">
   <div class="sec">
-    <div class="sec-label">340+ Verified Farms</div>
+    <div class="sec-label">9 Demo Farm Listings</div>
     <h1 class="sec-title">Browse Hunting Farms</h1>
     <p class="sec-sub" style="margin-bottom:28px">Browse farms across South Africa and send an enquiry directly to the farm owner. No booking fees, no middlemen.</p>
+    <div style="background:rgba(201,125,26,0.06);border:1px solid rgba(201,125,26,0.15);border-radius:3px;padding:10px 16px;margin-bottom:24px;font-size:12px;color:rgba(237,224,204,0.45);display:flex;align-items:center;gap:8px">
+      <span style="color:var(--amber)">⚠️</span> Some listings are example/demo farms used to showcase the platform. <a onclick="gp('list')" style="color:var(--amber);cursor:pointer;text-decoration:underline;margin-left:4px">List your real farm →</a>
+    </div>
     <div class="ftabs">
       <button class="ftab on" onclick="ftab(this)">All Farms</button>
       <button class="ftab" onclick="ftab(this)">⚡ Instant Book</button>
@@ -2939,7 +3118,10 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <li><a onclick="openOverlay('tosModal')" style="cursor:pointer">Terms of Service</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 WildHuntsa. All rights reserved.</span><span style="display:flex;gap:16px;align-items:center"><a onclick="openOverlay('privacyModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Privacy Policy</a><span style="opacity:0.2">·</span><a onclick="openOverlay('tosModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Terms of Service</a><span style="opacity:0.2">·</span><span>🇿🇦 Proudly South African</span></span></div>
+    <div class="footer-bottom">
+      <span>© 2026 WildHuntsa. All rights reserved.</span>
+      <span style="font-size:11px;color:rgba(237,224,204,0.2);letter-spacing:0.3px;text-align:center">⚠️ Some listings are example/demo farms used to showcase the platform.</span>
+      <span style="display:flex;gap:16px;align-items:center"><a onclick="openOverlay('privacyModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Privacy Policy</a><span style="opacity:0.2">·</span><a onclick="openOverlay('tosModal')" style="color:rgba(237,224,204,0.4);cursor:pointer;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='rgba(237,224,204,0.4)'">Terms of Service</a><span style="opacity:0.2">·</span><span>🇿🇦 Proudly South African</span></span></div>
   </div>
 </footer>
 
@@ -3049,12 +3231,15 @@ function filterPosts(btn, cat) {
 
 // ════ FARMS DATA ════
 const farms = [
-  {id:1,name:"Bushveld Legacy Farm",verified:true,province:"Limpopo",town:"Bela-Bela",rating:4.9,reviews:47,price:"R 4,200",unit:"per animal",desc:"Premier big game hunting on 8,000 hectares of pristine Limpopo bushveld. Specialising in trophy kudu, buffalo and sable. Full luxury accommodation available.",badges:["instant","trophy"],badgeLabels:["⚡ Instant","🏆 Trophy"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"R 8,500"},{n:"Buffalo",p:"R 45,000"},{n:"Sable",p:"R 22,000"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"},{n:"Eland",p:"R 6,500"}],amenities:["🏠 Luxury lodge","🍽️ Full catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility","📡 WiFi"],calDates:{2025:{3:[5,6,7,12,13,14,19,20]}}},
-  {id:2,name:"Kalahari Dunes Reserve",verified:true,province:"Northern Cape",town:"Upington",rating:4.8,reviews:31,price:"R 2,800",unit:"per animal",desc:"Authentic Kalahari plains game hunting. Gemsbok, springbok and eland in the iconic red sand dunes landscape. Self-catering or catered options.",badges:["plains"],badgeLabels:["🦌 Plains"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"R 4,200"},{n:"Springbok",p:"R 1,200"},{n:"Eland",p:"R 5,800"},{n:"Blesbok",p:"R 1,500"},{n:"Warthog",p:"R 800"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],calDates:{}},
-  {id:3,name:"Groot Karoo Safari",verified:true,province:"Eastern Cape",town:"Graaff-Reinet",rating:4.7,reviews:28,price:"R 3,100",unit:"per animal",desc:"Dramatic Karoo landscape hunting. Buffalo, plains game and big 5 packages available. Professional hunters on staff. Taxidermy on site.",badges:["big-game","trophy"],badgeLabels:["🦬 Big Game","🏆 Trophy"],img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",imgPos:"center",species:[{n:"Buffalo",p:"R 38,000"},{n:"Kudu",p:"R 7,200"},{n:"Springbok",p:"R 1,100"},{n:"Gemsbok",p:"R 3,800"},{n:"Warthog",p:"R 750"}],amenities:["🏠 Farmhouse","🍽️ Full board","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}},
-  {id:4,name:"Magalies Mountain Lodge",verified:false,province:"North West",town:"Rustenburg",rating:4.6,reviews:19,price:"R 1,900",unit:"per animal",desc:"Family-friendly hunting farm in the Magaliesberg. Excellent for first-time hunters. Blesbok, impala and warthog. Comfortable lodge accommodation.",badges:["budget","instant"],badgeLabels:["💰 Budget","⚡ Instant"],img:"https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,200"},{n:"Impala",p:"R 1,600"},{n:"Warthog",p:"R 800"},{n:"Kudu",p:"R 7,000"}],amenities:["🏡 Lodge","🍽️ Breakfast","❄️ Cold storage","🔪 Skinning"],calDates:{}},
-  {id:5,name:"Highveld Plains Hunting",verified:true,province:"Mpumalanga",town:"Middelburg",rating:4.8,reviews:22,price:"R 2,400",unit:"per animal",desc:"Open highveld hunting for plains game species. Excellent blesbok and black wildebeest populations. Close to Johannesburg — ideal weekend hunt.",badges:["plains","instant"],badgeLabels:["🦌 Plains","⚡ Instant"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,000"},{n:"Black Wildebeest",p:"R 3,500"},{n:"Springbok",p:"R 1,200"},{n:"Zebra",p:"R 5,500"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],calDates:{}},
-  {id:6,name:"Drakensberg Outpost",verified:true,province:"KwaZulu-Natal",town:"Winterton",rating:4.9,reviews:35,price:"R 3,800",unit:"per animal",desc:"Breathtaking Drakensberg foothills hunting. Nyala, bushbuck and mountain reedbuck specialist. 5-star lodge with spa and pool. Perfect hunting safari.",badges:["trophy","premium"],badgeLabels:["🏆 Trophy","⭐ Premium"],img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",imgPos:"center",species:[{n:"Nyala",p:"R 5,500"},{n:"Bushbuck",p:"R 4,200"},{n:"Mountain Reedbuck",p:"R 3,800"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"}],amenities:["🏠 5-Star lodge","🍽️ Fine dining","🏊 Pool & spa","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}}
+  {id:1,demo:true,name:"Bushveld Ridge Hunting",verified:false,province:"Limpopo",town:"Vaalwater",price:"Contact for pricing",unit:"",desc:"Experience authentic bushveld hunting in the heart of Limpopo. Bushveld Ridge offers kudu, impala, warthog, and blue wildebeest in a classic lowveld environment with comfortable lodge accommodation.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"Enquire"},{n:"Impala",p:"Enquire"},{n:"Warthog",p:"Enquire"},{n:"Blue Wildebeest",p:"Enquire"}],amenities:["🏠 Lodge accommodation","🍽️ Meals available","❄️ Cold storage","🔪 Skinning facility","🚗 Game vehicle"],style:"Plains Game | Rifle Hunting"},
+  {id:2,demo:true,name:"Kalahari Edge Safaris",verified:false,province:"North West",town:"Rustenburg",price:"Contact for pricing",unit:"",desc:"Open savannah terrain with excellent plains game hunting. Ideal for both first-time and experienced hunters looking for a relaxed but rewarding hunting experience.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"Enquire"},{n:"Springbok",p:"Enquire"},{n:"Blesbok",p:"Enquire"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],style:"Plains Game | Walk & Stalk"},
+  {id:3,demo:true,name:"Golden Plains Hunting Farm",verified:false,province:"Free State",town:"Kroonstad",price:"Contact for pricing",unit:"",desc:"Wide open Free State plains offering classic spot-and-stalk hunting. Perfect for hunters looking for longer shots and traditional hunting conditions.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Springbok",p:"Enquire"},{n:"Blesbok",p:"Enquire"},{n:"Black Wildebeest",p:"Enquire"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],style:"Plains Game | Long Range"},
+  {id:4,demo:true,name:"Karoo Valley Hunts",verified:false,province:"Eastern Cape",town:"Graaff-Reinet",price:"Contact for pricing",unit:"",desc:"Hunt in the rugged Karoo landscape with a wide variety of species. Known for diverse terrain and excellent trophy quality.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"Enquire"},{n:"Bushbuck",p:"Enquire"},{n:"Springbok",p:"Enquire"}],amenities:["🏠 Farmhouse","🍽️ Meals available","❄️ Cold storage","🚗 Game vehicle"],style:"Plains Game | Mixed Terrain"},
+  {id:5,demo:true,name:"Mountain Range Hunting Co.",verified:false,province:"Western Cape",town:"Oudtshoorn",price:"Contact for pricing",unit:"",desc:"A unique hunting experience combining mountain terrain with semi-arid landscapes. Ideal for hunters looking for a scenic and challenging hunt.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",imgPos:"center",species:[{n:"Springbok",p:"Enquire"},{n:"Gemsbok",p:"Enquire"},{n:"Duiker",p:"Enquire"}],amenities:["🏡 Lodge","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],style:"Plains Game | Mountain Hunting"},
+  {id:6,demo:true,name:"Red Dune Safaris",verified:false,province:"Northern Cape",town:"Upington",price:"Contact for pricing",unit:"",desc:"Classic Kalahari hunting experience with vast open land and exceptional visibility. Perfect for traditional African hunting.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"Enquire"},{n:"Springbok",p:"Enquire"},{n:"Blue Wildebeest",p:"Enquire"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],style:"Plains Game | Kalahari"},
+  {id:7,demo:true,name:"Lowveld Trophy Hunts",verified:false,province:"Mpumalanga",town:"Nelspruit",price:"Contact for pricing",unit:"",desc:"Dense bushveld and riverine areas provide exciting close-range hunting. Ideal for hunters seeking a more immersive experience.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",imgPos:"center",species:[{n:"Nyala",p:"Enquire"},{n:"Impala",p:"Enquire"},{n:"Bushbuck",p:"Enquire"}],amenities:["🏠 Bush lodge","🍽️ Full board","❄️ Cold storage","🚗 Game vehicle"],style:"Plains Game | Bushveld"},
+  {id:8,demo:true,name:"Zululand Game Hunts",verified:false,province:"KwaZulu-Natal",town:"Hluhluwe",price:"Contact for pricing",unit:"",desc:"Subtropical hunting environment with lush vegetation and diverse species. A unique hunting experience in Zululand.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"top",species:[{n:"Nyala",p:"Enquire"},{n:"Impala",p:"Enquire"},{n:"Warthog",p:"Enquire"}],amenities:["🏡 Lodge","🍽️ Meals available","❄️ Cold storage","🔪 Skinning facility"],style:"Plains Game | Coastal Bush"},
+  {id:9,demo:true,name:"Highveld Hunting Estate",verified:false,province:"Gauteng",town:"Dinokeng",price:"Contact for pricing",unit:"",desc:"Conveniently located near Gauteng, offering accessible hunting experiences for weekend hunters without compromising on quality.",badges:["plains"],badgeLabels:["🦌 Plains Game"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Impala",p:"Enquire"},{n:"Blesbok",p:"Enquire"},{n:"Warthog",p:"Enquire"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],style:"Plains Game | Weekend Hunts"}
 ];
 
 // ════ RENDER FARMS ════
@@ -3066,22 +3251,22 @@ function renderFarms(data, containerId) {
       <div class="farm-img">
         <div class="farm-img-bg" style="background-image:url('${f.img}');background-size:cover;background-position:${f.imgPos||'center'};width:100%;height:100%;position:absolute;inset:0;transition:transform 0.5s"></div>
         <div class="farm-img-overlay"></div>
-        <div class="farm-badges">${f.badges.map((b,i)=>`<div class="fbadge ${b}">${f.badgeLabels[i]}</div>`).join('')}</div>
+        <div class="farm-badges">
+          ${f.demo?`<div class="fbadge" style="background:rgba(42,28,13,0.85);border:1px solid rgba(176,152,112,0.3);color:rgba(237,224,204,0.55);font-size:9px;letter-spacing:1.5px">DEMO</div>`:''}
+          ${f.badges.map((b,i)=>`<div class="fbadge ${b}">${f.badgeLabels[i]}</div>`).join('')}
+        </div>
         <button class="farm-fav" onclick="event.stopPropagation();this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button>
         <div class="farm-img-bottom">
-          <span class="farm-province-tag">📍 ${f.province}</span>
-          <span class="farm-rating-tag" onclick="event.stopPropagation();goToFarmReviewsById(${f.id})" title="View all reviews">★ ${f.rating} <span style="font-size:11px;color:var(--khaki)">(${f.reviews})</span></span>
+          <span class="farm-province-tag">📍 ${f.town}, ${f.province}</span>
         </div>
       </div>
       <div class="farm-body">
-        <div class="farm-name-row">
-          <div class="farm-name">${f.name}</div>
-          ${f.verified?`<span class="verified-tick"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:10px;height:10px"><circle cx="6" cy="6" r="5.5" fill="rgba(34,140,70,0.25)" stroke="#5de882" stroke-width="1"/><path d="M3.5 6l1.8 1.8 3.2-3.2" stroke="#5de882" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>`:''}
-        </div>
-        <div class="farm-desc">${f.desc.substring(0,80)}...</div>
-        <div class="farm-species">${f.species.slice(0,3).map(s=>`<span class="sp-tag">${s.n.split(' ')[0]}</span>`).join('')}${f.species.length>3?`<span class="sp-tag">+${f.species.length-3}</span>`:''}</div>
+        <div class="farm-name" style="margin-bottom:4px">${f.name}</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--amber);letter-spacing:0.8px;margin-bottom:8px">${f.style||''}</div>
+        <div class="farm-desc">${f.desc.substring(0,90)}...</div>
+        <div class="farm-species">${f.species.slice(0,4).map(s=>`<span class="sp-tag">${s.n.split(' ')[0]}</span>`).join('')}${f.species.length>4?`<span class="sp-tag">+${f.species.length-4}</span>`:''}</div>
         <div class="farm-footer">
-          <div><div class="fp-from">Trophy hunting from</div><div class="fp-price">${f.price} <span class="fp-unit">${f.unit}</span></div></div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);letter-spacing:0.5px">Pricing on enquiry</div>
           <button class="farm-book-btn" onclick="event.stopPropagation();openEnquiry(${f.id})">Enquire Now</button>
         </div>
         <div class="farm-disclaimer">WildHunt SA connects hunters with farms. All arrangements are made directly with the farm.</div>
@@ -3140,18 +3325,27 @@ function openFarm(id) {
   if(!f) return;
   currentFarm = id;
   document.getElementById('fd-title').textContent = f.name;
-  document.getElementById('fd-loc').innerHTML = `📍 ${f.town}, ${f.province}`;
-  document.getElementById('fd-stars').textContent = '★'.repeat(Math.round(f.rating)) + ' ' + f.rating;
-  document.getElementById('fd-reviews').textContent = `${f.reviews} verified reviews — click to read →`;
+  document.getElementById('fd-loc').innerHTML = `📍 ${f.town}, ${f.province}${f.style ? ' &nbsp;·&nbsp; <span style="color:var(--amber);font-size:12px">'+f.style+'</span>' : ''}`;
+  // No fake ratings — clear the stars/reviews fields
+  const starsEl = document.getElementById('fd-stars');
+  const reviewsEl = document.getElementById('fd-reviews');
+  if(starsEl) starsEl.textContent = '';
+  if(reviewsEl) reviewsEl.textContent = '';
   document.getElementById('fd-desc').textContent = f.desc;
   document.getElementById('fd-gal-main').style.cssText = `background-image:url('${f.img}');background-size:cover;background-position:center;height:280px;border-radius:6px 6px 0 0`;
   document.getElementById('fd-animals').innerHTML = f.species.map(s=>`<div class="animal-price-row"><span class="apn">${s.n}</span><span class="app">${s.p}</span></div>`).join('');
   document.getElementById('fd-amenities').innerHTML = f.amenities.map(a=>`<div class="fd-amenity">${a}</div>`).join('');
   const badge = document.getElementById('fd-verified-badge');
-  if(badge) badge.innerHTML = f.verified
-    ? `<span class="verified-tick verified-tick-lg"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:13px;height:13px"><circle cx="6" cy="6" r="5.5" fill="rgba(34,140,70,0.25)" stroke="#5de882" stroke-width="1"/><path d="M3.5 6l1.8 1.8 3.2-3.2" stroke="#5de882" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified Farm</span>`
-    : `<span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--khaki);border:1px solid rgba(176,152,112,0.2);padding:3px 10px;border-radius:20px">Pending Verification</span>`;
-  renderRatingWidget(id);
+  if(badge) badge.innerHTML = f.demo
+    ? `<span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(237,224,204,0.4);border:1px solid rgba(176,152,112,0.2);padding:3px 9px;border-radius:20px">Demo Listing</span>`
+    : f.verified
+      ? `<span class="verified-tick verified-tick-lg"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:13px;height:13px"><circle cx="6" cy="6" r="5.5" fill="rgba(34,140,70,0.25)" stroke="#5de882" stroke-width="1"/><path d="M3.5 6l1.8 1.8 3.2-3.2" stroke="#5de882" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified Farm</span>`
+      : `<span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--khaki);border:1px solid rgba(176,152,112,0.2);padding:3px 10px;border-radius:20px">Pending Verification</span>`;
+  const widget = document.getElementById('fd-star-widget');
+  if(widget) widget.innerHTML = f.demo
+    ? `<div style="font-size:12px;color:rgba(237,224,204,0.35);font-style:italic;text-align:center;padding:8px 0">⚠️ This is a demo listing used to showcase the platform. Pricing and details are indicative only.</div>`
+    : '';
+  if(!f.demo) renderRatingWidget(id);
   openOverlay('farmModal');
 }
 
