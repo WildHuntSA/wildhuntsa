@@ -158,7 +158,7 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 .fp-from{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:1.5px;color:var(--khaki);text-transform:uppercase}
 .fp-price{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:var(--gold);line-height:1}
 .fp-unit{font-size:11px;color:var(--khaki)}
-.farm-book-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:7px 14px;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.farm-book-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:9px 16px;border-radius:2px;cursor:pointer;transition:all 0.2s;flex-shrink:0}
 .farm-book-btn:hover{background:var(--amber);color:var(--earth)}
 
 /* ── GALLERY MODAL ── */
@@ -366,6 +366,84 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .toast.ok{border-left-color:#5a8a2a}
 .toast.err{border-left-color:var(--blood)}
 @keyframes tIn{from{transform:translateX(16px);opacity:0}to{transform:translateX(0);opacity:1}}
+
+/* ── VERIFIED BADGE ── */
+.verified-tick{display:inline-flex;align-items:center;gap:4px;background:rgba(34,140,70,0.18);border:1px solid rgba(80,190,110,0.35);color:#5de882;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.verified-tick-lg{font-size:11px;padding:4px 12px;gap:5px}
+.farm-name-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.farm-name-row .farm-name{margin-bottom:0}
+.fd-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+/* ── STAR RATING WIDGET ── */
+.star-rating-section{background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.1);border-radius:3px;padding:16px 20px;margin-bottom:22px}
+.star-rating-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.star-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.star-btn{background:none;border:none;font-size:28px;cursor:pointer;color:rgba(176,152,112,0.2);transition:color 0.12s,transform 0.12s;line-height:1;padding:2px 3px}
+.star-btn.hovered,.star-btn.filled{color:var(--gold)}
+.star-btn:hover{transform:scale(1.18)}
+.star-label-text{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--khaki);margin-left:8px;letter-spacing:0.5px;min-width:70px;transition:color 0.2s}
+.star-submitted-msg{display:flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:#5de882;margin-top:8px}
+.star-summary{font-size:12px;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;margin-top:8px;letter-spacing:0.3px}
+.farm-rating-tag{cursor:pointer;transition:color 0.2s}
+.farm-rating-tag:hover{color:var(--gold2)}
+/* ── SERVICES TAB ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.3s}
+.svc-card:hover{transform:translateY(-4px);border-color:rgba(201,125,26,0.3);box-shadow:0 16px 48px rgba(0,0,0,0.45)}
+.svc-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;background:linear-gradient(135deg,rgba(42,28,13,0.9),rgba(61,82,32,0.35))}
+.svc-cat-tag{position:absolute;top:10px;left:10px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:2px;background:var(--amber);color:var(--earth)}
+.svc-body{padding:16px 18px 14px}
+.svc-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ivory);margin-bottom:3px}
+.svc-provider{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);letter-spacing:0.5px;margin-bottom:8px}
+.svc-desc{font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.5;margin-bottom:10px}
+.svc-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(176,152,112,0.08);padding-top:10px}
+.svc-price{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--gold)}
+.svc-price span{font-size:11px;color:var(--khaki)}
+.svc-contact-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:6px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.svc-contact-btn:hover{background:var(--amber);color:var(--earth)}
+/* ── COMMENTS SECTION ── */
+.comments-wrap{padding:20px 28px 28px}
+.comments-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.comment-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.comment-item{background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.08);border-radius:3px;padding:12px 14px}
+.comment-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.comment-author{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--sand);letter-spacing:0.3px}
+.comment-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--khaki)}
+.comment-stars{color:var(--gold);font-size:12px;margin-bottom:4px}
+.comment-text{font-size:13px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.55}
+.comment-input-wrap{display:flex;flex-direction:column;gap:10px;background:rgba(42,28,13,0.6);border:1px solid rgba(176,152,112,0.1);border-radius:3px;padding:14px}
+.comment-input-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber)}
+.comment-star-pick{display:flex;gap:6px;margin-bottom:4px}
+.comment-star-pick button{background:none;border:none;font-size:22px;color:rgba(176,152,112,0.25);cursor:pointer;transition:color 0.12s}
+.comment-star-pick button.on{color:var(--gold)}
+.comment-textarea{background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.15);border-radius:2px;padding:10px 12px;color:var(--bone);font-family:'Barlow',sans-serif;font-size:13px;resize:vertical;min-height:72px;width:100%}
+.comment-textarea::placeholder{color:rgba(176,152,112,0.3)}
+.comment-submit-btn{align-self:flex-end;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:9px 22px;border-radius:2px;cursor:pointer;transition:background 0.2s}
+.comment-submit-btn:hover{background:var(--gold)}
+/* ── MERCH SHOP ── */
+.merch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.merch-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;overflow:hidden;cursor:pointer;transition:all 0.3s;text-align:center}
+.merch-card:hover{transform:translateY(-4px);border-color:rgba(201,125,26,0.3);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.merch-img-wrap{position:relative}
+.merch-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;background:linear-gradient(135deg,rgba(30,20,9,0.95),rgba(61,82,32,0.3))}
+.merch-body{padding:14px 14px 16px}
+.merch-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory);letter-spacing:0.3px;margin-bottom:4px}
+.merch-variant{font-size:11px;color:var(--khaki);margin-bottom:8px}
+.merch-price{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:10px}
+.merch-add-btn{width:100%;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:8px;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.merch-add-btn:hover{background:var(--amber);color:var(--earth)}
+.merch-badge-new{position:absolute;top:8px;left:8px;background:var(--blood);color:var(--ivory);font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 8px;border-radius:2px;text-transform:uppercase}
+/* ── BUTCHER CARDS IN BOOKING ── */
+.butcher-card{background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.08);border-radius:3px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all 0.2s;position:relative}
+.butcher-card:hover{border-color:rgba(201,125,26,0.2);background:rgba(42,28,13,0.6)}
+.butcher-card.selected{border-color:var(--amber);background:rgba(201,125,26,0.08)}
+.butcher-card.selected::after{content:'✓';position:absolute;top:10px;right:12px;color:var(--amber);font-weight:700;font-size:16px}
+.butcher-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--ivory);letter-spacing:0.3px;margin-bottom:2px}
+.butcher-meta{font-size:12px;color:var(--khaki);margin-bottom:8px}
+.butcher-prices{display:flex;gap:14px;flex-wrap:wrap}
+.butcher-price-item{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--sand)}
+.butcher-price-item strong{color:var(--gold)}
+@media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr)}.merch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}.merch-grid{grid-template-columns:1fr 1fr}}
 
 /* ════ RESPONSIVE ════ */
 
@@ -1196,7 +1274,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 </div>
 
 <!-- PROVINCE FARM RESULTS - below map -->
-<div id="prov-results" style="display:none;background:var(--earth)">
+<div id="prov-results" style="display:none;background:var(--earth);scroll-margin-top:160px">
   <div class="sec" style="padding-top:32px">
     <div class="sec-head">
       <div><div class="sec-label" id="prov-result-label"></div><h2 class="sec-title" id="prov-result-title"></h2></div>
@@ -1242,22 +1320,6 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <div class="mkt-cat-icon">🎯</div>
         <div class="mkt-cat-label">All Items</div>
         <div class="mkt-cat-count">1,240+</div>
-      </div>
-
-      <div class="mkt-cat-dd-wrap">
-        <div class="mkt-cat" onclick="toggleMktDD('guns-dd',this,'guns')">
-          <div class="mkt-cat-icon">🔫</div>
-          <div class="mkt-cat-label">Guns ▾</div>
-          <div class="mkt-cat-count">284</div>
-        </div>
-        <div class="mkt-sub-dd" id="guns-dd">
-          <div onclick="mktCatSub('guns','','All Guns');closeMktDDs()">All Guns</div>
-          <div onclick="mktCatSub('guns','rifles','Rifles');closeMktDDs()">🎯 Rifles</div>
-          <div onclick="mktCatSub('guns','shotguns','Shotguns');closeMktDDs()">🔫 Shotguns</div>
-          <div onclick="mktCatSub('guns','handguns','Handguns');closeMktDDs()">🔫 Handguns</div>
-          <div onclick="mktCatSub('guns','ammo','Ammunition');closeMktDDs()">📦 Ammunition</div>
-          <div onclick="mktCatSub('guns','parts','Parts & Upgrades');closeMktDDs()">⚙️ Parts & Upgrades</div>
-        </div>
       </div>
 
       <div class="mkt-cat-dd-wrap">
@@ -1355,8 +1417,32 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
-    </div>
-  </div>
+      <div class="mkt-cat-dd-wrap">
+        <div class="mkt-cat" onclick="toggleMktDD('services-dd',this,'services')">
+          <div class="mkt-cat-icon">🛠️</div>
+          <div class="mkt-cat-label">Services ▾</div>
+          <div class="mkt-cat-count">48</div>
+        </div>
+        <div class="mkt-sub-dd" id="services-dd">
+          <div onclick="mktShowServices('all');closeMktDDs()">All Services</div>
+          <div onclick="mktShowServices('reloading');closeMktDDs()">🔧 Reloading</div>
+          <div onclick="mktShowServices('taxidermy');closeMktDDs()">🦌 Taxidermy</div>
+          <div onclick="mktShowServices('leather');closeMktDDs()">🪣 Leather Work</div>
+          <div onclick="mktShowServices('barrel');closeMktDDs()">⚙️ Barrel Threading</div>
+          <div onclick="mktShowServices('butchery');closeMktDDs()">🔪 Butchery</div>
+          <div onclick="mktShowServices('transport');closeMktDDs()">🚗 Trophy Transport</div>
+          <div onclick="mktShowServices('photography');closeMktDDs()">📸 Trophy Photography</div>
+        </div>
+      </div>
+
+      <div class="mkt-cat" onclick="mktShowMerch(this)" style="background:linear-gradient(135deg,rgba(201,125,26,0.18),rgba(224,168,48,0.08));border:1px solid rgba(201,125,26,0.3)">
+        <div class="mkt-cat-icon">🛒</div>
+        <div class="mkt-cat-label" style="color:var(--gold)">WildHunt Merch</div>
+        <div class="mkt-cat-count" style="color:var(--amber)">Shop</div>
+      </div>
+
+    </div><!-- end mkt-cats -->
+  </div><!-- end mkt-cats-wrap -->
 
   <div class="mkt-body">
 
@@ -1461,7 +1547,52 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
 
   </div><!-- end mkt-body -->
-</div>
+
+  <!-- ══ SERVICES PANEL ══ -->
+  <div id="mkt-services-panel" style="display:none" class="mkt-body">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px">
+      <div>
+        <div class="mkt-section-kicker">🛠️ Hunter Services</div>
+        <h2 class="mkt-section-title">Professional Services</h2>
+        <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.45);margin-top:4px">Reloading, taxidermy, leather work, barrel threading and more — advertised by verified service providers across SA.</p>
+      </div>
+      <button class="mkt-btn-primary" onclick="openOverlay('listServiceModal')">+ Advertise Your Service</button>
+    </div>
+    <div class="mkt-search-bar" style="margin-bottom:20px">
+      <div class="mkt-search-input-wrap">
+        <span class="mkt-search-icon">🔍</span>
+        <input type="text" id="svc-search" class="mkt-search-input" placeholder="Search services (e.g. reloading, taxidermy, leather...)" oninput="filterServices()">
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px" id="svc-filter-tabs">
+      <button class="ftab on" onclick="svcFilter(this,'all')">All</button>
+      <button class="ftab" onclick="svcFilter(this,'reloading')">🔧 Reloading</button>
+      <button class="ftab" onclick="svcFilter(this,'taxidermy')">🦌 Taxidermy</button>
+      <button class="ftab" onclick="svcFilter(this,'leather')">🪣 Leather Work</button>
+      <button class="ftab" onclick="svcFilter(this,'barrel')">⚙️ Barrel Threading</button>
+      <button class="ftab" onclick="svcFilter(this,'butchery')">🔪 Butchery</button>
+      <button class="ftab" onclick="svcFilter(this,'transport')">🚗 Trophy Transport</button>
+      <button class="ftab" onclick="svcFilter(this,'photography')">📸 Photography</button>
+    </div>
+    <div class="svc-grid" id="svc-grid"></div>
+  </div>
+
+  <!-- ══ MERCH PANEL ══ -->
+  <div id="mkt-merch-panel" style="display:none" class="mkt-body">
+    <div style="text-align:center;padding:0 0 36px">
+      <div class="mkt-section-kicker" style="justify-content:center;display:flex">🛒 Official Store</div>
+      <h2 class="mkt-section-title" style="font-size:clamp(26px,3vw,40px)">WildHunt SA Merchandise</h2>
+      <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.45);margin-top:6px;max-width:520px;margin-left:auto;margin-right:auto">Proudly South African hunting gear and apparel. All proceeds support the WildHuntsa community.</p>
+    </div>
+    <div class="merch-grid" id="merch-grid"></div>
+    <div style="margin-top:32px;text-align:center;padding:24px;background:rgba(42,28,13,0.5);border:1px solid rgba(201,125,26,0.15);border-radius:4px">
+      <div style="font-size:22px;margin-bottom:8px">📦</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory);letter-spacing:0.5px;margin-bottom:4px">Free delivery on orders over R 500 anywhere in South Africa</div>
+      <div style="font-size:12px;color:var(--khaki)">All items shipped within 3–5 business days · PayFast & EFT accepted</div>
+    </div>
+  </div>
+
+</div><!-- end page-marketplace -->
 
 <!-- ══════════ PAGE: COMMUNITY ══════════ -->
 <div class="page" id="page-community">
@@ -1934,7 +2065,80 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
-<!-- ══════════ FARM DETAIL MODAL ══════════ --><!-- ══════════ FARM DETAIL MODAL ══════════ -->
+<!-- ══════════ SERVICE DETAIL MODAL ══════════ -->
+<div class="overlay" id="serviceModal">
+  <div class="modal-box" style="max-width:680px;max-height:92vh;overflow-y:auto">
+    <div style="position:sticky;top:0;z-index:10;background:var(--bark2);padding:20px 28px 16px;border-bottom:1px solid rgba(176,152,112,0.1);display:flex;justify-content:space-between;align-items:flex-start">
+      <div>
+        <div id="svc-modal-cat-tag" style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:6px"></div>
+        <div id="svc-modal-title" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ivory)"></div>
+        <div id="svc-modal-meta" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);margin-top:4px;letter-spacing:0.5px"></div>
+      </div>
+      <button class="modal-close-btn" onclick="closeOverlay('serviceModal')" style="font-size:22px;flex-shrink:0">✕</button>
+    </div>
+    <div style="padding:24px 28px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px">
+        <div>
+          <div id="svc-modal-price" style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--gold)"></div>
+          <div id="svc-modal-desc" style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.55);margin-top:6px;line-height:1.6;max-width:420px"></div>
+        </div>
+        <button class="btn-hero-main" onclick="showToast('WhatsApp message opened! 📱','ok')" style="padding:12px 28px;font-size:13px;flex-shrink:0">📱 WhatsApp Provider</button>
+      </div>
+      <div id="svc-modal-details" style="background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.08);border-radius:3px;padding:14px 16px;margin-bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px"></div>
+    </div>
+    <!-- COMMENTS -->
+    <div class="comments-wrap">
+      <div class="comments-label">💬 Reviews & Comments</div>
+      <div class="comment-list" id="svc-comment-list"></div>
+      <div class="comment-input-wrap">
+        <div class="comment-input-label">Leave a Review</div>
+        <div class="comment-star-pick" id="svc-rating-pick">
+          <button onclick="pickCommentStar('svc',1)">☆</button>
+          <button onclick="pickCommentStar('svc',2)">☆</button>
+          <button onclick="pickCommentStar('svc',3)">☆</button>
+          <button onclick="pickCommentStar('svc',4)">☆</button>
+          <button onclick="pickCommentStar('svc',5)">☆</button>
+        </div>
+        <textarea class="comment-textarea" id="svc-comment-input" placeholder="Share your experience with this service provider..."></textarea>
+        <button class="comment-submit-btn" onclick="submitComment('svc')">Post Review →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LIST SERVICE MODAL ══════════ -->
+<div class="overlay" id="listServiceModal">
+  <div class="modal-box" style="max-width:600px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div><div class="bk-title">🛠️ Advertise Your Service</div><div class="bk-sub">Reach thousands of hunters across SA · Free to list</div></div>
+      <button class="modal-close-btn" onclick="closeOverlay('listServiceModal')">✕</button>
+    </div>
+    <div class="bk-body">
+      <div class="fg">
+        <div class="fi full"><label class="fl">Service Title</label><input type="text" class="finput" placeholder="e.g. Professional Rifle Reloading — Limpopo"></div>
+        <div class="fi"><label class="fl">Service Category</label>
+          <select class="fselect">
+            <option>🔧 Reloading</option><option>🦌 Taxidermy</option><option>🪣 Leather Work</option>
+            <option>⚙️ Barrel Threading</option><option>🔪 Butchery</option>
+            <option>🚗 Trophy Transport</option><option>📸 Trophy Photography</option><option>🔩 Other</option>
+          </select>
+        </div>
+        <div class="fi"><label class="fl">Your Province</label>
+          <select class="fselect"><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select>
+        </div>
+        <div class="fi full"><label class="fl">Description</label><textarea class="ftextarea" placeholder="Describe your service, turnaround times, specialisations..."></textarea></div>
+        <div class="fi"><label class="fl">Starting Price (Rands)</label><input type="text" class="finput" placeholder="e.g. R 85 / round or R 1,200 / mount"></div>
+        <div class="fi"><label class="fl">WhatsApp Number</label><input type="tel" class="finput" placeholder="+27 71 123 4567"></div>
+      </div>
+    </div>
+    <div class="bk-footer">
+      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('listServiceModal')">Cancel</button>
+      <button class="btn-sm btn-amber-sm" onclick="showToast('Service listed! Goes live after review.','ok');closeOverlay('listServiceModal')">List Service →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FARM DETAIL MODAL ══════════ -->
 <div class="overlay" id="farmModal">
   <div class="modal-box farm-detail">
     <div class="fd-gallery" id="fd-gallery">
@@ -1944,10 +2148,21 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
     <div class="fd-body">
       <div class="fd-header">
-        <div><div class="fd-title" id="fd-title"></div><div class="fd-loc" id="fd-loc">📍</div></div>
-        <div class="fd-rating-block"><div class="fd-stars" id="fd-stars"></div><div class="fd-reviews" id="fd-reviews"></div></div>
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px">
+            <div class="fd-title" id="fd-title"></div>
+            <span id="fd-verified-badge"></span>
+          </div>
+          <div class="fd-loc" id="fd-loc">📍</div>
+        </div>
+        <div class="fd-rating-block">
+          <div class="fd-stars" id="fd-stars" style="cursor:pointer" onclick="goToFarmReviews()" title="View all reviews in community"></div>
+          <div class="fd-reviews" id="fd-reviews" style="cursor:pointer;color:var(--amber)" onclick="goToFarmReviews()"></div>
+        </div>
       </div>
       <p class="fd-desc" id="fd-desc"></p>
+      <!-- STAR RATING WIDGET -->
+      <div class="star-rating-section" id="fd-star-widget"></div>
       <div class="fd-grid">
         <div class="fd-box"><div class="fd-box-title">🦌 Species & Pricing</div><div id="fd-animals"></div></div>
         <div class="fd-box"><div class="fd-box-title">✅ Amenities</div><div class="fd-amenities" id="fd-amenities"></div></div>
@@ -2019,35 +2234,35 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </label>
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="280" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="280" data-multiply="days" onchange="calcBooking()">
             <div><div class="bk-opt-name">🧊 Cold Storage</div><div class="bk-opt-desc">Refrigerated storage for your meat</div></div>
           </div>
           <div class="bk-opt-price">R 280 <span>/ day</span></div>
         </label>
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="1200" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="1200" data-multiply="species" onchange="calcBooking()">
             <div><div class="bk-opt-name">🦌 Taxidermy (Basic)</div><div class="bk-opt-desc">Skull & horn mount per trophy</div></div>
           </div>
           <div class="bk-opt-price">R 1,200 <span>/ trophy</span></div>
         </label>
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="850" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="850" data-multiply="days" onchange="calcBooking()">
             <div><div class="bk-opt-name">🚗 Game Vehicle</div><div class="bk-opt-desc">4x4 hunting vehicle with tracker</div></div>
           </div>
           <div class="bk-opt-price">R 850 <span>/ day</span></div>
         </label>
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="600" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="600" data-multiply="days" onchange="calcBooking()">
             <div><div class="bk-opt-name">👨‍🌾 Professional Hunter</div><div class="bk-opt-desc">Licensed PH to accompany your hunt</div></div>
           </div>
           <div class="bk-opt-price">R 600 <span>/ day</span></div>
         </label>
         <label class="bk-option-row">
           <div class="bk-option-left">
-            <input type="checkbox" class="bk-chk" data-price="450" onchange="calcBooking()">
+            <input type="checkbox" class="bk-chk" data-price="450" data-multiply="days" onchange="calcBooking()">
             <div><div class="bk-opt-name">🔫 Rifle Hire</div><div class="bk-opt-desc">Calibre of your choice, ammo included</div></div>
           </div>
           <div class="bk-opt-price">R 450 <span>/ day</span></div>
@@ -2062,12 +2277,48 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       </div>
 
       <!-- MESSAGE -->
+      <div class="bk-section-label" style="margin-top:20px">🔪 Butchery Services</div>
+      <p style="font-size:12px;color:var(--khaki);margin-bottom:12px;font-weight:300">Select a butcher near the farm to process your meat after the hunt.</p>
+      <div id="bk-butcher-list">
+        <div class="butcher-card" onclick="selectButcher(this,'Limpopo Fresh Cuts','R 55/kg biltong · R 35/kg droëwors · R 280 flat skinning')">
+          <div class="butcher-name">🔪 Limpopo Fresh Cuts</div>
+          <div class="butcher-meta">📍 Bela-Bela · Verified · ⭐ 4.8 (34 reviews)</div>
+          <div class="butcher-prices">
+            <span class="butcher-price-item">Biltong: <strong>R 55/kg</strong></span>
+            <span class="butcher-price-item">Droëwors: <strong>R 35/kg</strong></span>
+            <span class="butcher-price-item">Skinning: <strong>R 280 flat</strong></span>
+            <span class="butcher-price-item">Vacuum pack: <strong>R 12/pack</strong></span>
+          </div>
+        </div>
+        <div class="butcher-card" onclick="selectButcher(this,'Bushveld Boude','R 50/kg biltong · R 30/kg droëwors · R 250 flat skinning')">
+          <div class="butcher-name">🥩 Bushveld Boude</div>
+          <div class="butcher-meta">📍 Mokopane · Verified · ⭐ 4.6 (21 reviews)</div>
+          <div class="butcher-prices">
+            <span class="butcher-price-item">Biltong: <strong>R 50/kg</strong></span>
+            <span class="butcher-price-item">Droëwors: <strong>R 30/kg</strong></span>
+            <span class="butcher-price-item">Skinning: <strong>R 250 flat</strong></span>
+            <span class="butcher-price-item">Sausages: <strong>R 28/kg</strong></span>
+          </div>
+        </div>
+        <div class="butcher-card" onclick="selectButcher(this,'Plaas Vleis Spesialiste','R 60/kg biltong · R 320 flat skinning')">
+          <div class="butcher-name">🏪 Plaas Vleis Spesialiste</div>
+          <div class="butcher-meta">📍 Vaalwater · ⭐ 4.9 (58 reviews) · Farm pickup available</div>
+          <div class="butcher-prices">
+            <span class="butcher-price-item">Biltong: <strong>R 60/kg</strong></span>
+            <span class="butcher-price-item">Droëwors: <strong>R 38/kg</strong></span>
+            <span class="butcher-price-item">Skinning: <strong>R 320 flat</strong></span>
+            <span class="butcher-price-item">Farm pickup: <strong>Free</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MESSAGE -->
       <div class="bk-section-label" style="margin-top:20px">💬 Message to Farm Owner</div>
       <textarea class="ftextarea" placeholder="Special requests, dietary requirements, questions..." style="margin-bottom:0"></textarea>
 
       <!-- PRICE BREAKDOWN -->
       <div class="bk-breakdown" id="bk-breakdown">
-        <div class="bk-breakdown-title">💰 Price Breakdown</div>
+        <div class="bk-breakdown-title">💰 Estimated Price Breakdown</div>
         <div class="bk-breakdown-rows" id="bk-breakdown-rows">
           <div class="bk-br-empty">Select species and services above to see your quote</div>
         </div>
@@ -2357,12 +2608,12 @@ function filterPosts(btn, cat) {
 
 // ════ FARMS DATA ════
 const farms = [
-  {id:1,name:"Bushveld Legacy Farm",province:"Limpopo",town:"Bela-Bela",rating:4.9,reviews:47,price:"R 4,200",unit:"per animal",desc:"Premier big game hunting on 8,000 hectares of pristine Limpopo bushveld. Specialising in trophy kudu, buffalo and sable. Full luxury accommodation available.",badges:["instant","trophy"],badgeLabels:["⚡ Instant","🏆 Trophy"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"R 8,500"},{n:"Buffalo",p:"R 45,000"},{n:"Sable",p:"R 22,000"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"},{n:"Eland",p:"R 6,500"}],amenities:["🏠 Luxury lodge","🍽️ Full catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility","📡 WiFi"],calDates:{2025:{3:[5,6,7,12,13,14,19,20]}}},
-  {id:2,name:"Kalahari Dunes Reserve",province:"Northern Cape",town:"Upington",rating:4.8,reviews:31,price:"R 2,800",unit:"per animal",desc:"Authentic Kalahari plains game hunting. Gemsbok, springbok and eland in the iconic red sand dunes landscape. Self-catering or catered options.",badges:["plains"],badgeLabels:["🦌 Plains"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"R 4,200"},{n:"Springbok",p:"R 1,200"},{n:"Eland",p:"R 5,800"},{n:"Blesbok",p:"R 1,500"},{n:"Warthog",p:"R 800"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],calDates:{}},
-  {id:3,name:"Groot Karoo Safari",province:"Eastern Cape",town:"Graaff-Reinet",rating:4.7,reviews:28,price:"R 3,100",unit:"per animal",desc:"Dramatic Karoo landscape hunting. Buffalo, plains game and big 5 packages available. Professional hunters on staff. Taxidermy on site.",badges:["big-game","trophy"],badgeLabels:["🦬 Big Game","🏆 Trophy"],img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",imgPos:"center",species:[{n:"Buffalo",p:"R 38,000"},{n:"Kudu",p:"R 7,200"},{n:"Springbok",p:"R 1,100"},{n:"Gemsbok",p:"R 3,800"},{n:"Warthog",p:"R 750"}],amenities:["🏠 Farmhouse","🍽️ Full board","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}},
-  {id:4,name:"Magalies Mountain Lodge",province:"North West",town:"Rustenburg",rating:4.6,reviews:19,price:"R 1,900",unit:"per animal",desc:"Family-friendly hunting farm in the Magaliesberg. Excellent for first-time hunters. Blesbok, impala and warthog. Comfortable lodge accommodation.",badges:["budget","instant"],badgeLabels:["💰 Budget","⚡ Instant"],img:"https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,200"},{n:"Impala",p:"R 1,600"},{n:"Warthog",p:"R 800"},{n:"Kudu",p:"R 7,000"}],amenities:["🏡 Lodge","🍽️ Breakfast","❄️ Cold storage","🔪 Skinning"],calDates:{}},
-  {id:5,name:"Highveld Plains Hunting",province:"Mpumalanga",town:"Middelburg",rating:4.8,reviews:22,price:"R 2,400",unit:"per animal",desc:"Open highveld hunting for plains game species. Excellent blesbok and black wildebeest populations. Close to Johannesburg — ideal weekend hunt.",badges:["plains","instant"],badgeLabels:["🦌 Plains","⚡ Instant"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,000"},{n:"Black Wildebeest",p:"R 3,500"},{n:"Springbok",p:"R 1,200"},{n:"Zebra",p:"R 5,500"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],calDates:{}},
-  {id:6,name:"Drakensberg Outpost",province:"KwaZulu-Natal",town:"Winterton",rating:4.9,reviews:35,price:"R 3,800",unit:"per animal",desc:"Breathtaking Drakensberg foothills hunting. Nyala, bushbuck and mountain reedbuck specialist. 5-star lodge with spa and pool. Perfect hunting safari.",badges:["trophy","premium"],badgeLabels:["🏆 Trophy","⭐ Premium"],img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",imgPos:"center",species:[{n:"Nyala",p:"R 5,500"},{n:"Bushbuck",p:"R 4,200"},{n:"Mountain Reedbuck",p:"R 3,800"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"}],amenities:["🏠 5-Star lodge","🍽️ Fine dining","🏊 Pool & spa","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}}
+  {id:1,name:"Bushveld Legacy Farm",verified:true,province:"Limpopo",town:"Bela-Bela",rating:4.9,reviews:47,price:"R 4,200",unit:"per animal",desc:"Premier big game hunting on 8,000 hectares of pristine Limpopo bushveld. Specialising in trophy kudu, buffalo and sable. Full luxury accommodation available.",badges:["instant","trophy"],badgeLabels:["⚡ Instant","🏆 Trophy"],img:"https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",imgPos:"center",species:[{n:"Kudu",p:"R 8,500"},{n:"Buffalo",p:"R 45,000"},{n:"Sable",p:"R 22,000"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"},{n:"Eland",p:"R 6,500"}],amenities:["🏠 Luxury lodge","🍽️ Full catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility","📡 WiFi"],calDates:{2025:{3:[5,6,7,12,13,14,19,20]}}},
+  {id:2,name:"Kalahari Dunes Reserve",verified:true,province:"Northern Cape",town:"Upington",rating:4.8,reviews:31,price:"R 2,800",unit:"per animal",desc:"Authentic Kalahari plains game hunting. Gemsbok, springbok and eland in the iconic red sand dunes landscape. Self-catering or catered options.",badges:["plains"],badgeLabels:["🦌 Plains"],img:"https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",imgPos:"center",species:[{n:"Gemsbok",p:"R 4,200"},{n:"Springbok",p:"R 1,200"},{n:"Eland",p:"R 5,800"},{n:"Blesbok",p:"R 1,500"},{n:"Warthog",p:"R 800"}],amenities:["🏡 Self-catering","❄️ Cold storage","🚗 Game vehicle","🔪 Skinning facility"],calDates:{}},
+  {id:3,name:"Groot Karoo Safari",verified:true,province:"Eastern Cape",town:"Graaff-Reinet",rating:4.7,reviews:28,price:"R 3,100",unit:"per animal",desc:"Dramatic Karoo landscape hunting. Buffalo, plains game and big 5 packages available. Professional hunters on staff. Taxidermy on site.",badges:["big-game","trophy"],badgeLabels:["🦬 Big Game","🏆 Trophy"],img:"https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",imgPos:"center",species:[{n:"Buffalo",p:"R 38,000"},{n:"Kudu",p:"R 7,200"},{n:"Springbok",p:"R 1,100"},{n:"Gemsbok",p:"R 3,800"},{n:"Warthog",p:"R 750"}],amenities:["🏠 Farmhouse","🍽️ Full board","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}},
+  {id:4,name:"Magalies Mountain Lodge",verified:false,province:"North West",town:"Rustenburg",rating:4.6,reviews:19,price:"R 1,900",unit:"per animal",desc:"Family-friendly hunting farm in the Magaliesberg. Excellent for first-time hunters. Blesbok, impala and warthog. Comfortable lodge accommodation.",badges:["budget","instant"],badgeLabels:["💰 Budget","⚡ Instant"],img:"https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,200"},{n:"Impala",p:"R 1,600"},{n:"Warthog",p:"R 800"},{n:"Kudu",p:"R 7,000"}],amenities:["🏡 Lodge","🍽️ Breakfast","❄️ Cold storage","🔪 Skinning"],calDates:{}},
+  {id:5,name:"Highveld Plains Hunting",verified:true,province:"Mpumalanga",town:"Middelburg",rating:4.8,reviews:22,price:"R 2,400",unit:"per animal",desc:"Open highveld hunting for plains game species. Excellent blesbok and black wildebeest populations. Close to Johannesburg — ideal weekend hunt.",badges:["plains","instant"],badgeLabels:["🦌 Plains","⚡ Instant"],img:"https://images.unsplash.com/photo-1504432842672-1a79a1f5a3a1?w=800&q=80",imgPos:"center",species:[{n:"Blesbok",p:"R 2,000"},{n:"Black Wildebeest",p:"R 3,500"},{n:"Springbok",p:"R 1,200"},{n:"Zebra",p:"R 5,500"}],amenities:["🏡 Farmhouse","❄️ Cold storage","🔪 Skinning","🚗 4x4 available"],calDates:{}},
+  {id:6,name:"Drakensberg Outpost",verified:true,province:"KwaZulu-Natal",town:"Winterton",rating:4.9,reviews:35,price:"R 3,800",unit:"per animal",desc:"Breathtaking Drakensberg foothills hunting. Nyala, bushbuck and mountain reedbuck specialist. 5-star lodge with spa and pool. Perfect hunting safari.",badges:["trophy","premium"],badgeLabels:["🏆 Trophy","⭐ Premium"],img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80",imgPos:"center",species:[{n:"Nyala",p:"R 5,500"},{n:"Bushbuck",p:"R 4,200"},{n:"Mountain Reedbuck",p:"R 3,800"},{n:"Impala",p:"R 1,800"},{n:"Warthog",p:"R 900"}],amenities:["🏠 5-Star lodge","🍽️ Fine dining","🏊 Pool & spa","❄️ Cold storage","🦌 Taxidermy","🚗 Game vehicle"],calDates:{}}
 ];
 
 // ════ RENDER FARMS ════
@@ -2378,11 +2629,14 @@ function renderFarms(data, containerId) {
         <button class="farm-fav" onclick="event.stopPropagation();this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button>
         <div class="farm-img-bottom">
           <span class="farm-province-tag">📍 ${f.province}</span>
-          <span class="farm-rating-tag">★ ${f.rating} <span style="font-size:11px;color:var(--khaki)">(${f.reviews})</span></span>
+          <span class="farm-rating-tag" onclick="event.stopPropagation();goToFarmReviewsById(${f.id})" title="View all reviews">★ ${f.rating} <span style="font-size:11px;color:var(--khaki)">(${f.reviews})</span></span>
         </div>
       </div>
       <div class="farm-body">
-        <div class="farm-name">${f.name}</div>
+        <div class="farm-name-row">
+          <div class="farm-name">${f.name}</div>
+          ${f.verified?`<span class="verified-tick"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:10px;height:10px"><circle cx="6" cy="6" r="5.5" fill="rgba(34,140,70,0.25)" stroke="#5de882" stroke-width="1"/><path d="M3.5 6l1.8 1.8 3.2-3.2" stroke="#5de882" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span>`:''}
+        </div>
         <div class="farm-desc">${f.desc.substring(0,80)}...</div>
         <div class="farm-species">${f.species.slice(0,3).map(s=>`<span class="sp-tag">${s.n.split(' ')[0]}</span>`).join('')}${f.species.length>3?`<span class="sp-tag">+${f.species.length-3}</span>`:''}</div>
         <div class="farm-footer">
@@ -2391,6 +2645,50 @@ function renderFarms(data, containerId) {
         </div>
       </div>
     </div>`).join('');
+}
+
+// ════ FARM RATINGS ════
+const farmRatings = JSON.parse(localStorage.getItem('wh_ratings')||'{}');
+const ratingLabels = ['','Terrible','Poor','Average','Good','Excellent'];
+function saveRating(farmId,stars){
+  farmRatings[farmId]=stars;
+  try{localStorage.setItem('wh_ratings',JSON.stringify(farmRatings));}catch(e){}
+  renderRatingWidget(farmId);
+  showToast('Thanks for rating! ⭐ '+ratingLabels[stars],'ok');
+}
+function renderRatingWidget(farmId){
+  const w=document.getElementById('fd-star-widget'); if(!w)return;
+  const saved=farmRatings[farmId];
+  if(saved){
+    const sh=Array.from({length:5},(_,i)=>`<span style="font-size:20px;color:${i<saved?'var(--gold)':'rgba(176,152,112,0.2)'}">${i<saved?'★':'☆'}</span>`).join('');
+    w.innerHTML=`<div class="star-rating-label">Your Rating</div><div class="star-submitted-msg">${sh}&nbsp; You rated <strong>${saved}/5</strong> — ${ratingLabels[saved]}</div><div class="star-summary" style="margin-top:8px"><button onclick="delete farmRatings[${farmId}];try{localStorage.setItem('wh_ratings',JSON.stringify(farmRatings))}catch(e){};renderRatingWidget(${farmId})" style="background:none;border:none;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:11px;cursor:pointer;text-decoration:underline">Change my rating</button> &nbsp;·&nbsp; <button onclick="goToFarmReviewsById(${farmId})" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:11px;cursor:pointer;text-decoration:underline">Read all community reviews →</button></div>`;
+  }else{
+    w.innerHTML=`<div class="star-rating-label">Rate This Farm</div><div class="star-row" id="star-row-${farmId}">${[1,2,3,4,5].map(s=>`<button class="star-btn" id="star-${farmId}-${s}" onmouseenter="hoverStars(${farmId},${s})" onmouseleave="hoverStars(${farmId},0)" onclick="saveRating(${farmId},${s})">☆</button>`).join('')}<span class="star-label-text" id="star-label-${farmId}">Tap to rate</span></div>`;
+  }
+}
+function hoverStars(farmId,upTo){
+  for(let i=1;i<=5;i++){const b=document.getElementById(`star-${farmId}-${i}`);if(!b)continue;b.textContent=i<=upTo?'★':'☆';b.classList.toggle('hovered',i<=upTo);}
+  const l=document.getElementById(`star-label-${farmId}`);if(l)l.textContent=upTo>0?ratingLabels[upTo]:'Tap to rate';
+}
+function goToFarmReviews(){
+  const f=farms.find(x=>x.id===currentFarm);
+  closeOverlay('farmModal');
+  gp('community');
+  setTimeout(()=>{
+    const tab=document.querySelector('.comm-tab[onclick*="review"]');
+    if(tab){tab.click();}
+    showToast('Showing reviews for '+(f?f.name:'this farm')+' ⭐');
+  },300);
+}
+function goToFarmReviewsById(id){
+  const f=farms.find(x=>x.id===id);
+  closeOverlay('farmModal');
+  gp('community');
+  setTimeout(()=>{
+    const tab=document.querySelector('.comm-tab[onclick*="review"]');
+    if(tab)tab.click();
+    showToast('Showing reviews for '+(f?f.name:'this farm')+' ⭐');
+  },300);
 }
 
 // ════ FARM DETAIL ════
@@ -2402,12 +2700,153 @@ function openFarm(id) {
   document.getElementById('fd-title').textContent = f.name;
   document.getElementById('fd-loc').innerHTML = `📍 ${f.town}, ${f.province}`;
   document.getElementById('fd-stars').textContent = '★'.repeat(Math.round(f.rating)) + ' ' + f.rating;
-  document.getElementById('fd-reviews').textContent = `${f.reviews} verified reviews`;
+  document.getElementById('fd-reviews').textContent = `${f.reviews} verified reviews — click to read →`;
   document.getElementById('fd-desc').textContent = f.desc;
   document.getElementById('fd-gal-main').style.cssText = `background-image:url('${f.img}');background-size:cover;background-position:center;height:280px;border-radius:6px 6px 0 0`;
   document.getElementById('fd-animals').innerHTML = f.species.map(s=>`<div class="animal-price-row"><span class="apn">${s.n}</span><span class="app">${s.p}</span></div>`).join('');
   document.getElementById('fd-amenities').innerHTML = f.amenities.map(a=>`<div class="fd-amenity">${a}</div>`).join('');
+  const badge = document.getElementById('fd-verified-badge');
+  if(badge) badge.innerHTML = f.verified
+    ? `<span class="verified-tick verified-tick-lg"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:13px;height:13px"><circle cx="6" cy="6" r="5.5" fill="rgba(34,140,70,0.25)" stroke="#5de882" stroke-width="1"/><path d="M3.5 6l1.8 1.8 3.2-3.2" stroke="#5de882" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified Farm</span>`
+    : `<span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--khaki);border:1px solid rgba(176,152,112,0.2);padding:3px 10px;border-radius:20px">Pending Verification</span>`;
+  renderRatingWidget(id);
   openOverlay('farmModal');
+}
+
+// ════ BUTCHER SELECTION ════
+function selectButcher(el, name, summary) {
+  document.querySelectorAll('.butcher-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  showToast('✓ ' + name + ' selected','ok');
+}
+
+// ════ SERVICES DATA ════
+const services = [
+  {id:1,cat:'reloading',icon:'🔧',name:'Precision Rifle Reloading',provider:'Johan se Laaiplek',province:'Limpopo',town:'Tzaneen',rating:4.9,reviews:28,price:'R 85',unit:'/ round',desc:'Custom handloads for all calibres. Lapua brass, premium projectiles. 5–7 day turnaround.',details:[{k:'Calibres',v:'All hunting calibres'},{k:'Turnaround',v:'5–7 business days'},{k:'Min. Order',v:'50 rounds'},{k:'Brass',v:'Lapua / Norma'}]},
+  {id:2,cat:'taxidermy',icon:'🦌',name:'Bushveld Trophy Studio',provider:'Kobus van Niekerk',province:'Limpopo',town:'Bela-Bela',rating:4.8,reviews:41,price:'R 1,200',unit:'/ shoulder mount',desc:'Full taxidermy studio. Kudu, buffalo, full-body mounts. 8–12 week delivery. CITES compliant.',details:[{k:'Speciality',v:'Shoulder & full body'},{k:'Delivery',v:'8–12 weeks'},{k:'Pickup',v:'Farm pickup available'},{k:'Compliance',v:'CITES certified'}]},
+  {id:3,cat:'leather',icon:'🪣',name:'Karoo Leather Craft',provider:'Marthinus Botha',province:'Northern Cape',town:'Colesberg',rating:4.7,reviews:19,price:'R 650',unit:'/ custom item',desc:'Bespoke leather goods from your own hide. Knife sheaths, cartridge belts, wallets, rifle slings.',details:[{k:'Materials',v:'Your hide or purchased'},{k:'Lead Time',v:'3–4 weeks'},{k:'Items',v:'Sheaths, belts, slings'},{k:'Custom',v:'Yes, send measurements'}]},
+  {id:4,cat:'barrel',icon:'⚙️',name:'Gunsmith Central — Barrel Threading',provider:'Riaan se Geweerwerkplaas',province:'Gauteng',town:'Pretoria',rating:4.9,reviews:34,price:'R 380',unit:'/ barrel',desc:'Professional barrel threading for suppressors and muzzle brakes. All calibres. SAPS compliant work.',details:[{k:'Thread Types',v:'1/2"·28, 5/8"·24, M15x1'},{k:'Turnaround',v:'3–5 business days'},{k:'SAPS Comp.',v:'Yes'},{k:'Includes',v:'Thread protector cap'}]},
+  {id:5,cat:'butchery',icon:'🔪',name:'Limpopo Fresh Cuts',provider:'Piet Jacobs Butchery',province:'Limpopo',town:'Bela-Bela',rating:4.8,reviews:34,price:'R 55',unit:'/ kg biltong',desc:'On-farm or drop-off butchery. Biltong, droëwors, sausage, vacuum packing. Farm collection available.',details:[{k:'Biltong',v:'R 55/kg'},{k:'Droëwors',v:'R 35/kg'},{k:'Skinning',v:'R 280 flat'},{k:'Vacuum Pack',v:'R 12/pack'}]},
+  {id:6,cat:'transport',icon:'🚗',name:'Trophy Transport SA',provider:'Gerrit Joubert Logistics',province:'Mpumalanga',town:'Nelspruit',rating:4.6,reviews:15,price:'R 4.50',unit:'/ km',desc:'Refrigerated transport for trophies and meat. Farm to butcher, taxidermist or home. 24hr service.',details:[{k:'Vehicle',v:'Refrigerated bakkie'},{k:'Coverage',v:'All 9 provinces'},{k:'Notice',v:'24 hours'},{k:'CITES',v:'Documentation assisted'}]},
+  {id:7,cat:'photography',icon:'📸',name:'Wild Frame Photography',provider:'Anné Erasmus',province:'North West',town:'Rustenburg',rating:4.9,reviews:22,price:'R 1,800',unit:'/ half day',desc:'Professional hunting photography and trophy shots. Drone footage available. Prints and albums included.',details:[{k:'Duration',v:'Half or full day'},{k:'Deliverables',v:'150+ edited photos'},{k:'Drone',v:'Available on request'},{k:'Album',v:'Printed album included'}]},
+  {id:8,cat:'reloading',icon:'🔧',name:'Highveld Ammo Works',provider:'Frikkie du Plessis',province:'Free State',town:'Bloemfontein',rating:4.7,reviews:17,price:'R 75',unit:'/ round',desc:'Budget-friendly precision reloading. All common hunting calibres. Bulk discounts over 200 rounds.',details:[{k:'Calibres',v:'.308, .30-06, 7mm, 6.5'},{k:'Turnaround',v:'7–10 business days'},{k:'Bulk Discount',v:'200+ rounds: R 68/rd'},{k:'Brass',v:'Federal / Winchester'}]},
+  {id:9,cat:'leather',icon:'🪣',name:'Veld & Vel Leather Studio',provider:'Sunette Venter',province:'Eastern Cape',town:'Graaff-Reinet',rating:4.8,reviews:26,price:'R 450',unit:'/ knife sheath',desc:'Handstitched leather goods. Premium knife sheaths, custom rifle slings and cartridge pouches.',details:[{k:'Stitch Type',v:'Saddle stitch'},{k:'Leather',v:'Veg-tanned full grain'},{k:'Lead Time',v:'2–3 weeks'},{k:'Personalisation',v:'Branded initials/logos'}]}
+];
+const svcComments = {};
+function renderServices(filter='all'){
+  const g=document.getElementById('svc-grid'); if(!g)return;
+  let data=filter==='all'?services:services.filter(s=>s.cat===filter);
+  const q=(document.getElementById('svc-search')||{}).value||'';
+  if(q)data=data.filter(s=>s.name.toLowerCase().includes(q.toLowerCase())||s.desc.toLowerCase().includes(q.toLowerCase())||s.provider.toLowerCase().includes(q.toLowerCase()));
+  g.innerHTML=data.map(s=>`
+    <div class="svc-card" onclick="openService(${s.id})">
+      <div class="svc-img">${s.icon}<span class="svc-cat-tag">${s.cat.charAt(0).toUpperCase()+s.cat.slice(1)}</span></div>
+      <div class="svc-body">
+        <div class="svc-name">${s.name}</div>
+        <div class="svc-provider">👤 ${s.provider} · 📍 ${s.town}, ${s.province}</div>
+        <div class="svc-desc">${s.desc.substring(0,85)}...</div>
+        <div class="svc-footer">
+          <div class="svc-price">${s.price} <span>${s.unit}</span></div>
+          <button class="svc-contact-btn" onclick="event.stopPropagation();openService(${s.id})">View & Review</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+let currentService=null;
+function openService(id){
+  const s=services.find(x=>x.id===id); if(!s)return;
+  currentService=id;
+  document.getElementById('svc-modal-cat-tag').textContent=s.cat.toUpperCase();
+  document.getElementById('svc-modal-title').textContent=s.icon+' '+s.name;
+  document.getElementById('svc-modal-meta').innerHTML=`👤 ${s.provider} · 📍 ${s.town}, ${s.province} · ⭐ ${s.rating} (${s.reviews} reviews)`;
+  document.getElementById('svc-modal-price').textContent=s.price+' '+s.unit;
+  document.getElementById('svc-modal-desc').textContent=s.desc;
+  document.getElementById('svc-modal-details').innerHTML=s.details.map(d=>`<div style="font-size:12px"><span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber)">${d.k}</span><div style="color:var(--sand);margin-top:2px">${d.v}</div></div>`).join('');
+  const list=document.getElementById('svc-comment-list');
+  const seed=svcComments[id]||[];
+  list.innerHTML=(seed.length?seed:([{author:'WildHunter_SA',stars:5,date:'2 weeks ago',text:'Top kwaliteit werk. Sal beslis weer gebruik!'},{author:'Riaan_NW',stars:4,date:'1 month ago',text:'Goeie diens en vinnige aflewering. Prys is redelik.'}])).map(c=>`<div class="comment-item"><div class="comment-top"><span class="comment-author">${c.author}</span><span class="comment-date">${c.date}</span></div><div class="comment-stars">${'★'.repeat(c.stars)}${'☆'.repeat(5-c.stars)}</div><div class="comment-text">${c.text}</div></div>`).join('');
+  resetCommentPicker('svc');
+  openOverlay('serviceModal');
+}
+function svcFilter(btn,cat){
+  btn.closest('#svc-filter-tabs').querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderServices(cat);
+}
+function filterServices(){renderServices(document.querySelector('#svc-filter-tabs .ftab.on')?.textContent?.toLowerCase().replace(/[^a-z]/g,'')||'all');}
+
+// ════ MERCH DATA ════
+const merch=[
+  {id:1,icon:'🧢',name:'WildHunt SA Snapback',variant:'Camo · One Size',price:'R 280',isNew:true},
+  {id:2,icon:'👕',name:'WildHunt SA Hunting Tee',variant:'Sand / Camo · S–3XL',price:'R 320',isNew:true},
+  {id:3,icon:'🧥',name:'Fleece Hunt Jacket',variant:'Earth Tone · S–3XL',price:'R 680',isNew:false},
+  {id:4,icon:'🥤',name:'Stainless Steel Flask',variant:'500ml · Matte Black',price:'R 240',isNew:false},
+  {id:5,icon:'🎒',name:'Hunting Day Pack',variant:'28L · Camo Green',price:'R 890',isNew:true},
+  {id:6,icon:'🪖',name:'Bush Hat',variant:'Wide Brim · Tan/Camo',price:'R 190',isNew:false},
+  {id:7,icon:'🔖',name:'WildHunt Sticker Pack',variant:'8 premium vinyl stickers',price:'R 75',isNew:false},
+  {id:8,icon:'🧣',name:'Buff / Neck Gaiter',variant:'Camo Print · One Size',price:'R 130',isNew:false},
+];
+function renderMerch(){
+  const g=document.getElementById('merch-grid'); if(!g)return;
+  g.innerHTML=merch.map(m=>`<div class="merch-card"><div class="merch-img-wrap"><div class="merch-img">${m.icon}</div>${m.isNew?'<div class="merch-badge-new">New</div>':''}</div><div class="merch-body"><div class="merch-name">${m.name}</div><div class="merch-variant">${m.variant}</div><div class="merch-price">${m.price}</div><button class="merch-add-btn" onclick="showToast('${m.name} added to cart 🛒','ok')">Add to Cart</button></div></div>`).join('');
+}
+
+// ════ SHOW SERVICES / MERCH ════
+function mktShowServices(filter){
+  const mb=document.querySelector('.mkt-body');
+  const sp=document.getElementById('mkt-services-panel');
+  const mp=document.getElementById('mkt-merch-panel');
+  if(mb)mb.style.display='none';
+  if(mp)mp.style.display='none';
+  if(sp)sp.style.display='block';
+  document.querySelectorAll('.mkt-cat').forEach(c=>c.classList.remove('on'));
+  renderServices(filter==='all'?'all':filter);
+  if(filter!=='all'){
+    const btn=document.querySelector(`#svc-filter-tabs .ftab[onclick*="${filter}"]`);
+    if(btn){document.querySelectorAll('#svc-filter-tabs .ftab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+  }
+}
+function mktShowMerch(el){
+  const mb=document.querySelector('.mkt-body');
+  const sp=document.getElementById('mkt-services-panel');
+  const mp=document.getElementById('mkt-merch-panel');
+  if(mb)mb.style.display='none';
+  if(sp)sp.style.display='none';
+  if(mp)mp.style.display='block';
+  document.querySelectorAll('.mkt-cat').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  renderMerch();
+}
+// ════ COMMENTS ════
+let commentStars={svc:0};
+function pickCommentStar(ctx,n){
+  commentStars[ctx]=n;
+  const btns=document.querySelectorAll(`#${ctx}-rating-pick button`);
+  btns.forEach((b,i)=>{b.textContent=i<n?'★':'☆';b.classList.toggle('on',i<n);});
+}
+function resetCommentPicker(ctx){
+  commentStars[ctx]=0;
+  const btns=document.querySelectorAll(`#${ctx}-rating-pick button`);
+  btns.forEach(b=>{b.textContent='☆';b.classList.remove('on');});
+  const ta=document.getElementById(`${ctx}-comment-input`);
+  if(ta)ta.value='';
+}
+function submitComment(ctx){
+  const text=(document.getElementById(`${ctx}-comment-input`)||{}).value||'';
+  if(!text.trim()){showToast('Please write something before posting ⚠️','err');return;}
+  const stars=commentStars[ctx]||0;
+  const id=ctx==='svc'?currentService:currentFarm;
+  if(!svcComments[id])svcComments[id]=[];
+  svcComments[id].unshift({author:'You',stars,date:'Just now',text});
+  const list=document.getElementById(`${ctx}-comment-list`);
+  if(list){
+    const div=document.createElement('div');
+    div.className='comment-item';
+    div.innerHTML=`<div class="comment-top"><span class="comment-author">You</span><span class="comment-date">Just now</span></div><div class="comment-stars">${stars?'★'.repeat(stars)+'☆'.repeat(5-stars):'No rating'}</div><div class="comment-text">${text}</div>`;
+    list.prepend(div);
+  }
+  resetCommentPicker(ctx);
+  showToast('Review posted! Thanks 🙏','ok');
 }
 
 // ════ BOOKING ════
@@ -2499,9 +2938,17 @@ function calcBooking() {
     const row = chk.closest('.bk-option-row');
     const name = row.querySelector('.bk-opt-name').textContent;
     const price = parseInt(chk.dataset.price);
-    const multiply = chk.dataset.multiply === 'species' ? speciesCount : 1;
-    const lineTotal = price * multiply;
-    const label = multiply > 1 ? `${name} (${multiply} animals)` : name;
+    let lineTotal, label;
+    if (chk.dataset.multiply === 'species') {
+      lineTotal = price * speciesCount;
+      label = speciesCount > 1 ? `${name} (${speciesCount} animals)` : name;
+    } else if (chk.dataset.multiply === 'days') {
+      lineTotal = price * nights;
+      label = `${name} (${nights} night${nights !== 1 ? 's' : ''})`;
+    } else {
+      lineTotal = price;
+      label = name;
+    }
     rows.push({label, val:'R '+lineTotal.toLocaleString()});
     total += lineTotal;
   });
@@ -2563,6 +3010,13 @@ function toggleMktDD(id, btn, cat) {
     document.querySelectorAll('.mkt-cat').forEach(t => t.classList.remove('on'));
     btn.classList.add('on');
     mktFilter = cat; mktSub = '';
+    // Hide services/merch panels, show main body
+    const sp=document.getElementById('mkt-services-panel');
+    const mp=document.getElementById('mkt-merch-panel');
+    const mb=document.querySelector('.mkt-body');
+    if(sp)sp.style.display='none';
+    if(mp)mp.style.display='none';
+    if(mb)mb.style.display='';
     mktSearch();
   }
 }
@@ -2576,6 +3030,12 @@ function mktCat(btn, cat) {
   if(btn) btn.classList.add('on');
   mktFilter = cat;
   mktSub = '';
+  const sp=document.getElementById('mkt-services-panel');
+  const mp=document.getElementById('mkt-merch-panel');
+  const mb=document.querySelector('.mkt-body');
+  if(sp)sp.style.display='none';
+  if(mp)mp.style.display='none';
+  if(mb)mb.style.display='';
   mktSearch();
 }
 
@@ -2657,7 +3117,23 @@ function showProvPopupXY(e,name,count,species){
 }
 function hideProvPopup(){const p=document.getElementById('prov-popup');if(p)p.style.display='none';}
 function showProvPopup(e,name,count,species){showProvPopupXY(e,name,count,species);}
-function selectProvince(name,count,species){document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===name);});const provFarms=farms.filter(f=>f.province===name);const resultsDiv=document.getElementById('prov-results');document.getElementById('prov-result-label').textContent=count+' Farms in '+name;document.getElementById('prov-result-title').textContent='Hunting in '+name;renderFarms(provFarms.length>0?provFarms:farms.slice(0,2),'prov-farms-grid');resultsDiv.style.display='block';showToast('Showing '+count+' farms in '+name+' 📍');resultsDiv.scrollIntoView({behavior:'smooth',block:'start'});}
+function selectProvince(name,count,species){
+  document.querySelectorAll('.svgp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.prov-row').forEach(r=>{r.classList.toggle('active',r.querySelector('.prov-row-name')?.textContent===name);});
+  const provFarms=farms.filter(f=>f.province===name);
+  const resultsDiv=document.getElementById('prov-results');
+  document.getElementById('prov-result-label').textContent=count+' Farms in '+name;
+  document.getElementById('prov-result-title').textContent='Hunting in '+name;
+  renderFarms(provFarms.length>0?provFarms:farms.slice(0,2),'prov-farms-grid');
+  resultsDiv.style.display='block';
+  showToast('Showing '+count+' farms in '+name+' 📍');
+  // Scroll with nav offset so farms are fully visible below the fixed header
+  setTimeout(function(){
+    const rect = resultsDiv.getBoundingClientRect();
+    const navH = document.querySelector('nav') ? document.querySelector('nav').offsetHeight : 140;
+    window.scrollBy({top: rect.top - navH - 16, behavior:'smooth'});
+  }, 50);
+}
 function provFilter(btn,filter){document.querySelectorAll('.prov-pill').forEach(p=>p.classList.remove('on'));btn.classList.add('on');}
 function hoverProv(){}function unhoverProv(){}function showTT(){}function hideTT(){}
 function hideProvPopup(){const p=document.getElementById('prov-popup');if(p)p.style.display='none';}
