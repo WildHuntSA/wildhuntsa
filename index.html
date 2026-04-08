@@ -432,7 +432,22 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .merch-add-btn{width:100%;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.3);color:var(--amber);padding:8px;border-radius:2px;cursor:pointer;transition:all 0.2s}
 .merch-add-btn:hover{background:var(--amber);color:var(--earth)}
 .merch-badge-new{position:absolute;top:8px;left:8px;background:var(--blood);color:var(--ivory);font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 8px;border-radius:2px;text-transform:uppercase}
-/* ── BUTCHER CARDS IN BOOKING ── */
+/* ── BUTCHER CALCULATOR ── */
+.butcher-calc{background:rgba(18,13,6,0.7);border:1px solid rgba(201,125,26,0.25);border-radius:4px;padding:16px 18px;margin-top:4px}
+.butcher-calc-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.butcher-calc-row{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(176,152,112,0.07)}
+.butcher-calc-row:last-child{border-bottom:none}
+.butcher-calc-species{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--ivory)}
+.butcher-calc-yield{font-size:11px;color:var(--khaki);font-family:'Barlow Condensed',sans-serif}
+.butcher-calc-select{background:rgba(42,28,13,0.8);border:1px solid rgba(176,152,112,0.2);border-radius:2px;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;padding:4px 8px;cursor:pointer;letter-spacing:0.3px}
+.butcher-calc-select:focus{outline:none;border-color:var(--amber)}
+.butcher-calc-price{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--gold);text-align:right;min-width:70px}
+.butcher-vac-row{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(176,152,112,0.1)}
+.butcher-vac-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);letter-spacing:0.3px;flex:1}
+.butcher-calc-total-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,125,26,0.2)}
+.butcher-calc-total-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber)}
+.butcher-calc-total-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--gold)}
+.butcher-calc-empty{font-size:12px;color:var(--khaki);text-align:center;padding:12px 0;font-style:italic}
 .butcher-card{background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.08);border-radius:3px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all 0.2s;position:relative}
 .butcher-card:hover{border-color:rgba(201,125,26,0.2);background:rgba(42,28,13,0.6)}
 .butcher-card.selected{border-color:var(--amber);background:rgba(201,125,26,0.08)}
@@ -883,15 +898,35 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 /* ══ BOOKING CALCULATOR ══ */
 .bk-section-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
 .bk-species-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.bk-species-row{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s}
+.bk-species-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;transition:all 0.18s;gap:6px}
 .bk-species-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
 .bk-species-row.selected{border-color:var(--amber);background:rgba(201,125,26,0.1)}
-.bk-species-left{display:flex;align-items:center;gap:10px}
-.bk-species-name{font-size:13px;font-weight:500;color:var(--bone)}
-.bk-species-price{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--gold)}
-.bk-chk-circle{width:18px;height:18px;border-radius:50%;border:2px solid rgba(176,152,112,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:10px}
+.bk-species-left{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.bk-species-name{font-size:12px;font-weight:500;color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bk-species-price{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--gold);white-space:nowrap}
+.bk-chk-circle{width:16px;height:16px;border-radius:50%;border:2px solid rgba(176,152,112,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:9px}
 .bk-species-row.selected .bk-chk-circle{background:var(--amber);border-color:var(--amber);color:var(--earth)}
-.bk-option-list{display:flex;flex-direction:column;gap:6px}
+.bk-qty{display:flex;align-items:center;flex-shrink:0}
+.bk-qty-btn{width:22px;height:22px;border:1px solid rgba(176,152,112,0.25);background:rgba(42,28,13,0.9);color:var(--sand);font-size:14px;font-weight:700;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;justify-content:center;line-height:1;user-select:none;flex-shrink:0}
+.bk-qty-btn:hover{background:rgba(201,125,26,0.3);border-color:var(--amber);color:var(--gold)}
+.bk-qty-btn.minus{border-radius:3px 0 0 3px;border-right:none}
+.bk-qty-btn.plus{border-radius:0 3px 3px 0;border-left:none}
+.bk-qty-val{width:26px;height:22px;background:rgba(18,13,6,0.8);border:1px solid rgba(176,152,112,0.25);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--gold);display:flex;align-items:center;justify-content:center}
+/* Contact Us page */
+.contact-page{padding:60px 80px 80px;max-width:860px;margin:0 auto}
+.contact-hero-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+.contact-hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:8px}
+.contact-hero-title em{color:var(--gold);font-style:italic}
+.contact-form-wrap{background:var(--bark2);border:1px solid rgba(176,152,112,0.15);border-radius:6px;padding:40px;margin-top:40px}
+.contact-fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-fi-full{grid-column:1/-1}
+.contact-info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.contact-info-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:20px;text-align:center}
+.contact-info-icon{font-size:26px;margin-bottom:10px}
+.contact-info-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.contact-info-val{font-size:13px;color:var(--sand);font-weight:300}
+@media(max-width:768px){.contact-page{padding:32px 16px}.contact-fg{grid-template-columns:1fr}.contact-fi-full{grid-column:1}.contact-info-cards{grid-template-columns:1fr}}
+@media(max-width:520px){.bk-species-grid{grid-template-columns:1fr}}{display:flex;flex-direction:column;gap:6px}
 .bk-option-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;gap:12px}
 .bk-option-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
 .bk-option-row:has(.bk-chk:checked){border-color:var(--amber);background:rgba(201,125,26,0.08)}
@@ -968,8 +1003,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .prov-hotspot:hover{background:transparent}
 .prov-dot-pin{width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(224,168,48,0.8),0 0 20px rgba(224,168,48,0.4);opacity:0.85;transition:all 0.3s;animation:pinPulse 2s ease-in-out infinite}
 /* ── IMAGE MAP DOT HOTSPOTS ── */
-.map-dot-hs{position:absolute;cursor:pointer;z-index:20;transform:translate(-0%,-50%);border-radius:4px;border:1px solid transparent;transition:all 0.2s}
-.map-dot-hs:hover{background:rgba(255,180,30,0.15);border-color:rgba(255,180,30,0.5);box-shadow:0 0 12px rgba(255,160,20,0.4)}
+.map-dot-hs{position:absolute;cursor:pointer;z-index:20;transform:translate(-50%,-50%);border-radius:30px;border:1.5px solid rgba(201,125,26,0.35);background:rgba(201,125,26,0.07);transition:all 0.22s}
+.map-dot-hs:hover{background:rgba(201,125,26,0.22);border-color:rgba(255,180,30,0.85);box-shadow:0 0 18px 4px rgba(255,160,20,0.45),0 0 6px 2px rgba(255,180,30,0.3);transform:translate(-50%,-50%) scale(1.07)}
 .map-dot-ring{display:none}
 .prov-hotspot:hover .prov-dot-pin,.prov-hotspot.active .prov-dot-pin{width:16px;height:16px;box-shadow:0 0 16px rgba(224,168,48,1),0 0 32px rgba(224,168,48,0.6);opacity:1;animation:none}
 @keyframes pinPulse{0%,100%{transform:scale(1);opacity:0.7}50%{transform:scale(1.3);opacity:1}}
@@ -1012,6 +1047,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="openAuth('login')">Sign In</button>
+    <button class="btn-sm btn-outline-sm" onclick="gp('contact')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Contact Us</button>
     <button class="btn-sm btn-amber-sm" onclick="openOnboard()">List Your Farm</button>
     <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
   </div>
@@ -1021,6 +1057,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('provinces');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Hunting Farms</button>
     <button onclick="gp('marketplace');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
     <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">The Hunting Community</button>
+    <button onclick="gp('contact');toggleMobileMenu()" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact Us</button>
     <button onclick="openOnboard();toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
   </div>
 </nav>
@@ -1142,7 +1179,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
     <div class="cta-btns">
       <button class="btn-hero-main" onclick="openOnboard()">List Your Farm Free</button>
-      <button class="btn-hero-sec" onclick="showToast('We\'ll be in touch! 📧')">Talk to Us on WhatsApp</button>
+      <button class="btn-hero-sec" onclick="window.location.href='mailto:info@wildhuntsa.com'">Email Us</button>
     </div>
   </div>
 </div>
@@ -1198,55 +1235,55 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
           <!-- CLICKABLE HOTSPOTS — precisely over province name labels (verified live) -->
 
           <!-- LIMPOPO -->
-          <div class="map-dot-hs" style="left:59%;top:21.4%;width:100px;height:22px"
+          <div class="map-dot-hs" style="left:74%;top:13%;width:120px;height:46px"
             onclick="selectProvince('Limpopo',128,'Kudu, Impala, Bushbuck')"
             onmouseenter="showProvPopupXY(event,'Limpopo',128,'Kudu, Impala, Bushbuck')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- NORTH WEST -->
-          <div class="map-dot-hs" style="left:44%;top:38.5%;width:110px;height:22px"
+          <div class="map-dot-hs" style="left:50%;top:35%;width:130px;height:46px"
             onclick="selectProvince('North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseenter="showProvPopupXY(event,'North West',74,'Kudu, Blesbok, Wildebeest')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- GAUTENG -->
-          <div class="map-dot-hs" style="left:58%;top:35.7%;width:85px;height:22px"
+          <div class="map-dot-hs" style="left:63%;top:33%;width:110px;height:46px"
             onclick="selectProvince('Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseenter="showProvPopupXY(event,'Gauteng',12,'Impala, Blesbok, Steenbok')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- MPUMALANGA -->
-          <div class="map-dot-hs" style="left:65%;top:43.9%;width:120px;height:22px"
+          <div class="map-dot-hs" style="left:77%;top:42%;width:140px;height:46px"
             onclick="selectProvince('Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseenter="showProvPopupXY(event,'Mpumalanga',41,'Impala, Kudu, Nyala')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- FREE STATE — verified live ✅ -->
-          <div class="map-dot-hs" style="left:52%;top:52.5%;width:105px;height:22px"
+          <!-- FREE STATE -->
+          <div class="map-dot-hs" style="left:58%;top:51%;width:130px;height:46px"
             onclick="selectProvince('Free State',22,'Blesbok, Springbok, Wildebeest')"
             onmouseenter="showProvPopupXY(event,'Free State',22,'Blesbok, Springbok, Wildebeest')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- KWAZULU-NATAL -->
-          <div class="map-dot-hs" style="left:63%;top:53.3%;width:130px;height:22px"
+          <div class="map-dot-hs" style="left:76%;top:69%;width:150px;height:52px"
             onclick="selectProvince('KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
             onmouseenter="showProvPopupXY(event,'KwaZulu-Natal',19,'Nyala, Bushbuck, Impala')"
             onmouseleave="hideProvPopup()"></div>
 
-          <!-- NORTHERN CAPE — verified live ✅ -->
-          <div class="map-dot-hs" style="left:22%;top:59.8%;width:125px;height:22px"
+          <!-- NORTHERN CAPE -->
+          <div class="map-dot-hs" style="left:27%;top:59%;width:155px;height:46px"
             onclick="selectProvince('Northern Cape',58,'Gemsbok, Springbok, Eland')"
             onmouseenter="showProvPopupXY(event,'Northern Cape',58,'Gemsbok, Springbok, Eland')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- EASTERN CAPE -->
-          <div class="map-dot-hs" style="left:43%;top:71.1%;width:115px;height:22px"
+          <div class="map-dot-hs" style="left:57%;top:79%;width:145px;height:46px"
             onclick="selectProvince('Eastern Cape',17,'Buffalo, Kudu, Sable')"
             onmouseenter="showProvPopupXY(event,'Eastern Cape',17,'Buffalo, Kudu, Sable')"
             onmouseleave="hideProvPopup()"></div>
 
           <!-- WESTERN CAPE -->
-          <div class="map-dot-hs" style="left:17%;top:79.1%;width:120px;height:22px"
+          <div class="map-dot-hs" style="left:26%;top:89%;width:150px;height:46px"
             onclick="selectProvince('Western Cape',8,'Springbok, Gemsbok, Eland')"
             onmouseenter="showProvPopupXY(event,'Western Cape',8,'Springbok, Gemsbok, Eland')"
             onmouseleave="hideProvPopup()"></div>
@@ -1919,6 +1956,74 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div><!-- end comm-body -->
 </div>
 
+<!-- ══════════ PAGE: CONTACT ══════════ -->
+<div class="page" id="page-contact">
+  <div class="contact-page">
+    <div class="contact-hero-label">🇿🇦 WildHunt SA</div>
+    <h1 class="contact-hero-title">Get In<em> Touch</em></h1>
+    <p style="font-size:16px;font-weight:300;color:rgba(237,224,204,0.55);max-width:520px;line-height:1.65;margin-top:12px">Whether you're a hunter looking for more info, a farm owner wanting to list, or a service provider — we'd love to hear from you.</p>
+
+    <div class="contact-info-cards">
+      <div class="contact-info-card">
+        <div class="contact-info-icon">📧</div>
+        <div class="contact-info-label">Email</div>
+        <div class="contact-info-val"><a href="/cdn-cgi/l/email-protection#fa93949c95ba8d93969e928f948e899bd4999597" style="color:var(--amber);text-decoration:none"><span class="__cf_email__" data-cfemail="533a3d353c13243a3f373b263d2720327d303c3e">[email&#160;protected]</span></a></div>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-info-icon">🇿🇦</div>
+        <div class="contact-info-label">Based In</div>
+        <div class="contact-info-val">South Africa</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-info-icon">⏱️</div>
+        <div class="contact-info-label">Response Time</div>
+        <div class="contact-info-val">Within 24 hours</div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="sec-label" style="margin-bottom:10px">Send a Message</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--ivory);margin-bottom:6px">How can we help you?</h2>
+      <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.45);margin-bottom:28px">Fill in the form below and we'll get back to you as soon as possible.</p>
+
+      <div class="contact-fg">
+        <div>
+          <label class="fl">Your Name</label>
+          <input type="text" class="finput" id="ct-name" placeholder="e.g. Pieter van der Berg" style="margin-top:6px;width:100%">
+        </div>
+        <div>
+          <label class="fl">Email Address</label>
+          <input type="email" class="finput" id="ct-email" placeholder="you@email.com" style="margin-top:6px;width:100%">
+        </div>
+        <div class="contact-fi-full">
+          <label class="fl">Contact Number</label>
+          <input type="tel" class="finput" id="ct-phone" placeholder="+27 71 123 4567" style="margin-top:6px;width:100%">
+        </div>
+        <div class="contact-fi-full">
+          <label class="fl">What is your enquiry about?</label>
+          <select class="fselect" id="ct-subject" style="margin-top:6px;width:100%">
+            <option>🦌 Hunting Enquiry</option>
+            <option>🌿 List My Farm</option>
+            <option>🛠️ Advertise a Service</option>
+            <option>🛒 Marketplace Question</option>
+            <option>🤝 Partnership / Sponsorship</option>
+            <option>🐛 Technical Issue</option>
+            <option>💬 General</option>
+          </select>
+        </div>
+        <div class="contact-fi-full">
+          <label class="fl">Message</label>
+          <textarea class="ftextarea" id="ct-message" placeholder="Tell us how we can help you..." style="margin-top:6px;min-height:140px;width:100%"></textarea>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;display:flex;justify-content:flex-end">
+        <button class="btn-hero-main" onclick="submitContact()" style="padding:14px 48px;font-size:14px">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════ START DISCUSSION MODAL ══════════ -->
 <div class="overlay" id="discussionModal">
   <div class="modal-box" style="max-width:580px;max-height:92vh;overflow-y:auto">
@@ -2312,6 +2417,30 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         </div>
       </div>
 
+      <!-- BUTCHER MEAT CALCULATOR -->
+      <div class="butcher-calc" id="bk-meat-calc">
+        <div class="butcher-calc-title">🥩 Meat Processing Calculator
+          <span style="font-weight:300;font-size:10px;letter-spacing:0.5px;color:var(--khaki);text-transform:none">Based on avg carcass yield per animal</span>
+        </div>
+        <div id="bk-meat-rows">
+          <div class="butcher-calc-empty">Select your animals above to calculate processing costs</div>
+        </div>
+        <div class="butcher-vac-row" id="bk-vac-row" style="display:none">
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1">
+            <input type="checkbox" id="bk-vac-pack" style="width:16px;height:16px;accent-color:var(--amber);cursor:pointer" onchange="calcMeat()">
+            <div>
+              <div class="butcher-vac-label">🧊 Vacuum Packing</div>
+              <div style="font-size:11px;color:var(--khaki)">±500g per pack · R 12/pack — extends shelf life significantly</div>
+            </div>
+          </label>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--gold)" id="bk-vac-cost">R 0</div>
+        </div>
+        <div class="butcher-calc-total-row" id="bk-meat-total-row" style="display:none">
+          <span class="butcher-calc-total-label">Processing Subtotal</span>
+          <span class="butcher-calc-total-val" id="bk-meat-total">R 0</span>
+        </div>
+      </div>
+
       <!-- MESSAGE -->
       <div class="bk-section-label" style="margin-top:20px">💬 Message to Farm Owner</div>
       <textarea class="ftextarea" placeholder="Special requests, dietary requirements, questions..." style="margin-bottom:0"></textarea>
@@ -2495,7 +2624,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       </ul></div>
       <div class="footer-col"><h4>Support</h4><ul>
         <li><a onclick="showToast('Help Centre coming soon! 🛠️')" style="cursor:pointer">Help Centre</a></li>
-        <li><a onclick="showToast('Email us: info@wildhuntsa.com 📧')" style="cursor:pointer">Contact Us</a></li>
+        <li><a onclick="gp('contact')" style="cursor:pointer">Contact Us</a></li>
         <li><a onclick="openOverlay('privacyModal')" style="cursor:pointer">Privacy Policy</a></li>
         <li><a onclick="openOverlay('tosModal')" style="cursor:pointer">Terms of Service</a></li>
       </ul></div>
@@ -2507,7 +2636,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ════ MOBILE MENU ════
 function toggleMobileMenu() {
   const menu = document.getElementById('mob-menu');
@@ -2538,7 +2667,8 @@ function gp(id) {
   if(id==='home') renderFarms(farms.slice(0,3),'home-farms');
   if(id==='listings' || id==='provinces') renderFarms(farms,'listings-farms');
   if(id==='marketplace') setTimeout(function(){ mktSearch(); }, 50);
-  if(id==='community') {} 
+  if(id==='community') {}
+  if(id==='contact') {}
 }
 
 // ════ TOAST ════
@@ -2718,6 +2848,119 @@ function selectButcher(el, name, summary) {
   document.querySelectorAll('.butcher-card').forEach(c=>c.classList.remove('selected'));
   el.classList.add('selected');
   showToast('✓ ' + name + ' selected','ok');
+  calcMeat();
+}
+
+// ════ MEAT CALCULATOR ════
+// Average usable meat yield (kg) per animal after field dressing
+const meatYields = {
+  'Kudu':120, 'Buffalo':280, 'Sable':130, 'Impala':28, 'Warthog':22,
+  'Eland':190, 'Gemsbok':90, 'Springbok':16, 'Blesbok':30,
+  'Black Wildebeest':75, 'Zebra':155, 'Nyala':45, 'Bushbuck':22,
+  'Mountain Reedbuck':18, 'Blue Wildebeest':120, 'Blesbuck':30,
+  'Waterbuck':100, 'Steenbok':8, 'Duiker':7
+};
+
+// Butcher processing prices (R/kg) by butcher index
+const butcherPrices = [
+  {biltong:55, droewors:35, sausage:28, fresh:18, skinning:280}, // Limpopo Fresh Cuts
+  {biltong:50, droewors:30, sausage:28, fresh:16, skinning:250}, // Bushveld Boude
+  {biltong:60, droewors:38, sausage:32, fresh:20, skinning:320}, // Plaas Vleis Spesialiste
+];
+const defaultPrices = {biltong:55, droewors:35, sausage:28, fresh:18, skinning:280};
+
+function getButcherPrices() {
+  const sel = document.querySelector('.butcher-card.selected');
+  if (!sel) return defaultPrices;
+  const cards = document.querySelectorAll('.butcher-card');
+  let idx = 0;
+  cards.forEach((c,i) => { if(c === sel) idx = i; });
+  return butcherPrices[idx] || defaultPrices;
+}
+
+function calcMeat() {
+  const rowsEl = document.getElementById('bk-meat-rows');
+  const vacRow = document.getElementById('bk-vac-row');
+  const totalRow = document.getElementById('bk-meat-total-row');
+  const totalEl = document.getElementById('bk-meat-total');
+  const vacCostEl = document.getElementById('bk-vac-cost');
+  if (!rowsEl) return;
+
+  // Get selected species from qty system
+  const qtyMap = window.speciesQty || {};
+  const selected = Object.entries(qtyMap).filter(([,q]) => q > 0).map(([n,q]) => ({name:n, qty:q}));
+
+  if (selected.length === 0) {
+    rowsEl.innerHTML = '<div class="butcher-calc-empty">Select your animals above to calculate processing costs</div>';
+    if (vacRow) vacRow.style.display = 'none';
+    if (totalRow) totalRow.style.display = 'none';
+    window.meatProcessingTotal = 0;
+    calcBooking();
+    return;
+  }
+
+  const prices = getButcherPrices();
+  let grandTotal = 0;
+  let totalWeight = 0;
+
+  // Build a row for each selected animal (accounting for qty)
+  const rows = selected.map(({name, qty}) => {
+    let yield_kg = meatYields[name];
+    if (!yield_kg) {
+      const firstWord = name.split(' ')[0];
+      yield_kg = Object.entries(meatYields).find(([k]) => k.includes(firstWord) || firstWord.includes(k))?.[1] || 35;
+    }
+    const totalYield = yield_kg * qty;
+    totalWeight += totalYield;
+    const savedType = (window.meatChoices && window.meatChoices[name]) || 'none';
+    const pricePerKg = savedType === 'none' ? 0 : (prices[savedType] || 0);
+    const lineTotal = Math.round(totalYield * pricePerKg);
+    grandTotal += lineTotal;
+
+    const options = [
+      {v:'none', l:'— Select processing —'},
+      {v:'biltong', l:`Biltong (R${prices.biltong}/kg)`},
+      {v:'droewors', l:`Droëwors (R${prices.droewors}/kg)`},
+      {v:'sausage', l:`Boerewors (R${prices.sausage}/kg)`},
+      {v:'fresh', l:`Fresh Cuts (R${prices.fresh}/kg)`},
+    ];
+    const qtyLabel = qty > 1 ? ` × ${qty}` : '';
+    const priceDisplay = savedType === 'none' ? '<span style="font-size:11px;color:var(--khaki);font-style:italic">choose type →</span>' : `R ${lineTotal.toLocaleString()}`;
+
+    return `<div class="butcher-calc-row">
+      <div>
+        <div class="butcher-calc-species">${name}${qtyLabel}</div>
+        <div class="butcher-calc-yield">≈ ${totalYield}kg usable meat</div>
+      </div>
+      <select class="butcher-calc-select" onchange="setMeatChoice('${name}',this.value)">
+        ${options.map(o=>`<option value="${o.v}"${savedType===o.v?' selected':''}>${o.l}</option>`).join('')}
+      </select>
+      <div class="butcher-calc-price">${priceDisplay}</div>
+    </div>`;
+  });
+
+  rowsEl.innerHTML = rows.join('');
+
+  // Vacuum packing
+  const vacChecked = document.getElementById('bk-vac-pack')?.checked;
+  const packsNeeded = Math.ceil(totalWeight * 2); // ±500g per pack
+  const vacCost = vacChecked ? packsNeeded * 12 : 0;
+  if (vacChecked) grandTotal += vacCost;
+
+  if (vacRow) vacRow.style.display = 'flex';
+  if (vacCostEl) vacCostEl.textContent = vacChecked ? `R ${vacCost.toLocaleString()} (${packsNeeded} packs)` : 'R 0';
+  if (totalRow) totalRow.style.display = grandTotal > 0 ? 'flex' : 'none';
+  if (totalEl) totalEl.textContent = 'R ' + grandTotal.toLocaleString();
+
+  // Store for calcBooking — only if user has actually chosen processing
+  window.meatProcessingTotal = grandTotal > 0 ? grandTotal : 0;
+  calcBooking();
+}
+
+function setMeatChoice(name, type) {
+  if (!window.meatChoices) window.meatChoices = {};
+  window.meatChoices[name] = type;
+  calcMeat();
 }
 
 // ════ SERVICES DATA ════
@@ -2849,6 +3092,64 @@ function submitComment(ctx){
   showToast('Review posted! Thanks 🙏','ok');
 }
 
+// ════ SPECIES QTY ════
+function changeQty(name, unitPrice, delta) {
+  if (!window.speciesQty) window.speciesQty = {};
+  const current = window.speciesQty[name] || 0;
+  const next = Math.max(0, current + delta);
+  window.speciesQty[name] = next;
+
+  const safeId = name.replace(/\s/g,'-');
+  const qtyEl = document.getElementById('sp-qty-' + safeId);
+  const row = document.getElementById('sp-row-' + safeId);
+  const chk = document.getElementById('sp-chk-' + safeId);
+  const priceEl = document.getElementById('sp-price-' + safeId);
+
+  if (qtyEl) qtyEl.textContent = next;
+  if (row) row.classList.toggle('selected', next > 0);
+  if (chk) chk.textContent = next > 0 ? '✓' : '✓';
+
+  // Update displayed price (unit × qty, or just unit if qty 0)
+  if (priceEl) {
+    const base = 'R ' + unitPrice.toLocaleString();
+    priceEl.textContent = next > 1 ? 'R ' + (unitPrice * next).toLocaleString() : base;
+  }
+
+  calcBooking();
+  calcMeat();
+}
+
+// ════ CONTACT FORM ════
+function submitContact() {
+  const name = document.getElementById('ct-name')?.value.trim();
+  const email = document.getElementById('ct-email')?.value.trim();
+  const phone = document.getElementById('ct-phone')?.value.trim();
+  const subject = document.getElementById('ct-subject')?.value;
+  const message = document.getElementById('ct-message')?.value.trim();
+
+  if (!name || !email || !message) {
+    showToast('Please fill in your name, email and message ⚠️','err');
+    return;
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    showToast('Please enter a valid email address ⚠️','err');
+    return;
+  }
+
+  // Open mailto as a fallback (real backend can replace this later)
+  const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone||'Not provided'}\nSubject: ${subject}\n\n${message}`);
+  window.location.href = `mailto:info@wildhuntsa.com?subject=${encodeURIComponent('WildHuntSA Enquiry: '+subject)}&body=${body}`;
+
+  showToast('Opening your email client… 📧','ok');
+
+  // Reset form
+  ['ct-name','ct-email','ct-phone','ct-message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+}
+
 // ════ BOOKING ════
 function openBooking(id) {
   const f = farms.find(x => x.id === id);
@@ -2862,17 +3163,27 @@ function openBooking(id) {
   const dep = new Date(today); dep.setDate(dep.getDate()+4);
   document.getElementById('bk-depart').value = dep.toISOString().split('T')[0];
 
-  // Species grid
+  // Species grid with QTY
   const grid = document.getElementById('bk-species-grid');
   const species = f ? f.species : [{n:'Kudu',p:'R 8,500'},{n:'Impala',p:'R 1,800'},{n:'Warthog',p:'R 900'}];
-  grid.innerHTML = species.map(s => `
-    <div class="bk-species-row" onclick="this.classList.toggle('selected');calcBooking()">
+  window.speciesQty = {};
+  grid.innerHTML = species.map(s => {
+    const unitPrice = parseInt(s.p.replace(/\D/g,''));
+    return `<div class="bk-species-row" id="sp-row-${s.n.replace(/\s/g,'-')}">
       <div class="bk-species-left">
-        <div class="bk-chk-circle">✓</div>
+        <div class="bk-chk-circle" id="sp-chk-${s.n.replace(/\s/g,'-')}">✓</div>
         <div class="bk-species-name">${s.n}</div>
       </div>
-      <div class="bk-species-price">${s.p}</div>
-    </div>`).join('');
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <div class="bk-qty">
+          <button class="bk-qty-btn minus" onclick="changeQty('${s.n}',${unitPrice},-1)">−</button>
+          <div class="bk-qty-val" id="sp-qty-${s.n.replace(/\s/g,'-')}">0</div>
+          <button class="bk-qty-btn plus" onclick="changeQty('${s.n}',${unitPrice},1)">+</button>
+        </div>
+        <div class="bk-species-price" id="sp-price-${s.n.replace(/\s/g,'-')}">${s.p}</div>
+      </div>
+    </div>`;
+  }).join('');
 
   // Accommodation
   const accomList = document.getElementById('bk-accom-list');
@@ -2893,6 +3204,19 @@ function openBooking(id) {
 
   // Reset services
   document.querySelectorAll('.bk-chk').forEach(c => c.checked = false);
+  // Reset qty system
+  window.speciesQty = {};
+  window.meatChoices = {};
+  window.meatProcessingTotal = 0;
+  window.meatProcessingTotal = 0;
+  const vacPack = document.getElementById('bk-vac-pack');
+  if (vacPack) vacPack.checked = false;
+  const meatRows = document.getElementById('bk-meat-rows');
+  if (meatRows) meatRows.innerHTML = '<div class="butcher-calc-empty">Select your animals above to calculate processing costs</div>';
+  const vacRow = document.getElementById('bk-vac-row');
+  if (vacRow) vacRow.style.display = 'none';
+  const totalRow = document.getElementById('bk-meat-total-row');
+  if (totalRow) totalRow.style.display = 'none';
   calcBooking();
   openOverlay('bookingModal');
 }
@@ -2912,13 +3236,21 @@ function calcBooking() {
   const rows = [];
   let total = 0;
 
-  // Species
-  document.querySelectorAll('.bk-species-row.selected').forEach(el => {
-    const name = el.querySelector('.bk-species-name').textContent;
-    const price = parseInt(el.querySelector('.bk-species-price').textContent.replace(/\D/g,''));
-    rows.push({label:'🦌 '+name, val:'R '+price.toLocaleString()});
-    total += price;
+  // Species (qty-based)
+  const qty = window.speciesQty || {};
+  let speciesCount = 0;
+  Object.entries(qty).forEach(([name, q]) => {
+    if (q <= 0) return;
+    speciesCount += q;
+    const safeId = name.replace(/\s/g,'-');
+    const priceEl = document.getElementById('sp-price-' + safeId);
+    const unitPrice = priceEl ? parseInt(priceEl.textContent.replace(/\D/g,'')) : 0;
+    const lineTotal = unitPrice * q;
+    const label = q > 1 ? `🦌 ${name} × ${q}` : `🦌 ${name}`;
+    rows.push({label, val:'R '+lineTotal.toLocaleString()});
+    total += lineTotal;
   });
+  if (speciesCount === 0) speciesCount = 1;
 
   // Accommodation
   const selAccom = document.querySelector('.bk-accom-row.selected');
@@ -2933,7 +3265,6 @@ function calcBooking() {
   }
 
   // Services
-  const speciesCount = document.querySelectorAll('.bk-species-row.selected').length || 1;
   document.querySelectorAll('.bk-chk:checked').forEach(chk => {
     const row = chk.closest('.bk-option-row');
     const name = row.querySelector('.bk-opt-name').textContent;
@@ -2952,6 +3283,12 @@ function calcBooking() {
     rows.push({label, val:'R '+lineTotal.toLocaleString()});
     total += lineTotal;
   });
+
+  // Meat processing (from butcher calculator)
+  if (window.meatProcessingTotal && window.meatProcessingTotal > 0) {
+    rows.push({label:'🥩 Meat Processing', val:'R '+window.meatProcessingTotal.toLocaleString()});
+    total += window.meatProcessingTotal;
+  }
 
   const rowsEl = document.getElementById('bk-breakdown-rows');
   const totalEl = document.getElementById('bk-total-val');
@@ -3352,7 +3689,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <div class="pp-num">9</div>
         <div class="pp-body">
           <h3 class="pp-title">Contact Us</h3>
-          <p class="pp-text">If you have any questions about this Privacy Policy, please contact us at <span style="color:var(--amber)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147d7a727b54637d78707c617a6067753a777b79">[email&#160;protected]</a></span></p>
+          <p class="pp-text">If you have any questions about this Privacy Policy, please contact us at <span style="color:var(--amber)"><a href="/cdn-cgi/l/email-protection#036a6d656c43746a6f676b766d7770622d606c6e" style="color:var(--amber);text-decoration:none"><span class="__cf_email__" data-cfemail="d4bdbab2bb94a3bdb8b0bca1baa0a7b5fab7bbb9">[email&#160;protected]</span></a></span></p>
         </div>
       </div>
 
@@ -3402,15 +3739,4 @@ window.addEventListener('DOMContentLoaded', function() {
 
       <div class="pp-section"><div class="pp-num">10</div><div class="pp-body"><h3 class="pp-title">Governing Law</h3><p class="pp-text">These terms are governed by the laws of South Africa.</p></div></div>
 
-      <div class="pp-section"><div class="pp-num">11</div><div class="pp-body"><h3 class="pp-title">Contact</h3><p class="pp-text">For any questions regarding these terms, contact us at <span style="color:var(--amber)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb6b1b9b09fa8b6b3bbb7aab1abacbef1bcb0b2">[email&#160;protected]</a></span></p></div></div>
-    </div>
-
-    <div style="padding:16px 32px 24px;border-top:1px solid rgba(176,152,112,0.08);display:flex;justify-content:flex-end">
-      <button class="btn-hero-main" onclick="closeOverlay('tosModal')" style="padding:11px 28px;font-size:13px">Close</button>
-    </div>
-
-  </div>
-</div>
-
-</body>
-</html>
+      <div class="pp-section"><div class="pp-num">11</div><div class="pp-body"><h3 class="pp-title">Contact</h3><p class="pp-text
