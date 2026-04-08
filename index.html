@@ -925,8 +925,53 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .contact-info-icon{font-size:26px;margin-bottom:10px}
 .contact-info-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
 .contact-info-val{font-size:13px;color:var(--sand);font-weight:300}
-@media(max-width:768px){.contact-page{padding:32px 16px}.contact-fg{grid-template-columns:1fr}.contact-fi-full{grid-column:1}.contact-info-cards{grid-template-columns:1fr}}
-@media(max-width:520px){.bk-species-grid{grid-template-columns:1fr}}{display:flex;flex-direction:column;gap:6px}
+
+/* ── LIST FARM PAGE ── */
+.lf-hero{min-height:380px;background:linear-gradient(135deg,rgba(18,13,6,0.97) 0%,rgba(42,28,13,0.92) 50%,rgba(61,82,32,0.85) 100%),url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=80') center/cover;display:flex;align-items:center;padding:160px 80px 80px;position:relative;overflow:hidden}
+.lf-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,125,26,0.12) 0%,transparent 60%);pointer-events:none}
+.lf-hero-content{position:relative;z-index:2;max-width:680px}
+.lf-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--earth);background:var(--amber);padding:5px 14px;border-radius:2px;margin-bottom:22px}
+.lf-hero-title{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:16px}
+.lf-hero-title em{color:var(--gold);font-style:italic;display:block}
+.lf-hero-sub{font-size:17px;font-weight:300;color:rgba(237,224,204,0.65);line-height:1.65;max-width:520px;margin-bottom:32px}
+.lf-hero-stats{display:flex;gap:40px;margin-top:44px;padding-top:32px;border-top:1px solid rgba(176,152,112,0.12)}
+.lf-stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold)}
+.lf-stat-l{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--khaki);margin-top:2px}
+.lf-benefits{padding:72px 80px;background:var(--bark)}
+.lf-benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.lf-benefit-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:32px 24px;transition:all 0.25s;position:relative;overflow:hidden}
+.lf-benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber),var(--gold));opacity:0;transition:opacity 0.25s}
+.lf-benefit-card:hover{transform:translateY(-4px);border-color:rgba(201,125,26,0.25);box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.lf-benefit-card:hover::before{opacity:1}
+.lf-benefit-icon{font-size:36px;margin-bottom:18px}
+.lf-benefit-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:0.5px;color:var(--ivory);margin-bottom:10px}
+.lf-benefit-desc{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.65}
+.lf-benefit-tag{display:inline-block;margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(201,125,26,0.3);padding:3px 10px;border-radius:20px}
+.lf-form-section{padding:72px 80px;background:var(--earth)}
+.lf-form-wrap{max-width:860px;margin:0 auto}
+.lf-form-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.12);border-radius:8px;overflow:hidden}
+.lf-form-header{padding:32px 40px;background:linear-gradient(135deg,rgba(42,28,13,0.95),rgba(61,82,32,0.4));border-bottom:1px solid rgba(176,152,112,0.1)}
+.lf-form-body{padding:36px 40px}
+.lf-section-divider{display:flex;align-items:center;gap:14px;margin:28px 0 20px}
+.lf-section-divider span{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);white-space:nowrap}
+.lf-section-divider::before,.lf-section-divider::after{content:'';flex:1;height:1px;background:rgba(176,152,112,0.1)}
+.lf-upload-zone{border:2px dashed rgba(176,152,112,0.2);border-radius:4px;padding:36px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(18,13,6,0.4)}
+.lf-upload-zone:hover{border-color:var(--amber);background:rgba(201,125,26,0.06)}
+.lf-agreement{background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;transition:border-color 0.2s}
+.lf-agreement:has(input:checked){border-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.05)}
+.lf-submit-area{padding:32px 40px;background:rgba(8,5,2,0.4);border-top:1px solid rgba(176,152,112,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.lf-success{display:none;text-align:center;padding:64px 40px}
+.lf-success.show{display:block}
+/* ── ENQUIRY SYSTEM ── */
+.enquire-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:9px 18px;border-radius:2px;cursor:pointer;transition:all 0.2s;flex-shrink:0}
+.enquire-btn:hover{background:var(--gold)}
+.enquire-btn-lg{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:15px;border-radius:2px;cursor:pointer;transition:all 0.25s;width:100%}
+.enquire-btn-lg:hover{background:var(--gold)}
+.enq-legal{font-size:11px;font-weight:300;color:rgba(237,224,204,0.32);text-align:center;margin-top:10px;line-height:1.6;padding:0 4px}
+.farm-disclaimer{font-size:11px;font-weight:300;color:rgba(237,224,204,0.3);border-top:1px solid rgba(176,152,112,0.06);padding-top:10px;margin-top:10px;line-height:1.55;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.3px}
+
+@media(max-width:1100px){.lf-hero{padding:140px 32px 60px}.lf-benefits{padding:52px 32px}.lf-benefits-grid{grid-template-columns:1fr 1fr}.lf-form-section{padding:52px 32px}.lf-form-header,.lf-form-body,.lf-submit-area{padding-left:24px;padding-right:24px}.contact-page{padding:40px 32px 60px}.contact-info-cards{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:768px){.lf-hero{padding:120px 16px 48px}.lf-benefits-grid{grid-template-columns:1fr}.lf-hero-stats{gap:24px;flex-wrap:wrap}.lf-form-header,.lf-form-body,.lf-submit-area{padding-left:18px;padding-right:18px}.lf-submit-area{flex-direction:column}.lf-submit-area button{width:100%}.contact-page{padding:32px 16px}.contact-fg{grid-template-columns:1fr}.contact-fi-full{grid-column:1}.contact-info-cards{grid-template-columns:1fr}}{display:flex;flex-direction:column;gap:6px}
 .bk-option-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;gap:12px}
 .bk-option-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
 .bk-option-row:has(.bk-chk:checked){border-color:var(--amber);background:rgba(201,125,26,0.08)}
@@ -1029,6 +1074,76 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .opt-sub-btn:last-child{border-bottom:none}
 .opt-sub-btn:hover{background:rgba(201,125,26,0.1);color:var(--gold)}
 .opt-sub-btn.active{background:rgba(201,125,26,0.15);color:var(--gold)}
+
+/* ══ LIST FARM PAGE ══ */
+.lf-hero{position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:120px 40px 80px}
+.lf-hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,rgba(18,13,6,0.92) 0%,rgba(42,28,13,0.88) 50%,rgba(61,82,32,0.75) 100%),url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=80') center/cover no-repeat}
+.lf-hero-content{position:relative;z-index:2;max-width:720px}
+.lf-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--earth);background:var(--amber);padding:5px 16px;border-radius:2px;margin-bottom:20px}
+.lf-hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,68px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:16px}
+.lf-hero-title em{display:block;color:var(--gold);font-style:italic}
+.lf-hero-sub{font-size:17px;font-weight:300;color:rgba(237,224,204,0.7);max-width:540px;margin:0 auto 32px;line-height:1.65}
+.lf-hero-stats{display:flex;gap:40px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.lf-hstat{text-align:center}
+.lf-hstat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold)}
+.lf-hstat-l{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--khaki);margin-top:2px}
+/* Benefits */
+.lf-benefits{padding:60px 80px;background:var(--bark)}
+.lf-benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.lf-benefit-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:28px 24px;text-align:center;transition:all 0.25s}
+.lf-benefit-card:hover{border-color:rgba(201,125,26,0.3);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.35)}
+.lf-benefit-icon{font-size:36px;margin-bottom:14px}
+.lf-benefit-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:0.5px;color:var(--ivory);margin-bottom:8px}
+.lf-benefit-desc{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6}
+.lf-free-badge{display:inline-block;background:rgba(90,112,48,0.3);border:1px solid rgba(122,152,64,0.4);color:#9dc060;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:3px 9px;border-radius:2px;margin-top:8px;text-transform:uppercase}
+/* Form */
+.lf-form-outer{padding:0 80px 80px;background:var(--earth);max-width:100%}
+.lf-form-inner{max-width:800px;margin:0 auto}
+.lf-section{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:32px 36px;margin-bottom:20px}
+.lf-section-head{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.lf-section-num{width:32px;height:32px;border-radius:50%;background:var(--amber);color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lf-section-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ivory)}
+.lf-section-sub{font-size:12px;font-weight:300;color:var(--khaki);letter-spacing:0.3px;text-transform:none;margin-top:2px}
+.lf-fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lf-fi{display:flex;flex-direction:column;gap:6px}
+.lf-fi-full{grid-column:1/-1}
+.lf-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber)}
+.lf-label span{color:var(--khaki);font-weight:400;font-size:9px}
+/* Species grid */
+.lf-species-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}
+.lf-species-chip{display:flex;align-items:center;gap:7px;padding:7px 10px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--sand);letter-spacing:0.3px;user-select:none}
+.lf-species-chip:hover{border-color:rgba(201,125,26,0.4);background:rgba(201,125,26,0.08);color:var(--gold)}
+.lf-species-chip.on{border-color:var(--amber);background:rgba(201,125,26,0.14);color:var(--gold)}
+.lf-species-chip input{display:none}
+/* Upload area */
+.lf-upload{border:2px dashed rgba(176,152,112,0.2);border-radius:4px;padding:32px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(18,13,6,0.4)}
+.lf-upload:hover{border-color:rgba(201,125,26,0.5);background:rgba(201,125,26,0.06)}
+.lf-upload-icon{font-size:36px;margin-bottom:10px}
+.lf-upload-label{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:var(--sand);margin-bottom:4px}
+.lf-upload-sub{font-size:12px;color:var(--khaki)}
+/* Agreement */
+.lf-agreement{display:flex;align-items:flex-start;gap:12px;background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.12);border-radius:3px;padding:16px;margin-top:4px}
+.lf-agreement input{width:18px;height:18px;accent-color:var(--amber);flex-shrink:0;margin-top:1px;cursor:pointer}
+.lf-agreement-text{font-size:13px;font-weight:300;color:rgba(237,224,204,0.65);line-height:1.6}
+.lf-agreement-text strong{color:var(--sand);font-weight:600}
+/* Success state */
+.lf-success{text-align:center;padding:60px 40px;display:none}
+.lf-success-icon{font-size:56px;margin-bottom:20px}
+.lf-success-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ivory);margin-bottom:12px}
+.lf-success-sub{font-size:15px;font-weight:300;color:rgba(237,224,204,0.55);max-width:480px;margin:0 auto;line-height:1.65}
+@media(max-width:1100px){.lf-benefits{padding:48px 32px}.lf-benefits-grid{grid-template-columns:1fr 1fr}.lf-form-outer{padding:0 32px 60px}.lf-section{padding:24px 20px}.lf-fg{grid-template-columns:1fr}.lf-fi-full{grid-column:1}.lf-species-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.lf-species-grid{grid-template-columns:repeat(2,1fr)}.lf-benefits-grid{grid-template-columns:1fr}}
+/* ══ ENQUIRY MODAL ══ */
+.enq-farm-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(42,28,13,0.7);border:1px solid rgba(201,125,26,0.25);border-radius:3px;padding:6px 12px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--sand);margin-bottom:18px}
+.enq-disclaimer{display:flex;align-items:flex-start;gap:9px;background:rgba(18,13,6,0.5);border-left:3px solid rgba(201,125,26,0.4);padding:12px 14px;border-radius:0 3px 3px 0;margin-top:16px;font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.55}
+.enq-disclaimer-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.enq-success-wrap{text-align:center;padding:32px 20px;display:none}
+.enq-success-wrap .enq-success-icon{font-size:48px;margin-bottom:16px}
+.enq-success-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.5px;color:var(--ivory);margin-bottom:8px}
+.enq-success-sub{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6}
+/* Farm disclaimer note */
+.farm-disclaimer-note{font-size:11px;font-weight:300;color:rgba(176,152,112,0.45);text-align:center;margin-top:10px;line-height:1.5;font-style:italic}
+
 </style>
 </head>
 <body>
@@ -1048,7 +1163,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="openAuth('login')">Sign In</button>
     <button class="btn-sm btn-outline-sm" onclick="gp('contact')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Contact Us</button>
-    <button class="btn-sm btn-amber-sm" onclick="openOnboard()">List Your Farm</button>
+    <button class="btn-sm btn-amber-sm" onclick="gp('list')">List Your Farm</button>
     <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
   </div>
   <!-- MOBILE DROPDOWN MENU -->
@@ -1058,7 +1173,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('marketplace');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
     <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">The Hunting Community</button>
     <button onclick="gp('contact');toggleMobileMenu()" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact Us</button>
-    <button onclick="openOnboard();toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
+    <button onclick="gp('list');toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
   </div>
 </nav>
 
@@ -1125,7 +1240,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <p class="hero-p">Book world-class hunting experiences directly from verified South African farm and game reserve owners. No middleman. Real availability. Online booking.</p>
     <div class="hero-btns" style="display:none">
       <button class="btn-hero-main" onclick="gp('provinces')">Browse Farms</button>
-      <button class="btn-hero-sec" onclick="openOnboard()">List Your Farm Free</button>
+      <button class="btn-hero-sec" onclick="gp('list')">List Your Farm Free</button>
     </div>
     <div class="hero-stats">
       <div><div class="hstat-n">340+</div><div class="hstat-l">Farms</div></div>
@@ -1178,7 +1293,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <p class="cta-sub">List your property for free and reach thousands of hunters. We only earn when you earn — no upfront costs, no monthly fees.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-hero-main" onclick="openOnboard()">List Your Farm Free</button>
+      <button class="btn-hero-main" onclick="gp('list')">List Your Farm Free</button>
       <button class="btn-hero-sec" onclick="window.location.href='mailto:info@wildhuntsa.com'">Email Us</button>
     </div>
   </div>
@@ -1191,7 +1306,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="sec">
     <div class="sec-label">340+ Verified Farms</div>
     <h1 class="sec-title">Browse Hunting Farms</h1>
-    <p class="sec-sub" style="margin-bottom:28px">All farms are personally verified and licensed. Hunt with total confidence.</p>
+    <p class="sec-sub" style="margin-bottom:28px">Browse farms across South Africa and send an enquiry directly to the farm owner. No booking fees, no middlemen.</p>
     <div class="ftabs">
       <button class="ftab on" onclick="ftab(this)">All Farms</button>
       <button class="ftab" onclick="ftab(this)">⚡ Instant Book</button>
@@ -2272,7 +2387,11 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <div class="fd-box"><div class="fd-box-title">🦌 Species & Pricing</div><div id="fd-animals"></div></div>
         <div class="fd-box"><div class="fd-box-title">✅ Amenities</div><div class="fd-amenities" id="fd-amenities"></div></div>
       </div>
-      <button class="btn-full" onclick="openBooking(currentFarm);closeOverlay('farmModal')" style="width:100%;padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);border:none;border-radius:2px;color:var(--earth);cursor:pointer;margin-top:16px">📅 Book This Farm</button>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <button class="btn-full amber" onclick="openEnquiry(currentFarm);closeOverlay('farmModal')" style="padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase">📬 Enquire Now</button>
+        <button class="btn-full ghost" onclick="openBooking(currentFarm);closeOverlay('farmModal')" style="padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap">💰 Build Quote</button>
+      </div>
+      <div class="farm-disclaimer" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(176,152,112,0.06)">🛡️ WildHunt SA connects hunters with farms. All hunting arrangements, pricing and availability are confirmed directly with the farm owner. WildHunt SA is not a party to any agreement.</div>
     </div>
   </div>
 </div>
@@ -2284,8 +2403,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <!-- Header -->
     <div class="bk-header" style="position:sticky;top:0;z-index:10;background:var(--bark2)">
       <div>
-        <div class="bk-title" id="bk-title">Book Your Hunt</div>
-        <div class="bk-sub" id="bk-farm-name">Select your package below</div>
+        <div class="bk-title" id="bk-title">Build Your Quote</div>
+        <div class="bk-sub" id="bk-farm-name">Select species, dates & services to estimate costs</div>
       </div>
       <button class="modal-close-btn" onclick="closeOverlay('bookingModal')">✕</button>
     </div>
@@ -2456,14 +2575,14 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
           <span>Estimated Total</span>
           <span class="bk-total-val" id="bk-total-val">R 0</span>
         </div>
-        <div style="font-size:11px;color:var(--khaki);margin-top:6px;text-align:center">Final pricing confirmed by farm owner · Deposit may be required</div>
+        <div style="font-size:11px;color:var(--khaki);margin-top:6px;text-align:center">Prices are estimates only — all arrangements are confirmed directly with the farm owner</div>
       </div>
 
     </div>
 
     <div class="bk-footer">
       <button class="btn-sm btn-outline-sm" onclick="closeOverlay('bookingModal')">Cancel</button>
-      <button class="btn-sm btn-amber-sm" onclick="submitBooking()">Send Booking Request →</button>
+      <button class="btn-sm btn-amber-sm" onclick="submitBooking()">Send Enquiry with Quote →</button>
     </div>
 
   </div>
@@ -2590,22 +2709,213 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 </div>
 
 <!-- ══════════ FARM ONBOARDING MODAL ══════════ -->
-<div class="overlay" id="onboardModal">
-  <div class="modal-box onboard" style="max-width:700px;max-height:95vh;overflow-y:auto">
-    <div class="bk-header">
-      <div><div class="bk-title">🌿 List Your Farm</div><div class="bk-sub">Takes about 5 minutes · Free to list</div></div>
-      <button class="modal-close-btn" onclick="closeOverlay('onboardModal')">✕</button>
+<!-- ══════════ PAGE: LIST YOUR FARM ══════════ -->
+<div class="page" id="page-list">
+
+  <!-- HERO -->
+  <div class="lf-hero">
+    <div class="lf-hero-content">
+      <div class="lf-hero-eyebrow">🌿 Farm Partner Programme</div>
+      <h1 class="lf-hero-title">List Your<em>Hunting Farm</em></h1>
+      <p class="lf-hero-sub">Join WildHunt SA and connect with thousands of hunters across South Africa. Showcase your farm professionally — free during our launch phase.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <button class="btn-hero-main" onclick="document.getElementById('lf-form').scrollIntoView({behavior:'smooth'})">Get Started — It's Free</button>
+        <button class="btn-hero-sec" onclick="gp('contact')">Talk to Us First</button>
+      </div>
+      <div class="lf-hero-stats">
+        <div><div class="lf-stat-n">340+</div><div class="lf-stat-l">Active Hunters</div></div>
+        <div><div class="lf-stat-n">9</div><div class="lf-stat-l">Provinces</div></div>
+        <div><div class="lf-stat-n">Free</div><div class="lf-stat-l">During Launch</div></div>
+        <div><div class="lf-stat-n">24h</div><div class="lf-stat-l">Review Time</div></div>
+      </div>
     </div>
-    <div class="ob-steps" id="ob-steps"></div>
-    <div class="bk-body" id="ob-body"></div>
-    <div class="bk-footer">
-      <button class="btn-sm btn-outline-sm" id="ob-back" onclick="obNav(-1)">← Back</button>
-      <button class="btn-sm btn-amber-sm" id="ob-next" onclick="obNav(1)">Next →</button>
+  </div>
+
+  <!-- BENEFITS -->
+  <div class="lf-benefits">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <div class="sec-label" style="justify-content:center;display:flex">Why List on WildHunt SA?</div>
+      <h2 class="sec-title" style="font-size:clamp(28px,3.5vw,44px)">Everything your farm needs to attract quality hunters</h2>
+    </div>
+    <div class="lf-benefits-grid">
+      <div class="lf-benefit-card">
+        <div class="lf-benefit-icon">🎯</div>
+        <div class="lf-benefit-title">Reach New Hunters</div>
+        <p class="lf-benefit-desc">Your farm is visible to thousands of active hunters searching across all 9 South African provinces.</p>
+        <span class="lf-benefit-tag">Discovery Platform</span>
+      </div>
+      <div class="lf-benefit-card">
+        <div class="lf-benefit-icon">🏆</div>
+        <div class="lf-benefit-title">Professional Showcase</div>
+        <p class="lf-benefit-desc">Present your farm with a premium listing — species, pricing, accommodation, photos and amenities all in one place.</p>
+        <span class="lf-benefit-tag">Premium Profile</span>
+      </div>
+      <div class="lf-benefit-card">
+        <div class="lf-benefit-icon">💬</div>
+        <div class="lf-benefit-title">Direct Enquiries</div>
+        <p class="lf-benefit-desc">Hunters enquire directly to you. No middleman, no commission — every lead goes straight to your inbox.</p>
+        <span class="lf-benefit-tag">No Commission</span>
+      </div>
+      <div class="lf-benefit-card">
+        <div class="lf-benefit-icon">🆓</div>
+        <div class="lf-benefit-title">Free During Launch</div>
+        <p class="lf-benefit-desc">List your farm at no cost during our launch phase. Early partners lock in the best rates when we introduce premium plans.</p>
+        <span class="lf-benefit-tag" style="color:#5de882;border-color:rgba(93,232,130,0.3)">Free Now</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMISSION FORM -->
+  <div class="lf-form-section" id="lf-form">
+    <div class="lf-form-wrap">
+      <div style="text-align:center;margin-bottom:48px">
+        <div class="sec-label" style="justify-content:center;display:flex">Farm Submission</div>
+        <h2 class="sec-title" style="font-size:clamp(28px,3.5vw,44px)">Tell us about your farm</h2>
+        <p style="font-size:15px;font-weight:300;color:rgba(237,224,204,0.45);margin-top:8px">Takes about 5 minutes. We'll review and publish within 24 hours.</p>
+      </div>
+
+      <div class="lf-form-card" id="lf-form-card">
+
+        <!-- Success state (hidden until submit) -->
+        <div class="lf-success" id="lf-success">
+          <div style="font-size:56px;margin-bottom:20px">🎉</div>
+          <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ivory);margin-bottom:12px">Thank You!</h2>
+          <p style="font-size:16px;font-weight:300;color:rgba(237,224,204,0.55);max-width:420px;margin:0 auto 28px;line-height:1.7">We have received your farm submission. Our team will review your listing and contact you within 24 hours to confirm it's live.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <button class="btn-hero-main" onclick="gp('provinces')">Browse Other Farms</button>
+            <button class="btn-hero-sec" onclick="gp('contact')">Talk to the Team</button>
+          </div>
+        </div>
+
+        <!-- Form content -->
+        <div id="lf-form-inner">
+          <div class="lf-form-header">
+            <div class="sec-label" style="margin-bottom:8px">Step 1 of 1 — All in one form</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ivory);margin-bottom:4px">Farm Details</h3>
+            <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.45)">Fields marked * are required</p>
+          </div>
+
+          <div class="lf-form-body">
+            <!-- Basic Info -->
+            <div class="lf-section-divider"><span>📍 Farm Information</span></div>
+            <div class="fg" style="grid-template-columns:1fr 1fr;gap:16px;display:grid">
+              <div class="fi full" style="grid-column:1/-1"><label class="fl">Farm Name *</label><input type="text" class="finput" id="lf-farm-name" placeholder="e.g. Bushveld Legacy Farm"></div>
+              <div class="fi"><label class="fl">Province *</label>
+                <select class="fselect" id="lf-province">
+                  <option value="">Select Province</option>
+                  <option>Limpopo</option><option>North West</option><option>Northern Cape</option>
+                  <option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option>
+                  <option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option>
+                </select>
+              </div>
+              <div class="fi"><label class="fl">Nearest Town *</label><input type="text" class="finput" id="lf-town" placeholder="e.g. Bela-Bela"></div>
+              <div class="fi"><label class="fl">Farm Size (hectares)</label><input type="number" class="finput" id="lf-size" placeholder="e.g. 5 000"></div>
+              <div class="fi"><label class="fl">Years in Operation</label><input type="number" class="finput" id="lf-years" placeholder="e.g. 15"></div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="lf-section-divider"><span>👤 Contact Details</span></div>
+            <div class="fg" style="grid-template-columns:1fr 1fr;gap:16px;display:grid">
+              <div class="fi"><label class="fl">Contact Person *</label><input type="text" class="finput" id="lf-contact" placeholder="e.g. Pieter van der Berg"></div>
+              <div class="fi"><label class="fl">Role</label><input type="text" class="finput" id="lf-role" placeholder="e.g. Owner / Manager / PH"></div>
+              <div class="fi"><label class="fl">Email Address *</label><input type="email" class="finput" id="lf-email" placeholder="owner@yourfarm.co.za"></div>
+              <div class="fi"><label class="fl">WhatsApp / Phone *</label><input type="tel" class="finput" id="lf-phone" placeholder="+27 71 123 4567"></div>
+            </div>
+
+            <!-- Farm Details -->
+            <div class="lf-section-divider"><span>🌿 Farm Description</span></div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div><label class="fl">Farm Description *</label><textarea class="ftextarea" id="lf-desc" style="min-height:120px;margin-top:6px" placeholder="Describe your farm — landscape, hunting terrain, what makes it special, experience level required..."></textarea></div>
+              <div><label class="fl">Game Available *</label><input type="text" class="finput" id="lf-game" placeholder="e.g. Kudu, Buffalo, Impala, Warthog, Sable (separate with commas)"></div>
+              <div><label class="fl">Accommodation Details</label><textarea class="ftextarea" id="lf-accom" style="min-height:80px;margin-top:6px" placeholder="Lodge type, number of guests, meals included, WiFi, etc."></textarea></div>
+              <div><label class="fl">Pricing Information <span style="color:var(--khaki);font-weight:300">(optional — can be discussed directly with hunters)</span></label><input type="text" class="finput" id="lf-pricing" placeholder="e.g. From R 2,500 per animal · Full packages from R 12,000"></div>
+            </div>
+
+            <!-- Images -->
+            <div class="lf-section-divider"><span>📸 Farm Photos</span></div>
+            <div class="lf-upload-zone" onclick="document.getElementById('lf-images').click()">
+              <div style="font-size:36px;margin-bottom:12px">📷</div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--ivory);margin-bottom:6px">Upload Farm Photos</div>
+              <div style="font-size:13px;color:var(--khaki)">Click to browse · JPG, PNG accepted · Up to 10 photos</div>
+              <div id="lf-image-names" style="margin-top:12px;font-size:12px;color:var(--amber)"></div>
+              <input type="file" id="lf-images" multiple accept="image/*" style="display:none" onchange="showImageNames(this)">
+            </div>
+
+            <!-- Agreement -->
+            <div class="lf-section-divider"><span>📋 Agreement</span></div>
+            <label class="lf-agreement" for="lf-agree">
+              <input type="checkbox" id="lf-agree" style="width:18px;height:18px;accent-color:var(--amber);flex-shrink:0;margin-top:2px;cursor:pointer">
+              <div>
+                <div style="font-size:13px;font-weight:500;color:var(--bone);line-height:1.6">I confirm that I have the legal right to submit this farm listing, that all information provided is accurate, and I agree to the <span style="color:var(--amber)">WildHunt SA Farm Listing Agreement</span> and <span style="color:var(--amber)">Terms of Service</span>.</div>
+                <div style="font-size:11px;color:var(--khaki);margin-top:6px">WildHunt SA is a discovery platform. All hunting arrangements are made directly between hunters and farm owners.</div>
+              </div>
+            </label>
+          </div><!-- end lf-form-body -->
+
+          <div class="lf-submit-area">
+            <div style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.35);max-width:340px;line-height:1.6">
+              🔒 Your information is secure and will only be used to set up your farm listing. We will never share your details without consent.
+            </div>
+            <button class="btn-hero-main" onclick="submitFarmListing()" style="padding:15px 48px;font-size:14px;flex-shrink:0">Submit Farm Listing →</button>
+          </div>
+
+        </div><!-- end lf-form-inner -->
+      </div><!-- end lf-form-card -->
+    </div>
+  </div>
+
+</div><!-- end page-list -->
+
+<!-- ══════════ ENQUIRY MODAL ══════════ -->
+<div class="overlay" id="enquiryModal">
+  <div class="modal-box" style="max-width:560px;max-height:92vh;overflow-y:auto">
+    <div style="position:sticky;top:0;z-index:10;background:var(--bark2);padding:22px 28px 18px;border-bottom:1px solid rgba(176,152,112,0.1);display:flex;justify-content:space-between;align-items:flex-start">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:6px">📩 Send Enquiry</div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory)" id="enq-farm-name-title">Enquire About This Farm</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--khaki);margin-top:3px" id="enq-farm-location"></div>
+      </div>
+      <button class="modal-close-btn" onclick="closeOverlay('enquiryModal')" style="font-size:20px;flex-shrink:0">✕</button>
+    </div>
+
+    <!-- Success state -->
+    <div id="enq-success" style="display:none;text-align:center;padding:48px 32px">
+      <div style="font-size:48px;margin-bottom:16px">✅</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ivory);margin-bottom:10px">Enquiry Sent!</h3>
+      <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.55);line-height:1.7;max-width:360px;margin:0 auto 24px">Your enquiry has been sent. The farm will contact you directly.</p>
+      <button class="btn-hero-sec" onclick="closeOverlay('enquiryModal')" style="padding:11px 32px">Close</button>
+    </div>
+
+    <!-- Form -->
+    <div id="enq-form-body" class="bk-body" style="padding:24px 28px">
+
+      <!-- Farm auto-fill banner -->
+      <div style="background:rgba(201,125,26,0.08);border:1px solid rgba(201,125,26,0.2);border-radius:3px;padding:11px 14px;margin-bottom:20px;display:flex;align-items:center;gap:10px">
+        <span style="font-size:16px">🏕️</span>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--amber)">ENQUIRING ABOUT</div>
+          <div style="font-size:13px;color:var(--bone);font-weight:500" id="enq-farm-autofill">—</div>
+        </div>
+      </div>
+
+      <div class="fg" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="grid-column:1/-1"><label class="fl">Your Full Name *</label><input type="text" class="finput" id="enq-name" placeholder="e.g. Pieter van der Berg" style="margin-top:6px"></div>
+        <div><label class="fl">Email Address *</label><input type="email" class="finput" id="enq-email" placeholder="you@email.com" style="margin-top:6px"></div>
+        <div><label class="fl">Phone <span style="color:var(--khaki);font-weight:300">(optional)</span></label><input type="tel" class="finput" id="enq-phone" placeholder="+27 71 123 4567" style="margin-top:6px"></div>
+        <div style="grid-column:1/-1"><label class="fl">Preferred Dates <span style="color:var(--khaki);font-weight:300">(optional)</span></label><input type="text" class="finput" id="enq-dates" placeholder="e.g. June 2026 · flexible" style="margin-top:6px"></div>
+        <div style="grid-column:1/-1"><label class="fl">Your Message *</label><textarea class="ftextarea" id="enq-message" style="min-height:110px;margin-top:6px" placeholder="Tell the farm what you're looking for — species, group size, type of hunt, any questions..."></textarea></div>
+      </div>
+
+      <button class="enquire-btn-lg" onclick="submitEnquiry()" style="margin-top:20px">Send Enquiry →</button>
+      <p class="enq-legal">By submitting this enquiry, you agree that your details will be shared with the farm owner. <a href="#" onclick="openOverlay('privacyModal');return false">Privacy Policy</a></p>
+
+      <div class="farm-disclaimer" style="margin-top:16px">
+        🛡️ WildHunt SA connects hunters with farms. All hunting arrangements, pricing and availability are confirmed directly with the farm owner. WildHunt SA is not a party to any agreement between hunters and farm owners.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
@@ -2617,7 +2927,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <li><a onclick="gp('community')" style="cursor:pointer">The Hunting Community</a></li>
       </ul></div>
       <div class="footer-col"><h4>Farm Owners</h4><ul>
-        <li><a onclick="openOnboard()" style="cursor:pointer">List Your Farm</a></li>
+        <li><a onclick="gp('list')" style="cursor:pointer">List Your Farm</a></li>
         <li><a onclick="showToast('Pricing info coming soon! 📋')" style="cursor:pointer">Pricing & Fees</a></li>
         <li><a onclick="openAuth('login')" style="cursor:pointer">Owner Dashboard</a></li>
         <li><a onclick="gp('provinces')" style="cursor:pointer">Featured Listings</a></li>
@@ -2669,6 +2979,7 @@ function gp(id) {
   if(id==='marketplace') setTimeout(function(){ mktSearch(); }, 50);
   if(id==='community') {}
   if(id==='contact') {}
+  if(id==='list') {}
 }
 
 // ════ TOAST ════
@@ -2771,8 +3082,9 @@ function renderFarms(data, containerId) {
         <div class="farm-species">${f.species.slice(0,3).map(s=>`<span class="sp-tag">${s.n.split(' ')[0]}</span>`).join('')}${f.species.length>3?`<span class="sp-tag">+${f.species.length-3}</span>`:''}</div>
         <div class="farm-footer">
           <div><div class="fp-from">Trophy hunting from</div><div class="fp-price">${f.price} <span class="fp-unit">${f.unit}</span></div></div>
-          <button class="farm-book-btn" onclick="event.stopPropagation();openBooking(${f.id})">Book Now</button>
+          <button class="farm-book-btn" onclick="event.stopPropagation();openEnquiry(${f.id})">Enquire Now</button>
         </div>
+        <div class="farm-disclaimer">WildHunt SA connects hunters with farms. All arrangements are made directly with the farm.</div>
       </div>
     </div>`).join('');
 }
@@ -3154,7 +3466,7 @@ function submitContact() {
 function openBooking(id) {
   const f = farms.find(x => x.id === id);
   currentFarm = id;
-  document.getElementById('bk-title').textContent = 'Book ' + (f ? f.name : 'Hunt');
+  document.getElementById('bk-title').textContent = 'Quote for ' + (f ? f.name : 'Hunt');
   document.getElementById('bk-farm-name').textContent = f ? f.province + ' · ' + f.town : '';
 
   // Default dates
@@ -3302,8 +3614,33 @@ function submitBooking() {
   const arrive = document.getElementById('bk-arrive').value;
   const depart = document.getElementById('bk-depart').value;
   if (!arrive || !depart) { showToast('Please select arrival and departure dates ⚠️','err'); return; }
-  showToast('Booking request sent! Farm owner will confirm within 24hrs. 🎉','ok');
+
+  // Build quote summary for the enquiry message
+  const totalEl = document.getElementById('bk-total-val');
+  const total = totalEl ? totalEl.textContent : '';
+  const rows = document.querySelectorAll('#bk-breakdown-rows .bk-br-row');
+  let quoteSummary = 'Estimated Quote Summary:\n';
+  rows.forEach(r => {
+    const label = r.querySelector('span:first-child')?.textContent || '';
+    const val = r.querySelector('span:last-child')?.textContent || '';
+    if (label) quoteSummary += `  • ${label}: ${val}\n`;
+  });
+  if (total) quoteSummary += `  Total Estimate: ${total}\n`;
+  quoteSummary += `\nArrival: ${arrive}  |  Departure: ${depart}`;
+
   closeOverlay('bookingModal');
+
+  // Pre-fill the enquiry modal with the quote
+  const f = farms.find(x => x.id === currentFarm);
+  if (f) {
+    openEnquiry(currentFarm);
+    setTimeout(() => {
+      const msgEl = document.getElementById('enq-message');
+      if (msgEl) msgEl.value = quoteSummary + '\n\nPlease confirm availability and pricing for these dates.';
+      const datesEl = document.getElementById('enq-dates');
+      if (datesEl) datesEl.value = arrive + ' to ' + depart;
+    }, 200);
+  }
 }
 
 // ════ MARKETPLACE ════
@@ -3523,40 +3860,139 @@ function goFsSlide(n){fsSlides[fsIdx].classList.remove('active');if(fsDots&&fsDo
 setInterval(()=>goFsSlide(fsIdx+1),4500);
 
 // ════ ONBOARDING ════
-let obStep=1;
-const obStepData=[
-  {title:'Farm Details',desc:'Tell us about your farm'},
-  {title:'Species & Pricing',desc:'What can hunters hunt?'},
-  {title:'Photos',desc:'Show your farm'},
-  {title:'Availability',desc:'Set your calendar'},
-  {title:'Preview',desc:'Review & submit'},
-];
-function updateObStep(){
-  const steps=document.getElementById('ob-steps');
-  if(steps)steps.innerHTML=obStepData.map((s,i)=>`<div class="ob-step ${i+1===obStep?'active':i+1<obStep?'done':''}"><div class="ob-step-n">${i+1<obStep?'✓':i+1}</div><div class="ob-step-label">${s.title}</div></div>`).join('');
-  const body=document.getElementById('ob-body');
-  const back=document.getElementById('ob-back');
-  const next=document.getElementById('ob-next');
-  if(back)back.style.display=obStep===1?'none':'block';
-  if(next)next.textContent=obStep===5?'Submit Listing →':'Next →';
-  const steps2=[
-    `<div class="fg"><div class="fi full"><label class="fl">Farm Name</label><input type="text" class="finput" placeholder="e.g. Bushveld Legacy Farm"></div><div class="fi"><label class="fl">Province</label><select class="fselect"><option>Limpopo</option><option>North West</option><option>Northern Cape</option><option>Mpumalanga</option><option>Free State</option><option>Eastern Cape</option><option>KwaZulu-Natal</option><option>Gauteng</option><option>Western Cape</option></select></div><div class="fi"><label class="fl">Nearest Town</label><input type="text" class="finput" placeholder="e.g. Bela-Bela"></div><div class="fi full"><label class="fl">Farm Description</label><textarea class="ftextarea" placeholder="Describe your farm, landscape, hunting experience..."></textarea></div><div class="fi"><label class="fl">Farm Size (hectares)</label><input type="number" class="finput" placeholder="e.g. 5000"></div><div class="fi"><label class="fl">Years in Operation</label><input type="number" class="finput" placeholder="e.g. 15"></div><div class="fi full"><label class="fl">WhatsApp Contact</label><input type="tel" class="finput" placeholder="+27 71 123 4567"></div><div class="fi full"><label class="fl">Email Address</label><input type="email" class="finput" placeholder="owner@farm.co.za"></div></div>`,
-    `<div class="fg" id="species-rows"><div class="species-row fi full"><label class="fl">Species & Trophy Fees</label><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input type="text" class="finput" placeholder="Species (e.g. Kudu)"><input type="text" class="finput" placeholder="Trophy fee (e.g. R 8,500)"></div></div></div><button class="add-species-btn" onclick="addSpeciesRow()">+ Add Another Animal</button><div style="margin-top:20px;padding:16px;background:rgba(18,13,6,0.4);border:1px solid rgba(176,152,112,0.1);border-radius:3px"><div class="fl" style="margin-bottom:12px">🏕️ Accommodation & Additional Fees</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div class="fi"><label class="fl">Accommodation (per person/night)</label><input type="text" class="finput" placeholder="e.g. R650"></div><div class="fi"><label class="fl">Skinning & Caping Fee</label><input type="text" class="finput" placeholder="e.g. R350 per animal"></div><div class="fi"><label class="fl">Cold Storage (per day)</label><input type="text" class="finput" placeholder="e.g. R50 per day"></div><div class="fi"><label class="fl">Game Vehicle (per day)</label><input type="text" class="finput" placeholder="e.g. R800 per day"></div><div class="fi"><label class="fl">Trophy Packing & Dipping</label><input type="text" class="finput" placeholder="e.g. R500 per trophy"></div><div class="fi"><label class="fl">Taxidermy (if offered)</label><input type="text" class="finput" placeholder="e.g. On request"></div><div class="fi"><label class="fl">Meals (if not included)</label><input type="text" class="finput" placeholder="e.g. R250 per day full board"></div><div class="fi"><label class="fl">Observer / Non-Hunter Fee</label><input type="text" class="finput" placeholder="e.g. R400 per day"></div></div><div class="fi" style="margin-top:10px"><label class="fl">Other Fees</label><textarea class="ftextarea" placeholder="Any other fees hunters should know about..." style="min-height:60px"></textarea></div></div>`,
-    `<div style="text-align:center;padding:40px 20px"><div style="font-size:48px;margin-bottom:16px">📸</div><p style="color:var(--sand);margin-bottom:20px">Upload up to 10 photos of your farm, lodge, hunting areas and wildlife.</p><div class="photo-drop" onclick="document.getElementById('ob-photos').click()" style="padding:40px;border:2px dashed rgba(176,152,112,0.2);border-radius:4px;cursor:pointer"><p style="color:var(--khaki)">Click to upload photos</p><input type="file" id="ob-photos" multiple accept="image/*" style="display:none"></div></div>`,
-    `<div style="text-align:center;padding:20px"><div style="font-size:48px;margin-bottom:16px">📅</div><p style="color:var(--sand);margin-bottom:20px">Set your available hunting dates. Hunters will only see available slots.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px"><div class="fi"><label class="fl">Season Open</label><input type="date" class="finput"></div><div class="fi"><label class="fl">Season Close</label><input type="date" class="finput"></div></div></div>`,
-    `<div style="text-align:center;padding:40px 20px"><div style="font-size:64px;margin-bottom:16px">🦌</div><h3 style="color:var(--ivory);margin-bottom:12px">Ready to go live!</h3><p style="color:var(--sand);margin-bottom:8px">Your listing will be reviewed within 24 hours.</p><p style="color:var(--khaki);font-size:13px">Once approved, hunters across SA can find and book your farm.</p></div>`
-  ];
-  if(body)body.innerHTML=steps2[obStep-1]||'';}
-function obNav(dir){if(dir===1&&obStep===5){submitFarm();return;}obStep=Math.max(1,Math.min(5,obStep+dir));updateObStep();}
-function addSpeciesRow(){const rows=document.getElementById('species-rows');if(!rows)return;const div=document.createElement('div');div.className='species-row fi full';div.style.marginTop='10px';div.innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><input type="text" class="finput" placeholder="Species"><input type="text" class="finput" placeholder="Trophy fee"></div>';rows.appendChild(div);}
-function submitFarm(){showToast('Farm submitted! We\'ll review and go live within 24hrs. 🎉','ok');closeOverlay('onboardModal');}
-function openOnboard(){obStep=1;updateObStep();openOverlay('onboardModal');}
+// ════ ENQUIRY SYSTEM ════
+const enquiries = JSON.parse(localStorage.getItem('wh_enquiries') || '[]');
 
-// ════ CALENDAR (used in onboarding) ════
-let calOffset=0;
-function renderCal(){}
+function openEnquiry(farmId) {
+  const f = farms.find(x => x.id === farmId);
+  if (!f) return;
+  // Reset form
+  ['enq-name','enq-email','enq-phone','enq-dates','enq-message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('enq-success').style.display = 'none';
+  document.getElementById('enq-form-body').style.display = 'block';
+  // Auto-fill farm info
+  const titleEl = document.getElementById('enq-farm-name-title');
+  const locEl = document.getElementById('enq-farm-location');
+  const fillEl = document.getElementById('enq-farm-autofill');
+  if (titleEl) titleEl.textContent = f.name;
+  if (locEl) locEl.textContent = '📍 ' + f.town + ', ' + f.province;
+  if (fillEl) fillEl.textContent = f.name + ' · ' + f.province;
+  // Store for submit
+  window.currentEnquiryFarm = farmId;
+  openOverlay('enquiryModal');
+}
 
-// ════ INIT ════
+function submitEnquiry() {
+  const name = (document.getElementById('enq-name')?.value || '').trim();
+  const email = (document.getElementById('enq-email')?.value || '').trim();
+  const phone = (document.getElementById('enq-phone')?.value || '').trim();
+  const dates = (document.getElementById('enq-dates')?.value || '').trim();
+  const message = (document.getElementById('enq-message')?.value || '').trim();
+
+  if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  if (!message) { showToast('Please add a message ⚠️','err'); return; }
+
+  const farmId = window.currentEnquiryFarm;
+  const farm = farms.find(x => x.id === farmId);
+
+  // Store enquiry
+  const enquiry = {
+    id: Date.now(),
+    farm: farm ? farm.name : 'Unknown',
+    province: farm ? farm.province : '',
+    name, email, phone, dates, message,
+    timestamp: new Date().toISOString(),
+    status: 'new'
+  };
+  enquiries.unshift(enquiry);
+  try { localStorage.setItem('wh_enquiries', JSON.stringify(enquiries.slice(0,200))); } catch(e) {}
+
+  // Mock email notification (opens mailto as fallback — replace with API in production)
+  const farmEmail = 'info@wildhuntsa.com'; // Replace with farm.email when real data
+  const subject = encodeURIComponent('New Hunting Enquiry — ' + (farm ? farm.name : 'WildHunt SA'));
+  const body = encodeURIComponent(
+    `New enquiry received via WildHunt SA\n\n` +
+    `Farm: ${farm ? farm.name : 'Unknown'}\n` +
+    `Hunter Name: ${name}\n` +
+    `Email: ${email}\n` +
+    `Phone: ${phone || 'Not provided'}\n` +
+    `Preferred Dates: ${dates || 'Flexible'}\n\n` +
+    `Message:\n${message}\n\n` +
+    `---\nWildHunt SA · info@wildhuntsa.com`
+  );
+  // In production: replace below with fetch('/api/enquiry', {...})
+  window.open(`mailto:${farmEmail}?subject=${subject}&body=${body}`, '_blank');
+
+  // Show success
+  document.getElementById('enq-form-body').style.display = 'none';
+  document.getElementById('enq-success').style.display = 'block';
+}
+
+// ════ LIST YOUR FARM FORM ════
+function showImageNames(input) {
+  const el = document.getElementById('lf-image-names');
+  if (!el) return;
+  const names = Array.from(input.files).map(f => f.name).join(', ');
+  el.textContent = names ? '✓ ' + names : '';
+}
+
+function submitFarmListing() {
+  const farmName = (document.getElementById('lf-farm-name')?.value || '').trim();
+  const province = (document.getElementById('lf-province')?.value || '').trim();
+  const town = (document.getElementById('lf-town')?.value || '').trim();
+  const contact = (document.getElementById('lf-contact')?.value || '').trim();
+  const email = (document.getElementById('lf-email')?.value || '').trim();
+  const phone = (document.getElementById('lf-phone')?.value || '').trim();
+  const desc = (document.getElementById('lf-desc')?.value || '').trim();
+  const game = (document.getElementById('lf-game')?.value || '').trim();
+  const agree = document.getElementById('lf-agree')?.checked;
+
+  if (!farmName) { showToast('Please enter the farm name ⚠️','err'); return; }
+  if (!province) { showToast('Please select a province ⚠️','err'); return; }
+  if (!town) { showToast('Please enter the nearest town ⚠️','err'); return; }
+  if (!contact) { showToast('Please enter a contact name ⚠️','err'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  if (!phone) { showToast('Please enter a phone number ⚠️','err'); return; }
+  if (!desc) { showToast('Please add a farm description ⚠️','err'); return; }
+  if (!game) { showToast('Please list the game available ⚠️','err'); return; }
+  if (!agree) { showToast('Please accept the Farm Listing Agreement ⚠️','err'); return; }
+
+  // Store submission
+  const submission = {
+    id: Date.now(), farmName, province, town, contact, email, phone, desc, game,
+    timestamp: new Date().toISOString(), status: 'pending'
+  };
+  try {
+    const subs = JSON.parse(localStorage.getItem('wh_farm_submissions') || '[]');
+    subs.unshift(submission);
+    localStorage.setItem('wh_farm_submissions', JSON.stringify(subs.slice(0,100)));
+  } catch(e) {}
+
+  // Mock notification email
+  const subject = encodeURIComponent('New Farm Listing — ' + farmName);
+  const body = encodeURIComponent(
+    `New farm listing submitted on WildHunt SA\n\n` +
+    `Farm: ${farmName}\nProvince: ${province}\nTown: ${town}\n` +
+    `Contact: ${contact}\nEmail: ${email}\nPhone: ${phone}\n\n` +
+    `Game: ${game}\n\nDescription:\n${desc}`
+  );
+  window.open(`mailto:info@wildhuntsa.com?subject=${subject}&body=${body}`, '_blank');
+
+  // Show success state
+  const inner = document.getElementById('lf-form-inner');
+  const success = document.getElementById('lf-success');
+  if (inner) inner.style.display = 'none';
+  if (success) success.classList.add('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ════ LEGACY COMPAT ════
+function openOnboard() { gp('list'); }
+
 window.addEventListener('DOMContentLoaded', function() {
   renderFarms(farms.slice(0,3),'home-farms');
   renderFarms(farms,'listings-farms');
@@ -3739,4 +4175,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
       <div class="pp-section"><div class="pp-num">10</div><div class="pp-body"><h3 class="pp-title">Governing Law</h3><p class="pp-text">These terms are governed by the laws of South Africa.</p></div></div>
 
-      <div class="pp-section"><div class="pp-num">11</div><div class="pp-body"><h3 class="pp-title">Contact</h3><p class="pp-text
+      <div class="pp-section"><div class="pp-num">11</div><div class="pp-body"><h3 class="pp-title">Contact</h3><p class="pp-text for any questions regarding these terms, contact us at <span style="color:var(--amber)"><a href="mailto:info@wildhuntsa.com" style="color:var(--amber);text-decoration:none">info@wildhuntsa.com</a></span></p></div></div>
+    </div>
+
+    <div style="padding:16px 32px 24px;border-top:1px solid rgba(176,152,112,0.08);display:flex;justify-content:flex-end">
+      <button class="btn-hero-main" onclick="closeOverlay('tosModal')" style="padding:11px 28px;font-size:13px">Close</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
