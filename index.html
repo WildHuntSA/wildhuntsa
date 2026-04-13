@@ -1234,6 +1234,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="openAuth('login')">Sign In</button>
     <button class="btn-sm btn-outline-sm" onclick="gp('contact')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Contact Us</button>
+    <button class="btn-sm btn-outline-sm" id="nav-install-btn" onclick="installApp()" style="display:none;border-color:rgba(93,232,130,0.4);color:#5de882" title="Install WildHunt SA App">📲 Get App</button>
     <button class="btn-sm btn-amber-sm" onclick="gp('list')">List Your Farm</button>
     <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
   </div>
@@ -1245,6 +1246,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('community');toggleMobileMenu()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">The Hunting Community</button>
     <button onclick="gp('merch');toggleMobileMenu()" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">WildHunt SA Merchandise</button>
     <button onclick="gp('contact');toggleMobileMenu()" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact Us</button>
+    <button id="mob-install-btn" onclick="installApp();toggleMobileMenu()" style="display:none;background:rgba(93,232,130,0.1);border:1px solid rgba(93,232,130,0.3);color:#5de882;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:4px">📲 Download App</button>
     <button onclick="gp('list');toggleMobileMenu()" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm Free</button>
   </div>
 </nav>
@@ -8339,18 +8341,50 @@ if ('serviceWorker' in navigator) {
   }
 })();
 
-// Install prompt — show after 30s on mobile
+// Install prompt handler
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
+  // Show Get App button in nav immediately
+  const navBtn = document.getElementById('nav-install-btn');
+  const mobBtn = document.getElementById('mob-install-btn');
+  if (navBtn) navBtn.style.display = 'flex';
+  if (mobBtn) mobBtn.style.display = 'block';
+  // Also show banner after 15s if not dismissed
   setTimeout(() => {
     const banner = document.getElementById('pwa-install-banner');
     if (banner && !localStorage.getItem('pwa-dismissed')) {
       banner.style.display = 'flex';
     }
-  }, 30000);
+  }, 15000);
 });
+
+function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choice => {
+      if (choice.outcome === 'accepted') {
+        showToast('WildHunt SA installed! 🎉 Check your home screen.', 'ok');
+        const navBtn = document.getElementById('nav-install-btn');
+        const mobBtn = document.getElementById('mob-install-btn');
+        const banner = document.getElementById('pwa-install-banner');
+        if (navBtn) navBtn.style.display = 'none';
+        if (mobBtn) mobBtn.style.display = 'none';
+        if (banner) banner.style.display = 'none';
+      }
+      deferredPrompt = null;
+    });
+  } else {
+    // Fallback instructions for iOS or already installed
+    showToast('📲 Tap your browser menu → "Add to Home Screen" to install', 'ok');
+  }
+}
+
+// Hide install button if already installed as PWA
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+  localStorage.setItem('pwa-dismissed', '1');
+}
 </script>
 </body>
 </html>
