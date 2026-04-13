@@ -158,19 +158,40 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 /* ── HOMEPAGE: FINAL CTA ── */
 .home-final-cta{background:linear-gradient(135deg,rgba(61,82,32,0.6) 0%,rgba(18,13,6,0.98) 50%,rgba(42,28,13,0.95) 100%);padding:80px;text-align:center;position:relative;overflow:hidden}
 .home-final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,125,26,0.08) 0%,transparent 60%);pointer-events:none}
+.why-outer-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 
 @media(max-width:1100px){
   .hiw3-grid{grid-template-columns:1fr;gap:8px}.hiw3-grid::before{display:none}
   .hiw3-card{border-radius:4px!important}
   .prov-grid{grid-template-columns:repeat(2,1fr)}
-  .why-grid{grid-template-columns:1fr}
+  .why-outer-grid{grid-template-columns:1fr;gap:32px}
+  .why-grid{grid-template-columns:1fr 1fr!important}
   .trust-bar{padding:14px 32px;gap:20px}
   .home-final-cta{padding:56px 32px}
 }
 @media(max-width:768px){
-  .prov-grid{grid-template-columns:1fr 1fr}
-  .trust-bar{padding:12px 16px;gap:14px}
-  .home-final-cta{padding:48px 16px}
+  .nav-logo img{height:50px!important}
+  .nav{padding:0 12px!important}
+  #nav-install-btn{display:none!important}
+  .hero-content{padding:80px 18px 80px!important;max-width:100%!important}
+  .hero-h1{font-size:clamp(30px,10vw,48px)!important;line-height:1.05!important}
+  .hero-p{font-size:15px!important;max-width:100%!important}
+  .hero-btns{flex-direction:column!important;gap:10px!important}
+  .hero-btns button{width:100%!important}
+  .hero-eyebrow{font-size:10px!important;white-space:normal!important}
+  .sec{padding:36px 16px!important}
+  hr.div{margin:0 16px!important}
+  .sec-title{font-size:24px!important}
+  .sec-head{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;margin-bottom:24px!important}
+  .why-outer-grid{grid-template-columns:1fr!important;gap:20px!important}
+  .why-grid{grid-template-columns:1fr!important;margin-top:0!important}
+  .prov-grid{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .trust-bar{padding:10px 14px!important;gap:10px!important;font-size:11px!important;flex-wrap:wrap!important}
+  .home-final-cta{padding:40px 16px!important}
+  .farms-grid{grid-template-columns:1fr!important}
+  .cta-box{padding:24px 18px!important;gap:16px!important;flex-direction:column!important;text-align:center!important}
+  .cta-btns{width:100%!important;flex-direction:column!important;gap:8px!important}
+  .cta-btns button{width:100%!important}
 }
 
 /* ── PROVINCE MAP ── */
@@ -1273,10 +1294,10 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
   <div class="fs-dots" id="fs-dots"></div>
 
-  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 100px;max-width:680px">
+  <div class="hero-content" style="position:relative;z-index:10">
     <div class="hero-eyebrow">🇿🇦 South Africa's Hunting Marketplace</div>
     <h1 class="hero-h1">Find Hunting Farms<em>Across South Africa</em></h1>
-    <p class="hero-p" style="font-size:18px;max-width:520px">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
+    <p class="hero-p">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
     <div class="hero-btns" style="display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap">
       <button class="btn-hero-main" style="padding:16px 40px;font-size:15px" onclick="gp('provinces')">Browse Farms</button>
       <button class="btn-hero-sec" style="padding:16px 40px;font-size:15px" onclick="gp('list')">List Your Farm</button>
@@ -1410,7 +1431,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══ WHY USE WILDHUNT SA ══ -->
 <div class="sec" style="background:var(--bark)">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+  <div class="why-outer-grid">
     <div>
       <div class="sec-label">Our Promise</div>
       <h2 class="sec-title">Why Hunters Use WildHunt SA</h2>
@@ -3235,10 +3256,10 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
   <div class="fs-dots" id="fs-dots"></div>
 
-  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 100px;max-width:680px">
+  <div class="hero-content" style="position:relative;z-index:10">
     <div class="hero-eyebrow">🇿🇦 South Africa's Hunting Marketplace</div>
     <h1 class="hero-h1">Find Hunting Farms<em>Across South Africa</em></h1>
-    <p class="hero-p" style="font-size:18px;max-width:520px">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
+    <p class="hero-p">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
     <div class="hero-btns" style="display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap">
       <button class="btn-hero-main" style="padding:16px 40px;font-size:15px" onclick="gp('provinces')">Browse Farms</button>
       <button class="btn-hero-sec" style="padding:16px 40px;font-size:15px" onclick="gp('list')">List Your Farm</button>
@@ -5203,10 +5224,10 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="fs-animal-name" id="fs-animal-name">Impala</div>
   <div class="fs-dots" id="fs-dots"></div>
 
-  <div class="hero-content" style="position:relative;z-index:10;padding:0 80px 100px;max-width:680px">
+  <div class="hero-content" style="position:relative;z-index:10">
     <div class="hero-eyebrow">🇿🇦 South Africa's Hunting Marketplace</div>
     <h1 class="hero-h1">Find Hunting Farms<em>Across South Africa</em></h1>
-    <p class="hero-p" style="font-size:18px;max-width:520px">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
+    <p class="hero-p">Browse farms and send enquiries directly to owners. No middleman. No fees.</p>
     <div class="hero-btns" style="display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap">
       <button class="btn-hero-main" style="padding:16px 40px;font-size:15px" onclick="gp('provinces')">Browse Farms</button>
       <button class="btn-hero-sec" style="padding:16px 40px;font-size:15px" onclick="gp('list')">List Your Farm</button>
