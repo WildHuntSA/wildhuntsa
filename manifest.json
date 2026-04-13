@@ -1,0 +1,58 @@
+{
+  "name": "WildHunt SA",
+  "short_name": "WildHunt SA",
+  "description": "South Africa's Hunting Marketplace — Browse farms and send enquiries directly to owners.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#120d06",
+  "theme_color": "#c97d1a",
+  "lang": "en-ZA",
+  "scope": "/",
+  "categories": ["hunting", "outdoor", "marketplace", "lifestyle"],
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse Farms",
+      "short_name": "Farms",
+      "description": "Browse hunting farms across South Africa",
+      "url": "/?page=provinces",
+      "icons": [{ "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Send Enquiry",
+      "short_name": "Enquire",
+      "description": "Send an enquiry to a farm",
+      "url": "/?page=provinces",
+      "icons": [{ "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "List Your Farm",
+      "short_name": "List Farm",
+      "description": "List your hunting farm on WildHunt SA",
+      "url": "/?page=list",
+      "icons": [{ "src": "https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png", "sizes": "96x96" }]
+    }
+  ]
+}
