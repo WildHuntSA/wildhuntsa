@@ -2233,7 +2233,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 // ════ MOBILE MENU ════
 function toggleMobileMenu(){const m=document.getElementById('mob-menu');if(!m)return;const open=m.style.display==='flex';m.style.display=open?'none':'flex';}
@@ -2593,6 +2593,78 @@ window.addEventListener('DOMContentLoaded',function(){
   const page=params.get('page');
   if(page&&document.getElementById('page-'+page))gp(page);
 });
+
+// ════ MARKETPLACE SIDEBAR ════
+function toggleMktSidebarCat(btn, ddId, cat) {
+  const dd = document.getElementById(ddId);
+  if (!dd) return;
+  const isOpen = dd.style.display !== 'none';
+  ['dd-optics','dd-firearms','dd-clothing'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+  document.querySelectorAll('.mkt-sidebar-item.expanded').forEach(function(b) { b.classList.remove('expanded'); });
+  if (!isOpen) {
+    dd.style.display = 'block';
+    btn.classList.add('expanded');
+  }
+  mktCat(btn, cat);
+}
+function mktSubCat(cat, sub) {
+  document.querySelectorAll('.mkt-sidebar-item').forEach(function(b) { b.classList.remove('on'); });
+  mktFilter = cat;
+  mktSubFilter = sub;
+  const sp = document.getElementById('mkt-services-panel');
+  const mb = document.getElementById('mkt-listings');
+  if (sp) sp.style.display = 'none';
+  if (mb) mb.style.display = '';
+  mktSearch();
+}
+
+// ════ COMMUNITY ════
+var commStarRating = 0;
+var commPostType = 'story';
+function selectPostType(type, btn) {
+  commPostType = type;
+  document.querySelectorAll('.disc-type-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  ['story','trophy','review'].forEach(function(t) {
+    var el = document.getElementById('comm-form-' + t);
+    if (el) el.style.display = (t === type || (type === 'question' && t === 'story')) ? 'block' : 'none';
+  });
+}
+function setCommStar(n) {
+  commStarRating = n;
+  var stars = document.querySelectorAll('#comm-stars span');
+  stars.forEach(function(s, i) { s.textContent = i < n ? '⭐' : '☆'; });
+}
+function submitCommunityPost() {
+  var name = (document.getElementById('comm-name') ? document.getElementById('comm-name').value : '').trim();
+  if (!name) { showToast('Please enter your name ⚠️', 'err'); return; }
+  var title = '', body = '';
+  if (commPostType === 'story' || commPostType === 'question') {
+    title = (document.getElementById('comm-title') ? document.getElementById('comm-title').value : '').trim();
+    body = (document.getElementById('comm-body') ? document.getElementById('comm-body').value : '').trim();
+  } else if (commPostType === 'trophy') {
+    title = (document.getElementById('comm-trophy-title') ? document.getElementById('comm-trophy-title').value : '').trim();
+    body = (document.getElementById('comm-trophy-desc') ? document.getElementById('comm-trophy-desc').value : '').trim();
+  } else if (commPostType === 'review') {
+    title = 'Farm Review: ' + (document.getElementById('comm-farm-review') ? document.getElementById('comm-farm-review').value : '').trim();
+    body = (document.getElementById('comm-review-body') ? document.getElementById('comm-review-body').value : '').trim();
+    if (commStarRating > 0) body = '⭐'.repeat(commStarRating) + ' — ' + body;
+  }
+  if (!title && !body) { showToast('Please add some content ⚠️', 'err'); return; }
+  var typeLabel = {story:'Hunt Story',trophy:'Trophy Shot',review:'Farm Review',question:'Community Question'}[commPostType] || commPostType;
+  var subject = encodeURIComponent('WildHunt SA Community Post — ' + typeLabel);
+  var emailBody = encodeURIComponent('Community Post - ' + typeLabel + ' by ' + name + ': ' + (title || '') + ' ' + (body || ''));
+  window.open('mailto:info@wildhuntsa.com?subject=' + subject + '&body=' + emailBody, '_blank');
+  showToast('Post submitted! 🦌', 'ok');
+  ['comm-title','comm-body','comm-trophy-title','comm-trophy-desc','comm-farm-review','comm-review-body','comm-name'].forEach(function(id) {
+    var el = document.getElementById(id); if (el) el.value = '';
+  });
+  setCommStar(0);
+}
+
 </script>
 </body>
 </html>
