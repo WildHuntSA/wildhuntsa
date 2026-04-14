@@ -2579,4 +2579,20 @@ function goSlide(i){const slides=document.querySelectorAll('.fs-slide');slideIdx
 // ════ PWA ════
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;const navBtn=document.getElementById('nav-install-btn');const mobBtn=document.getElementById('mob-install-btn');if(navBtn)navBtn.style.display='flex';if(mobBtn)mobBtn.style.display='block';});
-function install
+function installApp(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(choice=>{if(choice.outcome==='accepted')showToast('WildHunt SA installed! 🎉','ok');deferredPrompt=null;});}else{showToast('📲 Tap your browser menu → "Add to Home Screen" to install','ok');}}
+if(navigator.serviceWorker&&(location.hostname==='wildhuntsa.com'||location.hostname==='www.wildhuntsa.com')){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(err=>console.log('SW:',err));});}
+if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){localStorage.setItem('pwa-dismissed','1');}
+
+// ════ INIT ════
+window.addEventListener('DOMContentLoaded',function(){
+  renderFarms(farms.slice(0,3),'home-farms');
+  renderFarms(farms,'listings-farms');
+  initSlideshow();
+  setTimeout(function(){mktSearch();},100);
+  const params=new URLSearchParams(window.location.search);
+  const page=params.get('page');
+  if(page&&document.getElementById('page-'+page))gp(page);
+});
+</script>
+</body>
+</html>
