@@ -1235,6 +1235,98 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 /* Farm disclaimer note */
 .farm-disclaimer-note{font-size:11px;font-weight:300;color:rgba(176,152,112,0.45);text-align:center;margin-top:10px;line-height:1.5;font-style:italic}
 
+
+/* ════ FARM DETAIL PAGE ════ */
+.fdp-hero{position:relative;height:480px;overflow:hidden;background:var(--earth)}
+.fdp-hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.fdp-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,5,2,0.15) 0%,rgba(8,5,2,0.7) 100%)}
+.fdp-hero-back{position:absolute;top:24px;left:24px;z-index:10;background:rgba(8,5,2,0.6);border:1px solid rgba(176,152,112,0.2);color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:2px;cursor:pointer;backdrop-filter:blur(8px);transition:all 0.2s}
+.fdp-hero-back:hover{background:rgba(42,28,13,0.9);border-color:var(--amber);color:var(--gold)}
+.fdp-hero-badges{position:absolute;top:24px;right:24px;z-index:10;display:flex;gap:8px}
+.fdp-hero-info{position:absolute;bottom:0;left:0;right:0;padding:32px 48px;z-index:10}
+.fdp-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--ivory);line-height:1;margin-bottom:8px}
+.fdp-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.fdp-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:rgba(237,224,204,0.7);letter-spacing:0.3px}
+.fdp-body{display:grid;grid-template-columns:1fr 380px;gap:40px;max-width:1200px;margin:0 auto;padding:48px 48px 80px}
+.fdp-main{min-width:0}
+.fdp-section{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(176,152,112,0.08)}
+.fdp-section:last-child{border-bottom:none}
+.fdp-section-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+.fdp-desc{font-size:15px;font-weight:300;color:rgba(237,224,204,0.65);line-height:1.8}
+.fdp-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:0}
+.fdp-highlight{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:16px;text-align:center}
+.fdp-highlight-icon{font-size:24px;margin-bottom:8px}
+.fdp-highlight-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px}
+.fdp-highlight-val{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory)}
+.fdp-species-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fdp-species-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:3px}
+.fdp-species-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory)}
+.fdp-species-price{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--amber)}
+.fdp-amenities-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fdp-amenity-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bark2);border-radius:3px;font-size:13px;font-weight:300;color:var(--sand)}
+.fdp-incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fdp-incl-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:300;color:rgba(237,224,204,0.65)}
+.fdp-excl-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:300;color:rgba(237,224,204,0.45)}
+.fdp-trust-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.fdp-trust-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:18px;text-align:center}
+.fdp-trust-icon{font-size:22px;margin-bottom:8px}
+.fdp-trust-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--ivory);margin-bottom:4px}
+.fdp-trust-desc{font-size:11px;font-weight:300;color:rgba(237,224,204,0.4);line-height:1.5}
+.fdp-hiw-steps{display:flex;flex-direction:column;gap:0}
+.fdp-hiw-step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(176,152,112,0.06)}
+.fdp-hiw-step:last-child{border-bottom:none}
+.fdp-hiw-num{width:32px;height:32px;border-radius:50%;background:rgba(201,125,26,0.15);border:1.5px solid rgba(201,125,26,0.35);font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fdp-hiw-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory);margin-bottom:4px}
+.fdp-hiw-desc{font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6}
+
+/* ── BOOKING CARD ── */
+.fdp-book-card{position:sticky;top:100px;background:var(--bark2);border:1px solid rgba(201,125,26,0.25);border-radius:8px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,0.5)}
+.fdp-book-header{background:linear-gradient(135deg,rgba(201,125,26,0.18),rgba(61,82,32,0.3));padding:24px 24px 20px;border-bottom:1px solid rgba(201,125,26,0.15)}
+.fdp-book-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ivory);margin-bottom:4px}
+.fdp-book-sub{font-size:12px;font-weight:300;color:rgba(237,224,204,0.5)}
+.fdp-book-body{padding:24px}
+.fdp-book-field{margin-bottom:14px}
+.fdp-book-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:6px;display:block}
+.fdp-book-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.fdp-book-cta{width:100%;padding:16px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);border-radius:4px;cursor:pointer;transition:all 0.25s;margin-bottom:14px}
+.fdp-book-cta:hover{background:var(--gold);transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,125,26,0.4)}
+.fdp-book-trust{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:rgba(18,13,6,0.5);border-radius:3px;margin-bottom:14px}
+.fdp-book-trust-text{font-size:11px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.6}
+.fdp-book-steps{border-top:1px solid rgba(176,152,112,0.08);padding-top:16px}
+.fdp-book-step{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px;font-weight:300;color:rgba(237,224,204,0.4);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.3px}
+.fdp-book-step span:first-child{width:20px;height:20px;border-radius:50%;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.25);font-size:10px;font-weight:700;color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* ── SUCCESS STATE ── */
+.fdp-success{display:none;padding:60px 48px;text-align:center;max-width:600px;margin:0 auto}
+.fdp-success.show{display:block}
+.fdp-success-icon{font-size:64px;margin-bottom:24px}
+.fdp-success-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--ivory);margin-bottom:12px}
+.fdp-success-sub{font-size:16px;font-weight:300;color:rgba(237,224,204,0.55);line-height:1.75;margin-bottom:32px}
+.fdp-success-steps{text-align:left;background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:24px;margin-bottom:28px}
+.fdp-success-step{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(176,152,112,0.06)}
+.fdp-success-step:last-child{border-bottom:none;padding-bottom:0}
+.fdp-success-step-num{width:28px;height:28px;border-radius:50%;background:rgba(201,125,26,0.15);border:1.5px solid rgba(201,125,26,0.3);font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fdp-success-step-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--ivory);margin-bottom:3px;letter-spacing:0.3px}
+.fdp-success-step-desc{font-size:12px;font-weight:300;color:rgba(237,224,204,0.45);line-height:1.55}
+.fdp-reassure{background:rgba(93,232,130,0.05);border:1px solid rgba(93,232,130,0.15);border-radius:4px;padding:14px 16px;display:flex;align-items:center;gap:10px;font-size:12px;font-weight:300;color:rgba(237,224,204,0.55);line-height:1.6;text-align:left;margin-bottom:24px}
+
+@media(max-width:1024px){
+  .fdp-body{grid-template-columns:1fr;padding:32px 20px 60px}
+  .fdp-book-card{position:relative;top:auto}
+  .fdp-hero-info{padding:24px 20px}
+  .fdp-highlights{grid-template-columns:1fr 1fr 1fr}
+  .fdp-trust-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:768px){
+  .fdp-hero{height:320px}
+  .fdp-hero-info{padding:16px}
+  .fdp-highlights{grid-template-columns:1fr 1fr}
+  .fdp-species-grid{grid-template-columns:1fr}
+  .fdp-amenities-grid{grid-template-columns:1fr}
+  .fdp-incl-grid{grid-template-columns:1fr}
+  .fdp-trust-grid{grid-template-columns:1fr}
+  .fdp-book-row{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -2634,6 +2726,259 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div><!-- end comm-body -->
 </div>
 
+<!-- ══════════ PAGE: FARM DETAIL ══════════ -->
+<div class="page" id="page-farm-detail">
+
+  <!-- HERO IMAGE -->
+  <div class="fdp-hero" id="fdp-hero">
+    <img class="fdp-hero-img" id="fdp-hero-img" src="" alt="">
+    <div class="fdp-hero-overlay"></div>
+    <button class="fdp-hero-back" onclick="history.back();gp(window._fdpPrevPage||'listings')">← Back to Farms</button>
+    <div class="fdp-hero-badges" id="fdp-hero-badges"></div>
+    <div class="fdp-hero-info">
+      <div id="fdp-hero-badge-demo"></div>
+      <h1 class="fdp-title" id="fdp-title"></h1>
+      <div class="fdp-meta">
+        <div class="fdp-meta-item" id="fdp-location">📍</div>
+        <div class="fdp-meta-item" id="fdp-style"></div>
+        <div id="fdp-verified-badge"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY: MAIN + BOOKING CARD -->
+  <div class="fdp-body" id="fdp-main-body">
+
+    <!-- LEFT: MAIN CONTENT -->
+    <div class="fdp-main">
+
+      <!-- HIGHLIGHTS -->
+      <div class="fdp-section">
+        <div class="fdp-highlights" id="fdp-highlights"></div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="fdp-section">
+        <div class="fdp-section-title">About This Farm</div>
+        <p class="fdp-desc" id="fdp-desc"></p>
+      </div>
+
+      <!-- SPECIES & PRICING -->
+      <div class="fdp-section">
+        <div class="fdp-section-title">Species Available</div>
+        <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.4);margin-bottom:14px;font-style:italic">Pricing confirmed on enquiry — contact the farm directly for current rates.</p>
+        <div class="fdp-species-grid" id="fdp-species"></div>
+      </div>
+
+      <!-- ACCOMMODATION -->
+      <div class="fdp-section">
+        <div class="fdp-section-title">Accommodation</div>
+        <div class="fdp-amenities-grid" id="fdp-amenities"></div>
+      </div>
+
+      <!-- INCLUDED / EXCLUDED -->
+      <div class="fdp-section">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+          <div>
+            <div class="fdp-section-title" style="color:#5de882">What's Included</div>
+            <div class="fdp-incl-grid" id="fdp-included"></div>
+          </div>
+          <div>
+            <div class="fdp-section-title" style="color:rgba(237,224,204,0.4)">Not Included</div>
+            <div id="fdp-excluded"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS -->
+      <div class="fdp-section">
+        <div class="fdp-section-title">How the Enquiry Process Works</div>
+        <div class="fdp-hiw-steps">
+          <div class="fdp-hiw-step">
+            <div class="fdp-hiw-num">1</div>
+            <div>
+              <div class="fdp-hiw-title">Submit Your Request</div>
+              <p class="fdp-hiw-desc">Fill in your preferred dates, group size and hunt type. Takes 2 minutes. No payment required.</p>
+            </div>
+          </div>
+          <div class="fdp-hiw-step">
+            <div class="fdp-hiw-num">2</div>
+            <div>
+              <div class="fdp-hiw-title">We Confirm with the Farm</div>
+              <p class="fdp-hiw-desc">WildHunt SA contacts the farm directly to confirm availability and pricing. We respond within 24 hours.</p>
+            </div>
+          </div>
+          <div class="fdp-hiw-step">
+            <div class="fdp-hiw-num">3</div>
+            <div>
+              <div class="fdp-hiw-title">You Arrange Directly</div>
+              <p class="fdp-hiw-desc">Once confirmed, we introduce you to the farm owner. All final arrangements — dates, trophy fees, logistics — are made directly between you and the farm.</p>
+            </div>
+          </div>
+          <div class="fdp-hiw-step">
+            <div class="fdp-hiw-num">4</div>
+            <div>
+              <div class="fdp-hiw-title">Hunt. No Surprises.</div>
+              <p class="fdp-hiw-desc">WildHunt SA charges no fees to hunters. The platform earns a small service fee from the farm on confirmed bookings only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRUST SECTION -->
+      <div class="fdp-section">
+        <div class="fdp-section-title">Why Hunt Through WildHunt SA</div>
+        <div class="fdp-trust-grid">
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">🛡️</div>
+            <div class="fdp-trust-title">Verified Listings</div>
+            <p class="fdp-trust-desc">Farms are reviewed before going live. We vet contact details, species and facilities.</p>
+          </div>
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">💬</div>
+            <div class="fdp-trust-title">Direct Communication</div>
+            <p class="fdp-trust-desc">No call centres. We connect you directly to the farm owner once your request is confirmed.</p>
+          </div>
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">🆓</div>
+            <div class="fdp-trust-title">Free for Hunters</div>
+            <p class="fdp-trust-desc">Zero cost to submit an enquiry. No hidden fees. No subscription. Just South African hunting.</p>
+          </div>
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">⏱️</div>
+            <div class="fdp-trust-title">24-Hour Response</div>
+            <p class="fdp-trust-desc">We confirm availability with the farm within 24 hours of your submission. Weekdays and weekends.</p>
+          </div>
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">🇿🇦</div>
+            <div class="fdp-trust-title">100% South African</div>
+            <p class="fdp-trust-desc">Built for South African hunters and farm owners. Every farm on this platform is right here at home.</p>
+          </div>
+          <div class="fdp-trust-card">
+            <div class="fdp-trust-icon">📋</div>
+            <div class="fdp-trust-title">No Commitment</div>
+            <p class="fdp-trust-desc">Submitting a request is not a booking. There's no obligation until you've spoken to the farm and agreed on everything.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISCLAIMER -->
+      <div style="background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:16px 18px;font-size:12px;font-weight:300;color:rgba(237,224,204,0.3);line-height:1.65">
+        🛡️ WildHunt SA is a discovery and enquiry platform. All hunting arrangements, pricing and contracts are made directly between the hunter and the farm owner. WildHunt SA is not a party to any agreement between hunters and farm owners.
+      </div>
+
+    </div><!-- end fdp-main -->
+
+    <!-- RIGHT: BOOKING CARD -->
+    <div>
+      <div class="fdp-book-card" id="fdp-book-card">
+
+        <!-- FORM STATE -->
+        <div id="fdp-form-state">
+          <div class="fdp-book-header">
+            <div class="fdp-book-title">Request Availability</div>
+            <div class="fdp-book-sub" id="fdp-book-farm-name">Check dates with this farm</div>
+          </div>
+          <div class="fdp-book-body">
+
+            <div class="fdp-book-row">
+              <div>
+                <label class="fdp-book-label">Arrival Date</label>
+                <input type="date" class="finput" id="fdp-arrive" style="padding:10px 12px;font-size:13px">
+              </div>
+              <div>
+                <label class="fdp-book-label">Departure</label>
+                <input type="date" class="finput" id="fdp-depart" style="padding:10px 12px;font-size:13px">
+              </div>
+            </div>
+
+            <div class="fdp-book-row">
+              <div>
+                <label class="fdp-book-label">Hunters</label>
+                <select class="fselect" id="fdp-hunters" style="padding:10px 12px;font-size:13px">
+                  <option>1 Hunter</option>
+                  <option>2 Hunters</option>
+                  <option>3 Hunters</option>
+                  <option>4+ Hunters</option>
+                </select>
+              </div>
+              <div>
+                <label class="fdp-book-label">Hunt Type</label>
+                <select class="fselect" id="fdp-hunt-type" style="padding:10px 12px;font-size:13px">
+                  <option value="">Select...</option>
+                  <option>Plains Game — Rifle</option>
+                  <option>Plains Game — Bow</option>
+                  <option>Walk &amp; Stalk</option>
+                  <option>Long Range</option>
+                  <option>Mountain Hunt</option>
+                  <option>Night Hunt</option>
+                  <option>Package Hunt</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fdp-book-field">
+              <label class="fdp-book-label">Your Full Name *</label>
+              <input type="text" class="finput" id="fdp-name" placeholder="e.g. Pieter van der Berg" style="padding:10px 12px;font-size:13px">
+            </div>
+
+            <div class="fdp-book-field">
+              <label class="fdp-book-label">Email Address *</label>
+              <input type="email" class="finput" id="fdp-email" placeholder="you@email.com" style="padding:10px 12px;font-size:13px">
+            </div>
+
+            <div class="fdp-book-field">
+              <label class="fdp-book-label">WhatsApp / Phone</label>
+              <input type="tel" class="finput" id="fdp-phone" placeholder="+27 71 123 4567" style="padding:10px 12px;font-size:13px">
+            </div>
+
+            <div class="fdp-book-field">
+              <label class="fdp-book-label">Notes <span style="color:var(--khaki);font-weight:300;text-transform:none;letter-spacing:0">(species, special requests...)</span></label>
+              <textarea class="ftextarea" id="fdp-notes" style="min-height:80px;padding:10px 12px;font-size:13px;margin-top:0" placeholder="e.g. Looking for Kudu and Impala, 4-night stay, self-drive from JHB"></textarea>
+            </div>
+
+            <button class="fdp-book-cta" onclick="submitFarmRequest()">Send Availability Request →</button>
+
+            <div class="fdp-book-trust">
+              <span style="font-size:18px;flex-shrink:0">🔒</span>
+              <div class="fdp-book-trust-text">We'll confirm availability with the farm within 24 hours. <strong style="color:rgba(237,224,204,0.7)">No payment required at this stage.</strong> Submitting this request creates no obligation.</div>
+            </div>
+
+            <div class="fdp-book-steps">
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(176,152,112,0.4);margin-bottom:10px">What happens next</div>
+              <div class="fdp-book-step"><span>1</span><span>We receive your request immediately</span></div>
+              <div class="fdp-book-step"><span>2</span><span>We contact the farm to confirm availability</span></div>
+              <div class="fdp-book-step"><span>3</span><span>You hear back within 24 hours</span></div>
+              <div class="fdp-book-step"><span>4</span><span>You arrange everything directly with the farm</span></div>
+            </div>
+
+          </div>
+        </div><!-- end form state -->
+
+        <!-- SUCCESS STATE -->
+        <div id="fdp-success-state" style="display:none;padding:36px 24px;text-align:center">
+          <div style="font-size:52px;margin-bottom:16px">🦌</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--ivory);margin-bottom:10px">Request Sent!</h3>
+          <p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.5);margin-bottom:20px;line-height:1.7">Your availability request has been received. We'll confirm with the farm and get back to you <strong style="color:rgba(237,224,204,0.7)">within 24 hours.</strong></p>
+          <div style="background:rgba(93,232,130,0.06);border:1px solid rgba(93,232,130,0.15);border-radius:4px;padding:12px 14px;margin-bottom:20px;font-size:12px;color:rgba(237,224,204,0.5);text-align:left;line-height:1.6">
+            ✅ No payment has been taken. This is a request only.
+          </div>
+          <div style="text-align:left;margin-bottom:20px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(176,152,112,0.4);margin-bottom:10px">WHAT HAPPENS NEXT</div>
+            <div class="fdp-book-step" style="margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.25);font-size:10px;font-weight:700;color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span><span style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5)">WildHunt SA contacts the farm today</span></div>
+            <div class="fdp-book-step" style="margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.25);font-size:10px;font-weight:700;color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span><span style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5)">We confirm availability and pricing</span></div>
+            <div class="fdp-book-step" style="margin-bottom:8px"><span style="width:20px;height:20px;border-radius:50%;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.25);font-size:10px;font-weight:700;color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span><span style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5)">You receive a confirmation email within 24hrs</span></div>
+            <div class="fdp-book-step"><span style="width:20px;height:20px;border-radius:50%;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.25);font-size:10px;font-weight:700;color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0">4</span><span style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5)">You finalise details directly with the farm</span></div>
+          </div>
+          <button onclick="gp(window._fdpPrevPage||'listings')" style="width:100%;padding:12px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid rgba(176,152,112,0.2);color:var(--sand);border-radius:2px;cursor:pointer">← Browse More Farms</button>
+        </div>
+
+      </div><!-- end fdp-book-card -->
+    </div>
+
+  </div><!-- end fdp-body -->
+</div><!-- end page-farm-detail -->
+
 <!-- ══════════ PAGE: CONTACT ══════════ -->
 <div class="page" id="page-contact">
   <div class="contact-page">
@@ -3547,6 +3892,7 @@ function gp(id) {
   if(id==='contact') {}
   if(id==='merch') {}
   if(id==='list') {}
+  if(id==='farm-detail') {}
 }
 
 // ════ TOAST ════
@@ -3631,8 +3977,9 @@ const farms = [
 function renderFarms(data, containerId) {
   const c = document.getElementById(containerId);
   if(!c) return;
+  const fromPage = containerId === 'home-farms' ? 'home' : 'listings';
   c.innerHTML = data.map(f => `
-    <div class="farm-card" onclick="openFarm(${f.id})">
+    <div class="farm-card" onclick="openFarmDetail(${f.id},fromPage)">
       <div class="farm-img">
         <div class="farm-img-bg" style="background-image:url('${f.img}');background-size:cover;background-position:${f.imgPos||'center'};width:100%;height:100%;position:absolute;inset:0;transition:transform 0.5s"></div>
         <div class="farm-img-overlay"></div>
@@ -3703,7 +4050,142 @@ function goToFarmReviewsById(id){
   },300);
 }
 
-// ════ FARM DETAIL ════
+// ════ FARM DETAIL PAGE ════
+function openFarmDetail(id, fromPage) {
+  const f = farms.find(x => x.id === id);
+  if (!f) return;
+  window._fdpFarmId = id;
+  window._fdpPrevPage = fromPage || 'listings';
+
+  // Hero
+  const heroImg = document.getElementById('fdp-hero-img');
+  if (heroImg) { heroImg.src = f.img; heroImg.alt = f.name; }
+
+  // Demo badge
+  const demoBadge = document.getElementById('fdp-hero-badge-demo');
+  if (demoBadge) demoBadge.innerHTML = f.demo
+    ? `<div style="display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(237,224,204,0.4);background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.2);padding:3px 10px;border-radius:20px;margin-bottom:10px">Demo Listing</div>`
+    : '';
+
+  // Title & meta
+  document.getElementById('fdp-title').textContent = f.name;
+  document.getElementById('fdp-location').textContent = '📍 ' + f.town + ', ' + f.province;
+  document.getElementById('fdp-style').textContent = f.style || '';
+  document.getElementById('fdp-book-farm-name').textContent = f.name;
+
+  // Verified badge
+  const vb = document.getElementById('fdp-verified-badge');
+  if (vb) vb.innerHTML = f.demo
+    ? '' : f.verified
+    ? `<span class="verified-tick">✓ Verified Farm</span>`
+    : '';
+
+  // Highlights
+  const speciesCount = f.species.length;
+  const highlights = [
+    { icon: '🦌', label: 'Species', val: speciesCount + ' available' },
+    { icon: '🏕️', label: 'Accommodation', val: f.amenities.find(a => a.includes('lodge') || a.includes('Lodge') || a.includes('Farm')) || 'On-site lodge' },
+    { icon: '🎯', label: 'Hunt Style', val: (f.style || 'Plains Game').split('|')[0].trim() },
+  ];
+  const hlEl = document.getElementById('fdp-highlights');
+  if (hlEl) hlEl.innerHTML = highlights.map(h => `
+    <div class="fdp-highlight">
+      <div class="fdp-highlight-icon">${h.icon}</div>
+      <div class="fdp-highlight-label">${h.label}</div>
+      <div class="fdp-highlight-val">${h.val}</div>
+    </div>`).join('');
+
+  // Description
+  document.getElementById('fdp-desc').textContent = f.desc;
+
+  // Species
+  const spEl = document.getElementById('fdp-species');
+  if (spEl) spEl.innerHTML = f.species.map(s => `
+    <div class="fdp-species-row">
+      <span class="fdp-species-name">🦌 ${s.n}</span>
+      <span class="fdp-species-price">${s.p === 'Enquire' ? 'Enquire for pricing' : s.p}</span>
+    </div>`).join('');
+
+  // Amenities
+  const amEl = document.getElementById('fdp-amenities');
+  if (amEl) amEl.innerHTML = f.amenities.map(a => `
+    <div class="fdp-amenity-item"><span>✓</span> ${a}</div>`).join('');
+
+  // Included / Excluded
+  const included = ['Professional Hunter / Guide', 'Field preparation', 'Farm vehicle & fuel', 'Skinning & salting of trophies', 'Cold storage facilities', 'Daily meals (where applicable)'];
+  const excluded = ['Trophy fees (on enquiry)', 'Taxidermy & caping', 'Airport transfers', 'CITES documentation', 'Personal insurance', 'Liquor & incidentals'];
+  const inclEl = document.getElementById('fdp-included');
+  const exclEl = document.getElementById('fdp-excluded');
+  if (inclEl) inclEl.innerHTML = included.map(i => `<div class="fdp-incl-item"><span style="color:#5de882;font-size:12px">✓</span> ${i}</div>`).join('');
+  if (exclEl) exclEl.innerHTML = excluded.map(e => `<div class="fdp-excl-item"><span style="font-size:12px;color:rgba(237,224,204,0.3)">✕</span> ${e}</div>`).join('');
+
+  // Reset booking card
+  document.getElementById('fdp-form-state').style.display = 'block';
+  document.getElementById('fdp-success-state').style.display = 'none';
+  ['fdp-name','fdp-email','fdp-phone','fdp-notes','fdp-arrive','fdp-depart'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+
+  // Navigate to the page
+  gp('farm-detail');
+}
+
+function submitFarmRequest() {
+  const name = (document.getElementById('fdp-name')?.value || '').trim();
+  const email = (document.getElementById('fdp-email')?.value || '').trim();
+  const phone = (document.getElementById('fdp-phone')?.value || '').trim();
+  const arrive = document.getElementById('fdp-arrive')?.value || '';
+  const depart = document.getElementById('fdp-depart')?.value || '';
+  const hunters = document.getElementById('fdp-hunters')?.value || '';
+  const huntType = document.getElementById('fdp-hunt-type')?.value || '';
+  const notes = (document.getElementById('fdp-notes')?.value || '').trim();
+
+  if (!name) { showToast('Please enter your full name ⚠️', 'err'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️', 'err'); return; }
+
+  const farmId = window._fdpFarmId;
+  const farm = farms.find(x => x.id === farmId);
+
+  // Store enquiry
+  const enquiry = {
+    id: Date.now(),
+    farm: farm ? farm.name : 'Unknown',
+    province: farm ? farm.province : '',
+    name, email, phone,
+    arrive, depart, hunters, huntType, notes,
+    status: 'Pending',
+    timestamp: new Date().toISOString()
+  };
+  const stored = JSON.parse(localStorage.getItem('wh_enquiries') || '[]');
+  stored.unshift(enquiry);
+  try { localStorage.setItem('wh_enquiries', JSON.stringify(stored.slice(0,200))); } catch(e) {}
+
+  // Fire mailto to admin
+  const subject = encodeURIComponent(`New Hunt Request — ${farm ? farm.name : 'WildHunt SA'}`);
+  const body = encodeURIComponent(
+    `NEW HUNTING REQUEST — WILDHUNT SA\n` +
+    `━━━━━━━━━━━━━━━━━━━━\n` +
+    `Farm: ${farm ? farm.name + ' · ' + farm.province : 'Unknown'}\n` +
+    `━━━━━━━━━━━━━━━━━━━━\n` +
+    `Hunter: ${name}\n` +
+    `Email: ${email}\n` +
+    `Phone: ${phone || 'Not provided'}\n\n` +
+    `Dates: ${arrive || 'Flexible'} to ${depart || 'Flexible'}\n` +
+    `Hunters: ${hunters}\n` +
+    `Hunt Type: ${huntType || 'Not specified'}\n\n` +
+    `Notes:\n${notes || 'None'}\n\n` +
+    `━━━━━━━━━━━━━━━━━━━━\n` +
+    `Status: PENDING — Please contact farm within 24 hours\n` +
+    `Submitted: ${new Date().toLocaleString('en-ZA')}`
+  );
+  window.open(`mailto:info@wildhuntsa.com?subject=${subject}&body=${body}`, '_blank');
+
+  // Show success state
+  document.getElementById('fdp-form-state').style.display = 'none';
+  document.getElementById('fdp-success-state').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 let currentFarm = null;
 function openFarm(id) {
   const f = farms.find(x => x.id === id);
