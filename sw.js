@@ -1,7 +1,7 @@
 // WildHunt SA Service Worker
 // Enables offline support and installability
 
-const CACHE_NAME = 'wildhuntsa-v10';
+const CACHE_NAME = 'wildhuntsa-v12';
 const OFFLINE_URL = '/';
 
 // Assets to cache on install
