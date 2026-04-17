@@ -1395,6 +1395,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button class="nav-btn" onclick="gp('provinces')">Browse Farms</button>
     <button class="nav-btn" onclick="gp('marketplace')">Marketplace</button>
     <button class="nav-btn" onclick="gp('community')">Community</button>
+    <button class="nav-btn" onclick="gp('register')" style="color:var(--amber)">Register</button>
     <button class="nav-btn" onclick="gp('merch')" style="color:var(--gold)">Merchandise</button>
   </div>
   <div class="nav-right">
@@ -1408,6 +1409,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('provinces')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Farms</button>
     <button onclick="gp('marketplace')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
     <button onclick="gp('community')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
+    <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
     <button onclick="gp('merch')" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Merchandise</button>
     <button onclick="gp('contact')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact</button>
     <button onclick="gp('list')" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm</button>
@@ -1870,6 +1872,119 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
   </div>
 </div>
+
+<!-- ══════════ PAGE: REGISTER ══════════ -->
+<div class="page" id="page-register">
+  <div class="sec" style="max-width:680px;padding-top:100px">
+
+    <!-- Header -->
+    <div class="sec-label">Hunter Community</div>
+    <h1 class="sec-title" style="margin-bottom:8px">Register as a Hunter</h1>
+    <p class="sec-sub" style="margin-bottom:40px">Join thousands of South African hunters on WildHunt SA. Get notified about new farms, exclusive deals and community updates.</p>
+
+    <!-- Registration form -->
+    <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:32px" id="reg-form-wrap">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label class="fl">Full Name *</label>
+          <input type="text" class="finput" id="reg-name" placeholder="e.g. Johan van der Merwe" style="margin-top:6px;padding:10px 14px">
+        </div>
+        <div>
+          <label class="fl">Email Address *</label>
+          <input type="email" class="finput" id="reg-email" placeholder="your@email.com" style="margin-top:6px;padding:10px 14px">
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label class="fl">Phone Number</label>
+          <input type="tel" class="finput" id="reg-phone" placeholder="+27 82 000 0000" style="margin-top:6px;padding:10px 14px">
+        </div>
+        <div>
+          <label class="fl">Province</label>
+          <select class="fselect" id="reg-province" style="margin-top:6px;padding:10px 14px;width:100%">
+            <option value="">Select province...</option>
+            <option>Limpopo</option>
+            <option>Northern Cape</option>
+            <option>North West</option>
+            <option>Mpumalanga</option>
+            <option>Free State</option>
+            <option>KwaZulu-Natal</option>
+            <option>Eastern Cape</option>
+            <option>Gauteng</option>
+            <option>Western Cape</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label class="fl">Hunting Experience</label>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <button class="disc-type-btn selected" id="exp-beginner" onclick="selectExp('Beginner',this)" style="flex:1;min-width:140px">
+            <span class="disc-type-icon">🌱</span>
+            <span class="disc-type-label">Beginner</span>
+            <span class="disc-type-desc">0–3 years hunting</span>
+          </button>
+          <button class="disc-type-btn" id="exp-intermediate" onclick="selectExp('Intermediate',this)" style="flex:1;min-width:140px">
+            <span class="disc-type-icon">🎯</span>
+            <span class="disc-type-label">Intermediate</span>
+            <span class="disc-type-desc">3–10 years hunting</span>
+          </button>
+          <button class="disc-type-btn" id="exp-experienced" onclick="selectExp('Experienced',this)" style="flex:1;min-width:140px">
+            <span class="disc-type-icon">🏆</span>
+            <span class="disc-type-label">Experienced</span>
+            <span class="disc-type-desc">10+ years hunting</span>
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label class="fl">Preferred Species <span style="color:rgba(176,152,112,0.4);font-size:11px">(optional)</span></label>
+        <input type="text" class="finput" id="reg-species" placeholder="e.g. Kudu, Impala, Blesbok..." style="margin-top:6px;padding:10px 14px">
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label class="fl">How did you hear about WildHunt SA?</label>
+        <select class="fselect" id="reg-heard" style="margin-top:6px;padding:10px 14px;width:100%">
+          <option value="">Select...</option>
+          <option>Google Search</option>
+          <option>Facebook</option>
+          <option>Instagram</option>
+          <option>Friend / Word of mouth</option>
+          <option>Hunting expo / Show</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+        <input type="checkbox" id="reg-newsletter" style="width:16px;height:16px;accent-color:var(--amber);cursor:pointer">
+        <label for="reg-newsletter" style="font-size:13px;color:rgba(237,224,204,0.55);cursor:pointer;user-select:none">Send me updates about new farm listings, promotions and community news</label>
+      </div>
+
+      <button onclick="submitRegistration()" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:14px;border-radius:2px;cursor:pointer;transition:all 0.2s" id="reg-submit-btn" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--amber)'">
+        Register Now — It's Free →
+      </button>
+    </div>
+
+    <!-- Stats row -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px">
+      <div style="text-align:center;background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:20px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)">9</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-top:4px">Provinces</div>
+      </div>
+      <div style="text-align:center;background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:20px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)">Free</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-top:4px">To Register</div>
+      </div>
+      <div style="text-align:center;background:var(--bark2);border:1px solid rgba(176,152,112,0.08);border-radius:4px;padding:20px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)">🇿🇦</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-top:4px">South African</div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end page-register -->
 
 <!-- ══════════ PAGE: CONTACT ══════════ -->
 <div class="page" id="page-contact">
@@ -2737,6 +2852,55 @@ function submitCommunityPost() {
     var el = document.getElementById(id); if (el) el.value = '';
   });
   setCommStar(0);
+}
+
+
+// ════ HUNTER REGISTRATION ════
+var regExperience = 'Beginner';
+function selectExp(level, btn) {
+  regExperience = level;
+  document.querySelectorAll('#exp-beginner,#exp-intermediate,#exp-experienced').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+}
+
+async function submitRegistration() {
+  var name = (document.getElementById('reg-name')?.value||'').trim();
+  var email = (document.getElementById('reg-email')?.value||'').trim();
+  if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  
+  var btn = document.getElementById('reg-submit-btn');
+  if (btn) { btn.textContent = 'Registering...'; btn.disabled = true; }
+  
+  var data = {
+    full_name: name,
+    email: email,
+    phone: document.getElementById('reg-phone')?.value || '',
+    province: document.getElementById('reg-province')?.value || '',
+    experience: regExperience,
+    preferred_species: document.getElementById('reg-species')?.value || '',
+    heard_from: document.getElementById('reg-heard')?.value || '',
+    newsletter: document.getElementById('reg-newsletter')?.checked || false
+  };
+  
+  var ok = await supaInsert('hunters', data);
+  
+  if (ok) {
+    showToast('Welcome to WildHunt SA! 🦌','ok');
+    var wrap = document.getElementById('reg-form-wrap');
+    if (wrap) {
+      wrap.innerHTML = '<div style="text-align:center;padding:48px 24px"><div style="font-size:52px;margin-bottom:16px">🦌</div>' +
+        '<h3 style="font-family:Playfair Display,serif;font-size:28px;color:var(--ivory);margin-bottom:10px">Welcome, ' + name + '!</h3>' +
+        '<p style="font-size:14px;color:rgba(237,224,204,0.55);max-width:360px;margin:0 auto;line-height:1.7">You are now registered on WildHunt SA. We will keep you updated on new listings, deals and community news.</p>' +
+        '<div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap">' +
+        '<button class="btn-hero-main" onclick="gp(&quot;provinces&quot;)" style="padding:12px 28px">Browse Farms</button>' +
+        '<button class="btn-hero-sec" onclick="gp(&quot;community&quot;)" style="padding:12px 28px">Community</button>' +
+        '</div></div>';
+    }
+  } else {
+    if (btn) { btn.textContent = 'Register Now - Free'; btn.disabled = false; }
+    showToast('Registration failed — please try again ⚠️','err');
+  }
 }
 
 </script>
