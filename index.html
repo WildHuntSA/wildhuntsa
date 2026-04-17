@@ -1395,11 +1395,14 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button class="nav-btn" onclick="gp('provinces')">Browse Farms</button>
     <button class="nav-btn" onclick="gp('marketplace')">Marketplace</button>
     <button class="nav-btn" onclick="gp('community')">Community</button>
-    <button class="nav-btn" onclick="gp('register')" style="color:var(--amber)">Register</button>
     <button class="nav-btn" onclick="gp('merch')" style="color:var(--gold)">Merchandise</button>
   </div>
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="gp('contact')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Contact</button>
+    <button class="btn-sm btn-outline-sm" onclick="gp('register')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Register</button>
+    <button id="nav-login-btn" class="btn-sm btn-outline-sm" onclick="openLoginModal()" style="border-color:rgba(176,152,112,0.4);color:var(--sand)">Login</button>
+    <button id="nav-profile-btn" class="btn-sm btn-outline-sm" onclick="gp('profile')" style="display:none;border-color:rgba(201,125,26,0.4);color:var(--amber)">Profile</button>
+    <button id="nav-logout-btn" class="btn-sm btn-outline-sm" onclick="authLogout()" style="display:none;border-color:rgba(176,152,112,0.3);color:var(--khaki)">Logout</button>
     <button class="btn-sm btn-amber-sm" onclick="gp('list')">List Your Farm</button>
     <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
   </div>
@@ -1409,9 +1412,12 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button onclick="gp('provinces')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Farms</button>
     <button onclick="gp('marketplace')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
     <button onclick="gp('community')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
-    <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
     <button onclick="gp('merch')" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Merchandise</button>
     <button onclick="gp('contact')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact</button>
+    <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
+    <button id="mob-login-btn" onclick="openLoginModal()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Login</button>
+    <button id="mob-profile-btn" onclick="gp('profile')" style="display:none;background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Profile</button>
+    <button id="mob-logout-btn" onclick="authLogout()" style="display:none;background:none;border:none;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Logout</button>
     <button onclick="gp('list')" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm</button>
   </div>
 </nav>
@@ -1873,6 +1879,36 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
+<!-- ══ LOGIN MODAL ══ -->
+<div id="loginModal" style="display:none;position:fixed;inset:0;background:rgba(8,5,2,0.88);z-index:1200;align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.15);border-radius:6px;width:100%;max-width:420px;padding:32px;position:relative">
+    <button onclick="closeOverlay('loginModal')" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer;line-height:1">✕</button>
+    <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--ivory);margin:0 0 6px">Hunter Login</h2>
+    <p style="font-size:13px;color:rgba(237,224,204,0.45);margin:0 0 24px">Welcome back to WildHunt SA</p>
+    <div id="login-error" style="display:none;background:rgba(180,60,60,0.15);border:1px solid rgba(180,60,60,0.3);border-radius:3px;padding:10px 14px;font-size:13px;color:#e07070;margin-bottom:16px"></div>
+    <label class="fl" style="display:block;margin-bottom:6px">Email Address</label>
+    <input type="email" id="login-email" class="finput" placeholder="your@email.com" style="width:100%;margin-bottom:14px;padding:10px 14px;box-sizing:border-box">
+    <label class="fl" style="display:block;margin-bottom:6px">Password</label>
+    <input type="password" id="login-password" class="finput" placeholder="Your password" style="width:100%;margin-bottom:6px;padding:10px 14px;box-sizing:border-box" onkeydown="if(event.key==='Enter')submitLogin()">
+    <div style="text-align:right;margin-bottom:20px">
+      <button onclick="openForgotPassword()" style="background:none;border:none;color:var(--amber);font-size:12px;cursor:pointer;padding:4px 0">Forgot password?</button>
+    </div>
+    <button onclick="submitLogin()" id="login-submit-btn" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:13px;border-radius:2px;cursor:pointer;margin-bottom:16px">Login →</button>
+    <p style="text-align:center;font-size:13px;color:rgba(237,224,204,0.45);margin:0">No account? <button onclick="closeOverlay('loginModal');gp('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-size:13px;padding:0">Register free →</button></p>
+  </div>
+</div>
+
+<!-- ══ FORGOT PASSWORD MODAL ══ -->
+<div id="forgotModal" style="display:none;position:fixed;inset:0;background:rgba(8,5,2,0.88);z-index:1300;align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.15);border-radius:6px;width:100%;max-width:400px;padding:32px;position:relative">
+    <button onclick="closeOverlay('forgotModal')" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer">✕</button>
+    <h2 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ivory);margin:0 0 8px">Reset Password</h2>
+    <p style="font-size:13px;color:rgba(237,224,204,0.45);margin:0 0 20px">Enter your email and we will send you a reset link.</p>
+    <input type="email" id="forgot-email" class="finput" placeholder="your@email.com" style="width:100%;margin-bottom:16px;padding:10px 14px;box-sizing:border-box">
+    <button onclick="submitForgotPassword()" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:13px;border-radius:2px;cursor:pointer">Send Reset Link →</button>
+  </div>
+</div>
+
 <!-- ══════════ PAGE: REGISTER ══════════ -->
 <div class="page" id="page-register">
   <div class="sec" style="max-width:680px;padding-top:100px">
@@ -1962,8 +1998,19 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
         <label for="reg-newsletter" style="font-size:13px;color:rgba(237,224,204,0.55);cursor:pointer;user-select:none">Send me updates about new farm listings, promotions and community news</label>
       </div>
 
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label class="fl">Password *</label>
+          <input type="password" class="finput" id="reg-password" placeholder="Min 6 characters" style="margin-top:6px;padding:10px 14px">
+        </div>
+        <div>
+          <label class="fl">Confirm Password *</label>
+          <input type="password" class="finput" id="reg-confirm-password" placeholder="Repeat password" style="margin-top:6px;padding:10px 14px">
+        </div>
+      </div>
+
       <button onclick="submitRegistration()" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:14px;border-radius:2px;cursor:pointer;transition:all 0.2s" id="reg-submit-btn" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--amber)'">
-        Register Now — It's Free →
+        Create Account — Free →
       </button>
     </div>
 
@@ -1985,6 +2032,17 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
   </div>
 </div><!-- end page-register -->
+
+<!-- ══════════ PAGE: PROFILE ══════════ -->
+<div class="page" id="page-profile">
+  <div class="sec" style="max-width:680px;padding-top:100px" id="profile-content">
+    <div style="text-align:center;padding:80px 20px">
+      <div style="font-size:40px;margin-bottom:12px">🔒</div>
+      <p style="color:var(--khaki)">Please log in to view your profile.</p>
+      <button onclick="openLoginModal()" class="btn-hero-main" style="margin-top:16px">Login</button>
+    </div>
+  </div>
+</div><!-- end page-profile -->
 
 <!-- ══════════ PAGE: CONTACT ══════════ -->
 <div class="page" id="page-contact">
@@ -2349,11 +2407,71 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 
 // ════ SUPABASE BACKEND ════
 const SUPA_URL = 'https://eercwxsmefhflcmteowq.supabase.co';
 const SUPA_KEY = 'sb_publishable_HDja7y4GAxImGxHrpvT_0Q_zWn80dmG';
+var supa = null;
+var currentUser = null;
+var currentHunterProfile = null;
+
+function initSupabase() {
+  if (supa) return;
+  if (!window.supabase) { setTimeout(initSupabase, 50); return; }
+  supa = window.supabase.createClient(SUPA_URL, SUPA_KEY);
+  supa.auth.onAuthStateChange(async function(event, session) {
+    currentUser = session ? session.user : null;
+    if (currentUser) {
+      await loadHunterProfile();
+    } else {
+      currentHunterProfile = null;
+    }
+    updateNavAuth();
+  });
+}
+document.addEventListener('DOMContentLoaded', initSupabase);
+
+async function loadHunterProfile() {
+  if (!currentUser) return;
+  const res = await fetch(SUPA_URL + '/rest/v1/hunters?email=eq.' + encodeURIComponent(currentUser.email) + '&limit=1', {
+    headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY }
+  });
+  const data = await res.json();
+  currentHunterProfile = data && data.length > 0 ? data[0] : null;
+}
+
+function updateNavAuth() {
+  const loginBtn = document.getElementById('nav-login-btn');
+  const profileBtn = document.getElementById('nav-profile-btn');
+  const logoutBtn = document.getElementById('nav-logout-btn');
+  const mobLoginBtn = document.getElementById('mob-login-btn');
+  const mobProfileBtn = document.getElementById('mob-profile-btn');
+  const mobLogoutBtn = document.getElementById('mob-logout-btn');
+  if (currentUser) {
+    if (loginBtn) loginBtn.style.display = 'none';
+    if (profileBtn) { profileBtn.style.display = ''; profileBtn.textContent = currentHunterProfile ? currentHunterProfile.full_name.split(' ')[0] : 'Profile'; }
+    if (logoutBtn) logoutBtn.style.display = '';
+    if (mobLoginBtn) mobLoginBtn.style.display = 'none';
+    if (mobProfileBtn) { mobProfileBtn.style.display = ''; mobProfileBtn.textContent = currentHunterProfile ? currentHunterProfile.full_name.split(' ')[0] : 'Profile'; }
+    if (mobLogoutBtn) mobLogoutBtn.style.display = '';
+  } else {
+    if (loginBtn) loginBtn.style.display = '';
+    if (profileBtn) profileBtn.style.display = 'none';
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (mobLoginBtn) mobLoginBtn.style.display = '';
+    if (mobProfileBtn) mobProfileBtn.style.display = 'none';
+    if (mobLogoutBtn) mobLogoutBtn.style.display = 'none';
+  }
+}
+
+async function authLogout() {
+  const sc4 = await getSupaClient();
+  await sc4.auth.signOut();
+  showToast('Logged out successfully.', 'ok');
+  gp('home');
+}
 
 async function supaInsert(table, data) {
   try {
@@ -2529,6 +2647,7 @@ function gp(id){
   if(id==='listings'||id==='provinces')renderFarms(farms,'listings-farms');
   if(id==='marketplace')setTimeout(function(){mktSearch();},50);
   if(id==='farm-detail'){}
+  if(id==='profile'){setTimeout(renderProfilePage,50);}
   if(id==='merch'){}
   if(id==='list'){}
   if(id==='contact'){}
@@ -2864,10 +2983,14 @@ function selectExp(level, btn) {
 }
 
 async function submitRegistration() {
+  var password = document.getElementById('reg-password')?.value||'';
+  var confirmPassword = document.getElementById('reg-confirm-password')?.value||'';
   var name = (document.getElementById('reg-name')?.value||'').trim();
   var email = (document.getElementById('reg-email')?.value||'').trim();
   if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
   if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  if (!password || password.length < 6) { showToast('Password must be at least 6 characters ⚠️','err'); return; }
+  if (password !== confirmPassword) { showToast('Passwords do not match ⚠️','err'); return; }
   
   var btn = document.getElementById('reg-submit-btn');
   if (btn) { btn.textContent = 'Registering...'; btn.disabled = true; }
@@ -2883,10 +3006,22 @@ async function submitRegistration() {
     newsletter: document.getElementById('reg-newsletter')?.checked || false
   };
   
+  // Create auth account
+  const sc3 = await getSupaClient();
+  const { data: authData, error: authError } = await sc3.auth.signUp({ email, password });
+  if (authError) {
+    if (btn) { btn.textContent = 'Register Now - Free'; btn.disabled = false; }
+    showToast(authError.message.includes('already registered') ? 'Email already registered. Try logging in ⚠️' : 'Registration failed ⚠️', 'err');
+    return;
+  }
+  // Save profile to hunters table
+  data.user_id = authData.user ? authData.user.id : null;
   var ok = await supaInsert('hunters', data);
-  
+
   if (ok) {
-    showToast('Welcome to WildHunt SA! 🦌','ok');
+    showToast('Welcome to WildHunt SA! Account created 🦌','ok');
+    await loadHunterProfile();
+    updateNavAuth();
     var wrap = document.getElementById('reg-form-wrap');
     if (wrap) {
       wrap.innerHTML = '<div style="text-align:center;padding:48px 24px"><div style="font-size:52px;margin-bottom:16px">🦌</div>' +
@@ -2901,6 +3036,98 @@ async function submitRegistration() {
     if (btn) { btn.textContent = 'Register Now - Free'; btn.disabled = false; }
     showToast('Registration failed — please try again ⚠️','err');
   }
+}
+
+
+// ════ AUTH FUNCTIONS ════
+function openLoginModal() {
+  const el = document.getElementById('loginModal');
+  if (el) { el.style.display = 'flex'; }
+  const mm = document.getElementById('mob-menu');
+  if (mm) mm.style.display = 'none';
+}
+
+function openForgotPassword() {
+  closeOverlay('loginModal');
+  const el = document.getElementById('forgotModal');
+  if (el) el.style.display = 'flex';
+}
+
+async function getSupaClient() {
+  if (supa) return supa;
+  return new Promise(resolve => {
+    const check = setInterval(() => { if (supa) { clearInterval(check); resolve(supa); } }, 50);
+  });
+}
+
+async function submitLogin() {
+  const email = (document.getElementById('login-email')?.value||'').trim();
+  const password = document.getElementById('login-password')?.value||'';
+  const errEl = document.getElementById('login-error');
+  const btn = document.getElementById('login-submit-btn');
+  if (!email || !password) { if(errEl){errEl.style.display='block';errEl.textContent='Please enter your email and password.';} return; }
+  if (btn) { btn.textContent = 'Logging in...'; btn.disabled = true; }
+  if (errEl) errEl.style.display = 'none';
+  const sc = await getSupaClient();
+  const { data, error } = await sc.auth.signInWithPassword({ email, password });
+  if (error) {
+    if (errEl) { errEl.style.display = 'block'; errEl.textContent = error.message === 'Invalid login credentials' ? 'Incorrect email or password.' : error.message; }
+    if (btn) { btn.textContent = 'Login →'; btn.disabled = false; }
+    return;
+  }
+  closeOverlay('loginModal');
+  if (document.getElementById('login-email')) document.getElementById('login-email').value = '';
+  if (document.getElementById('login-password')) document.getElementById('login-password').value = '';
+  if (btn) { btn.textContent = 'Login →'; btn.disabled = false; }
+  showToast('Welcome back! 🦌', 'ok');
+  await loadHunterProfile();
+  updateNavAuth();
+  gp('profile');
+}
+
+async function submitForgotPassword() {
+  const email = (document.getElementById('forgot-email')?.value||'').trim();
+  if (!email) { showToast('Please enter your email address ⚠️', 'err'); return; }
+  const sc2 = await getSupaClient();
+  const { error } = await sc2.auth.resetPasswordForEmail(email, { redirectTo: 'https://wildhuntsa.com' });
+  if (error) { showToast('Could not send reset email ⚠️', 'err'); return; }
+  showToast('Password reset email sent! Check your inbox.', 'ok');
+  closeOverlay('forgotModal');
+}
+
+function renderProfilePage() {
+  const container = document.getElementById('profile-content');
+  if (!container) return;
+  if (!currentUser) {
+    container.innerHTML = '<div style="text-align:center;padding:80px 20px"><div style="font-size:40px;margin-bottom:12px">&#x1F512;</div><p style="color:var(--khaki)">Please log in to view your profile.</p><button onclick="openLoginModal()" class="btn-hero-main" style="margin-top:16px">Login</button></div>';
+    return;
+  }
+  const p = currentHunterProfile;
+  const expColors = { Beginner: 'var(--moss)', Intermediate: 'var(--amber)', Experienced: 'var(--gold)' };
+  container.innerHTML =
+    '<div class="sec-label">Your Account</div>' +
+    '<h1 class="sec-title" style="margin-bottom:24px">Hunter Profile</h1>' +
+    '<div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:28px;margin-bottom:20px">' +
+      '<div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">' +
+        '<div style="width:64px;height:64px;border-radius:50%;background:rgba(201,125,26,0.15);border:2px solid rgba(201,125,26,0.3);display:flex;align-items:center;justify-content:center;font-size:28px">&#x1F98C;</div>' +
+        '<div>' +
+          '<div style="font-family:Playfair Display,serif;font-size:22px;color:var(--ivory);font-weight:700">' + (p ? p.full_name : currentUser.email.split('@')[0]) + '</div>' +
+          '<div style="font-size:13px;color:var(--khaki);margin-top:2px">' + currentUser.email + '</div>' +
+        '</div>' +
+      '</div>' +
+      (p ? (
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+          '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Province</div><div style="color:var(--sand)">' + (p.province||'Not set') + '</div></div>' +
+          '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Experience</div><div style="color:' + (expColors[p.experience]||'var(--sand)') + '">' + (p.experience||'Not set') + '</div></div>' +
+          '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Phone</div><div style="color:var(--sand)">' + (p.phone||'Not set') + '</div></div>' +
+          '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Preferred Species</div><div style="color:var(--sand)">' + (p.preferred_species||'Not set') + '</div></div>' +
+        '</div>'
+      ) : '<p style="color:var(--khaki);font-size:14px">No profile details found. <button onclick="gp(&quot;register&quot;)" style="background:none;border:none;color:var(--amber);cursor:pointer;padding:0;font-size:14px">Complete your profile</button></p>') +
+    '</div>' +
+    '<div style="display:flex;gap:12px;flex-wrap:wrap">' +
+      '<button onclick="gp(&quot;provinces&quot;)" class="btn-hero-main" style="padding:12px 24px">Browse Farms</button>' +
+      '<button onclick="authLogout()" style="font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--khaki);padding:12px 24px;border-radius:2px;cursor:pointer">Logout</button>' +
+    '</div>';
 }
 
 </script>
