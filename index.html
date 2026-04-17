@@ -2235,6 +2235,157 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+
+// ════ SUPABASE BACKEND ════
+const SUPA_URL = 'https://eercwxsmefhflcmteowq.supabase.co';
+const SUPA_KEY = 'sb_publishable_HDja7y4GAxImGxHrpvT_0Q_zWn80dmG';
+
+async function supaInsert(table, data) {
+  try {
+    const res = await fetch(SUPA_URL + '/rest/v1/' + table, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) {
+      const err = await res.text();
+      console.error('Supabase error:', res.status, err);
+      return false;
+    }
+    return true;
+  } catch(e) {
+    console.error('Supabase fetch error:', e);
+    return false;
+  }
+}
+
+// ════ FARM BOOKING REQUEST (Farm Detail Page) ════
+async function submitFarmRequest() {
+  const name = (document.getElementById('fdp-name')?.value||'').trim();
+  const email = (document.getElementById('fdp-email')?.value||'').trim();
+  if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  const farm = farms.find(x=>x.id===window._fdpFarmId);
+  const btn = document.querySelector('.fdp-book-btn');
+  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+  const data = {
+    farm_name: farm ? farm.name : 'Unknown',
+    farm_id: window._fdpFarmId || null,
+    hunter_name: name,
+    email: email,
+    phone: document.getElementById('fdp-phone')?.value || '',
+    preferred_dates: (document.getElementById('fdp-arrive')?.value||'') + (document.getElementById('fdp-depart')?.value ? ' to ' + document.getElementById('fdp-depart').value : ''),
+    party_size: document.getElementById('fdp-hunters')?.value || '',
+    species: document.getElementById('fdp-species')?.value || '',
+    message: document.getElementById('fdp-notes')?.value || ''
+  };
+  const ok = await supaInsert('enquiries', data);
+  if (btn) { btn.textContent = ok ? 'Request Sent ✓' : 'Send Availability Request →'; btn.disabled = false; }
+  if (ok) {
+    showToast('Booking request sent! The farm will contact you within 24 hours. 🎉','ok');
+    ['fdp-name','fdp-email','fdp-phone','fdp-arrive','fdp-depart','fdp-hunters','fdp-species','fdp-notes'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  } else {
+    showToast('Failed to send — please try again or email info@wildhuntsa.com ⚠️','err');
+  }
+}
+
+// ════ ENQUIRY MODAL ════
+async function submitEnquiry() {
+  const name = (document.getElementById('enq-name')?.value||'').trim();
+  const email = (document.getElementById('enq-email')?.value||'').trim();
+  const message = (document.getElementById('enq-message')?.value||'').trim();
+  if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  if (!message) { showToast('Please add a message ⚠️','err'); return; }
+  const farm = farms.find(x=>x.id===window.currentEnquiryFarm);
+  const data = {
+    farm_name: farm ? farm.name : 'Unknown',
+    farm_id: window.currentEnquiryFarm || null,
+    hunter_name: name,
+    email: email,
+    phone: document.getElementById('enq-phone')?.value || '',
+    preferred_dates: document.getElementById('enq-dates')?.value || '',
+    message: message
+  };
+  const ok = await supaInsert('enquiries', data);
+  if (ok) {
+    showToast('Enquiry sent! The farm will be in touch within 24 hours. 🎉','ok');
+    closeOverlay('enquiryModal');
+    ['enq-name','enq-email','enq-phone','enq-dates','enq-message'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  } else {
+    showToast('Failed to send — please try again or email info@wildhuntsa.com ⚠️','err');
+  }
+}
+
+// ════ CONTACT FORM ════
+async function submitContact() {
+  const name = (document.getElementById('ct-name')?.value||'').trim();
+  const email = (document.getElementById('ct-email')?.value||'').trim();
+  const message = (document.getElementById('ct-message')?.value||'').trim();
+  const subject = document.getElementById('ct-subject')?.value || 'General Enquiry';
+  if (!name||!email||!message) { showToast('Please fill in all required fields ⚠️','err'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  const data = {
+    name: name,
+    email: email,
+    phone: document.getElementById('ct-phone')?.value || '',
+    subject: subject,
+    message: message
+  };
+  const ok = await supaInsert('contact_submissions', data);
+  if (ok) {
+    showToast('Message sent! We will get back to you within 24 hours. 🎉','ok');
+    ['ct-name','ct-email','ct-phone','ct-subject','ct-message'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+  } else {
+    showToast('Failed to send — please try again or email info@wildhuntsa.com ⚠️','err');
+  }
+}
+
+// ════ LIST YOUR FARM ════
+async function submitFarmListing() {
+  const farmName = (document.getElementById('lf-farm-name')?.value||'').trim();
+  const province = document.getElementById('lf-province')?.value || '';
+  const town = (document.getElementById('lf-town')?.value||'').trim();
+  const contact = (document.getElementById('lf-contact')?.value||'').trim();
+  const email = (document.getElementById('lf-email')?.value||'').trim();
+  const phone = (document.getElementById('lf-phone')?.value||'').trim();
+  const desc = (document.getElementById('lf-desc')?.value||'').trim();
+  const game = (document.getElementById('lf-game')?.value||'').trim();
+  const agree = document.getElementById('lf-agree')?.checked;
+  if (!farmName) { showToast('Please enter the farm name ⚠️','err'); return; }
+  if (!province) { showToast('Please select a province ⚠️','err'); return; }
+  if (!contact) { showToast('Please enter your name ⚠️','err'); return; }
+  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
+  if (!agree) { showToast('Please accept the terms ⚠️','err'); return; }
+  const data = {
+    farm_name: farmName,
+    owner_name: contact,
+    email: email,
+    phone: phone,
+    province: province,
+    town: town,
+    description: desc,
+    species: game,
+    status: 'pending'
+  };
+  const ok = await supaInsert('farm_listings', data);
+  if (ok) {
+    showToast('Farm listing submitted! We will review and contact you within 48 hours. 🎉','ok');
+    // Show success state
+    const form = document.getElementById('lf-form');
+    if (form) {
+      form.innerHTML = '<div style="text-align:center;padding:48px 24px"><div style="font-size:48px;margin-bottom:16px">&#9989;</div><h3 style="font-family:Playfair Display,serif;font-size:28px;color:var(--ivory);margin-bottom:10px">Application Received!</h3><p style="font-size:14px;color:rgba(237,224,204,0.55);margin-bottom:24px">We will review and contact you at ' + email + ' within 48 hours.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><button class="btn-hero-main" onclick="gp(&quot;provinces&quot;)">Browse Other Farms</button><button class="btn-hero-sec" onclick="gp(&quot;contact&quot;)">Contact Us</button></div></div>';
+    }
+  } else {
+    showToast('Failed to submit — please try again or email info@wildhuntsa.com ⚠️','err');
+  }
+}
+
 // ════ MOBILE MENU ════
 function toggleMobileMenu(){const m=document.getElementById('mob-menu');if(!m)return;const open=m.style.display==='flex';m.style.display=open?'none':'flex';}
 document.addEventListener('click',function(e){const m=document.getElementById('mob-menu');const btn=document.getElementById('mob-btn');if(m&&m.style.display==='flex'&&!m.contains(e.target)&&!btn.contains(e.target))m.style.display='none';});
@@ -2377,24 +2528,7 @@ function openFarmDetail(id, fromPage) {
   gp('farm-detail');
 }
 
-function submitFarmRequest() {
-  const name = (document.getElementById('fdp-name')?.value||'').trim();
-  const email = (document.getElementById('fdp-email')?.value||'').trim();
-  if (!name) { showToast('Please enter your full name ⚠️','err'); return; }
-  if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email ⚠️','err'); return; }
-  const farm = farms.find(x=>x.id===window._fdpFarmId);
-  const enquiry = {id:Date.now(),farm:farm?farm.name:'Unknown',province:farm?farm.province:'',name,email,phone:document.getElementById('fdp-phone')?.value||'',arrive:document.getElementById('fdp-arrive')?.value||'',depart:document.getElementById('fdp-depart')?.value||'',hunters:document.getElementById('fdp-hunters')?.value||'',huntType:document.getElementById('fdp-hunt-type')?.value||'',notes:document.getElementById('fdp-notes')?.value||'',status:'Pending',timestamp:new Date().toISOString()};
-  const stored=JSON.parse(localStorage.getItem('wh_enquiries')||'[]');stored.unshift(enquiry);
-  try{localStorage.setItem('wh_enquiries',JSON.stringify(stored.slice(0,200)));}catch(e){}
-  const subject=encodeURIComponent(`New Hunt Request — ${farm?farm.name:'WildHunt SA'}`);
-  const body=encodeURIComponent(`NEW HUNTING REQUEST\n━━━━━━━━━━━━━━━━━━━━\nFarm: ${farm?farm.name+' · '+farm.province:'Unknown'}\n━━━━━━━━━━━━━━━━━━━━\nHunter: ${name}\nEmail: ${email}\nPhone: ${enquiry.phone||'Not provided'}\nDates: ${enquiry.arrive||'Flexible'} to ${enquiry.depart||'Flexible'}\nHunters: ${enquiry.hunters}\nHunt Type: ${enquiry.huntType||'Not specified'}\n\nNotes:\n${enquiry.notes||'None'}\n\nStatus: PENDING — Confirm with farm within 24 hours\nSubmitted: ${new Date().toLocaleString('en-ZA')}`);
-  window.open(`mailto:info@wildhuntsa.com?subject=${subject}&body=${body}`,'_blank');
-  document.getElementById('fdp-form-state').style.display='none';
-  document.getElementById('fdp-success-state').style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
 
-// ════ ENQUIRY SYSTEM ════
 const enquiries = JSON.parse(localStorage.getItem('wh_enquiries')||'[]');
 function openEnquiry(farmId) {
   const f=farms.find(x=>x.id===farmId);
@@ -2411,69 +2545,9 @@ function openEnquiry(farmId) {
   window.currentEnquiryFarm=farmId;
   openOverlay('enquiryModal');
 }
-function submitEnquiry(){
-  const name=(document.getElementById('enq-name')?.value||'').trim();
-  const email=(document.getElementById('enq-email')?.value||'').trim();
-  const message=(document.getElementById('enq-message')?.value||'').trim();
-  if(!name){showToast('Please enter your full name ⚠️','err');return;}
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast('Please enter a valid email ⚠️','err');return;}
-  if(!message){showToast('Please add a message ⚠️','err');return;}
-  const farm=farms.find(x=>x.id===window.currentEnquiryFarm);
-  const enquiry={id:Date.now(),farm:farm?farm.name:'Unknown',province:farm?farm.province:'',name,email,phone:document.getElementById('enq-phone')?.value||'',dates:document.getElementById('enq-dates')?.value||'',message,status:'new',timestamp:new Date().toISOString()};
-  const stored=JSON.parse(localStorage.getItem('wh_enquiries')||'[]');stored.unshift(enquiry);
-  try{localStorage.setItem('wh_enquiries',JSON.stringify(stored.slice(0,200)));}catch(e){}
-  const subject=encodeURIComponent('New Hunt Request — '+(farm?farm.name:'WildHunt SA'));
-  const body=encodeURIComponent(`Farm: ${farm?farm.name+' · '+farm.province:'Unknown'}\nHunter: ${name}\nEmail: ${email}\nPhone: ${enquiry.phone||'Not provided'}\nDates: ${enquiry.dates||'Flexible'}\n\nMessage:\n${message}`);
-  window.open(`mailto:info@wildhuntsa.com?subject=${subject}&body=${body}`,'_blank');
-  document.getElementById('enq-form-body').style.display='none';
-  document.getElementById('enq-success').style.display='block';
-}
 
-// ════ LIST YOUR FARM ════
 function showImageNames(input){const el=document.getElementById('lf-image-names');if(!el)return;el.textContent=Array.from(input.files).map(f=>f.name).join(', ');}
-function submitFarmListing(){
-  const farmName=(document.getElementById('lf-farm-name')?.value||'').trim();
-  const province=document.getElementById('lf-province')?.value||'';
-  const town=(document.getElementById('lf-town')?.value||'').trim();
-  const contact=(document.getElementById('lf-contact')?.value||'').trim();
-  const email=(document.getElementById('lf-email')?.value||'').trim();
-  const phone=(document.getElementById('lf-phone')?.value||'').trim();
-  const desc=(document.getElementById('lf-desc')?.value||'').trim();
-  const game=(document.getElementById('lf-game')?.value||'').trim();
-  const agree=document.getElementById('lf-agree')?.checked;
-  if(!farmName){showToast('Please enter the farm name ⚠️','err');return;}
-  if(!province){showToast('Please select a province ⚠️','err');return;}
-  if(!town){showToast('Please enter the nearest town ⚠️','err');return;}
-  if(!contact){showToast('Please enter a contact name ⚠️','err');return;}
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast('Please enter a valid email ⚠️','err');return;}
-  if(!phone){showToast('Please enter a phone number ⚠️','err');return;}
-  if(!desc){showToast('Please add a farm description ⚠️','err');return;}
-  if(!game){showToast('Please list the game available ⚠️','err');return;}
-  if(!agree){showToast('Please accept the Farm Listing Agreement ⚠️','err');return;}
-  const sub={id:Date.now(),farmName,province,town,contact,email,phone,desc,game,timestamp:new Date().toISOString(),status:'pending'};
-  try{const s=JSON.parse(localStorage.getItem('wh_farm_submissions')||'[]');s.unshift(sub);localStorage.setItem('wh_farm_submissions',JSON.stringify(s.slice(0,100)));}catch(e){}
-  const subject=encodeURIComponent('New Farm Listing — '+farmName);
-  const body=encodeURIComponent(`Farm: ${farmName}\nProvince: ${province}\nTown: ${town}\nContact: ${contact}\nEmail: ${email}\nPhone: ${phone}\n\nGame: ${game}\n\nDescription:\n${desc}`);
-  window.open(`mailto:info@wildhuntsa.com?subject=${subject}&body=${body}`,'_blank');
-  const inner=document.getElementById('lf-form-inner');const success=document.getElementById('lf-success');
-  if(inner)inner.style.display='none';if(success)success.classList.add('show');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
 
-// ════ CONTACT FORM ════
-function submitContact(){
-  const name=(document.getElementById('ct-name')?.value||'').trim();
-  const email=(document.getElementById('ct-email')?.value||'').trim();
-  const message=(document.getElementById('ct-message')?.value||'').trim();
-  const subject=document.getElementById('ct-subject')?.value||'General Enquiry';
-  if(!name||!email||!message){showToast('Please fill in all required fields ⚠️','err');return;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showToast('Please enter a valid email ⚠️','err');return;}
-  const body=encodeURIComponent(`Name: ${name}\nPhone: ${document.getElementById('ct-phone')?.value||'Not provided'}\nSubject: ${subject}\n\n${message}`);
-  window.location.href=`mailto:info@wildhuntsa.com?subject=${encodeURIComponent('WildHuntSA: '+subject)}&body=${body}`;
-  showToast('Opening your email client… 📧','ok');
-}
-
-// ════ PROVINCE SELECTION ════
 const provData=[
   {name:'Limpopo',count:128,species:'Kudu, Impala, Bushbuck'},{name:'North West',count:74,species:'Kudu, Blesbok, Wildebeest'},
   {name:'Northern Cape',count:58,species:'Gemsbok, Springbok, Eland'},{name:'Mpumalanga',count:41,species:'Impala, Kudu, Nyala'},
