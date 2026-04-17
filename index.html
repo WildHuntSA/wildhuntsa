@@ -548,6 +548,8 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .butcher-price-item strong{color:var(--gold)}
 @media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr)}.merch-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr}.merch-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.reg-grid{grid-template-columns:1fr!important}}
+@media(max-width:900px){.nav-auth-btn{display:none!important}}
 
 /* ════ RESPONSIVE ════ */
 
@@ -1400,9 +1402,9 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="nav-right">
     <button class="btn-sm btn-outline-sm" onclick="gp('contact')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Contact</button>
     <button class="btn-sm btn-outline-sm" onclick="gp('register')" style="border-color:rgba(201,125,26,0.4);color:var(--amber)">Register</button>
-    <button id="nav-login-btn" class="btn-sm btn-outline-sm" onclick="openLoginModal()" style="border-color:rgba(176,152,112,0.4);color:var(--sand)">Login</button>
-    <button id="nav-profile-btn" class="btn-sm btn-outline-sm" onclick="gp('profile')" style="display:none;border-color:rgba(201,125,26,0.4);color:var(--amber)">Profile</button>
-    <button id="nav-logout-btn" class="btn-sm btn-outline-sm" onclick="authLogout()" style="display:none;border-color:rgba(176,152,112,0.3);color:var(--khaki)">Logout</button>
+    <button id="nav-login-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="openLoginModal()" style="border-color:rgba(176,152,112,0.4);color:var(--sand)">Login</button>
+    <button id="nav-profile-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="gp('profile')" style="display:none;border-color:rgba(201,125,26,0.4);color:var(--amber)">Profile</button>
+    <button id="nav-logout-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="authLogout()" style="display:none;border-color:rgba(176,152,112,0.3);color:var(--khaki)">Logout</button>
     <button class="btn-sm btn-amber-sm" onclick="gp('list')">List Your Farm</button>
     <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
   </div>
@@ -1882,7 +1884,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <!-- ══ LOGIN MODAL ══ -->
 <div id="loginModal" style="display:none;position:fixed;inset:0;background:rgba(8,5,2,0.88);z-index:1200;align-items:center;justify-content:center;padding:20px">
   <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.15);border-radius:6px;width:100%;max-width:420px;padding:32px;position:relative">
-    <button onclick="closeOverlay('loginModal')" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer;line-height:1">✕</button>
+    <button onclick="document.getElementById('loginModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer;line-height:1">✕</button>
     <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--ivory);margin:0 0 6px">Hunter Login</h2>
     <p style="font-size:13px;color:rgba(237,224,204,0.45);margin:0 0 24px">Welcome back to WildHunt SA</p>
     <div id="login-error" style="display:none;background:rgba(180,60,60,0.15);border:1px solid rgba(180,60,60,0.3);border-radius:3px;padding:10px 14px;font-size:13px;color:#e07070;margin-bottom:16px"></div>
@@ -1894,14 +1896,14 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <button onclick="openForgotPassword()" style="background:none;border:none;color:var(--amber);font-size:12px;cursor:pointer;padding:4px 0">Forgot password?</button>
     </div>
     <button onclick="submitLogin()" id="login-submit-btn" style="width:100%;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:13px;border-radius:2px;cursor:pointer;margin-bottom:16px">Login →</button>
-    <p style="text-align:center;font-size:13px;color:rgba(237,224,204,0.45);margin:0">No account? <button onclick="closeOverlay('loginModal');gp('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-size:13px;padding:0">Register free →</button></p>
+    <p style="text-align:center;font-size:13px;color:rgba(237,224,204,0.45);margin:0">No account? <button onclick="document.getElementById('loginModal').style.display='none';gp('register')" style="background:none;border:none;color:var(--amber);cursor:pointer;font-size:13px;padding:0">Register free →</button></p>
   </div>
 </div>
 
 <!-- ══ FORGOT PASSWORD MODAL ══ -->
 <div id="forgotModal" style="display:none;position:fixed;inset:0;background:rgba(8,5,2,0.88);z-index:1300;align-items:center;justify-content:center;padding:20px">
   <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.15);border-radius:6px;width:100%;max-width:400px;padding:32px;position:relative">
-    <button onclick="closeOverlay('forgotModal')" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer">✕</button>
+    <button onclick="document.getElementById('forgotModal').style.display='none'" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--khaki);font-size:20px;cursor:pointer">✕</button>
     <h2 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ivory);margin:0 0 8px">Reset Password</h2>
     <p style="font-size:13px;color:rgba(237,224,204,0.45);margin:0 0 20px">Enter your email and we will send you a reset link.</p>
     <input type="email" id="forgot-email" class="finput" placeholder="your@email.com" style="width:100%;margin-bottom:16px;padding:10px 14px;box-sizing:border-box">
@@ -1921,7 +1923,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <!-- Registration form -->
     <div style="background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;padding:32px" id="reg-form-wrap">
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="reg-grid">
         <div>
           <label class="fl">Full Name *</label>
           <input type="text" class="finput" id="reg-name" placeholder="e.g. Johan van der Merwe" style="margin-top:6px;padding:10px 14px">
@@ -3045,10 +3047,13 @@ function openLoginModal() {
   if (el) { el.style.display = 'flex'; }
   const mm = document.getElementById('mob-menu');
   if (mm) mm.style.display = 'none';
+  // Clear any previous errors
+  const errEl = document.getElementById('login-error');
+  if (errEl) errEl.style.display = 'none';
 }
 
 function openForgotPassword() {
-  closeOverlay('loginModal');
+  document.getElementById('loginModal').style.display='none';
   const el = document.getElementById('forgotModal');
   if (el) el.style.display = 'flex';
 }
@@ -3075,7 +3080,7 @@ async function submitLogin() {
     if (btn) { btn.textContent = 'Login →'; btn.disabled = false; }
     return;
   }
-  closeOverlay('loginModal');
+  document.getElementById('loginModal').style.display='none';
   if (document.getElementById('login-email')) document.getElementById('login-email').value = '';
   if (document.getElementById('login-password')) document.getElementById('login-password').value = '';
   if (btn) { btn.textContent = 'Login →'; btn.disabled = false; }
@@ -3092,7 +3097,7 @@ async function submitForgotPassword() {
   const { error } = await sc2.auth.resetPasswordForEmail(email, { redirectTo: 'https://wildhuntsa.com' });
   if (error) { showToast('Could not send reset email ⚠️', 'err'); return; }
   showToast('Password reset email sent! Check your inbox.', 'ok');
-  closeOverlay('forgotModal');
+  document.getElementById('forgotModal').style.display='none';
 }
 
 function renderProfilePage() {
@@ -3116,7 +3121,7 @@ function renderProfilePage() {
         '</div>' +
       '</div>' +
       (p ? (
-        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">' +
           '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Province</div><div style="color:var(--sand)">' + (p.province||'Not set') + '</div></div>' +
           '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Experience</div><div style="color:' + (expColors[p.experience]||'var(--sand)') + '">' + (p.experience||'Not set') + '</div></div>' +
           '<div style="background:rgba(0,0,0,0.2);border-radius:4px;padding:14px"><div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--khaki);margin-bottom:4px">Phone</div><div style="color:var(--sand)">' + (p.phone||'Not set') + '</div></div>' +
