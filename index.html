@@ -447,6 +447,53 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .ftab:hover{border-color:var(--amber);color:var(--gold)}
 .ftab.on{background:rgba(201,125,26,0.12);border-color:var(--amber);color:var(--gold)}
 
+
+/* ══ MARKETPLACE v3 — LIVE LISTINGS ══ */
+.mkt-filter-bar{display:flex;align-items:center;gap:8px;padding:12px 20px;background:rgba(10,7,2,0.97);border-bottom:1px solid rgba(176,152,112,0.08);position:sticky;top:64px;z-index:300;flex-wrap:wrap}
+.mkt-search-new{flex:1;min-width:160px;background:rgba(42,28,13,0.7);border:1px solid rgba(176,152,112,0.15);border-radius:3px;padding:9px 14px;color:var(--bone);font-family:'Barlow',sans-serif;font-size:13px;outline:none}
+.mkt-search-new::placeholder{color:rgba(176,152,112,0.35)}
+.mkt-search-new:focus{border-color:var(--amber)}
+.mkt-fsel{background:rgba(42,28,13,0.7);border:1px solid rgba(176,152,112,0.15);border-radius:3px;padding:8px 10px;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;outline:none;cursor:pointer}
+.mkt-fsel:focus{border-color:var(--amber)}
+.mkt-post-btn{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:9px 20px;border-radius:3px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background 0.2s}
+.mkt-post-btn:hover{background:var(--gold)}
+.mkt-listing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;padding:20px}
+.mkt-listing-card{background:var(--bark2);border:1px solid rgba(176,152,112,0.1);border-radius:6px;overflow:hidden;cursor:pointer;transition:all 0.2s;position:relative}
+.mkt-listing-card:hover{transform:translateY(-2px);border-color:rgba(201,125,26,0.3);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.mkt-listing-thumb{width:100%;aspect-ratio:1;background:linear-gradient(135deg,rgba(30,20,9,0.95),rgba(61,82,32,0.3));display:flex;align-items:center;justify-content:center;font-size:52px;overflow:hidden;position:relative}
+.mkt-listing-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mkt-listing-body{padding:10px 12px 12px}
+.mkt-listing-price{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:4px}
+.mkt-listing-title{font-size:13px;font-weight:500;color:var(--bone);line-height:1.35;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mkt-listing-meta{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--khaki)}
+.mkt-listing-cond{display:inline-block;padding:2px 6px;border-radius:2px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-left:4px}
+.mkt-listing-cond.new-item{background:rgba(90,112,48,0.25);color:#8fba50}
+.mkt-listing-cond.used-item{background:rgba(122,100,72,0.2);color:var(--sand)}
+.mkt-mine-badge{position:absolute;top:8px;right:8px;background:rgba(201,125,26,0.9);color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:2px}
+/* Sell modal image preview */
+.sell-img-preview{width:100%;height:160px;background:rgba(18,13,6,0.6);border:2px dashed rgba(176,152,112,0.2);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color 0.2s;flex-direction:column;gap:8px}
+.sell-img-preview:hover{border-color:rgba(201,125,26,0.5)}
+.sell-img-preview img.prev-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Detail overlay */
+.mkt-detail-thumb{width:100%;max-height:340px;background:linear-gradient(135deg,rgba(18,13,6,0.95),rgba(42,28,13,0.9));display:flex;align-items:center;justify-content:center;font-size:96px;overflow:hidden;min-height:220px}
+.mkt-detail-thumb img{width:100%;max-height:340px;object-fit:cover}
+.mkt-tabs{display:flex;gap:0;border-bottom:1px solid rgba(176,152,112,0.1);margin-bottom:0;padding:0 20px}
+.mkt-tab{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:12px 16px;border:none;background:none;color:var(--khaki);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s}
+.mkt-tab.on{color:var(--gold);border-bottom-color:var(--amber)}
+@media(max-width:768px){
+  .mkt-filter-bar{top:64px;gap:6px;padding:8px 12px}
+  .mkt-search-new{min-width:100%;order:-1;flex:none}
+  .mkt-listing-grid{grid-template-columns:repeat(2,1fr);gap:8px;padding:10px}
+}
+@media(max-width:380px){
+  .mkt-listing-grid{grid-template-columns:1fr 1fr;gap:6px;padding:8px}
+  .mkt-listing-price{font-size:17px}
+}
+
+.btn-mkt-enq{width:100%;font-family:Barlow Condensed,sans-serif;font-size:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:15px;border-radius:2px;cursor:pointer;transition:background 0.2s}
+.btn-mkt-enq:hover{background:var(--gold)}
+.btn-mkt-sold{font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(90,112,48,0.18);border:1px solid rgba(90,112,48,0.4);color:#8fba50;padding:10px 20px;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.btn-mkt-del{font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(122,24,24,0.18);border:1px solid rgba(122,24,24,0.35);color:#d06060;padding:10px 20px;border-radius:2px;cursor:pointer;transition:all 0.2s}
 #mob-btn{display:none}
 #mob-menu{display:none}
 
@@ -580,6 +627,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   .nav-center{display:none!important}
   .nav-logo img{height:48px}
   .nav-right .btn-outline-sm{display:none}
+  .nav-list-btn{display:none!important}
   #mob-btn{display:flex!important;align-items:center;justify-content:center}
 
   .hero{min-height:100svh}
@@ -1368,7 +1416,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .mkt-sidebar-item:hover{color:var(--ivory);background:rgba(201,125,26,0.06);border-left-color:rgba(201,125,26,0.3)}
 .mkt-sidebar-item.on{color:var(--gold);background:rgba(201,125,26,0.1);border-left-color:var(--amber)}
 .mkt-sidebar-item .si-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
-.mkt-sidebar-sub{padding-left:36px}
+.mkt-sidebar-sub{padding-left:36px;width:100%}
 .mkt-sidebar-sub .mkt-sidebar-item{font-size:12px;font-weight:500;padding:7px 20px 7px 0;color:rgba(237,224,204,0.4)}
 .mkt-sidebar-sub .mkt-sidebar-item:hover{color:var(--sand)}
 .mkt-sidebar-sub .mkt-sidebar-item.on{color:var(--amber)}
@@ -1382,7 +1430,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .mkt-search-input:focus{border-color:rgba(201,125,26,0.4)}
 .mkt-search-input::placeholder{color:rgba(176,152,112,0.35)}
 .mkt-filters-row{display:flex;gap:8px;flex-wrap:wrap}
-@media(max-width:900px){.mkt-layout{grid-template-columns:1fr}.mkt-sidebar{position:relative;height:auto;display:flex;flex-wrap:wrap;gap:4px;padding:12px;border-right:none;border-bottom:1px solid rgba(176,152,112,0.08)}.mkt-sidebar-item{padding:7px 12px;border-radius:20px;border-left:none!important;font-size:11px}.mkt-sidebar-item.on{background:rgba(201,125,26,0.15)}.mkt-sidebar-section,.mkt-sidebar-label{display:none}.mkt-sidebar-sub{padding-left:0}.mkt-sidebar-chevron{display:none}}
+@media(max-width:900px){.mkt-layout{grid-template-columns:1fr}.mkt-sidebar-sub{width:100%!important;flex-basis:100%}.mkt-sidebar{position:relative;height:auto;display:flex;flex-wrap:wrap;gap:4px;padding:12px;border-right:none;border-bottom:1px solid rgba(176,152,112,0.08);align-items:flex-start}.mkt-sidebar-item{padding:7px 12px;border-radius:20px;border-left:none!important;font-size:11px}.mkt-sidebar-item.on{background:rgba(201,125,26,0.15)}.mkt-sidebar-section,.mkt-sidebar-label{display:none}.mkt-sidebar-sub{padding-left:0}.mkt-sidebar-chevron{display:none}}
 
 </style>
 <body>
@@ -1405,24 +1453,26 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button id="nav-login-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="openLoginModal()" style="border-color:rgba(176,152,112,0.4);color:var(--sand)">Login</button>
     <button id="nav-profile-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="gp('profile')" style="display:none;border-color:rgba(201,125,26,0.4);color:var(--amber)">Profile</button>
     <button id="nav-logout-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="authLogout()" style="display:none;border-color:rgba(176,152,112,0.3);color:var(--khaki)">Logout</button>
-    <button class="btn-sm btn-amber-sm" onclick="gp('list')">List Your Farm</button>
-    <button id="mob-btn" onclick="toggleMobileMenu()" style="display:none;background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:36px;height:36px;border-radius:2px;font-size:18px;cursor:pointer">☰</button>
-  </div>
-  <!-- MOBILE MENU -->
-  <div id="mob-menu" style="display:none;position:fixed;top:72px;left:0;right:0;bottom:0;overflow-y:auto;background:rgba(8,5,2,1);border-bottom:1px solid rgba(201,125,26,0.2);z-index:799;padding:16px;flex-direction:column;gap:4px">
-    <button onclick="gp('home')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Home</button>
-    <button onclick="gp('provinces')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Farms</button>
-    <button onclick="gp('marketplace')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
-    <button onclick="gp('community')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
-    <button onclick="gp('merch')" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Merchandise</button>
-    <button onclick="gp('contact')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact</button>
-    <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
-    <button id="mob-login-btn" onclick="openLoginModal()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Login</button>
-    <button id="mob-profile-btn" onclick="gp('profile')" style="display:none;background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Profile</button>
-    <button id="mob-logout-btn" onclick="authLogout()" style="display:none;background:none;border:none;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Logout</button>
-    <button onclick="gp('list')" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm</button>
+    <button id="nav-install-btn" onclick="installApp()" style="display:none;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.4);color:var(--amber);padding:6px 12px;border-radius:2px;cursor:pointer;align-items:center;gap:6px">⬇ Install</button>
+    <button class="btn-sm btn-amber-sm nav-list-btn" onclick="gp('list')">List Your Farm</button>
+    <button id="mob-btn" onclick="toggleMobileMenu()" style="background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:40px;height:40px;border-radius:2px;font-size:20px;cursor:pointer;touch-action:manipulation">☰</button>
   </div>
 </nav>
+<!-- MOBILE MENU — must be outside <nav> to avoid iOS backdrop-filter containing-block bug -->
+<div id="mob-menu" style="display:none;position:fixed;top:64px;left:0;right:0;bottom:0;overflow-y:auto;background:rgba(8,5,2,1);border-bottom:1px solid rgba(201,125,26,0.2);z-index:799;padding:16px;flex-direction:column;gap:4px">
+  <button onclick="gp('home')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Home</button>
+  <button onclick="gp('provinces')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Farms</button>
+  <button onclick="gp('marketplace')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
+  <button onclick="gp('community')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
+  <button onclick="gp('merch')" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Merchandise</button>
+  <button onclick="gp('contact')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact</button>
+  <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
+  <button id="mob-login-btn" onclick="openLoginModal()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Login</button>
+  <button id="mob-profile-btn" onclick="gp('profile')" style="display:none;background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Profile</button>
+  <button id="mob-logout-btn" onclick="authLogout()" style="display:none;background:none;border:none;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Logout</button>
+  <button onclick="gp('list')" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm</button>
+  <button id="mob-install-btn" onclick="installApp()" style="display:none;background:none;border:1px solid rgba(201,125,26,0.3);color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:4px">⬇ Install App</button>
+</div>
 
 <!-- ══════════ PAGE: HOME ══════════ -->
 <div class="page active" id="page-home">
@@ -1671,6 +1721,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- ══════════ PAGE: MARKETPLACE ══════════ -->
 <div class="page" id="page-marketplace">
+
   <!-- HERO -->
   <div class="mkt-hero">
     <div class="mkt-hero-bg"></div>
@@ -1678,104 +1729,67 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
       <div class="mkt-hero-left">
         <div class="mkt-hero-kicker">🇿🇦 South Africa's Hunting Marketplace</div>
         <h1 class="mkt-hero-h1">Buy &amp; Sell<br><em>Hunting Gear</em></h1>
-        <p class="mkt-hero-sub">Optics, rifles, clothing and equipment — bought and sold by verified South African hunters.</p>
+        <p class="mkt-hero-sub">Optics, firearms, clothing &amp; equipment — listed directly by South African hunters. All buyer enquiries go through WildHunt SA.</p>
         <div class="mkt-hero-btns">
-          <button class="mkt-btn-primary" onclick="document.getElementById('mkt-layout').scrollIntoView({behavior:'smooth'})">Browse Gear <span>→</span></button>
-          <button class="mkt-btn-secondary" onclick="openOverlay('sellModal')">Sell Your Gear</button>
+          <button class="mkt-btn-primary" onclick="openSellModal()">+ Post a Free Ad</button>
+          <button class="mkt-btn-secondary" onclick="document.getElementById('mkt-body').scrollIntoView({behavior:'smooth'})">Browse Listings ↓</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SIDEBAR LAYOUT -->
-  <div class="mkt-layout" id="mkt-layout">
+  <!-- VIEW TABS: Gear / Services -->
+  <div class="mkt-tabs" id="mkt-view-tabs">
+    <button class="mkt-tab on" id="mkt-tab-gear" onclick="switchMktView('gear')">🛒 Gear &amp; Equipment</button>
+    <button class="mkt-tab" id="mkt-tab-svc" onclick="switchMktView('services')">🛠️ Hunting Services</button>
+  </div>
 
-    <!-- LEFT SIDEBAR -->
-    <nav class="mkt-sidebar">
-      <div class="mkt-sidebar-section">
-        <div class="mkt-sidebar-label">Browse</div>
-        <button class="mkt-sidebar-item on" onclick="mktCat(this,'all')"><span class="si-icon">🔭</span>All Gear</button>
-      </div>
-      <div class="mkt-sidebar-section">
-        <div class="mkt-sidebar-label">Categories</div>
-        <button class="mkt-sidebar-item" onclick="toggleMktSidebarCat(this,'dd-optics','optics')"><span class="si-icon">🔭</span>Optics<span class="mkt-sidebar-chevron">›</span></button>
-        <div class="mkt-sidebar-sub" id="dd-optics" style="display:none">
-          <button class="mkt-sidebar-item" onclick="mktSubCat('optics','rifle-scopes')">Rifle Scopes</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('optics','binoculars')">Binoculars</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('optics','rangefinders')">Rangefinders</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('optics','thermal')">Thermal</button>
-        </div>
-        <button class="mkt-sidebar-item" onclick="toggleMktSidebarCat(this,'dd-firearms','guns')"><span class="si-icon">🎯</span>Firearms<span class="mkt-sidebar-chevron">›</span></button>
-        <div class="mkt-sidebar-sub" id="dd-firearms" style="display:none">
-          <button class="mkt-sidebar-item" onclick="mktSubCat('guns','rifles')">Rifles</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('guns','shotguns')">Shotguns</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('guns','handguns')">Handguns</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('guns','barrels')">Barrels &amp; Parts</button>
-        </div>
-        <button class="mkt-sidebar-item" onclick="toggleMktSidebarCat(this,'dd-clothing','clothing')"><span class="si-icon">🧥</span>Clothing<span class="mkt-sidebar-chevron">›</span></button>
-        <div class="mkt-sidebar-sub" id="dd-clothing" style="display:none">
-          <button class="mkt-sidebar-item" onclick="mktSubCat('clothing','jackets')">Jackets</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('clothing','boots')">Boots</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('clothing','trousers')">Trousers</button>
-          <button class="mkt-sidebar-item" onclick="mktSubCat('clothing','hats')">Hats &amp; Caps</button>
-        </div>
-        <button class="mkt-sidebar-item" onclick="mktCat(this,'bows')"><span class="si-icon">🏹</span>Bows</button>
-        <button class="mkt-sidebar-item" onclick="mktCat(this,'knives')"><span class="si-icon">🔪</span>Knives</button>
-        <button class="mkt-sidebar-item" onclick="mktCat(this,'gear')"><span class="si-icon">🎒</span>Gear &amp; Equipment</button>
-        <button class="mkt-sidebar-item" onclick="mktCat(this,'accessories')"><span class="si-icon">⚙️</span>Accessories</button>
-      </div>
-      <div class="mkt-sidebar-section">
-        <div class="mkt-sidebar-label">Services</div>
-        <button class="mkt-sidebar-item" onclick="mktShowServices(this)"><span class="si-icon">🛠️</span>Hunting Services</button>
-      </div>
-    </nav>
+  <!-- FILTER BAR (gear only) -->
+  <div class="mkt-filter-bar" id="mkt-filter-bar">
+    <input type="text" class="mkt-search-new" id="mktq" placeholder="Search listings..." oninput="loadMktListings()">
+    <select class="mkt-fsel" id="mkt-f-cat" onchange="loadMktListings()">
+      <option value="">All Categories</option>
+      <option>Optics</option><option>Firearms</option><option>Ammunition &amp; Reloading</option>
+      <option>Bows</option><option>Knives</option><option>Clothing</option>
+      <option>Gear &amp; Equipment</option><option>Accessories</option><option>Other</option>
+    </select>
+    <select class="mkt-fsel" id="mkt-f-prov" onchange="loadMktListings()">
+      <option value="">All Provinces</option>
+      <option>Limpopo</option><option>Northern Cape</option><option>North West</option>
+      <option>Mpumalanga</option><option>Free State</option><option>KwaZulu-Natal</option>
+      <option>Eastern Cape</option><option>Gauteng</option><option>Western Cape</option>
+    </select>
+    <select class="mkt-fsel" id="mkt-f-cond" onchange="loadMktListings()">
+      <option value="">Any Condition</option>
+      <option>New</option><option>Used – Like New</option><option>Used – Good</option><option>Used – Fair</option>
+    </select>
+    <button class="mkt-post-btn" onclick="openSellModal()">+ Post Ad</button>
+  </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="mkt-main">
-      <!-- Search + filters bar -->
-      <div class="mkt-main-header">
-        <div class="mkt-search-wrap">
-          <input type="text" id="mkt-search" class="mkt-search-input" placeholder="Search gear, brands, calibres..." oninput="mktSearch()">
-        </div>
-        <div class="mkt-filters-row">
-          <select class="fselect" id="mkt-prov-filter" onchange="mktSearch()" style="padding:9px 12px;font-size:12px">
-            <option value="">All Provinces</option>
-            <option>Limpopo</option><option>Northern Cape</option><option>North West</option>
-            <option>Mpumalanga</option><option>Free State</option><option>KwaZulu-Natal</option>
-            <option>Eastern Cape</option><option>Gauteng</option><option>Western Cape</option>
-          </select>
-          <select class="fselect" id="mkt-cond-filter" onchange="mktSearch()" style="padding:9px 12px;font-size:12px">
-            <option value="">All Conditions</option>
-            <option>New</option><option>Used - Good</option><option>Used - Fair</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="mkt-listings"></div>
-      <div id="mkt-services-panel" style="display:none">
-        <div style="margin-bottom:20px"><div class="sec-label">Hunting Services</div><h2 class="mkt-section-title">Find Specialist Services</h2><p style="font-size:13px;font-weight:300;color:rgba(237,224,204,0.45);margin-top:4px">Taxidermy, reloading, leather work, barrel threading, butchery and more.</p></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
-          <button class="ftab on" onclick="svcFilter(this,'all')">All</button>
-          <button class="ftab" onclick="svcFilter(this,'reloading')">🔧 Reloading</button>
-          <button class="ftab" onclick="svcFilter(this,'taxidermy')">🦌 Taxidermy</button>
-          <button class="ftab" onclick="svcFilter(this,'leather')">🪣 Leather Work</button>
-          <button class="ftab" onclick="svcFilter(this,'barrel')">⚙️ Barrel Threading</button>
-          <button class="ftab" onclick="svcFilter(this,'butchery')">🔪 Butchery</button>
-          <button class="ftab" onclick="svcFilter(this,'transport')">🚗 Trophy Transport</button>
-          <button class="ftab" onclick="svcFilter(this,'photography')">📸 Photography</button>
-        </div>
-        <div class="svc-grid" id="svc-grid"></div>
-      </div>
-      <div id="mkt-merch-panel" style="display:none">
-        <div style="text-align:center;padding:40px 0 24px">
-          <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--ivory);margin-bottom:8px">WildHunt SA <em style="color:var(--gold);font-style:italic">Merchandise</em></h2>
-          <p style="font-size:14px;color:rgba(237,224,204,0.45);max-width:400px;margin:0 auto">Launching soon. <a href="mailto:info@wildhuntsa.com?subject=Merch%20Launch%20Notification" style="color:var(--amber)">Get notified →</a></p>
-        </div>
-        <div style="text-align:center;padding:24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--khaki)">View full range on the <a onclick="gp('merch')" style="color:var(--amber);cursor:pointer">Merchandise page →</a></div>
-      </div>
+  <!-- MAIN BODY -->
+  <div id="mkt-body">
+    <!-- GEAR LISTINGS panel -->
+    <div id="mkt-gear-panel">
+      <div id="mkt-listings" class="mkt-listing-grid"></div>
     </div>
 
+    <!-- SERVICES panel -->
+    <div id="mkt-svc-panel" style="display:none;padding:24px 20px">
+      <div style="margin-bottom:20px"><div class="sec-label">Hunting Services</div><h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--ivory)">Find Specialist Services</h2><p style="font-size:13px;color:rgba(237,224,204,0.45);margin-top:4px;font-weight:300">Taxidermy, reloading, butchery, trophy transport, photography and more.</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <button class="ftab on" onclick="svcFilter(this,'all')">All</button>
+        <button class="ftab" onclick="svcFilter(this,'reloading')">🔧 Reloading</button>
+        <button class="ftab" onclick="svcFilter(this,'taxidermy')">🦌 Taxidermy</button>
+        <button class="ftab" onclick="svcFilter(this,'leather')">🪣 Leather Work</button>
+        <button class="ftab" onclick="svcFilter(this,'barrel')">⚙️ Barrel Threading</button>
+        <button class="ftab" onclick="svcFilter(this,'butchery')">🔪 Butchery</button>
+        <button class="ftab" onclick="svcFilter(this,'transport')">🚗 Trophy Transport</button>
+        <button class="ftab" onclick="svcFilter(this,'photography')">📸 Photography</button>
+      </div>
+      <div class="svc-grid" id="svc-grid"></div>
+    </div>
   </div>
+
 </div><!-- end page-marketplace -->
 
 <!-- ══════════ PAGE: MERCH ══════════ -->
@@ -2288,14 +2302,101 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 
 <!-- SELL MODAL -->
 <div class="overlay" id="sellModal">
-  <div class="modal-box" style="max-width:520px">
-    <div class="bk-header"><div><div class="bk-title">🛒 List Your Item</div><div class="bk-sub">Reach thousands of hunters across SA · Free to list</div></div><button class="modal-close-btn" onclick="closeOverlay('sellModal')">✕</button></div>
-    <div class="bk-body">
-      <div class="fg"><div class="fi full"><label class="fl">Item Title *</label><input type="text" class="finput" id="sell-title" placeholder="e.g. Swarovski Z6i 2.5-15x56"></div><div class="fi"><label class="fl">Category</label><select class="fselect" id="sell-cat"><option>Optics</option><option>Clothing</option><option>Gear</option><option>Knives</option><option>Bows</option><option>Accessories</option><option>Firearms</option></select></div><div class="fi"><label class="fl">Condition</label><select class="fselect" id="sell-cond"><option>New</option><option>Used - Good</option><option>Used - Fair</option></select></div><div class="fi"><label class="fl">Asking Price (R)</label><input type="text" class="finput" id="sell-price" placeholder="e.g. 4500"></div><div class="fi"><label class="fl">Province</label><select class="fselect" id="sell-prov"><option>Limpopo</option><option>Northern Cape</option><option>North West</option><option>Mpumalanga</option><option>Free State</option><option>KwaZulu-Natal</option><option>Eastern Cape</option><option>Gauteng</option><option>Western Cape</option></select></div><div class="fi full"><label class="fl">Description</label><textarea class="ftextarea" id="sell-desc" placeholder="Brand, model, specs, reason for selling..."></textarea></div></div>
+  <div class="modal-box" style="max-width:560px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div><div class="bk-title">📷 Post a Free Ad</div><div class="bk-sub">Goes live immediately · Enquiries handled by WildHunt SA</div></div>
+      <button class="modal-close-btn" onclick="closeOverlay('sellModal')">✕</button>
     </div>
-    <div class="bk-footer"><button class="btn-sm btn-outline-sm" onclick="closeOverlay('sellModal')">Cancel</button><button class="btn-sm btn-amber-sm" onclick="showToast('Item submitted! Goes live after review. 🎉','ok');closeOverlay('sellModal')">List Item →</button></div>
+    <!-- Login prompt (shown when not logged in) -->
+    <div id="sell-login-prompt" style="display:none;text-align:center;padding:36px 24px">
+      <div style="font-size:44px;margin-bottom:14px">🔒</div>
+      <p style="color:var(--khaki);margin-bottom:18px;line-height:1.6">You need a free WildHunt SA account to post listings.</p>
+      <button class="btn-sm btn-amber-sm" onclick="closeOverlay('sellModal');openLoginModal()" style="margin-bottom:10px">Login →</button>
+      <p style="font-size:12px;color:var(--khaki)">No account? <a onclick="closeOverlay('sellModal');gp('register')" style="color:var(--amber);cursor:pointer">Register free →</a></p>
+    </div>
+    <!-- Form (shown when logged in) -->
+    <div id="sell-form-body">
+      <div class="bk-body">
+        <div class="fg">
+          <div class="fi full">
+            <label class="fl">Photo <span style="color:var(--khaki);font-weight:300">(recommended)</span></label>
+            <div class="sell-img-preview" id="sell-img-preview" onclick="document.getElementById('sell-img-input').click()">
+              <span style="font-size:32px">📷</span>
+              <span id="sell-img-label-txt" style="font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--khaki);letter-spacing:0.5px">Tap to add a photo from your device</span>
+            </div>
+            <input type="file" id="sell-img-input" accept="image/*" style="display:none" onchange="previewSellImage(this)">
+          </div>
+          <div class="fi full"><label class="fl">Title *</label><input type="text" class="finput" id="sell-title" placeholder="e.g. Swarovski Z6i 2.5-15x56 BT"></div>
+          <div class="fi"><label class="fl">Category *</label>
+            <select class="fselect" id="sell-cat">
+              <option value="">Select...</option>
+              <option>Optics</option><option>Firearms</option><option>Ammunition &amp; Reloading</option>
+              <option>Bows</option><option>Knives</option><option>Clothing</option>
+              <option>Gear &amp; Equipment</option><option>Accessories</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fi"><label class="fl">Condition *</label>
+            <select class="fselect" id="sell-cond">
+              <option value="">Select...</option>
+              <option>New</option><option>Used – Like New</option><option>Used – Good</option><option>Used – Fair</option>
+            </select>
+          </div>
+          <div class="fi"><label class="fl">Asking Price (R) *</label><input type="number" class="finput" id="sell-price" placeholder="e.g. 4500" min="1"></div>
+          <div class="fi"><label class="fl">Province *</label>
+            <select class="fselect" id="sell-prov">
+              <option value="">Select...</option>
+              <option>Limpopo</option><option>Northern Cape</option><option>North West</option>
+              <option>Mpumalanga</option><option>Free State</option><option>KwaZulu-Natal</option>
+              <option>Eastern Cape</option><option>Gauteng</option><option>Western Cape</option>
+            </select>
+          </div>
+          <div class="fi full"><label class="fl">Description *</label><textarea class="ftextarea" id="sell-desc" placeholder="Brand, model, specs, accessories included, reason for selling, any flaws..." style="min-height:88px"></textarea></div>
+          <div class="fi"><label class="fl">Your Name *</label><input type="text" class="finput" id="sell-name" placeholder="Full name"></div>
+          <div class="fi"><label class="fl">Phone *</label><input type="text" class="finput" id="sell-phone" placeholder="e.g. 082 000 0000"></div>
+          <div class="fi full" style="background:rgba(201,125,26,0.07);border:1px solid rgba(201,125,26,0.18);border-radius:3px;padding:12px 14px">
+            <div style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.65">🔒 <strong style="color:var(--sand)">Your contact info is private.</strong> Buyers enquire through WildHunt SA — we vet them and connect you directly.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-footer">
+        <button class="btn-sm btn-outline-sm" onclick="closeOverlay('sellModal')">Cancel</button>
+        <button class="btn-sm btn-amber-sm" id="sell-submit-btn" onclick="submitSellListing()">Post Ad →</button>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- LISTING DETAIL overlay -->
+<div class="overlay" id="listingDetailOverlay">
+  <div class="modal-box" style="max-width:640px;max-height:92vh;overflow-y:auto;padding:0">
+    <div id="listing-detail-inner"></div>
+  </div>
+</div>
+
+<!-- BUYER ENQUIRY overlay -->
+<div class="overlay" id="mktEnquiryOverlay">
+  <div class="modal-box" style="max-width:480px;max-height:92vh;overflow-y:auto">
+    <div class="bk-header">
+      <div><div class="bk-title" id="mkt-enq-title">Enquire About Item</div><div class="bk-sub">Your enquiry goes through WildHunt SA</div></div>
+      <button class="modal-close-btn" onclick="closeOverlay('mktEnquiryOverlay')">✕</button>
+    </div>
+    <div class="bk-body"><div class="fg">
+      <div class="fi full"><label class="fl">Your Name *</label><input type="text" class="finput" id="enq-name" placeholder="Full name"></div>
+      <div class="fi full"><label class="fl">Phone *</label><input type="text" class="finput" id="enq-phone" placeholder="082 000 0000"></div>
+      <div class="fi full"><label class="fl">Email *</label><input type="email" class="finput" id="enq-email" placeholder="your@email.com"></div>
+      <div class="fi full"><label class="fl">Message</label><textarea class="ftextarea" id="enq-message" placeholder="I'm interested in this item..."></textarea></div>
+      <div class="fi full" style="background:rgba(201,125,26,0.07);border:1px solid rgba(201,125,26,0.18);border-radius:3px;padding:12px 14px">
+        <div style="font-size:12px;color:rgba(237,224,204,0.5);line-height:1.65">📬 WildHunt SA will receive your enquiry, verify it and connect you with the seller.</div>
+      </div>
+    </div></div>
+    <div class="bk-footer">
+      <button class="btn-sm btn-outline-sm" onclick="closeOverlay('mktEnquiryOverlay')">Cancel</button>
+      <button class="btn-sm btn-amber-sm" onclick="submitMktEnquiry()">Send Enquiry →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FARM MODAL (quick view) -->
 
 <!-- FARM MODAL (quick view) -->
 <div class="overlay" id="farmModal">
@@ -2647,7 +2748,7 @@ function gp(id){
   const mm=document.getElementById('mob-menu');if(mm)mm.style.display='none';
   if(id==='home')renderFarms(farms.slice(0,3),'home-farms');
   if(id==='listings'||id==='provinces')renderFarms(farms,'listings-farms');
-  if(id==='marketplace')setTimeout(function(){mktSearch();},50);
+  if(id==='marketplace')setTimeout(function(){loadMktListings();},50);
   if(id==='farm-detail'){}
   if(id==='profile'){setTimeout(renderProfilePage,50);}
   if(id==='merch'){}
@@ -2806,59 +2907,312 @@ function selectProvince(name,count,species){
 }
 
 // ════ MARKETPLACE ════
-const products = [
-  {id:1,title:"Swarovski Z6i 2.5-15x56 BT Rifle Scope",cat:"optics",subcat:"rifle-scopes",cond:"Used - Good",price:"R 18,500",seller:"JaagBoer_Limpopo",rating:"4.9",loc:"Limpopo",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Excellent condition Swarovski Z6i with BT illumination. Includes original box, caps and 30mm rings.",details:{Brand:"Swarovski",Model:"Z6i 2.5-15x56",Tube:"30mm",Condition:"Used - Good"}},
-  {id:2,title:"Deerhunter Approach Jacket - Realtree Camo Size L",cat:"clothing",subcat:"jackets",cond:"New",price:"R 1,890",seller:"BushveldKing",rating:"5.0",loc:"North West",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Brand new Deerhunter Approach jacket in Realtree Edge camo.",details:{Brand:"Deerhunter",Size:"Large",Condition:"New"}},
-  {id:3,title:"Pelican 1750 Long Rifle Case",cat:"gear",subcat:"rifle-cases",cond:"Used - Fair",price:"R 2,200",seller:"HunterSA_Gauteng",rating:"4.7",loc:"Gauteng",img:"https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Impala.png",desc:"Pelican 1750 long case with custom foam. Watertight, crushproof.",details:{Brand:"Pelican",Model:"1750",Condition:"Used - Fair"}},
-  {id:4,title:"Garmin inReach Mini 2 Satellite Communicator",cat:"gear",subcat:"gps",cond:"New",price:"R 8,999",seller:"WildernessGear",rating:"5.0",loc:"Western Cape",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Brand new Garmin inReach Mini 2. Two-way satellite messaging, SOS, GPS tracking.",details:{Brand:"Garmin",Model:"inReach Mini 2",Condition:"New"}},
-  {id:5,title:"Meindl Bhutan MFS Hunting Boots - Size 44",cat:"clothing",subcat:"boots",cond:"Used - Good",price:"R 3,100",seller:"Rooikat_Hunter",rating:"4.6",loc:"Eastern Cape",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Meindl Bhutan MFS Gore-Tex boots, size 44. Used for 2 seasons.",details:{Brand:"Meindl",Model:"Bhutan MFS",Condition:"Used - Good"}},
-  {id:6,title:"Kestrel 5700 Elite Weather Meter",cat:"accessories",subcat:"shooting-acc",cond:"New",price:"R 7,200",seller:"LongRange_SA",rating:"4.9",loc:"Northern Cape",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"New Kestrel 5700 Elite with Applied Ballistics.",details:{Brand:"Kestrel",Model:"5700 Elite",Condition:"New"}},
-  {id:7,title:"Leatherman Signal Multi-Tool - Coyote Tan",cat:"knives",subcat:"multi-tools",cond:"New",price:"R 1,450",seller:"BushveldKing",rating:"5.0",loc:"Limpopo",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Brand new Leatherman Signal, 19 tools including firestarter.",details:{Brand:"Leatherman",Model:"Signal",Condition:"New"}},
-  {id:8,title:"Mathews Phase4 33 Compound Bow - 70lb",cat:"bows",subcat:"compound",cond:"Used - Good",price:"R 22,000",seller:"BowHunterZA",rating:"4.8",loc:"Mpumalanga",img:"https://https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@mainImpala.png",desc:"Mathews Phase4 33, 70lb draw. Includes Trophy Ridge sight.",details:{Brand:"Mathews",Model:"Phase4 33",Condition:"Used - Good"}}
-];
+// ════ MARKETPLACE v3 ════
+var mktCurrentListing = null;
 
-let mktFilter='all',mktSubFilter='';
-function mktCat(btn,cat){
-  document.querySelectorAll('.mkt-cat').forEach(t=>t.classList.remove('on'));
-  if(btn)btn.classList.add('on');
-  mktFilter=cat;mktSubFilter='';
-  const sp=document.getElementById('mkt-services-panel');
-  const mp=document.getElementById('mkt-merch-panel');
-  const mb=document.getElementById('mkt-listings');
-  if(sp)sp.style.display='none';if(mp)mp.style.display='none';if(mb)mb.style.display='';
-  mktSearch();
-}
-function mktShowServices(el){
-  document.querySelectorAll('.mkt-cat').forEach(t=>t.classList.remove('on'));
-  if(el)el.classList.add('on');
-  const sp=document.getElementById('mkt-services-panel');
-  const mp=document.getElementById('mkt-merch-panel');
-  const mb=document.getElementById('mkt-listings');
-  if(sp)sp.style.display='block';if(mp)mp.style.display='none';if(mb)mb.style.display='none';
-  renderServices('all');
-}
-function mktSub(cat,sub){mktFilter=cat;mktSubFilter=sub;mktSearch();}
-function closeMktDDs(){document.querySelectorAll('.mkt-sub-dd').forEach(d=>d.classList.remove('open'));}
-function toggleMktDD(id,btn,cat){const dd=document.getElementById(id);if(!dd)return;const wasOpen=dd.classList.contains('open');closeMktDDs();if(!wasOpen){dd.classList.add('open');document.querySelectorAll('.mkt-cat').forEach(t=>t.classList.remove('on'));if(btn)btn.classList.add('on');mktFilter=cat;mktSubFilter='';const sp=document.getElementById('mkt-services-panel');const mp=document.getElementById('mkt-merch-panel');const mb=document.getElementById('mkt-listings');if(sp)sp.style.display='none';if(mp)mp.style.display='none';if(mb)mb.style.display='';mktSearch();}}
-document.addEventListener('click',function(e){if(!e.target.closest('.mkt-cat-dd-wrap')&&!e.target.closest('.mkt-sub-dd'))closeMktDDs();});
-function mktSearch(){
-  const q=(document.getElementById('mkt-search')?.value||'').toLowerCase();
-  const prov=document.getElementById('mkt-prov-filter')?.value||'';
-  const cond=document.getElementById('mkt-cond-filter')?.value||'';
-  let filtered=products;
-  if(mktFilter!=='all')filtered=filtered.filter(p=>p.cat===mktFilter);
-  if(mktSubFilter)filtered=filtered.filter(p=>p.subcat===mktSubFilter);
-  if(q)filtered=filtered.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q));
-  if(prov)filtered=filtered.filter(p=>p.loc===prov);
-  if(cond)filtered=filtered.filter(p=>p.cond===cond);
-  const c=document.getElementById('mkt-listings');
-  if(!c)return;
-  if(!filtered.length){c.innerHTML='<div style="text-align:center;padding:60px 20px;color:var(--khaki)"><div style="font-size:40px;margin-bottom:12px">🔍</div><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:16px;font-weight:700;color:var(--ivory)">No items found</div><div style="font-size:13px;margin-top:6px">Try adjusting your search or filters</div></div>';return;}
-  c.innerHTML=`<div class="mkt-grid">${filtered.map(p=>`<div class="mkt-card" onclick="openProduct(${p.id})"><div class="mkt-card-img"><img src="${p.img}" alt="${p.title}" loading="lazy"></div><div class="mkt-card-body"><div class="mkt-card-cond ${p.cond==='New'?'new':''}">${p.cond}</div><div class="mkt-card-title">${p.title}</div><div class="mkt-card-meta"><span class="mkt-card-loc">📍 ${p.loc}</span><span>★ ${p.rating}</span></div><div class="mkt-card-footer"><div class="mkt-card-price">${p.price}</div><button class="mkt-card-btn" onclick="event.stopPropagation();openProduct(${p.id})">View →</button></div></div></div>`).join('')}</div>`;
-}
-function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;showToast(p.title+' · '+p.price);}
+function escHtml(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function getTimeAgo(ts){if(!ts)return'';var diff=Math.floor((Date.now()-new Date(ts))/1000);if(diff<60)return'Just now';if(diff<3600)return Math.floor(diff/60)+'m ago';if(diff<86400)return Math.floor(diff/3600)+'h ago';if(diff<604800)return Math.floor(diff/86400)+'d ago';return Math.floor(diff/604800)+'w ago';}
 
-// ════ SERVICES ════
+var mktCatEmoji={Optics:'🔭',Firearms:'🎯','Ammunition & Reloading':'🔧',Bows:'🏹',Knives:'🔪',Clothing:'🧥','Gear & Equipment':'🎒',Accessories:'⚙️',Other:'📦'};
+
+function switchMktView(view){
+  var gearPanel=document.getElementById('mkt-gear-panel');
+  var svcPanel=document.getElementById('mkt-svc-panel');
+  var filterBar=document.getElementById('mkt-filter-bar');
+  var tabGear=document.getElementById('mkt-tab-gear');
+  var tabSvc=document.getElementById('mkt-tab-svc');
+  if(view==='gear'){
+    if(gearPanel)gearPanel.style.display='';
+    if(svcPanel)svcPanel.style.display='none';
+    if(filterBar)filterBar.style.display='flex';
+    if(tabGear)tabGear.classList.add('on');
+    if(tabSvc)tabSvc.classList.remove('on');
+  } else {
+    if(gearPanel)gearPanel.style.display='none';
+    if(svcPanel)svcPanel.style.display='block';
+    if(filterBar)filterBar.style.display='none';
+    if(tabGear)tabGear.classList.remove('on');
+    if(tabSvc)tabSvc.classList.add('on');
+    renderServices('all');
+  }
+}
+
+async function loadMktListings(){
+  var c=document.getElementById('mkt-listings');if(!c)return;
+  c.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--khaki)"><div style="font-size:28px;margin-bottom:8px">⏳</div><div style="font-family:Barlow Condensed,sans-serif">Loading listings...</div></div>';
+  var sc=await getSupaClient();
+  var q=(document.getElementById('mktq')?.value||'').trim().toLowerCase();
+  var cat=document.getElementById('mkt-f-cat')?.value||'';
+  var prov=document.getElementById('mkt-f-prov')?.value||'';
+  var cond=document.getElementById('mkt-f-cond')?.value||'';
+  try{
+    var query=sc.from('marketplace_listings').select('*').eq('status','active').order('created_at',{ascending:false});
+    if(cat)query=query.eq('category',cat);
+    if(prov)query=query.eq('province',prov);
+    if(cond)query=query.eq('condition',cond);
+    var {data,error}=await query;
+    if(error){
+      // Don't throw the Supabase error object — it contains a Headers instance
+      // that triggers a DataCloneError when postMessage tries to serialize it.
+      var code=error.code||'';
+      var msg=error.message||error.details||'Unknown error';
+      console.warn('Marketplace query error ['+code+']: '+msg);
+      // Table not created yet — just show empty state
+      if(code==='42P01'||msg.indexOf('does not exist')!==-1){
+        renderMktListings([]);
+      } else {
+        c.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px 20px"><div style="font-size:32px;margin-bottom:10px">⚠️</div><div style="font-family:Barlow Condensed,sans-serif;font-size:15px;color:var(--khaki)">Could not load listings.</div><div style="font-size:12px;color:rgba(176,152,112,0.4);margin-top:6px">'+escHtml(msg)+'</div></div>';
+      }
+      return;
+    }
+    var items=data||[];
+    if(q)items=items.filter(function(p){return(p.title||'').toLowerCase().includes(q)||(p.description||'').toLowerCase().includes(q);});
+    renderMktListings(items);
+  }catch(err){
+    var msg=err&&err.message?err.message:String(err);
+    console.error('mkt load error: '+msg);
+    c.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px 20px"><div style="font-size:32px;margin-bottom:10px">⚠️</div><div style="font-family:Barlow Condensed,sans-serif;font-size:15px;color:var(--khaki)">Could not load listings.</div><div style="font-size:12px;color:rgba(176,152,112,0.4);margin-top:6px">'+escHtml(msg)+'</div></div>';
+  }
+}
+
+// Listing lookup map — keyed by id, populated on render
+var mktListingMap = {};
+
+function renderMktListings(items){
+  var c=document.getElementById('mkt-listings');if(!c)return;
+  if(!items.length){c.innerHTML=renderMktEmpty();return;}
+  mktListingMap={};
+  items.forEach(function(p){ mktListingMap[p.id]=p; });
+  c.innerHTML=items.map(function(p){
+    var isNew=p.condition==='New';
+    var emoji=mktCatEmoji[p.category]||'\u{1F4E6}';
+    var mine=currentUser&&p.user_id===currentUser.id;
+    var imgHtml=p.image_url?'<img src="'+escHtml(p.image_url)+'" alt="'+escHtml(p.title)+'" loading="lazy" onerror="this.remove()">':'';
+    return '<div class="mkt-listing-card" data-lid="'+escHtml(p.id)+'">'+
+      '<div class="mkt-listing-thumb">'+imgHtml+'<span style="'+(p.image_url?'display:none':'')+'">'+emoji+'</span>'+
+      (mine?'<div class="mkt-mine-badge">Mine</div>':'')+
+      '</div>'+
+      '<div class="mkt-listing-body">'+
+      '<div class="mkt-listing-price">R '+Number(p.price).toLocaleString('en-ZA')+'</div>'+
+      '<div class="mkt-listing-title">'+escHtml(p.title)+'</div>'+
+      '<div class="mkt-listing-meta">\u{1F4CD} '+escHtml(p.province)+'<span class="mkt-listing-cond '+(isNew?'new-item':'used-item')+'">'+escHtml(p.condition)+'</span></div>'+
+      '<div style="font-size:10px;color:rgba(176,152,112,0.4);margin-top:4px">'+getTimeAgo(p.created_at)+'</div>'+
+      '</div></div>';
+  }).join('');
+  // Attach click handlers after DOM is built — no inline onclick quoting issues
+  c.querySelectorAll('.mkt-listing-card').forEach(function(card){
+    card.addEventListener('click', function(){ openMktListing(this.dataset.lid); });
+  });
+}
+
+function renderMktEmpty(){
+  return '<div style="grid-column:1/-1;text-align:center;padding:56px 20px 48px;max-width:500px;margin:0 auto">'+
+    '<div style="display:inline-flex;align-items:center;gap:8px;background:rgba(201,125,26,0.12);border:1px solid rgba(201,125,26,0.35);border-radius:20px;padding:6px 18px;font-family:Barlow Condensed,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:22px">🟢 Be the First</div>'+
+    '<h2 style="font-family:Playfair Display,serif;font-size:clamp(22px,3.5vw,34px);font-weight:900;color:var(--ivory);line-height:1.15;margin-bottom:10px">No listings yet.<br><em style="color:var(--gold);font-style:italic">Post the first one.</em></h2>'+
+    '<p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.7;max-width:380px;margin:0 auto 28px">Got hunting gear to sell? Your ad goes live instantly and reaches all hunters on WildHunt SA. Free to list.</p>'+
+    '<button onclick="openSellModal()" style="font-family:Barlow Condensed,sans-serif;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:14px 32px;border-radius:2px;cursor:pointer">+ Post a Free Ad</button>'+
+    '<p style="margin-top:12px;font-family:Barlow Condensed,sans-serif;font-size:11px;color:var(--khaki)">Free · Enquiries through WildHunt SA</p>'+
+  '</div>';
+}
+
+function openMktListing(id){
+  var p=mktListingMap[id];if(!p)return;
+  mktCurrentListing=p;
+  var inner=document.getElementById('listing-detail-inner');if(!inner)return;
+  var emoji=mktCatEmoji[p.category]||'\u{1F4E6}';
+  var mine=currentUser&&p.user_id===currentUser.id;
+  var isNew=p.condition==='New';
+  var condStyle=isNew?'background:rgba(90,112,48,0.25);color:#8fba50':'background:rgba(122,100,72,0.18);color:var(--sand)';
+  var sellerName=escHtml(p.seller_name||'WildHunt SA Member');
+  var actions=mine
+    ? `<div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button onclick="markListingSold(mktCurrentListing.id)" class="btn-mkt-sold">\u2713 Mark as Sold</button>
+        <button onclick="deleteListing(mktCurrentListing.id)" class="btn-mkt-del">\u{1F5D1} Delete Listing</button>
+       </div>`
+    : `<button onclick="openMktEnquiry()" class="btn-mkt-enq">Enquire Now \u2192</button>`;
+  inner.innerHTML = `
+    <div class="mkt-detail-thumb">
+      ${p.image_url ? `<img src="${escHtml(p.image_url)}" alt="${escHtml(p.title)}" onerror="this.remove()">` : ''}
+      <span ${p.image_url ? 'style="display:none"' : ''}>${emoji}</span>
+    </div>
+    <div style="padding:22px 26px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px">
+        <div style="font-family:Playfair Display,serif;font-size:21px;font-weight:700;color:var(--ivory);line-height:1.2">${escHtml(p.title)}</div>
+        <button onclick="closeOverlay('listingDetailOverlay')" style="background:none;border:none;color:var(--khaki);font-size:22px;cursor:pointer;flex-shrink:0;padding:0 0 0 8px;line-height:1">\u00d7</button>
+      </div>
+      <div style="font-family:Barlow Condensed,sans-serif;font-size:30px;font-weight:800;color:var(--gold);margin-bottom:14px">R ${Number(p.price).toLocaleString('en-ZA')}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+        <span style="font-family:Barlow Condensed,sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:rgba(122,100,72,0.22);color:var(--sand)">${escHtml(p.category)}</span>
+        <span style="font-family:Barlow Condensed,sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:2px;${condStyle}">${escHtml(p.condition)}</span>
+        <span style="font-family:Barlow Condensed,sans-serif;font-size:12px;color:var(--khaki)">\u{1F4CD} ${escHtml(p.province)}</span>
+        <span style="font-family:Barlow Condensed,sans-serif;font-size:11px;color:rgba(176,152,112,0.4)">${getTimeAgo(p.created_at)}</span>
+      </div>
+      <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.65);line-height:1.75;margin-bottom:20px;white-space:pre-line">${escHtml(p.description||'')}</p>
+      <div style="background:rgba(18,13,6,0.5);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:14px 16px;margin-bottom:20px">
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:4px">Seller</div>
+        <div style="font-size:14px;color:var(--sand)">${sellerName}</div>
+        <div style="font-size:11px;color:var(--khaki);margin-top:2px;font-family:Barlow Condensed,sans-serif">Contact handled through WildHunt SA</div>
+      </div>
+      ${actions}
+    </div>`;
+  openOverlay('listingDetailOverlay');
+}
+
+function openMktEnquiry(){
+  closeOverlay('listingDetailOverlay');
+  var p=mktCurrentListing;
+  var t=document.getElementById('mkt-enq-title');
+  if(t&&p)t.textContent='Enquire: '+p.title.substring(0,50)+(p.title.length>50?'…':'');
+  if(currentUser){
+    var em=document.getElementById('enq-email');if(em)em.value=currentUser.email;
+    if(currentHunterProfile){
+      var nm=document.getElementById('enq-name');if(nm)nm.value=currentHunterProfile.full_name||'';
+      var ph=document.getElementById('enq-phone');if(ph)ph.value=currentHunterProfile.phone||'';
+    }
+  }
+  openOverlay('mktEnquiryOverlay');
+}
+
+function submitMktEnquiry(){
+  var name=(document.getElementById('enq-name')?.value||'').trim();
+  var phone=(document.getElementById('enq-phone')?.value||'').trim();
+  var email=(document.getElementById('enq-email')?.value||'').trim();
+  var msg=(document.getElementById('enq-message')?.value||'').trim();
+  if(!name||!phone||!email){showToast('Please fill in your name, phone and email ⚠️','err');return;}
+  var p=mktCurrentListing;
+  var subject=encodeURIComponent('Marketplace Enquiry: '+(p?p.title:'listing'));
+  var title = p ? p.title : '';
+  var price = p ? 'R ' + Number(p.price).toLocaleString('en-ZA') : '';
+  var cat   = p ? p.category : '';
+  var prov  = p ? p.province : '';
+  var lid   = p ? p.id : '';
+  var body=encodeURIComponent(
+    'MARKETPLACE ENQUIRY -- WILDHUNT SA\n' +
+    '===================================\n\n' +
+    'LISTING\n-------\n' +
+    'Title:    ' + title + '\n' +
+    'Price:    ' + price + '\n' +
+    'Category: ' + cat + '\n' +
+    'Province: ' + prov + '\n' +
+    'ID:       ' + lid + '\n\n' +
+    'BUYER\n-----\n' +
+    'Name:  ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    'Email: ' + email + '\n' +
+    (msg ? '\nMessage:\n' + msg : '') +
+    '\n\n--- WildHunt SA Marketplace'
+  );
+  window.location.href='mailto:info@wildhuntsa.com?subject='+subject+'&body='+body;
+  closeOverlay('mktEnquiryOverlay');
+  showToast('Opening your email — send it to enquire! 📬','ok');
+}
+
+function openSellModal(){
+  var fp=document.getElementById('sell-login-prompt');
+  var fb=document.getElementById('sell-form-body');
+  if(!currentUser){
+    if(fp)fp.style.display='block';
+    if(fb)fb.style.display='none';
+  } else {
+    if(fp)fp.style.display='none';
+    if(fb)fb.style.display='block';
+    if(currentHunterProfile){
+      var nm=document.getElementById('sell-name');if(nm&&!nm.value)nm.value=currentHunterProfile.full_name||'';
+      var ph=document.getElementById('sell-phone');if(ph&&!ph.value)ph.value=currentHunterProfile.phone||'';
+    }
+  }
+  openOverlay('sellModal');
+}
+
+function previewSellImage(input){
+  if(!input.files||!input.files[0])return;
+  var preview=document.getElementById('sell-img-preview');
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var img=preview.querySelector('img.prev-img');
+    if(!img){img=document.createElement('img');img.className='prev-img';preview.appendChild(img);}
+    img.src=e.target.result;
+    var lbl=document.getElementById('sell-img-label-txt');
+    if(lbl)lbl.style.display='none';
+    var icon=preview.querySelector('span:not(#sell-img-label-txt)');
+    if(icon)icon.style.display='none';
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+async function submitSellListing(){
+  var title=(document.getElementById('sell-title')?.value||'').trim();
+  var cat=(document.getElementById('sell-cat')?.value||'').trim();
+  var cond=(document.getElementById('sell-cond')?.value||'').trim();
+  var price=(document.getElementById('sell-price')?.value||'').trim();
+  var prov=(document.getElementById('sell-prov')?.value||'').trim();
+  var desc=(document.getElementById('sell-desc')?.value||'').trim();
+  var name=(document.getElementById('sell-name')?.value||'').trim();
+  var phone=(document.getElementById('sell-phone')?.value||'').trim();
+  if(!title||!cat||!cond||!price||!prov||!desc||!name||!phone){
+    showToast('Please fill in all required fields ⚠️','err');return;
+  }
+  var btn=document.getElementById('sell-submit-btn');
+  if(btn){btn.textContent='Posting...';btn.disabled=true;}
+  try{
+    var sc=await getSupaClient();
+    var imageUrl=null;
+    var fileInput=document.getElementById('sell-img-input');
+    if(fileInput&&fileInput.files&&fileInput.files[0]){
+      var file=fileInput.files[0];
+      var ext=file.name.split('.').pop();
+      var fileName=currentUser.id+'_'+Date.now()+'.'+ext;
+      var {data:upd,error:upe}=await sc.storage.from('marketplace-images').upload(fileName,file,{cacheControl:'3600',upsert:false});
+      if(!upe&&upd){
+        var {data:ud}=sc.storage.from('marketplace-images').getPublicUrl(fileName);
+        imageUrl=ud.publicUrl;
+      }
+    }
+    var {error}=await sc.from('marketplace_listings').insert({
+      user_id:currentUser.id,
+      seller_name:name,
+      seller_email:currentUser.email,
+      seller_phone:phone,
+      title:title,category:cat,condition:cond,
+      price:parseInt(price),province:prov,
+      description:desc,image_url:imageUrl,status:'active'
+    });
+    if(error)throw error;
+    closeOverlay('sellModal');
+    showToast('🎉 Ad posted — visible to all hunters!','ok');
+    ['sell-title','sell-desc','sell-price'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+    ['sell-cat','sell-cond','sell-prov'].forEach(function(id){var el=document.getElementById(id);if(el)el.selectedIndex=0;});
+    var prev=document.getElementById('sell-img-preview');
+    if(prev){var pi=prev.querySelector('img.prev-img');if(pi)pi.remove();}
+    var lbl=document.getElementById('sell-img-label-txt');if(lbl)lbl.style.display='';
+    var ic=document.getElementById('sell-img-preview')?.querySelector('span:not(#sell-img-label-txt)');if(ic)ic.style.display='';
+    var fi=document.getElementById('sell-img-input');if(fi)fi.value='';
+    loadMktListings();
+  }catch(err){
+    console.error('post listing error',err);
+    showToast('Could not post listing — please try again ⚠️','err');
+  }
+  if(btn){btn.textContent='Post Ad →';btn.disabled=false;}
+}
+
+async function markListingSold(id){
+  if(!confirm('Mark this listing as sold?'))return;
+  var sc=await getSupaClient();
+  await sc.from('marketplace_listings').update({status:'sold'}).eq('id',id).eq('user_id',currentUser.id);
+  closeOverlay('listingDetailOverlay');
+  showToast('Listing marked as sold ✓','ok');
+  loadMktListings();
+}
+
+async function deleteListing(id){
+  if(!confirm('Delete this listing permanently?'))return;
+  var sc=await getSupaClient();
+  await sc.from('marketplace_listings').update({status:'deleted'}).eq('id',id).eq('user_id',currentUser.id);
+  closeOverlay('listingDetailOverlay');
+  showToast('Listing deleted.','ok');
+  loadMktListings();
+}
+
 const services=[
   {id:1,cat:'taxidermy',icon:'🦌',name:'Bushveld Trophy Studio',provider:'Kobus van Niekerk',province:'Limpopo',town:'Bela-Bela',rating:4.8,reviews:41,price:'R 1,200',unit:'/ shoulder mount',desc:'Full taxidermy studio. Kudu, buffalo, full-body mounts. 8–12 week delivery.',details:[{k:'Speciality',v:'Shoulder & full body'},{k:'Delivery',v:'8–12 weeks'},{k:'CITES',v:'Certified'}]},
   {id:2,cat:'reloading',icon:'🔧',name:'Precision Reloads SA',provider:'Fanie Botha',province:'Gauteng',town:'Pretoria',rating:4.9,reviews:28,price:'R 8.50',unit:'/ round',desc:'Custom ammunition reloading for all calibres. Bulk orders welcome.',details:[{k:'Calibres',v:'All common calibres'},{k:'Min Order',v:'100 rounds'},{k:'Turnaround',v:'7–10 days'}]},
@@ -2872,7 +3226,7 @@ function renderServices(cat){
   g.innerHTML=filtered.map(s=>`<div class="svc-card" onclick="openService(${s.id})"><div class="svc-card-head"><div class="svc-icon">${s.icon}</div><div><div class="svc-name">${s.name}</div><div class="svc-provider">${s.provider} · ${s.town}, ${s.province}</div></div></div><p class="svc-desc">${s.desc}</p><div class="svc-footer"><div class="svc-price">${s.price} <span>${s.unit}</span></div><button class="svc-btn" onclick="event.stopPropagation();openService(${s.id})">View →</button></div></div>`).join('');
 }
 function svcFilter(btn,cat){document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderServices(cat);}
-function openService(id){const s=services.find(x=>x.id===id);if(!s)return;const h=document.getElementById('svc-modal-header');const b=document.getElementById('svc-modal-body');if(h)h.innerHTML=`<div><div class="bk-title">${s.icon} ${s.name}</div><div class="bk-sub">${s.provider} · ${s.province}</div></div>`;if(b)b.innerHTML=`<p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:20px">${s.desc}</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">${s.details.map(d=>`<div style="background:var(--bark);border-radius:3px;padding:12px"><div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:4px">${d.k}</div><div style="font-size:13px;color:var(--bone)">${d.v}</div></div>`).join('')}</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:14px">${s.price} <span style="font-size:13px;color:var(--khaki)">${s.unit}</span></div><a href="mailto:info@wildhuntsa.com?subject=Service Enquiry: ${encodeURIComponent(s.name)}" style="display:block;width:100%;padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);color:var(--earth);text-align:center;text-decoration:none;border-radius:2px">Contact Provider →</a>`;openOverlay('serviceModal');}
+function openService(id){const s=services.find(x=>x.id===id);if(!s)return;const h=document.getElementById('svc-modal-header');const b=document.getElementById('svc-modal-body');if(h)h.innerHTML=`<div><div class="bk-title">${s.icon} ${s.name}</div><div class="bk-sub">${s.provider} · ${s.province}</div></div>`;if(b)b.innerHTML=`<p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:20px">${s.desc}</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">${s.details.map(d=>`<div style="background:var(--bark);border-radius:3px;padding:12px"><div style="font-family:Barlow Condensed,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:4px">${d.k}</div><div style="font-size:13px;color:var(--bone)">${d.v}</div></div>`).join('')}</div><div style="font-family:Barlow Condensed,sans-serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:14px">${s.price} <span style="font-size:13px;color:var(--khaki)">${s.unit}</span></div><a href="mailto:info@wildhuntsa.com?subject=Service Enquiry: ${encodeURIComponent(s.name)}" style="display:block;width:100%;padding:14px;font-family:Barlow Condensed,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);color:var(--earth);text-align:center;text-decoration:none;border-radius:2px">Contact Provider →</a>`;openOverlay('serviceModal');}
 
 // ════ SLIDESHOW ════
 let slideIdx=0;const slideNames=['Impala','Kudu','Blesbuck','Blue Wildebeest','Nyala','Zebra'];
@@ -2898,38 +3252,12 @@ window.addEventListener('DOMContentLoaded',function(){
   renderFarms(farms.slice(0,3),'home-farms');
   renderFarms(farms,'listings-farms');
   initSlideshow();
-  setTimeout(function(){mktSearch();},100);
+  setTimeout(function(){loadMktListings();},100);
   const params=new URLSearchParams(window.location.search);
   const page=params.get('page');
   if(page&&document.getElementById('page-'+page))gp(page);
 });
 
-// ════ MARKETPLACE SIDEBAR ════
-function toggleMktSidebarCat(btn, ddId, cat) {
-  const dd = document.getElementById(ddId);
-  if (!dd) return;
-  const isOpen = dd.style.display !== 'none';
-  ['dd-optics','dd-firearms','dd-clothing'].forEach(function(id) {
-    const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
-  });
-  document.querySelectorAll('.mkt-sidebar-item.expanded').forEach(function(b) { b.classList.remove('expanded'); });
-  if (!isOpen) {
-    dd.style.display = 'block';
-    btn.classList.add('expanded');
-  }
-  mktCat(btn, cat);
-}
-function mktSubCat(cat, sub) {
-  document.querySelectorAll('.mkt-sidebar-item').forEach(function(b) { b.classList.remove('on'); });
-  mktFilter = cat;
-  mktSubFilter = sub;
-  const sp = document.getElementById('mkt-services-panel');
-  const mb = document.getElementById('mkt-listings');
-  if (sp) sp.style.display = 'none';
-  if (mb) mb.style.display = '';
-  mktSearch();
-}
 
 // ════ COMMUNITY ════
 var commStarRating = 0;
