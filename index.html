@@ -253,6 +253,7 @@ hr.div{border:none;border-top:1px solid rgba(176,152,112,0.08);margin:0 80px}
 /* ── GALLERY MODAL ── */
 .overlay{position:fixed;inset:0;z-index:2000;background:rgba(8,5,2,0.92);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}
 .overlay.open{display:flex}
+.overlay.active{display:flex}
 .modal-box{background:var(--bark2);border:1px solid rgba(176,152,112,0.18);border-radius:6px;width:100%;overflow-y:auto;animation:mIn 0.3s ease}
 @keyframes mIn{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-box.farm-detail{max-width:900px;max-height:92vh}
@@ -2304,17 +2305,10 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 <div class="overlay" id="sellModal">
   <div class="modal-box" style="max-width:560px;max-height:92vh;overflow-y:auto">
     <div class="bk-header">
-      <div><div class="bk-title">📷 Post a Free Ad</div><div class="bk-sub">Goes live immediately · Enquiries handled by WildHunt SA</div></div>
+      <div><div class="bk-title">📷 Post a Free Ad</div><div class="bk-sub">Free to list · Goes live immediately · Enquiries via WildHunt SA</div></div>
       <button class="modal-close-btn" onclick="closeOverlay('sellModal')">✕</button>
     </div>
-    <!-- Login prompt (shown when not logged in) -->
-    <div id="sell-login-prompt" style="display:none;text-align:center;padding:36px 24px">
-      <div style="font-size:44px;margin-bottom:14px">🔒</div>
-      <p style="color:var(--khaki);margin-bottom:18px;line-height:1.6">You need a free WildHunt SA account to post listings.</p>
-      <button class="btn-sm btn-amber-sm" onclick="closeOverlay('sellModal');openLoginModal()" style="margin-bottom:10px">Login →</button>
-      <p style="font-size:12px;color:var(--khaki)">No account? <a onclick="closeOverlay('sellModal');gp('register')" style="color:var(--amber);cursor:pointer">Register free →</a></p>
-    </div>
-    <!-- Form (shown when logged in) -->
+    <!-- Listing form — no login required -->
     <div id="sell-form-body">
       <div class="bk-body">
         <div class="fg">
@@ -2353,6 +2347,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
           <div class="fi full"><label class="fl">Description *</label><textarea class="ftextarea" id="sell-desc" placeholder="Brand, model, specs, accessories included, reason for selling, any flaws..." style="min-height:88px"></textarea></div>
           <div class="fi"><label class="fl">Your Name *</label><input type="text" class="finput" id="sell-name" placeholder="Full name"></div>
           <div class="fi"><label class="fl">Phone *</label><input type="text" class="finput" id="sell-phone" placeholder="e.g. 082 000 0000"></div>
+          <div class="fi full"><label class="fl">Email *</label><input type="email" class="finput" id="sell-email-field" placeholder="your@email.com"></div>
           <div class="fi full" style="background:rgba(201,125,26,0.07);border:1px solid rgba(201,125,26,0.18);border-radius:3px;padding:12px 14px">
             <div style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.65">🔒 <strong style="color:var(--sand)">Your contact info is private.</strong> Buyers enquire through WildHunt SA — we vet them and connect you directly.</div>
           </div>
@@ -3108,18 +3103,16 @@ function submitMktEnquiry(){
 }
 
 function openSellModal(){
+  // Always show the form — no login required to post
   var fp=document.getElementById('sell-login-prompt');
   var fb=document.getElementById('sell-form-body');
-  if(!currentUser){
-    if(fp)fp.style.display='block';
-    if(fb)fb.style.display='none';
-  } else {
-    if(fp)fp.style.display='none';
-    if(fb)fb.style.display='block';
-    if(currentHunterProfile){
-      var nm=document.getElementById('sell-name');if(nm&&!nm.value)nm.value=currentHunterProfile.full_name||'';
-      var ph=document.getElementById('sell-phone');if(ph&&!ph.value)ph.value=currentHunterProfile.phone||'';
-    }
+  if(fp)fp.style.display='none';
+  if(fb)fb.style.display='block';
+  // Pre-fill name/phone if logged in
+  if(currentUser&&currentHunterProfile){
+    var nm=document.getElementById('sell-name');if(nm&&!nm.value)nm.value=currentHunterProfile.full_name||'';
+    var ph=document.getElementById('sell-phone');if(ph&&!ph.value)ph.value=currentHunterProfile.phone||'';
+    var em=document.getElementById('sell-email-field');if(em&&!em.value)em.value=currentUser.email||'';
   }
   openOverlay('sellModal');
 }
@@ -3149,9 +3142,12 @@ async function submitSellListing(){
   var desc=(document.getElementById('sell-desc')?.value||'').trim();
   var name=(document.getElementById('sell-name')?.value||'').trim();
   var phone=(document.getElementById('sell-phone')?.value||'').trim();
-  if(!title||!cat||!cond||!price||!prov||!desc||!name||!phone){
+  var sellerEmail=(document.getElementById('sell-email-field')?.value||currentUser?.email||'').trim();
+  if(!title||!cat||!cond||!price||!prov||!desc||!name||!phone||!sellerEmail){
     showToast('Please fill in all required fields ⚠️','err');return;
   }
+  var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRe.test(sellerEmail)){showToast('Please enter a valid email address ⚠️','err');return;}
   var btn=document.getElementById('sell-submit-btn');
   if(btn){btn.textContent='Posting...';btn.disabled=true;}
   try{
@@ -3169,9 +3165,9 @@ async function submitSellListing(){
       }
     }
     var {error}=await sc.from('marketplace_listings').insert({
-      user_id:currentUser.id,
+      user_id:currentUser?currentUser.id:null,
       seller_name:name,
-      seller_email:currentUser.email,
+      seller_email:sellerEmail,
       seller_phone:phone,
       title:title,category:cat,condition:cond,
       price:parseInt(price),province:prov,
