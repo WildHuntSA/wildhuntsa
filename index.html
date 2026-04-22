@@ -496,10 +496,6 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .btn-mkt-enq:hover{background:var(--gold)}
 .btn-mkt-sold{font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(90,112,48,0.18);border:1px solid rgba(90,112,48,0.4);color:#8fba50;padding:10px 20px;border-radius:2px;cursor:pointer;transition:all 0.2s}
 .btn-mkt-del{font-family:Barlow Condensed,sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(122,24,24,0.18);border:1px solid rgba(122,24,24,0.35);color:#d06060;padding:10px 20px;border-radius:2px;cursor:pointer;transition:all 0.2s}
-@media(max-width:768px){
-  #app-install-strip{padding:12px 16px!important}
-  #app-install-strip .logo-wrap{display:none}
-}
 #mob-btn{display:none}
 #mob-menu{display:none}
 
@@ -628,14 +624,14 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 }
 
 /* MOBILE */
-@media(max-width:900px){
+@media(max-width:768px){
   nav{padding:0 16px;height:64px}
   .nav-center{display:none!important}
   .nav-logo img{height:48px}
-  .nav-right .btn-outline-sm{display:none}
-  .nav-list-btn{display:none!important}
+  .nav-right .btn-outline-sm,.nav-right .btn-amber-sm,.nav-right .btn-sm{display:none!important}
+  .nav-list-btn,.nav-auth-btn{display:none!important}
   #mob-btn{display:flex!important;align-items:center;justify-content:center}
-  .nav-right .btn-outline-sm,.nav-right .btn-amber-sm,.nav-list-btn{display:none!important}
+  .nav-right .btn-outline-sm,.nav-right .btn-amber-sm,.nav-list-btn,.nav-auth-btn{display:none!important}
 
   .hero{min-height:100svh}
   .hero-content{padding:40px 20px 80px;max-width:100%}
@@ -1120,7 +1116,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .farm-disclaimer{font-size:11px;font-weight:300;color:rgba(237,224,204,0.3);border-top:1px solid rgba(176,152,112,0.06);padding-top:10px;margin-top:10px;line-height:1.55;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.3px}
 
 @media(max-width:1100px){.lf-hero{padding:140px 32px 60px}.lf-benefits{padding:52px 32px}.lf-benefits-grid{grid-template-columns:1fr 1fr}.lf-form-section{padding:52px 32px}.lf-form-header,.lf-form-body,.lf-submit-area{padding-left:24px;padding-right:24px}.contact-page{padding:40px 32px 60px}.contact-info-cards{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:768px){.lf-hero{padding:120px 16px 48px}.lf-benefits-grid{grid-template-columns:1fr}.lf-hero-stats{gap:24px;flex-wrap:wrap}.lf-form-header,.lf-form-body,.lf-submit-area{padding-left:18px;padding-right:18px}.lf-submit-area{flex-direction:column}.lf-submit-area button{width:100%}.contact-page{padding:32px 16px}.contact-fg{grid-template-columns:1fr}.contact-fi-full{grid-column:1}.contact-info-cards{grid-template-columns:1fr}}{display:flex;flex-direction:column;gap:6px}
+@media(max-width:768px){.lf-hero{padding:120px 16px 48px}.lf-benefits-grid{grid-template-columns:1fr}.lf-benefits{padding:32px 16px!important}.lf-hero-stats{gap:24px;flex-wrap:wrap}.lf-form-header,.lf-form-body,.lf-submit-area{padding-left:18px;padding-right:18px}.lf-submit-area{flex-direction:column}.lf-submit-area button{width:100%}.contact-page{padding:32px 16px}.contact-fg{grid-template-columns:1fr}.contact-fi-full{grid-column:1}.contact-info-cards{grid-template-columns:1fr}}{display:flex;flex-direction:column;gap:6px}
 .bk-option-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:rgba(18,13,6,0.6);border:1px solid rgba(176,152,112,0.12);border-radius:3px;cursor:pointer;transition:all 0.18s;gap:12px}
 .bk-option-row:hover{border-color:rgba(201,125,26,0.3);background:rgba(201,125,26,0.06)}
 .bk-option-row:has(.bk-chk:checked){border-color:var(--amber);background:rgba(201,125,26,0.08)}
@@ -1281,7 +1277,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
 .lf-success-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ivory);margin-bottom:12px}
 .lf-success-sub{font-size:15px;font-weight:300;color:rgba(237,224,204,0.55);max-width:480px;margin:0 auto;line-height:1.65}
 @media(max-width:1100px){.lf-benefits{padding:48px 32px}.lf-benefits-grid{grid-template-columns:1fr 1fr}.lf-form-outer{padding:0 32px 60px}.lf-section{padding:24px 20px}.lf-fg{grid-template-columns:1fr}.lf-fi-full{grid-column:1}.lf-species-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.lf-species-grid{grid-template-columns:repeat(2,1fr)}.lf-benefits-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.lf-species-grid{grid-template-columns:repeat(2,1fr)}.lf-benefits-grid{grid-template-columns:1fr}.lf-benefits{padding:32px 16px!important}}
 /* ══ ENQUIRY MODAL ══ */
 .enq-farm-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(42,28,13,0.7);border:1px solid rgba(201,125,26,0.25);border-radius:3px;padding:6px 12px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--sand);margin-bottom:18px}
 .enq-disclaimer{display:flex;align-items:flex-start;gap:9px;background:rgba(18,13,6,0.5);border-left:3px solid rgba(201,125,26,0.4);padding:12px 14px;border-radius:0 3px 3px 0;margin-top:16px;font-size:12px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.55}
@@ -1462,7 +1458,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     <button id="nav-logout-btn" class="btn-sm btn-outline-sm nav-auth-btn" onclick="authLogout()" style="display:none;border-color:rgba(176,152,112,0.3);color:var(--khaki)">Logout</button>
     <button id="nav-install-btn" onclick="installApp()" style="display:none;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:rgba(201,125,26,0.15);border:1px solid rgba(201,125,26,0.4);color:var(--amber);padding:6px 12px;border-radius:2px;cursor:pointer;align-items:center;gap:6px">⬇ Install</button>
     <button class="btn-sm btn-amber-sm nav-list-btn" onclick="gp('list')">List Your Farm</button>
-    <button id="mob-btn" onclick="toggleMobileMenu()" style="background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:40px;height:40px;border-radius:2px;font-size:20px;cursor:pointer;touch-action:manipulation">☰</button>
+    <button id="mob-btn" onclick="toggleMobileMenu()" style="background:none;border:1px solid rgba(176,152,112,0.3);color:var(--sand);width:40px;height:40px;border-radius:2px;font-size:22px;cursor:pointer;touch-action:manipulation;transition:all 0.2s">☰</button>
   </div>
 </nav>
 <!-- MOBILE MENU — must be outside <nav> to avoid iOS backdrop-filter containing-block bug -->
@@ -1471,7 +1467,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <button onclick="gp('provinces')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Browse Farms</button>
   <button onclick="gp('marketplace')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Marketplace</button>
   <button onclick="gp('community')" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Community</button>
-  <button onclick="gp('merch')" style="background:none;border:none;color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Merchandise</button>
+  
   <button onclick="gp('contact')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Contact</button>
   <button onclick="gp('register')" style="background:none;border:none;color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Register</button>
   <button id="mob-login-btn" onclick="openLoginModal()" style="background:none;border:none;color:var(--sand);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Login</button>
@@ -1479,72 +1475,6 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <button id="mob-logout-btn" onclick="authLogout()" style="display:none;background:none;border:none;color:var(--khaki);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;cursor:pointer;border-radius:2px;width:100%">Logout</button>
   <button onclick="gp('list')" style="background:var(--amber);border:none;color:var(--earth);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:13px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:8px">List Your Farm</button>
   <button id="mob-install-btn" onclick="installApp()" style="display:none;background:none;border:1px solid rgba(201,125,26,0.3);color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 16px;cursor:pointer;border-radius:2px;width:100%;margin-top:4px">⬇ Install App</button>
-
-<!-- ══ INSTALL APP BANNER ══ -->
-<div id="app-install-strip" style="background:rgba(30,20,9,0.97);border-bottom:1px solid rgba(201,125,26,0.15);padding:14px 80px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
-  <div style="display:flex;align-items:center;gap:14px">
-    <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;flex-shrink:0;border:1px solid rgba(201,125,26,0.3)">
-      <img src="https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png" style="width:100%;height:100%;object-fit:cover">
-    </div>
-    <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--ivory);letter-spacing:0.3px">WildHunt SA — Install the App</div>
-      <div style="font-size:12px;color:var(--khaki);margin-top:1px">Add to your home screen for the best experience · Free</div>
-    </div>
-  </div>
-  <div style="display:flex;gap:10px;align-items:center">
-    <button id="install-android-btn" onclick="installApp()" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:9px 20px;border-radius:2px;cursor:pointer;display:none">⬇ Install</button>
-    <button onclick="showInstallHelp()" style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:transparent;border:1px solid rgba(201,125,26,0.4);color:var(--amber);padding:9px 20px;border-radius:2px;cursor:pointer" id="install-manual-btn">📲 Add to Home Screen</button>
-    <button onclick="document.getElementById('app-install-strip').style.display='none';localStorage.setItem('install-strip-dismissed','1')" style="background:none;border:none;color:rgba(176,152,112,0.4);font-size:18px;cursor:pointer;padding:4px;line-height:1">✕</button>
-  </div>
-</div>
-
-<!-- Install help modal -->
-<div class="overlay" id="installHelpModal">
-  <div class="modal-box" style="max-width:420px">
-    <div class="bk-header">
-      <div><div class="bk-title">📲 Install WildHunt SA</div><div class="bk-sub">Add to your home screen in seconds</div></div>
-      <button class="modal-close-btn" onclick="closeOverlay('installHelpModal')">✕</button>
-    </div>
-    <div class="bk-body">
-      <div id="install-ios-guide" style="display:none">
-        <p style="font-size:13px;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:16px">On iPhone or iPad (Safari):</p>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">1️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Tap the <strong style="color:var(--amber)">Share</strong> button at the bottom of Safari (the box with an arrow pointing up)</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">2️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Scroll down and tap <strong style="color:var(--amber)">"Add to Home Screen"</strong></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">3️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Tap <strong style="color:var(--amber)">"Add"</strong> — done! WildHunt SA is now on your home screen.</div>
-          </div>
-        </div>
-      </div>
-      <div id="install-android-guide" style="display:none">
-        <p style="font-size:13px;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:16px">On Android (Chrome):</p>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">1️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Tap the <strong style="color:var(--amber)">three-dot menu</strong> (⋮) at the top right of Chrome</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">2️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Tap <strong style="color:var(--amber)">"Add to Home Screen"</strong> or <strong style="color:var(--amber)">"Install App"</strong></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;background:rgba(42,28,13,0.6);border-radius:4px;padding:12px 14px">
-            <div style="font-size:24px;flex-shrink:0">3️⃣</div>
-            <div style="font-size:13px;color:var(--bone)">Tap <strong style="color:var(--amber)">"Install"</strong> — done!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bk-footer">
-      <button class="btn-sm btn-amber-sm" onclick="closeOverlay('installHelpModal')">Got It</button>
-    </div>
-  </div>
 </div>
 
 
@@ -1557,14 +1487,16 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   <div class="hero-gradient"></div>
   <div class="hero-sun"></div>
   <div class="fs-slideshow" id="fs-slideshow">
-    <div class="fs-slide active" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Impala.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Kudu.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blesbuck.png')"></div>
-    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blesbuck.png')"></div>
+    <div class="fs-slide active" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Kudu.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Impala.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Nyala.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blesbuck.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Blue%20Wildebeest.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Eland.png')"></div>
+    <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Golden%20Wildebeest.png')"></div>
     <div class="fs-slide" style="background-image:url('https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/Zebra.png')"></div>
   </div>
-  <div class="fs-animal-name" id="fs-animal-name">Impala</div>
+  <div class="fs-animal-name" id="fs-animal-name">Kudu</div>
   <div class="fs-dots" id="fs-dots"></div>
   <div class="hero-content" style="position:relative;z-index:10">
     <div class="hero-eyebrow">🇿🇦 South Africa's Hunting Marketplace</div>
@@ -1745,6 +1677,39 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
   </div>
 </div>
 
+
+<!-- ══ 9. GET THE APP ══ -->
+<div style="background:rgba(18,13,6,0.8);border-top:1px solid rgba(176,152,112,0.08);padding:56px 24px;text-align:center">
+  <div style="max-width:480px;margin:0 auto">
+    <div style="width:80px;height:80px;border-radius:18px;overflow:hidden;margin:0 auto 20px;border:2px solid rgba(201,125,26,0.3);box-shadow:0 8px 32px rgba(201,125,26,0.2)">
+      <img src="https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/icon-512.png" onerror="this.src='https://cdn.jsdelivr.net/gh/WildHuntSA/wildhuntsa@main/LOGO%20NEW.png'" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div class="sec-label" style="margin-bottom:10px">Free App</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:900;color:var(--ivory);line-height:1.1;margin-bottom:12px">WildHunt SA<br><em style="color:var(--gold);font-style:italic">On Your Phone</em></h2>
+    <p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.5);line-height:1.7;margin-bottom:28px">No app store needed. Install directly from your browser — works on Android and iPhone.</p>
+    <!-- Android install button (shows when Chrome is ready) -->
+    <button id="home-install-btn" onclick="installApp()" style="display:none;width:100%;max-width:300px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--amber);border:none;color:var(--earth);padding:16px 32px;border-radius:3px;cursor:pointer;margin-bottom:16px;transition:background 0.2s" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='var(--amber)'">⬇ Install App</button>
+    <!-- Step-by-step for all devices -->
+    <div id="home-install-steps" style="display:flex;flex-direction:column;gap:10px;text-align:left;margin-bottom:24px">
+      <div style="background:rgba(42,28,13,0.7);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="font-size:26px;flex-shrink:0">🤖</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:3px">Android</div>
+          <div style="font-size:13px;color:rgba(237,224,204,0.6);line-height:1.5">Open in <strong style="color:var(--sand)">Chrome</strong> → tap the <strong style="color:var(--sand)">⋮ menu</strong> → tap <strong style="color:var(--sand)">"Add to Home Screen"</strong></div>
+        </div>
+      </div>
+      <div style="background:rgba(42,28,13,0.7);border:1px solid rgba(176,152,112,0.1);border-radius:4px;padding:14px 16px;display:flex;align-items:center;gap:14px">
+        <div style="font-size:26px;flex-shrink:0">🍎</div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:3px">iPhone</div>
+          <div style="font-size:13px;color:rgba(237,224,204,0.6);line-height:1.5">Open in <strong style="color:var(--sand)">Safari</strong> → tap the <strong style="color:var(--sand)">Share ↑ button</strong> → tap <strong style="color:var(--sand)">"Add to Home Screen"</strong></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;color:rgba(176,152,112,0.3);letter-spacing:1px;text-transform:uppercase">Free · No app store · Works offline</p>
+  </div>
+</div>
+
 </div><!-- end page-home -->
 
 <!-- ══════════ PAGE: FARMS / LISTINGS ══════════ -->
@@ -1782,7 +1747,7 @@ footer{background:#0c0804;border-top:1px solid rgba(176,152,112,0.08);padding:56
     </div>
     <div style="text-align:center;margin-top:40px"><p style="font-size:12px;font-weight:300;color:rgba(237,224,204,0.25);font-family:'Barlow Condensed',sans-serif;letter-spacing:0.5px">⚠️ Some listings are example/demo farms used to showcase the platform.</p></div>
   </div>
-  <div id="prov-results" style="display:none;background:var(--earth);scroll-margin-top:100px">
+  <div id="prov-results" style="display:none;background:var(--earth);scroll-margin-top:100px;padding:0 0 32px">
     <div class="sec" style="padding-top:32px">
       <div class="sec-head">
         <div><div class="sec-label" id="prov-result-label"></div><h2 class="sec-title" id="prov-result-title"></h2></div>
@@ -2801,7 +2766,14 @@ async function submitFarmListing() {
 }
 
 // ════ MOBILE MENU ════
-function toggleMobileMenu(){const m=document.getElementById('mob-menu');if(!m)return;const open=m.style.display==='flex';m.style.display=open?'none':'flex';}
+function toggleMobileMenu(){
+  const m=document.getElementById('mob-menu');
+  const btn=document.getElementById('mob-btn');
+  if(!m)return;
+  const open=m.style.display==='flex';
+  m.style.display=open?'none':'flex';
+  if(btn)btn.innerHTML=open?'☰':'✕';
+}
 document.addEventListener('click',function(e){const m=document.getElementById('mob-menu');const btn=document.getElementById('mob-btn');if(m&&m.style.display==='flex'&&!m.contains(e.target)&&!btn.contains(e.target))m.style.display='none';});
 
 // ════ OVERLAY SYSTEM ════
@@ -2823,7 +2795,7 @@ function gp(id){
     b.classList.remove('active');
     if((id==='home'&&b.textContent.trim()==='Home')||(id==='provinces'&&b.textContent.trim()==='Browse Farms')||(id==='marketplace'&&b.textContent.trim()==='Marketplace')||(id==='community'&&b.textContent.trim()==='Community'))b.classList.add('active');
   });
-  const mm=document.getElementById('mob-menu');if(mm)mm.style.display='none';
+  const mm=document.getElementById('mob-menu');const mb=document.getElementById('mob-btn');if(mm)mm.style.display='none';if(mb)mb.innerHTML='☰';
   if(id==='home')renderFarms(farms.slice(0,3),'home-farms');
   if(id==='listings'||id==='provinces')renderFarms(farms,'listings-farms');
   if(id==='marketplace')setTimeout(function(){loadMktListings();},50);
@@ -3308,7 +3280,7 @@ function svcFilter(btn,cat){document.querySelectorAll('.ftab').forEach(b=>b.clas
 function openService(id){const s=services.find(x=>x.id===id);if(!s)return;const h=document.getElementById('svc-modal-header');const b=document.getElementById('svc-modal-body');if(h)h.innerHTML=`<div><div class="bk-title">${s.icon} ${s.name}</div><div class="bk-sub">${s.provider} · ${s.province}</div></div>`;if(b)b.innerHTML=`<p style="font-size:14px;font-weight:300;color:rgba(237,224,204,0.6);line-height:1.7;margin-bottom:20px">${s.desc}</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">${s.details.map(d=>`<div style="background:var(--bark);border-radius:3px;padding:12px"><div style="font-family:Barlow Condensed,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:4px">${d.k}</div><div style="font-size:13px;color:var(--bone)">${d.v}</div></div>`).join('')}</div><div style="font-family:Barlow Condensed,sans-serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:14px">${s.price} <span style="font-size:13px;color:var(--khaki)">${s.unit}</span></div><a href="mailto:info@wildhuntsa.com?subject=Service Enquiry: ${encodeURIComponent(s.name)}" style="display:block;width:100%;padding:14px;font-family:Barlow Condensed,sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--amber);color:var(--earth);text-align:center;text-decoration:none;border-radius:2px">Contact Provider →</a>`;openOverlay('serviceModal');}
 
 // ════ SLIDESHOW ════
-let slideIdx=0;const slideNames=['Impala','Kudu','Blesbuck','Blue Wildebeest','Nyala','Zebra'];
+let slideIdx=0;const slideNames=['Kudu','Impala','Nyala','Blesbok','Blue Wildebeest','Eland','Golden Wildebeest','Zebra'];
 function initSlideshow(){
   const slides=document.querySelectorAll('.fs-slide');
   const dotsEl=document.getElementById('fs-dots');
@@ -3325,41 +3297,29 @@ window.addEventListener('beforeinstallprompt',function(e){
   e.preventDefault();deferredPrompt=e;
   var navBtn=document.getElementById('nav-install-btn');
   var mobBtn=document.getElementById('mob-install-btn');
-  var androidBtn=document.getElementById('install-android-btn');
-  var manualBtn=document.getElementById('install-manual-btn');
+  var banner=document.getElementById('pwa-install-banner');
+  var homeBtn=document.getElementById('home-install-btn');
+  var homeSteps=document.getElementById('home-install-steps');
   if(navBtn)navBtn.style.display='flex';
   if(mobBtn)mobBtn.style.display='block';
-  if(androidBtn)androidBtn.style.display='block';
-  if(manualBtn)manualBtn.style.display='none';
+  if(banner&&!localStorage.getItem('pwa-dismissed'))banner.style.display='flex';
+  // Show one-tap install button, hide manual steps
+  if(homeBtn)homeBtn.style.display='block';
+  if(homeSteps)homeSteps.style.display='none';
 });
 function installApp(){
   if(deferredPrompt){
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(function(choice){
-      if(choice.outcome==='accepted'){showToast('WildHunt SA installed! 🎉','ok');}
+      if(choice.outcome==='accepted')showToast('WildHunt SA installed! 🎉','ok');
       deferredPrompt=null;
-      var strip=document.getElementById('app-install-strip');
-      if(strip)strip.style.display='none';
+      var banner=document.getElementById('pwa-install-banner');
+      if(banner)banner.style.display='none';
     });
-  }else{showInstallHelp();}
+  }else{
+    showToast('📲 Tap your browser menu → "Add to Home Screen" to install','ok');
+  }
 }
-function showInstallHelp(){
-  var isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
-  var iosG=document.getElementById('install-ios-guide');
-  var andG=document.getElementById('install-android-guide');
-  if(iosG)iosG.style.display=isIOS?'block':'none';
-  if(andG)andG.style.display=isIOS?'none':'block';
-  openOverlay('installHelpModal');
-}
-// Hide strip if already installed or dismissed
-window.addEventListener('DOMContentLoaded',function(){
-  var strip=document.getElementById('app-install-strip');
-  if(!strip)return;
-  var dismissed=localStorage.getItem('install-strip-dismissed');
-  var isStandalone=window.matchMedia('(display-mode:standalone)').matches||window.navigator.standalone;
-  if(dismissed||isStandalone){strip.style.display='none';}
-  else{strip.style.display='flex';}
-});
 if(navigator.serviceWorker&&(location.hostname==='wildhuntsa.com'||location.hostname==='www.wildhuntsa.com')){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(err=>console.log('SW:',err));});}
 if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){localStorage.setItem('pwa-dismissed','1');}
 
